@@ -1,15 +1,18 @@
 import { Home, FolderKanban, Wrench, User } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import whatsappIcon from "@/assets/whatsapp.svg";
 
 const navItems = [
-  { icon: Home, label: "Home" },
-  { icon: FolderKanban, label: "Projects" },
-  { icon: null, label: "WhatsApp" },
-  { icon: Wrench, label: "Services" },
-  { icon: User, label: "Profile" },
+  { icon: Home, label: "Home", to: "/" },
+  { icon: FolderKanban, label: "Projects", to: "/projects" },
+  { icon: null, label: "WhatsApp", to: "" },
+  { icon: Wrench, label: "Services", to: "/#services" },
+  { icon: User, label: "Profile", to: "/about" },
 ];
 
 const BottomNav = () => {
+  const location = useLocation();
+
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-50 glass-nav safe-area-bottom">
       <div className="flex items-end justify-around px-2 pt-2 pb-2">
@@ -32,16 +35,19 @@ const BottomNav = () => {
           }
 
           const Icon = item.icon!;
+          const isActive = location.pathname === item.to;
+
           return (
-            <button
+            <Link
               key={item.label}
+              to={item.to}
               className="flex flex-col items-center py-1 px-3 group"
             >
-              <Icon className="w-5 h-5 text-muted-foreground transition-colors group-hover:text-gold" />
-              <span className="text-[10px] font-sans text-muted-foreground mt-1 transition-colors group-hover:text-gold">
+              <Icon className={`w-5 h-5 transition-colors ${isActive ? "text-gold" : "text-muted-foreground group-hover:text-gold"}`} />
+              <span className={`text-[10px] font-sans mt-1 transition-colors ${isActive ? "text-gold" : "text-muted-foreground group-hover:text-gold"}`}>
                 {item.label}
               </span>
-            </button>
+            </Link>
           );
         })}
       </div>
