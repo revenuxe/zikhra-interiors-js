@@ -1,4 +1,4 @@
-import { Home, FolderKanban, Wrench, MessageSquare } from "lucide-react";
+import { Home, FolderKanban, Wrench, Send } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import whatsappIcon from "@/assets/whatsapp.svg";
 
