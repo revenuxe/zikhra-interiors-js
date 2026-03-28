@@ -6,8 +6,8 @@ const navItems = [
   { icon: Home, label: "Home", to: "/" },
   { icon: FolderKanban, label: "Projects", to: "/projects" },
   { icon: null, label: "WhatsApp", to: "" },
-  { icon: Wrench, label: "Services", to: "/#services" },
-  { icon: User, label: "Profile", to: "/about" },
+  { icon: Wrench, label: "Services", to: "/services" },
+  { icon: User, label: "About", to: "/about" },
 ];
 
 const BottomNav = () => {

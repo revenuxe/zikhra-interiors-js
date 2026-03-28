@@ -1,10 +1,10 @@
 import { Shield, Zap, Gem, BadgeCheck } from "lucide-react";
 
 const points = [
-  { icon: Shield, title: "End-to-End Solutions", desc: "From concept to completion, we handle everything" },
-  { icon: Zap, title: "Fast Delivery", desc: "On-time project completion guaranteed" },
-  { icon: Gem, title: "Premium Materials", desc: "Only the finest materials and finishes" },
-  { icon: BadgeCheck, title: "Transparent Pricing", desc: "No hidden costs, complete clarity" },
+  { icon: Shield, title: "End-to-End Solutions", desc: "From concept to completion, we handle everything for your Hyderabad home" },
+  { icon: Zap, title: "Fast Delivery", desc: "On-time project completion guaranteed across Hyderabad" },
+  { icon: Gem, title: "Premium Materials", desc: "Only the finest imported materials and finishes" },
+  { icon: BadgeCheck, title: "Transparent Pricing", desc: "No hidden costs, complete clarity on every project" },
 ];
 
 const WhyChooseSection = () => {
@@ -12,7 +12,7 @@ const WhyChooseSection = () => {
     <section className="section-padding bg-luxury-dark">
       <div className="text-center mb-10">
         <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Why Us</p>
-        <h2 className="font-serif text-3xl md:text-4xl gold-text">Why Choose Zikhra</h2>
+        <h2 className="font-serif text-3xl md:text-4xl gold-text">Why Hyderabad Trusts Zikhra</h2>
       </div>
 
       <div className="flex flex-col gap-4 max-w-lg mx-auto">

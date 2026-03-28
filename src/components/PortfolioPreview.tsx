@@ -16,7 +16,10 @@ const PortfolioPreview = () => {
     <section className="section-padding">
       <div className="text-center mb-10">
         <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Portfolio</p>
-        <h2 className="font-serif text-3xl md:text-4xl gold-text">Our Craft</h2>
+        <h2 className="font-serif text-3xl md:text-4xl gold-text">Explore Our Craft</h2>
+        <p className="font-sans text-muted-foreground text-sm mt-3 max-w-sm mx-auto">
+          Luxury interior design categories — handcrafted for Hyderabad homes
+        </p>
       </div>
 
       <div className="flex gap-4 overflow-x-auto hide-scrollbar pb-4 -mx-5 px-5 snap-x snap-mandatory">
@@ -28,7 +31,7 @@ const PortfolioPreview = () => {
           >
             <img
               src={cat.image}
-              alt={cat.name}
+              alt={`${cat.name} interior design Hyderabad`}
               loading="lazy"
               width={800}
               height={1024}

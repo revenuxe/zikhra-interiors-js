@@ -1,10 +1,14 @@
-import { Home, UtensilsCrossed, DoorOpen, Hammer } from "lucide-react";
+import { Link } from "react-router-dom";
+import serviceHome from "@/assets/service-home.jpg";
+import serviceKitchen from "@/assets/service-kitchen.jpg";
+import serviceWardrobe from "@/assets/service-wardrobe.jpg";
+import serviceRenovation from "@/assets/service-renovation.jpg";
 
 const services = [
-  { icon: Home, title: "Full Home Interiors", desc: "Complete design solutions" },
-  { icon: UtensilsCrossed, title: "Modular Kitchen", desc: "Bespoke kitchen designs" },
-  { icon: DoorOpen, title: "Wardrobes", desc: "Custom storage solutions" },
-  { icon: Hammer, title: "Renovation", desc: "Transform your space" },
+  { image: serviceHome, title: "Full Home Interiors", desc: "Complete luxury home design solutions", slug: "full-home" },
+  { image: serviceKitchen, title: "Modular Kitchen", desc: "Bespoke premium kitchen designs", slug: "modular-kitchen" },
+  { image: serviceWardrobe, title: "Wardrobes", desc: "Custom walk-in closet solutions", slug: "wardrobes" },
+  { image: serviceRenovation, title: "Renovation", desc: "Transform your existing space", slug: "renovation" },
 ];
 
 const ServicesSection = () => {
@@ -13,21 +17,44 @@ const ServicesSection = () => {
       <div className="text-center mb-10">
         <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">What We Do</p>
         <h2 className="font-serif text-3xl md:text-4xl gold-text">Our Services</h2>
+        <p className="font-sans text-muted-foreground text-sm mt-3 max-w-sm mx-auto">
+          Premium interior design services across Hyderabad — from Jubilee Hills to HITEC City
+        </p>
       </div>
 
       <div className="grid grid-cols-2 gap-4 max-w-lg mx-auto">
         {services.map((svc) => (
-          <div
+          <Link
             key={svc.title}
-            className="flex flex-col items-center text-center p-6 rounded-2xl bg-card border border-border/50 transition-all duration-300 hover:border-gold/30 hover:gold-glow group cursor-pointer"
+            to={`/services#${svc.slug}`}
+            className="flex flex-col items-center text-center rounded-2xl overflow-hidden bg-card border border-border/50 transition-all duration-300 hover:border-gold/30 hover:gold-glow group cursor-pointer"
           >
-            <div className="w-12 h-12 rounded-full gold-gradient flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110">
-              <svc.icon className="w-5 h-5 text-primary-foreground" />
+            <div className="relative w-full h-32 overflow-hidden">
+              <img
+                src={svc.image}
+                alt={`${svc.title} in Hyderabad`}
+                loading="lazy"
+                width={640}
+                height={640}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
             </div>
-            <h3 className="font-serif text-sm text-foreground mb-1">{svc.title}</h3>
-            <p className="text-xs font-sans text-muted-foreground">{svc.desc}</p>
-          </div>
+            <div className="p-4 -mt-4 relative z-10">
+              <h3 className="font-serif text-sm text-foreground mb-1">{svc.title}</h3>
+              <p className="text-xs font-sans text-muted-foreground">{svc.desc}</p>
+            </div>
+          </Link>
         ))}
+      </div>
+
+      <div className="text-center mt-8">
+        <Link
+          to="/services"
+          className="inline-block px-8 py-3 rounded-full font-sans text-sm font-medium border border-gold/40 text-gold-light transition-all duration-300 hover:border-gold hover:bg-gold/10"
+        >
+          View All Services
+        </Link>
       </div>
     </section>
   );
