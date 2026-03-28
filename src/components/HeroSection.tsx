@@ -1,5 +1,6 @@
 import heroImage from "@/assets/hero-interior.jpg";
 import { ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -11,15 +12,15 @@ const HeroSection = () => {
         height={1080}
         className="absolute inset-0 w-full h-full object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-luxury-black/60 via-luxury-black/40 to-luxury-black/80" />
+      <div className="absolute inset-0 bg-gradient-to-b from-luxury-black/75 via-luxury-black/60 to-luxury-black/90" />
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center">
-        <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-light mb-6 animate-fade-in-up leading-tight">
+        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in-up leading-[1.1]">
           <span className="gold-text">Where Elegance</span>
           <br />
           <span className="gold-text italic">Meets Living</span>
         </h1>
-        <p className="font-sans text-foreground/80 text-base md:text-lg max-w-md mb-10 font-light animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+        <p className="font-sans text-foreground/85 text-lg md:text-xl max-w-md mb-10 font-light animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
           We craft timeless interiors that define luxury living
         </p>
 
@@ -32,9 +33,12 @@ const HeroSection = () => {
           >
             Get Free Consultation
           </a>
-          <button className="px-8 py-3.5 rounded-full font-sans text-sm font-medium tracking-wide border border-gold/40 text-gold-light transition-all duration-300 hover:border-gold hover:bg-gold/10">
+          <Link
+            to="/projects"
+            className="px-8 py-3.5 rounded-full font-sans text-sm font-medium tracking-wide border border-gold/40 text-gold-light transition-all duration-300 hover:border-gold hover:bg-gold/10 text-center"
+          >
             View Projects
-          </button>
+          </Link>
         </div>
 
         <div className="absolute bottom-24 md:bottom-12 animate-scroll-bounce">
