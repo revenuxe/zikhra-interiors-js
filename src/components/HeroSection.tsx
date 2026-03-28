@@ -23,7 +23,7 @@ const HeroSection = () => {
           We craft timeless interiors that define luxury living
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+        <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
           <a
             href="https://wa.me/919999999999?text=Hi%20Zikhra,%20I%20want%20a%20free%20consultation"
             target="_blank"

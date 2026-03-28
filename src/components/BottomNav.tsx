@@ -1,10 +1,11 @@
-import { Home, LayoutGrid, Briefcase, User, MessageCircle } from "lucide-react";
+import { Home, FolderKanban, Wrench, User } from "lucide-react";
+import whatsappIcon from "@/assets/whatsapp.svg";
 
 const navItems = [
   { icon: Home, label: "Home" },
-  { icon: LayoutGrid, label: "Projects" },
+  { icon: FolderKanban, label: "Projects" },
   { icon: null, label: "WhatsApp" },
-  { icon: Briefcase, label: "Services" },
+  { icon: Wrench, label: "Services" },
   { icon: User, label: "Profile" },
 ];
 
@@ -23,7 +24,7 @@ const BottomNav = () => {
                 className="relative -mt-5 flex flex-col items-center"
               >
                 <div className="w-14 h-14 rounded-full gold-gradient flex items-center justify-center animate-pulse-gold shadow-xl">
-                  <MessageCircle className="w-6 h-6 text-primary-foreground" />
+                  <img src={whatsappIcon} alt="WhatsApp" className="w-7 h-7 brightness-0" />
                 </div>
                 <span className="text-[10px] font-sans text-gold mt-1">{item.label}</span>
               </a>
