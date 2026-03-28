@@ -21,7 +21,7 @@ const BottomNav = () => {
             return (
               <a
                 key={item.label}
-                href="https://wa.me/919999999999"
+                href="https://wa.me/919886285028"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="relative -mt-5 flex flex-col items-center"

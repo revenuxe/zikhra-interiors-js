@@ -26,7 +26,7 @@ const CTASection = () => {
             WhatsApp Now
           </a>
           <a
-            href="https://wa.me/919999999999?text=Hi%20Zikhra,%20I%20want%20a%20free%20quote"
+            href="https://wa.me/919886285028?text=Hi%20Zikhra,%20I%20want%20a%20free%20quote"
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-3.5 rounded-full font-sans text-sm font-medium border border-gold/40 text-gold-light transition-all duration-300 hover:border-gold hover:bg-gold/10"
