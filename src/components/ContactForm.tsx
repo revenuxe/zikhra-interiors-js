@@ -16,6 +16,7 @@ const ContactForm = () => {
       name: formData.name.trim(),
       phone: formData.phone.trim(),
       email: formData.email.trim() || null,
+      project_type: formData.projectType.trim() || null,
       message: formData.message.trim() || null,
       source: "website",
     });
