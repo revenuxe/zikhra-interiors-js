@@ -103,6 +103,11 @@ const Footer = () => {
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-2 text-xs font-sans text-muted-foreground/40">
           <p>© 2026 Zikhra Interiors. All rights reserved.</p>
+          <div className="flex items-center gap-3">
+            <Link to="/terms" className="hover:text-gold transition-colors">Terms & Conditions</Link>
+            <span>·</span>
+            <Link to="/privacy" className="hover:text-gold transition-colors">Privacy Policy</Link>
+          </div>
           <p>Designed with passion in Hyderabad</p>
         </div>
       </div>
