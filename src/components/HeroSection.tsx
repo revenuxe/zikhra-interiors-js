@@ -15,7 +15,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-luxury-black/85 via-luxury-black/70 to-luxury-black/95" />
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center">
-        <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold/80 mb-4 animate-fade-in-up">Hyderabad's Premier Interior Studio</p>
+        
         <h1 className="font-serif text-5xl md:text-7xl lg:text-9xl font-bold mb-6 animate-fade-in-up leading-[1.05]">
           <span className="gold-text">Designing</span>
           <br />
