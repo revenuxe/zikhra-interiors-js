@@ -13,6 +13,9 @@ import Services from "./pages/Services.tsx";
 import PortfolioDetail from "./pages/PortfolioDetail.tsx";
 import AdminLogin from "./pages/AdminLogin.tsx";
 import AdminDashboard from "./pages/AdminDashboard.tsx";
+import ThankYou from "./pages/ThankYou.tsx";
+import Terms from "./pages/Terms.tsx";
+import Privacy from "./pages/Privacy.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
