@@ -1,4 +1,4 @@
-import { MessageCircle } from "lucide-react";
+import whatsappIcon from "@/assets/whatsapp.svg";
 
 const CTASection = () => {
   return (
@@ -22,7 +22,7 @@ const CTASection = () => {
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-sans text-sm font-medium bg-[hsl(142,70%,45%)] text-foreground transition-all duration-300 hover:scale-105 shadow-lg shadow-[hsla(142,70%,45%,0.3)]"
           >
-            <MessageCircle className="w-4 h-4" />
+            <img src={whatsappIcon} alt="" className="w-4 h-4" />
             WhatsApp Now
           </a>
           <a

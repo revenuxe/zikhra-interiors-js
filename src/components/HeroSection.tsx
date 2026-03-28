@@ -14,17 +14,16 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-luxury-black/60 via-luxury-black/40 to-luxury-black/80" />
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center">
-        <p className="text-sm font-sans tracking-[0.35em] uppercase text-gold-light mb-4 animate-fade-in-up">
-          Zikhra Interiors
-        </p>
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-semibold mb-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-          <span className="gold-text">Beyond Design</span>
+        <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-light mb-6 animate-fade-in-up leading-tight">
+          <span className="gold-text">Where Elegance</span>
+          <br />
+          <span className="gold-text italic">Meets Living</span>
         </h1>
-        <p className="font-sans text-foreground/80 text-base md:text-lg max-w-md mb-10 font-light animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+        <p className="font-sans text-foreground/80 text-base md:text-lg max-w-md mb-10 font-light animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
           We craft timeless interiors that define luxury living
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+        <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
           <a
             href="https://wa.me/919999999999?text=Hi%20Zikhra,%20I%20want%20a%20free%20consultation"
             target="_blank"
