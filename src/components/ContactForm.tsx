@@ -4,7 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({ name: "", phone: "", email: "", message: "" });
+  const [formData, setFormData] = useState({ name: "", phone: "", email: "", projectType: "", message: "" });
   const [submitting, setSubmitting] = useState(false);
   const navigate = useNavigate();
 
