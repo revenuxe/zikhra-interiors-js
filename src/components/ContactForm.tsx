@@ -1,11 +1,32 @@
 import { useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 import whatsappIcon from "@/assets/whatsapp.svg";
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({ name: "", phone: "", message: "" });
+  const [formData, setFormData] = useState({ name: "", phone: "", email: "", message: "" });
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitting(true);
+
+    const { error } = await supabase.from("leads").insert({
+      name: formData.name.trim(),
+      phone: formData.phone.trim(),
+      email: formData.email.trim() || null,
+      message: formData.message.trim() || null,
+      source: "website",
+    });
+
+    if (error) {
+      toast.error("Something went wrong. Please try WhatsApp.");
+    } else {
+      toast.success("We'll contact you soon!");
+      setFormData({ name: "", phone: "", email: "", message: "" });
+    }
+    setSubmitting(false);
+
     const text = `Hi Zikhra, I'm ${formData.name}. ${formData.message}. Contact me at ${formData.phone}`;
     window.open(`https://wa.me/919999999999?text=${encodeURIComponent(text)}`, "_blank");
   };
@@ -44,6 +65,13 @@ const ContactForm = () => {
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
             className="w-full px-5 py-3.5 rounded-xl bg-card border border-border/50 font-sans text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors"
           />
+          <input
+            type="email"
+            placeholder="Email (optional)"
+            value={formData.email}
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            className="w-full px-5 py-3.5 rounded-xl bg-card border border-border/50 font-sans text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors"
+          />
           <textarea
             placeholder="Tell us about your project..."
             rows={3}
@@ -54,10 +82,11 @@ const ContactForm = () => {
           />
           <button
             type="submit"
-            className="w-full flex items-center justify-center gap-2 gold-gradient py-3.5 rounded-full font-sans text-sm font-medium text-primary-foreground transition-all duration-300 hover:scale-[1.02] gold-glow"
+            disabled={submitting}
+            className="w-full flex items-center justify-center gap-2 gold-gradient py-3.5 rounded-full font-sans text-sm font-medium text-primary-foreground transition-all duration-300 hover:scale-[1.02] gold-glow disabled:opacity-50"
           >
             <img src={whatsappIcon} alt="" className="w-4 h-4 brightness-0" />
-            Send via WhatsApp
+            {submitting ? "Sending..." : "Send via WhatsApp"}
           </button>
         </form>
 
