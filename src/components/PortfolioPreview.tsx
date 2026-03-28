@@ -1,13 +1,14 @@
+import { Link } from "react-router-dom";
 import kitchenImg from "@/assets/kitchen.jpg";
 import bedroomImg from "@/assets/bedroom.jpg";
 import livingroomImg from "@/assets/livingroom.jpg";
 import wardrobeImg from "@/assets/wardrobe.jpg";
 
 const categories = [
-  { name: "Kitchen", image: kitchenImg },
-  { name: "Bedroom", image: bedroomImg },
-  { name: "Living Room", image: livingroomImg },
-  { name: "Wardrobe", image: wardrobeImg },
+  { name: "Kitchen", image: kitchenImg, slug: "kitchen" },
+  { name: "Bedroom", image: bedroomImg, slug: "bedroom" },
+  { name: "Living Room", image: livingroomImg, slug: "living-room" },
+  { name: "Wardrobe", image: wardrobeImg, slug: "wardrobe" },
 ];
 
 const PortfolioPreview = () => {
@@ -20,9 +21,10 @@ const PortfolioPreview = () => {
 
       <div className="flex gap-4 overflow-x-auto hide-scrollbar pb-4 -mx-5 px-5 snap-x snap-mandatory">
         {categories.map((cat) => (
-          <div
+          <Link
             key={cat.name}
-            className="relative flex-shrink-0 w-64 h-80 rounded-2xl overflow-hidden group snap-center cursor-pointer"
+            to={`/portfolio/${cat.slug}`}
+            className="relative flex-shrink-0 w-64 h-80 rounded-2xl overflow-hidden group snap-center cursor-pointer block"
           >
             <img
               src={cat.image}
@@ -37,7 +39,7 @@ const PortfolioPreview = () => {
               <h3 className="font-serif text-xl text-foreground">{cat.name}</h3>
               <div className="w-8 h-0.5 gold-gradient mt-2 transition-all duration-300 group-hover:w-14" />
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
