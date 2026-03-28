@@ -17,7 +17,7 @@ const CTASection = () => {
 
         <div className="flex flex-col gap-3">
           <a
-            href="https://wa.me/919999999999?text=Hi%20Zikhra,%20I%20want%20to%20design%20my%20dream%20space"
+            href="https://wa.me/919886285028?text=Hi%20Zikhra,%20I%20want%20to%20design%20my%20dream%20space"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-sans text-sm font-medium gold-gradient text-primary-foreground transition-all duration-300 hover:scale-105 gold-glow"
