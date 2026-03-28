@@ -1,4 +1,4 @@
-import { Home, FolderKanban, Wrench, User } from "lucide-react";
+import { Home, FolderKanban, Wrench, MessageSquare } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import whatsappIcon from "@/assets/whatsapp.svg";
 
@@ -7,7 +7,7 @@ const navItems = [
   { icon: FolderKanban, label: "Projects", to: "/projects" },
   { icon: null, label: "WhatsApp", to: "" },
   { icon: Wrench, label: "Services", to: "/services" },
-  { icon: User, label: "About", to: "/about" },
+  { icon: MessageSquare, label: "Contact", to: "/contact" },
 ];
 
 const BottomNav = () => {
