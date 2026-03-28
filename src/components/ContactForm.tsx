@@ -4,7 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({ name: "", phone: "", email: "", message: "" });
+  const [formData, setFormData] = useState({ name: "", phone: "", email: "", projectType: "", message: "" });
   const [submitting, setSubmitting] = useState(false);
   const navigate = useNavigate();
 
@@ -16,6 +16,7 @@ const ContactForm = () => {
       name: formData.name.trim(),
       phone: formData.phone.trim(),
       email: formData.email.trim() || null,
+      project_type: formData.projectType.trim() || null,
       message: formData.message.trim() || null,
       source: "website",
     });
@@ -68,6 +69,13 @@ const ContactForm = () => {
             placeholder="Email (optional)"
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            className="w-full px-5 py-3.5 rounded-xl bg-card border border-border/50 font-sans text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors"
+          />
+          <input
+            type="text"
+            placeholder="Project Type (e.g., 2 BHK, Villa, Duplex)"
+            value={formData.projectType}
+            onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
             className="w-full px-5 py-3.5 rounded-xl bg-card border border-border/50 font-sans text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors"
           />
           <textarea
