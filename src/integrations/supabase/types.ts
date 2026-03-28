@@ -22,6 +22,7 @@ export type Database = {
           message: string | null
           name: string
           phone: string
+          project_type: string | null
           source: string | null
           status: string | null
         }
@@ -32,6 +33,7 @@ export type Database = {
           message?: string | null
           name: string
           phone: string
+          project_type?: string | null
           source?: string | null
           status?: string | null
         }
@@ -42,6 +44,7 @@ export type Database = {
           message?: string | null
           name?: string
           phone?: string
+          project_type?: string | null
           source?: string | null
           status?: string | null
         }
