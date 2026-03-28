@@ -2,11 +2,12 @@ import project2bhk from "@/assets/project-2bhk.jpg";
 import projectVilla from "@/assets/project-villa.jpg";
 import project3bhk from "@/assets/project-3bhk.jpg";
 import { MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const projects = [
-  { image: project2bhk, type: "2BHK Apartment", location: "Whitefield, Bangalore", budget: "₹12-18 Lakhs" },
-  { image: projectVilla, type: "Luxury Villa", location: "Sarjapur Road, Bangalore", budget: "₹45-60 Lakhs" },
-  { image: project3bhk, type: "3BHK Penthouse", location: "Indiranagar, Bangalore", budget: "₹25-35 Lakhs" },
+  { image: project2bhk, type: "2BHK Apartment", location: "Gachibowli, Hyderabad", budget: "₹12-18 Lakhs", slug: "2bhk-apartment" },
+  { image: projectVilla, type: "Luxury Villa", location: "Jubilee Hills, Hyderabad", budget: "₹45-60 Lakhs", slug: "luxury-villa" },
+  { image: project3bhk, type: "3BHK Penthouse", location: "Banjara Hills, Hyderabad", budget: "₹25-35 Lakhs", slug: "3bhk-penthouse" },
 ];
 
 const FeaturedProjects = () => {
@@ -14,19 +15,20 @@ const FeaturedProjects = () => {
     <section className="section-padding">
       <div className="text-center mb-10">
         <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Featured</p>
-        <h2 className="font-serif text-3xl md:text-4xl gold-text">Recent Projects</h2>
+        <h2 className="font-serif text-3xl md:text-4xl gold-text">Recent Projects in Hyderabad</h2>
       </div>
 
       <div className="flex flex-col gap-6 max-w-lg mx-auto">
         {projects.map((project) => (
-          <div
+          <Link
             key={project.type}
-            className="rounded-2xl overflow-hidden bg-card border border-border/50 group cursor-pointer transition-all duration-300 hover:border-gold/30"
+            to={`/projects/${project.slug}`}
+            className="rounded-2xl overflow-hidden bg-card border border-border/50 group cursor-pointer transition-all duration-300 hover:border-gold/30 block"
           >
             <div className="relative h-64 overflow-hidden">
               <img
                 src={project.image}
-                alt={project.type}
+                alt={`${project.type} interior design ${project.location}`}
                 loading="lazy"
                 width={800}
                 height={1024}
@@ -42,7 +44,7 @@ const FeaturedProjects = () => {
               </div>
               <p className="text-xs font-sans text-gold/80 tracking-wide">{project.budget}</p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>

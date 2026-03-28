@@ -12,7 +12,7 @@ const CTASection = () => {
           Let's Design Your Dream Space
         </h2>
         <p className="font-sans text-muted-foreground text-sm mb-8">
-          Transform your vision into reality with Zikhra's premium interior solutions
+          Transform your vision into reality with Zikhra's premium interior solutions in Hyderabad
         </p>
 
         <div className="flex flex-col gap-3">
@@ -20,16 +20,16 @@ const CTASection = () => {
             href="https://wa.me/919999999999?text=Hi%20Zikhra,%20I%20want%20to%20design%20my%20dream%20space"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-sans text-sm font-medium bg-[hsl(142,70%,45%)] text-foreground transition-all duration-300 hover:scale-105 shadow-lg shadow-[hsla(142,70%,45%,0.3)]"
+            className="flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-sans text-sm font-medium gold-gradient text-primary-foreground transition-all duration-300 hover:scale-105 gold-glow"
           >
-            <img src={whatsappIcon} alt="" className="w-4 h-4" />
+            <img src={whatsappIcon} alt="" className="w-4 h-4 brightness-0" />
             WhatsApp Now
           </a>
           <a
             href="https://wa.me/919999999999?text=Hi%20Zikhra,%20I%20want%20a%20free%20quote"
             target="_blank"
             rel="noopener noreferrer"
-            className="gold-gradient px-8 py-3.5 rounded-full font-sans text-sm font-medium text-primary-foreground transition-all duration-300 hover:scale-105 gold-glow"
+            className="px-8 py-3.5 rounded-full font-sans text-sm font-medium border border-gold/40 text-gold-light transition-all duration-300 hover:border-gold hover:bg-gold/10"
           >
             Get Free Quote
           </a>

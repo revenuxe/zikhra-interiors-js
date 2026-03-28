@@ -7,21 +7,22 @@ const HeroSection = () => {
     <section className="relative h-screen w-full overflow-hidden">
       <img
         src={heroImage}
-        alt="Luxury interior design"
+        alt="Luxury interior design Hyderabad"
         width={1920}
         height={1080}
         className="absolute inset-0 w-full h-full object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-luxury-black/75 via-luxury-black/60 to-luxury-black/90" />
+      <div className="absolute inset-0 bg-gradient-to-b from-luxury-black/85 via-luxury-black/70 to-luxury-black/95" />
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center">
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in-up leading-[1.1]">
-          <span className="gold-text">Where Elegance</span>
+        <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold/80 mb-4 animate-fade-in-up">Hyderabad's Premier Interior Studio</p>
+        <h1 className="font-serif text-5xl md:text-7xl lg:text-9xl font-bold mb-6 animate-fade-in-up leading-[1.05]">
+          <span className="gold-text">Designing</span>
           <br />
-          <span className="gold-text italic">Meets Living</span>
+          <span className="gold-text italic">Timeless Luxury</span>
         </h1>
-        <p className="font-sans text-foreground/85 text-lg md:text-xl max-w-md mb-10 font-light animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-          We craft timeless interiors that define luxury living
+        <p className="font-sans text-foreground/80 text-lg md:text-xl max-w-md mb-10 font-light animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+          Award-winning interior designers crafting bespoke homes across Hyderabad
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>

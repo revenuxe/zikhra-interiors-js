@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
+import ContactForm from "@/components/ContactForm";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 
 import kitchenImg from "@/assets/kitchen.jpg";
@@ -24,18 +25,11 @@ const portfolioData: Record<string, {
 }> = {
   kitchen: {
     title: "Kitchen Design",
-    tagline: "Where Culinary Art Meets Architecture",
-    description: "Our modular kitchens blend functionality with opulence. Every surface, every handle, every light is placed with intent — creating spaces where cooking becomes an experience.",
+    tagline: "Premium Modular Kitchens in Hyderabad",
+    description: "Our modular kitchens blend European functionality with Indian cooking needs. Every surface, handle, and fixture is placed with intent — creating luxury kitchen experiences across Jubilee Hills, Gachibowli, and HITEC City.",
     heroImage: kitchenImg,
     galleryImages: [kitchenImg, kitchenImg2],
-    features: [
-      "Premium Italian marble countertops",
-      "Soft-close German hardware",
-      "Integrated LED ambient lighting",
-      "Custom brass & gold fixtures",
-      "Space-optimized modular layouts",
-      "Waterproof & termite-proof materials",
-    ],
+    features: ["Premium Italian marble countertops", "Soft-close German hardware", "Integrated LED ambient lighting", "Custom brass & gold fixtures", "Space-optimized modular layouts", "Waterproof & termite-proof materials"],
     process: [
       { step: "Consultation", desc: "Understanding your cooking habits, family size, and style preferences" },
       { step: "3D Design", desc: "Photorealistic 3D renders so you see it before it's built" },
@@ -45,18 +39,11 @@ const portfolioData: Record<string, {
   },
   bedroom: {
     title: "Bedroom Design",
-    tagline: "Your Personal Sanctuary of Serenity",
-    description: "We design bedrooms that are more than rooms — they're retreats. Plush textures, moody lighting, and bespoke furniture come together to create your perfect escape.",
+    tagline: "Luxury Bedroom Interiors in Hyderabad",
+    description: "We design bedrooms that are personal retreats. Plush textures, moody lighting, and bespoke furniture come together to create your perfect sanctuary in Hyderabad.",
     heroImage: bedroomImg,
     galleryImages: [bedroomImg, bedroomImg2],
-    features: [
-      "Custom upholstered headboards",
-      "Cove & ambient ceiling lighting",
-      "Built-in vanity & dressing areas",
-      "Premium veneer wall paneling",
-      "Motorized curtain systems",
-      "Acoustic-optimized layouts",
-    ],
+    features: ["Custom upholstered headboards", "Cove & ambient ceiling lighting", "Built-in vanity & dressing areas", "Premium veneer wall paneling", "Motorized curtain systems", "Acoustic-optimized layouts"],
     process: [
       { step: "Vision", desc: "We listen to your dreams — colors, moods, and lifestyle" },
       { step: "Concept", desc: "Mood boards and material palettes for your approval" },
@@ -66,18 +53,11 @@ const portfolioData: Record<string, {
   },
   "living-room": {
     title: "Living Room Design",
-    tagline: "The Heart of Your Home, Reimagined",
-    description: "Grand yet inviting, our living rooms are designed to impress and comfort. From statement furniture to curated art walls, every detail reflects refined taste.",
+    tagline: "Elegant Living Rooms Across Hyderabad",
+    description: "Grand yet inviting, our living rooms are designed to impress and comfort. Statement furniture and curated art walls reflect refined taste for Hyderabad homes.",
     heroImage: livingroomImg,
     galleryImages: [livingroomImg, livingroomImg2],
-    features: [
-      "Statement designer furniture",
-      "Curated art & accent walls",
-      "Smart home integration ready",
-      "Premium marble & stone finishes",
-      "Layered lighting design",
-      "Custom entertainment units",
-    ],
+    features: ["Statement designer furniture", "Curated art & accent walls", "Smart home integration ready", "Premium marble & stone finishes", "Layered lighting design", "Custom entertainment units"],
     process: [
       { step: "Discovery", desc: "Understanding how you live and entertain" },
       { step: "Design", desc: "Space planning, furniture selection, and lighting design" },
@@ -87,18 +67,11 @@ const portfolioData: Record<string, {
   },
   wardrobe: {
     title: "Wardrobe Design",
-    tagline: "Luxury Storage, Masterfully Organized",
-    description: "Walk-in closets and built-in wardrobes that turn your everyday routine into a boutique experience. Every shelf, drawer, and hanger has its purpose.",
+    tagline: "Custom Wardrobes & Walk-in Closets in Hyderabad",
+    description: "Walk-in closets and built-in wardrobes that turn your everyday routine into a boutique experience. Designed for luxury Hyderabad homes.",
     heroImage: wardrobeImg,
     galleryImages: [wardrobeImg, wardrobeImg2],
-    features: [
-      "Glass-front display sections",
-      "Built-in LED strip lighting",
-      "Soft-close drawer systems",
-      "Custom shoe & accessory racks",
-      "Pull-out trouser hangers",
-      "Anti-dust sealed compartments",
-    ],
+    features: ["Glass-front display sections", "Built-in LED strip lighting", "Soft-close drawer systems", "Custom shoe & accessory racks", "Pull-out trouser hangers", "Anti-dust sealed compartments"],
     process: [
       { step: "Audit", desc: "We assess your wardrobe needs and collection size" },
       { step: "Layout", desc: "Maximizing every inch with smart modular design" },
@@ -115,7 +88,10 @@ const PortfolioDetail = () => {
   if (!data) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
-        <p className="text-foreground">Portfolio not found</p>
+        <div className="text-center">
+          <p className="text-foreground mb-4">Portfolio not found</p>
+          <Link to="/" className="text-gold font-sans text-sm">← Back to Home</Link>
+        </div>
       </div>
     );
   }
@@ -124,10 +100,9 @@ const PortfolioDetail = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      {/* Hero */}
       <section className="relative h-[70vh] w-full overflow-hidden">
-        <img src={data.heroImage} alt={data.title} className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-luxury-black/70 via-luxury-black/50 to-luxury-black/90" />
+        <img src={data.heroImage} alt={`${data.title} Hyderabad`} className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-b from-luxury-black/80 via-luxury-black/60 to-luxury-black/95" />
         <div className="relative z-10 flex flex-col items-center justify-end h-full px-6 pb-16 text-center">
           <Link to="/" className="absolute top-20 left-5 flex items-center gap-2 text-gold text-sm font-sans">
             <ArrowLeft className="w-4 h-4" /> Back
@@ -138,7 +113,6 @@ const PortfolioDetail = () => {
         </div>
       </section>
 
-      {/* Gallery */}
       <section className="section-padding">
         <div className="text-center mb-8">
           <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Gallery</p>
@@ -147,18 +121,12 @@ const PortfolioDetail = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
           {data.galleryImages.map((img, i) => (
             <div key={i} className="rounded-2xl overflow-hidden group">
-              <img
-                src={img}
-                alt={`${data.title} ${i + 1}`}
-                loading="lazy"
-                className="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105"
-              />
+              <img src={img} alt={`${data.title} ${i + 1}`} loading="lazy" className="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105" />
             </div>
           ))}
         </div>
       </section>
 
-      {/* Features */}
       <section className="section-padding bg-luxury-dark">
         <div className="text-center mb-8">
           <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Features</p>
@@ -174,7 +142,6 @@ const PortfolioDetail = () => {
         </div>
       </section>
 
-      {/* Process */}
       <section className="section-padding">
         <div className="text-center mb-10">
           <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Process</p>
@@ -195,12 +162,11 @@ const PortfolioDetail = () => {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="section-padding bg-luxury-dark text-center">
         <h2 className="font-serif text-2xl md:text-3xl gold-text mb-4">Ready to Transform Your {data.title.split(" ")[0]}?</h2>
         <p className="font-sans text-sm text-muted-foreground mb-6">Get a free consultation and 3D design preview</p>
         <a
-          href="https://wa.me/919999999999?text=Hi%20Zikhra,%20I%20am%20interested%20in%20your%20kitchen%20design"
+          href={`https://wa.me/919999999999?text=Hi%20Zikhra,%20I'm%20interested%20in%20${encodeURIComponent(data.title)}%20in%20Hyderabad`}
           target="_blank"
           rel="noopener noreferrer"
           className="gold-gradient px-8 py-3.5 rounded-full font-sans text-sm font-medium text-primary-foreground transition-all duration-300 hover:scale-105 gold-glow inline-block"
@@ -209,6 +175,7 @@ const PortfolioDetail = () => {
         </a>
       </section>
 
+      <ContactForm />
       <Footer />
       <BottomNav />
     </div>
