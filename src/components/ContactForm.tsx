@@ -1,11 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
-import whatsappIcon from "@/assets/whatsapp.svg";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({ name: "", phone: "", email: "", message: "" });
   const [submitting, setSubmitting] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -20,15 +21,12 @@ const ContactForm = () => {
     });
 
     if (error) {
-      toast.error("Something went wrong. Please try WhatsApp.");
-    } else {
-      toast.success("We'll contact you soon!");
-      setFormData({ name: "", phone: "", email: "", message: "" });
+      toast.error("Something went wrong. Please try again.");
+      setSubmitting(false);
+      return;
     }
-    setSubmitting(false);
 
-    const text = `Hi Zikhra, I'm ${formData.name}. ${formData.message}. Contact me at ${formData.phone}`;
-    window.open(`https://wa.me/919999999999?text=${encodeURIComponent(text)}`, "_blank");
+    navigate("/thank-you");
   };
 
   return (
@@ -85,8 +83,7 @@ const ContactForm = () => {
             disabled={submitting}
             className="w-full flex items-center justify-center gap-2 gold-gradient py-3.5 rounded-full font-sans text-sm font-medium text-primary-foreground transition-all duration-300 hover:scale-[1.02] gold-glow disabled:opacity-50"
           >
-            <img src={whatsappIcon} alt="" className="w-4 h-4 brightness-0" />
-            {submitting ? "Sending..." : "Send via WhatsApp"}
+            {submitting ? "Submitting..." : "Submit"}
           </button>
         </form>
 

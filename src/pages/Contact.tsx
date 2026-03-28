@@ -2,17 +2,36 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import contactHero from "@/assets/contact-hero.jpg";
-import whatsappIcon from "@/assets/whatsapp.svg";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", phone: "", email: "", message: "" });
+  const [submitting, setSubmitting] = useState(false);
+  const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const text = `Hi Zikhra, I'm ${formData.name}. ${formData.message}. Contact me at ${formData.phone}`;
-    window.open(`https://wa.me/919999999999?text=${encodeURIComponent(text)}`, "_blank");
+    setSubmitting(true);
+
+    const { error } = await supabase.from("leads").insert({
+      name: formData.name.trim(),
+      phone: formData.phone.trim(),
+      email: formData.email.trim() || null,
+      message: formData.message.trim() || null,
+      source: "contact-page",
+    });
+
+    if (error) {
+      toast.error("Something went wrong. Please try again.");
+      setSubmitting(false);
+      return;
+    }
+
+    navigate("/thank-you");
   };
 
   return (
@@ -34,8 +53,8 @@ const Contact = () => {
       <section className="section-padding">
         <div className="grid grid-cols-2 gap-3 max-w-lg mx-auto mb-10">
           {[
-            { icon: Phone, title: "Call Us", detail: "+91 99999 99999" },
-            { icon: Mail, title: "Email", detail: "hello@zikhra.com" },
+            { icon: Phone, title: "Call Us", detail: "+91 98862 85028" },
+            { icon: Mail, title: "Email", detail: "zikhraofficial@gmail.com" },
             { icon: MapPin, title: "Visit", detail: "Jubilee Hills, Hyderabad" },
             { icon: Clock, title: "Hours", detail: "Mon–Sat, 10am–7pm" },
           ].map((item) => (
@@ -52,7 +71,7 @@ const Contact = () => {
         <div className="max-w-lg mx-auto">
           <div className="text-center mb-8">
             <h2 className="font-serif text-2xl gold-text mb-2">Send Us a Message</h2>
-            <p className="font-sans text-xs text-muted-foreground">Fill out the form and we'll connect with you on WhatsApp</p>
+            <p className="font-sans text-xs text-muted-foreground">Fill out the form and our team will get back to you shortly</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -60,18 +79,10 @@ const Contact = () => {
             <input type="tel" placeholder="Phone Number" required value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className="w-full px-4 py-3 rounded-xl bg-card border border-border/50 font-sans text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors" />
             <input type="email" placeholder="Email Address" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className="w-full px-4 py-3 rounded-xl bg-card border border-border/50 font-sans text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors" />
             <textarea placeholder="Tell us about your project..." rows={4} required value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} className="w-full px-4 py-3 rounded-xl bg-card border border-border/50 font-sans text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors resize-none" />
-            <button type="submit" className="w-full gold-gradient py-3.5 rounded-full font-sans text-sm font-medium text-primary-foreground transition-all duration-300 hover:scale-[1.02] gold-glow">
-              Send via WhatsApp
+            <button type="submit" disabled={submitting} className="w-full gold-gradient py-3.5 rounded-full font-sans text-sm font-medium text-primary-foreground transition-all duration-300 hover:scale-[1.02] gold-glow disabled:opacity-50">
+              {submitting ? "Submitting..." : "Submit"}
             </button>
           </form>
-
-          <div className="text-center mt-6">
-            <p className="font-sans text-xs text-muted-foreground mb-3">Or connect directly</p>
-            <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-gold/40 text-gold-light font-sans text-sm transition-all hover:bg-gold/10 hover:border-gold">
-              <img src={whatsappIcon} alt="" className="w-5 h-5" />
-              Chat on WhatsApp
-            </a>
-          </div>
         </div>
       </section>
 
