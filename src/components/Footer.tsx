@@ -70,11 +70,11 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-gold flex-shrink-0" />
-                <span>+91 99999 99999</span>
+                <span>+91 98862 85028</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-gold flex-shrink-0" />
-                <span>hello@zikhra.com</span>
+                <span>zikhraofficial@gmail.com</span>
               </div>
             </div>
 
@@ -103,6 +103,11 @@ const Footer = () => {
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-2 text-xs font-sans text-muted-foreground/40">
           <p>© 2026 Zikhra Interiors. All rights reserved.</p>
+          <div className="flex items-center gap-3">
+            <Link to="/terms" className="hover:text-gold transition-colors">Terms & Conditions</Link>
+            <span>·</span>
+            <Link to="/privacy" className="hover:text-gold transition-colors">Privacy Policy</Link>
+          </div>
           <p>Designed with passion in Hyderabad</p>
         </div>
       </div>

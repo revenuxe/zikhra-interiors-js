@@ -169,7 +169,7 @@ const ProjectDetail = () => {
       <section className="section-padding bg-luxury-dark text-center">
         <h2 className="font-serif text-2xl gold-text mb-4">Want a Similar Transformation?</h2>
         <a
-          href={`https://wa.me/919999999999?text=Hi%20Zikhra,%20I%20saw%20your%20${encodeURIComponent(data.title)}%20project%20and%20I'm%20interested`}
+          href={`https://wa.me/919886285028?text=Hi%20Zikhra,%20I%20saw%20your%20${encodeURIComponent(data.title)}%20project%20and%20I'm%20interested`}
           target="_blank"
           rel="noopener noreferrer"
           className="gold-gradient px-8 py-3.5 rounded-full font-sans text-sm font-medium text-primary-foreground transition-all duration-300 hover:scale-105 gold-glow inline-block"

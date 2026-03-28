@@ -27,7 +27,7 @@ const HeroSection = () => {
 
         <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
           <a
-            href="https://wa.me/919999999999?text=Hi%20Zikhra,%20I%20want%20a%20free%20consultation"
+            href="https://wa.me/919886285028?text=Hi%20Zikhra,%20I%20want%20a%20free%20consultation"
             target="_blank"
             rel="noopener noreferrer"
             className="gold-gradient px-8 py-3.5 rounded-full font-sans text-sm font-medium tracking-wide text-primary-foreground transition-all duration-300 hover:scale-105 gold-glow"
