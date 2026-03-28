@@ -26,19 +26,17 @@ const HeroSection = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-          <a
-            href="https://wa.me/919886285028?text=Hi%20Zikhra,%20I%20want%20a%20free%20consultation"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/contact"
             className="gold-gradient px-8 py-3.5 rounded-full font-sans text-sm font-medium tracking-wide text-primary-foreground transition-all duration-300 hover:scale-105 gold-glow"
           >
             Get Free Consultation
-          </a>
+          </Link>
           <Link
-            to="/projects"
+            to="/services"
             className="px-8 py-3.5 rounded-full font-sans text-sm font-medium tracking-wide border border-gold/40 text-gold-light transition-all duration-300 hover:border-gold hover:bg-gold/10 text-center"
           >
-            View Projects
+            Explore Services
           </Link>
         </div>
 

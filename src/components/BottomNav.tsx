@@ -7,7 +7,7 @@ const navItems = [
   { icon: FolderKanban, label: "Projects", to: "/projects" },
   { icon: null, label: "WhatsApp", to: "" },
   { icon: Wrench, label: "Services", to: "/services" },
-  { icon: MessageSquare, label: "Contact", to: "/contact" },
+  { icon: Send, label: "Contact", to: "/contact" },
 ];
 
 const BottomNav = () => {
