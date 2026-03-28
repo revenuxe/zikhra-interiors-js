@@ -71,6 +71,13 @@ const ContactForm = () => {
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             className="w-full px-5 py-3.5 rounded-xl bg-card border border-border/50 font-sans text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors"
           />
+          <input
+            type="text"
+            placeholder="Project Type (e.g., 2 BHK, Villa, Duplex)"
+            value={formData.projectType}
+            onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
+            className="w-full px-5 py-3.5 rounded-xl bg-card border border-border/50 font-sans text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors"
+          />
           <textarea
             placeholder="Tell us about your project..."
             rows={3}
