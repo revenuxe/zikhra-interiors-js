@@ -5,14 +5,14 @@ import BottomNav from "@/components/BottomNav";
 import ContactForm from "@/components/ContactForm";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 
-import kitchenImg from "@/assets/kitchen.jpg";
-import kitchenImg2 from "@/assets/kitchen-2.jpg";
-import bedroomImg from "@/assets/bedroom.jpg";
-import bedroomImg2 from "@/assets/bedroom-2.jpg";
-import livingroomImg from "@/assets/livingroom.jpg";
-import livingroomImg2 from "@/assets/livingroom-2.jpg";
-import wardrobeImg from "@/assets/wardrobe.jpg";
-import wardrobeImg2 from "@/assets/wardrobe-2.jpg";
+import kitchenImg from "@/assets/kitchen.webp";
+import kitchenImg2 from "@/assets/kitchen-2.webp";
+import bedroomImg from "@/assets/bedroom.webp";
+import bedroomImg2 from "@/assets/bedroom-2.webp";
+import livingroomImg from "@/assets/livingroom.webp";
+import livingroomImg2 from "@/assets/livingroom-2.webp";
+import wardrobeImg from "@/assets/wardrobe.webp";
+import wardrobeImg2 from "@/assets/wardrobe-2.webp";
 
 const portfolioData: Record<string, {
   title: string;

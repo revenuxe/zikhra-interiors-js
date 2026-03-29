@@ -1,6 +1,6 @@
-import project2bhk from "@/assets/project-2bhk.jpg";
-import projectVilla from "@/assets/project-villa.jpg";
-import project3bhk from "@/assets/project-3bhk.jpg";
+import project2bhk from "@/assets/project-2bhk.webp";
+import projectVilla from "@/assets/project-villa.webp";
+import project3bhk from "@/assets/project-3bhk.webp";
 import { MapPin, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useRef, useState } from "react";
@@ -73,7 +73,6 @@ const FeaturedProjects = () => {
           ))}
         </div>
 
-        {/* Navigation arrows */}
         <button
           onClick={() => scroll("left")}
           className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 w-9 h-9 rounded-full bg-card/90 border border-border/50 flex items-center justify-center transition-opacity ${activeIndex === 0 ? "opacity-0 pointer-events-none" : "opacity-100"}`}
@@ -87,7 +86,6 @@ const FeaturedProjects = () => {
           <ChevronRight className="w-4 h-4 text-gold" />
         </button>
 
-        {/* Dots */}
         <div className="flex justify-center gap-2 mt-5">
           {projects.map((_, i) => (
             <div

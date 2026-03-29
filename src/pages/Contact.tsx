@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
-import contactHero from "@/assets/contact-hero.jpg";
+import contactHero from "@/assets/contact-hero.webp";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";

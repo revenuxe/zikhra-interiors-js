@@ -1,6 +1,13 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { MapPin, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import areaKitchen from "@/assets/area-kitchen.webp";
+import areaBedroom from "@/assets/area-bedroom.webp";
+import areaLiving from "@/assets/area-living.webp";
+import areaVilla from "@/assets/area-villa.webp";
+import areaBathroom from "@/assets/area-bathroom.webp";
+
+const areaImages = [areaKitchen, areaBedroom, areaLiving, areaVilla, areaBathroom];
 
 const areas = [
   { name: "Jubilee Hills", slug: "jubilee-hills", tagline: "Where Luxury Meets Legacy" },
@@ -31,6 +38,24 @@ const areas = [
   { name: "Nallagandla", slug: "nallagandla", tagline: "Premium Apartment Interiors" },
   { name: "Financial District", slug: "financial-district", tagline: "High-End Modern Homes" },
   { name: "Puppalguda", slug: "puppalguda", tagline: "Elegant Home Interiors" },
+  { name: "Dilsukhnagar", slug: "dilsukhnagar", tagline: "Vibrant Living Spaces" },
+  { name: "Habsiguda", slug: "habsiguda", tagline: "Modern Apartment Design" },
+  { name: "Tarnaka", slug: "tarnaka", tagline: "Smart & Stylish Homes" },
+  { name: "Alwal", slug: "alwal", tagline: "Affordable Luxury Design" },
+  { name: "Malkajgiri", slug: "malkajgiri", tagline: "Family Home Interiors" },
+  { name: "Bowenpally", slug: "bowenpally", tagline: "Contemporary Home Design" },
+  { name: "Serilingampally", slug: "serilingampally", tagline: "Premium Living Spaces" },
+  { name: "Lingampally", slug: "lingampally", tagline: "Budget Premium Interiors" },
+  { name: "Patancheru", slug: "patancheru", tagline: "Villa & Farm House Design" },
+  { name: "Bolarum", slug: "bolarum", tagline: "Defense Colony Interiors" },
+  { name: "Trimulgherry", slug: "trimulgherry", tagline: "Heritage Home Makeovers" },
+  { name: "Adibatla", slug: "adibatla", tagline: "New Township Interiors" },
+  { name: "Gandipet", slug: "gandipet", tagline: "Lakeside Villa Design" },
+  { name: "Tellapur", slug: "tellapur", tagline: "Premium Gated Community" },
+  { name: "Pragathi Nagar", slug: "pragathi-nagar", tagline: "Modern Flat Interiors" },
+  { name: "ECIL", slug: "ecil", tagline: "Smart Budget Interiors" },
+  { name: "AS Rao Nagar", slug: "as-rao-nagar", tagline: "Compact Home Design" },
+  { name: "Chanda Nagar", slug: "chanda-nagar", tagline: "Family Living Spaces" },
 ];
 
 export { areas };
@@ -54,17 +79,24 @@ const AreasWeServe = () => {
       <div className="relative max-w-2xl mx-auto">
         <div
           ref={scrollRef}
-          className="flex gap-3 overflow-x-auto scrollbar-hide px-4 py-2"
+          className="flex gap-4 overflow-x-auto scrollbar-hide px-4 py-2"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
-          {areas.map((area) => (
+          {areas.map((area, i) => (
             <Link
               key={area.slug}
               to={`/area/${area.slug}`}
               className="flex-shrink-0 flex flex-col items-center gap-2 group"
             >
-              <div className="w-20 h-20 rounded-full bg-card border-2 border-border/50 group-hover:border-gold/60 transition-all duration-300 flex items-center justify-center gold-glow group-hover:scale-105">
-                <MapPin className="w-6 h-6 text-gold" />
+              <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-border/50 group-hover:border-gold/60 transition-all duration-300 gold-glow group-hover:scale-105">
+                <img
+                  src={areaImages[i % areaImages.length]}
+                  alt={`Interior design ${area.name}`}
+                  loading="lazy"
+                  width={80}
+                  height={80}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <span className="font-sans text-[11px] text-muted-foreground group-hover:text-gold transition-colors text-center whitespace-nowrap max-w-[80px] truncate">
                 {area.name}

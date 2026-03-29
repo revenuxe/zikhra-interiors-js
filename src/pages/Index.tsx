@@ -10,6 +10,7 @@ import AreasWeServe from "@/components/AreasWeServe";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
+import ConsultationPopup from "@/components/ConsultationPopup";
 
 const Index = () => {
   return (
@@ -26,6 +27,7 @@ const Index = () => {
       <ContactForm />
       <Footer />
       <BottomNav />
+      <ConsultationPopup />
     </div>
   );
 };

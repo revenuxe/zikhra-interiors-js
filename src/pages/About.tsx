@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import ContactForm from "@/components/ContactForm";
-import aboutHero from "@/assets/about-hero.jpg";
+import aboutHero from "@/assets/about-hero.webp";
 import { Award, Users, Clock, Target } from "lucide-react";
 
 const stats = [

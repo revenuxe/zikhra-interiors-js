@@ -5,12 +5,12 @@ import BottomNav from "@/components/BottomNav";
 import ContactForm from "@/components/ContactForm";
 import { ArrowLeft, CheckCircle2, MapPin } from "lucide-react";
 
-import project2bhk from "@/assets/project-2bhk.jpg";
-import projectVilla from "@/assets/project-villa.jpg";
-import project3bhk from "@/assets/project-3bhk.jpg";
-import kitchenImg from "@/assets/kitchen.jpg";
-import bedroomImg from "@/assets/bedroom.jpg";
-import livingroomImg from "@/assets/livingroom.jpg";
+import project2bhk from "@/assets/project-2bhk.webp";
+import projectVilla from "@/assets/project-villa.webp";
+import project3bhk from "@/assets/project-3bhk.webp";
+import kitchenImg from "@/assets/kitchen.webp";
+import bedroomImg from "@/assets/bedroom.webp";
+import livingroomImg from "@/assets/livingroom.webp";
 
 const projectData: Record<string, {
   title: string;

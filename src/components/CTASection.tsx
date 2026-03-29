@@ -1,4 +1,5 @@
 import whatsappIcon from "@/assets/whatsapp.svg";
+import { Link } from "react-router-dom";
 
 const CTASection = () => {
   return (
@@ -25,14 +26,12 @@ const CTASection = () => {
             <img src={whatsappIcon} alt="" className="w-4 h-4 brightness-0" />
             WhatsApp Now
           </a>
-          <a
-            href="https://wa.me/919886285028?text=Hi%20Zikhra,%20I%20want%20a%20free%20quote"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-8 py-3.5 rounded-full font-sans text-sm font-medium border border-gold/40 text-gold-light transition-all duration-300 hover:border-gold hover:bg-gold/10"
+          <Link
+            to="/contact"
+            className="gold-gradient px-8 py-3.5 rounded-full font-sans text-sm font-medium text-primary-foreground transition-all duration-300 hover:scale-105 gold-glow"
           >
-            Get Free Quote
-          </a>
+            Get Free Consultation
+          </Link>
         </div>
       </div>
     </section>

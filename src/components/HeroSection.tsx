@@ -1,4 +1,4 @@
-import heroImage from "@/assets/hero-interior.jpg";
+import heroImage from "@/assets/hero-interior.webp";
 import { ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 

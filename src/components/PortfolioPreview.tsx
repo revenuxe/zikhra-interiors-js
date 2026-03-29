@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import kitchenImg from "@/assets/kitchen.jpg";
-import bedroomImg from "@/assets/bedroom.jpg";
-import livingroomImg from "@/assets/livingroom.jpg";
-import wardrobeImg from "@/assets/wardrobe.jpg";
+import kitchenImg from "@/assets/kitchen.webp";
+import bedroomImg from "@/assets/bedroom.webp";
+import livingroomImg from "@/assets/livingroom.webp";
+import wardrobeImg from "@/assets/wardrobe.webp";
 
 const categories = [
   { name: "Kitchen", image: kitchenImg, slug: "kitchen" },

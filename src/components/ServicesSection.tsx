@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import serviceHome from "@/assets/service-home.jpg";
-import serviceKitchen from "@/assets/service-kitchen.jpg";
-import serviceWardrobe from "@/assets/service-wardrobe.jpg";
-import serviceRenovation from "@/assets/service-renovation.jpg";
+import serviceHome from "@/assets/service-home.webp";
+import serviceKitchen from "@/assets/service-kitchen.webp";
+import serviceWardrobe from "@/assets/service-wardrobe.webp";
+import serviceRenovation from "@/assets/service-renovation.webp";
 
 const services = [
   { image: serviceHome, title: "Full Home Interiors", desc: "Complete luxury home design solutions", slug: "full-home" },
