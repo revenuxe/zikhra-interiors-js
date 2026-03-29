@@ -5,10 +5,17 @@ import ContactForm from "@/components/ContactForm";
 import { CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-import serviceHome from "@/assets/service-home.jpg";
-import serviceKitchen from "@/assets/service-kitchen.jpg";
-import serviceWardrobe from "@/assets/service-wardrobe.jpg";
-import serviceRenovation from "@/assets/service-renovation.jpg";
+import serviceHome from "@/assets/service-home.webp";
+import serviceKitchen from "@/assets/service-kitchen.webp";
+import serviceWardrobe from "@/assets/service-wardrobe.webp";
+import serviceRenovation from "@/assets/service-renovation.webp";
+import serviceTvunit from "@/assets/service-tvunit.webp";
+import servicePooja from "@/assets/service-pooja.webp";
+import serviceCeiling from "@/assets/service-ceiling.webp";
+import serviceBathroom from "@/assets/service-bathroom.webp";
+import serviceLivingroom from "@/assets/service-livingroom.webp";
+import serviceBedroom from "@/assets/service-bedroom.webp";
+import serviceCommercial from "@/assets/service-commercial.webp";
 
 const services = [
   {
@@ -32,7 +39,7 @@ const services = [
     image: serviceKitchen,
     title: "Modular Kitchen",
     subtitle: "Premium Kitchen Design Across Hyderabad",
-    description: "Our modular kitchens combine European aesthetics with Indian functionality. Every surface, handle, and fixture is selected with intent — creating spaces where cooking becomes a luxury experience. Serving homes across Jubilee Hills, Banjara Hills, Gachibowli & HITEC City.",
+    description: "Our modular kitchens combine European aesthetics with Indian functionality. Every surface, handle, and fixture is selected with intent — creating spaces where cooking becomes a luxury experience.",
     features: [
       "Premium Italian marble & quartz countertops",
       "Soft-close German Hettich/Blum hardware",
@@ -48,7 +55,7 @@ const services = [
     image: serviceWardrobe,
     title: "Wardrobes & Walk-in Closets",
     subtitle: "Custom Storage Solutions in Hyderabad",
-    description: "Walk-in closets and built-in wardrobes that turn your everyday routine into a boutique experience. Every shelf, drawer, and hanger is designed with purpose — maximizing storage while maintaining a luxurious aesthetic.",
+    description: "Walk-in closets and built-in wardrobes that turn your everyday routine into a boutique experience. Every shelf, drawer, and hanger is designed with purpose.",
     features: [
       "Glass-front display sections with LED strips",
       "Soft-close drawer & sliding systems",
@@ -60,11 +67,107 @@ const services = [
     price: "Starting from ₹2.5 Lakhs",
   },
   {
+    id: "living-room",
+    image: serviceLivingroom,
+    title: "Living Room Design",
+    subtitle: "Elegant Living Spaces in Hyderabad",
+    description: "Create a stunning first impression with our bespoke living room designs. From statement walls to premium seating arrangements, we craft spaces that reflect your personality and lifestyle.",
+    features: [
+      "Custom sofa & seating design",
+      "Statement accent walls & textures",
+      "Premium coffee tables & consoles",
+      "Ambient & decorative lighting design",
+      "Curtain & blind coordination",
+      "Art curation & styling",
+    ],
+    price: "Starting from ₹3 Lakhs",
+  },
+  {
+    id: "bedroom",
+    image: serviceBedroom,
+    title: "Bedroom Interiors",
+    subtitle: "Luxury Bedroom Design in Hyderabad",
+    description: "Your bedroom should be a sanctuary. We design bedrooms that promote relaxation and reflect luxury — from custom headboards to ambient lighting that sets the perfect mood.",
+    features: [
+      "Custom upholstered headboard designs",
+      "Walk-in wardrobe integration",
+      "Ambient cove & bedside lighting",
+      "Premium bedside tables & dressers",
+      "Blackout curtain solutions",
+      "En-suite bathroom coordination",
+    ],
+    price: "Starting from ₹2 Lakhs",
+  },
+  {
+    id: "bathroom",
+    image: serviceBathroom,
+    title: "Bathroom Interiors",
+    subtitle: "Premium Bathroom Design in Hyderabad",
+    description: "Transform your bathroom into a spa-like retreat. From premium fixtures to marble finishes, we create bathrooms that are both functional and luxurious.",
+    features: [
+      "Premium marble & tile selection",
+      "Rain shower & premium fixtures",
+      "LED mirror & vanity lighting",
+      "Custom vanity & storage solutions",
+      "Heated towel rails & accessories",
+      "Waterproofing & drainage solutions",
+    ],
+    price: "Starting from ₹2.5 Lakhs",
+  },
+  {
+    id: "false-ceiling",
+    image: serviceCeiling,
+    title: "False Ceiling & Lighting",
+    subtitle: "Designer Ceilings Across Hyderabad",
+    description: "Elevate your interiors with stunning false ceiling designs that add depth, dimension, and drama. Combined with expert lighting design, we create atmospheres that transform spaces.",
+    features: [
+      "Multi-layered gypsum ceiling designs",
+      "Cove lighting with LED strips",
+      "Chandelier & pendant integration",
+      "Recessed downlight planning",
+      "POP & wooden ceiling options",
+      "Smart lighting automation",
+    ],
+    price: "Starting from ₹1.5 Lakhs",
+  },
+  {
+    id: "tv-unit",
+    image: serviceTvunit,
+    title: "TV Unit & Entertainment",
+    subtitle: "Custom Entertainment Units in Hyderabad",
+    description: "Statement TV units that serve as the focal point of your living room. From floating designs to full wall units with integrated storage and lighting.",
+    features: [
+      "Wall-mounted & floating designs",
+      "Integrated LED backlighting",
+      "Hidden cable management",
+      "Display shelves & storage",
+      "Premium wood & lacquer finishes",
+      "Sound system integration",
+    ],
+    price: "Starting from ₹1.2 Lakhs",
+  },
+  {
+    id: "pooja-room",
+    image: servicePooja,
+    title: "Pooja Room Design",
+    subtitle: "Sacred Space Design in Hyderabad",
+    description: "Create a serene and beautiful pooja room that blends tradition with modern aesthetics. From marble temples to intricately carved wooden mandirs, we design spaces that inspire devotion.",
+    features: [
+      "Custom marble & wooden temple designs",
+      "Brass & gold-finish embellishments",
+      "LED backlit deity panels",
+      "Storage for pooja essentials",
+      "Bell & diya holder integration",
+      "Vastu-compliant layouts",
+    ],
+    price: "Starting from ₹1 Lakh",
+  },
+  {
     id: "renovation",
     image: serviceRenovation,
     title: "Home Renovation",
     subtitle: "Transform Your Existing Hyderabad Home",
-    description: "Breathe new life into your existing space. Our renovation service covers everything from structural changes to cosmetic upgrades — transforming outdated interiors into modern luxury living spaces without the hassle of starting from scratch.",
+    description: "Breathe new life into your existing space. Our renovation service covers everything from structural changes to cosmetic upgrades — transforming outdated interiors into modern luxury living spaces.",
     features: [
       "Complete demolition & reconstruction",
       "Electrical & plumbing rework",
@@ -75,7 +178,25 @@ const services = [
     ],
     price: "Starting from ₹5 Lakhs",
   },
+  {
+    id: "commercial",
+    image: serviceCommercial,
+    title: "Commercial & Office Interiors",
+    subtitle: "Professional Workspace Design in Hyderabad",
+    description: "From startups to corporate offices, retail stores to restaurants — we design commercial spaces that impress clients and boost productivity.",
+    features: [
+      "Office layout & partition planning",
+      "Reception & lobby design",
+      "Conference room & cabin interiors",
+      "Retail store & showroom design",
+      "Restaurant & café interiors",
+      "Brand-aligned design language",
+    ],
+    price: "Starting from ₹6 Lakhs",
+  },
 ];
+
+export { services };
 
 const Services = () => {
   return (

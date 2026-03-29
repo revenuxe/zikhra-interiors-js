@@ -18,7 +18,10 @@ const services = [
   "Bedroom Interiors",
   "Bathroom Renovation",
   "False Ceiling & Lighting",
+  "TV Unit & Entertainment",
+  "Pooja Room Design",
   "Home Renovation",
+  "Commercial Interiors",
 ];
 
 const whyChoose = [
@@ -96,9 +99,9 @@ const AreaLanding = () => {
               href={`https://wa.me/919886285028?text=Hi%20Zikhra,%20I%20need%20interior%20design%20in%20${encodeURIComponent(area.name)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 px-8 py-3.5 rounded-full border border-gold/40 text-gold-light font-sans text-sm transition-all hover:border-gold hover:bg-gold/10"
+              className="flex items-center justify-center gap-2 px-8 py-3.5 rounded-full gold-gradient text-primary-foreground font-sans text-sm font-medium transition-all hover:scale-105 gold-glow"
             >
-              <img src={whatsappIcon} alt="" className="w-4 h-4" />
+              <img src={whatsappIcon} alt="" className="w-4 h-4 brightness-0" />
               WhatsApp Us
             </a>
           </div>
@@ -115,10 +118,10 @@ const AreaLanding = () => {
           </div>
           <div className="grid grid-cols-2 gap-3">
             {services.map((svc) => (
-              <div key={svc} className="p-4 rounded-2xl bg-card border border-border/30 text-center transition-all hover:border-gold/30">
+              <Link to={`/services#${svc.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`} key={svc} className="p-4 rounded-2xl bg-card border border-border/30 text-center transition-all hover:border-gold/30">
                 <CheckCircle className="w-5 h-5 text-gold mx-auto mb-2" />
                 <p className="font-sans text-xs text-foreground">{svc}</p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -200,7 +203,7 @@ const AreaLanding = () => {
             <h2 className="font-serif text-xl gold-text">We Also Serve</h2>
           </div>
           <div className="flex flex-wrap justify-center gap-2">
-            {areas.filter((a) => a.slug !== slug).slice(0, 12).map((a) => (
+            {areas.filter((a) => a.slug !== slug).slice(0, 16).map((a) => (
               <Link
                 key={a.slug}
                 to={`/area/${a.slug}`}
