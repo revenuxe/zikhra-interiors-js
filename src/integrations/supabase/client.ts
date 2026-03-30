@@ -27,3 +27,7 @@ export function getSupabaseClient() {
 
   return browserSupabase;
 }
+
+// Backwards-compatible export for any older imports.
+// In browser it resolves to a client; during SSR it is null.
+export const supabase = getSupabaseClient();
