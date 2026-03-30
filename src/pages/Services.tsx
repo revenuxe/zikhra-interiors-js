@@ -242,14 +242,12 @@ const Services = () => {
                   </div>
                   <div className="flex items-center gap-4">
                     <span className="font-serif text-lg text-gold">{svc.price}</span>
-                    <a
-                      href={`https://wa.me/919886285028?text=Hi%20Zikhra,%20I'm%20interested%20in%20${encodeURIComponent(svc.title)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="gold-gradient px-6 py-2.5 rounded-full font-sans text-xs font-medium text-primary-foreground transition-all duration-300 hover:scale-105 gold-glow"
+                    <Link
+                      to={`/services/${svc.id}`}
+                      className="gold-gradient px-6 py-2.5 rounded-full font-sans text-xs font-medium text-primary-foreground transition-all duration-300 hover:scale-105 gold-glow inline-block"
                     >
-                      Get Quote
-                    </a>
+                      View Details
+                    </Link>
                   </div>
                 </div>
               </div>

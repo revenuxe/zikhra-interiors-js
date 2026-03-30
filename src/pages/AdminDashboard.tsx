@@ -78,8 +78,8 @@ const AdminDashboard = () => {
       </div>
 
       {/* Stats */}
-      <div className="px-4 py-4">
-        <div className="bg-card rounded-2xl border border-border/30 p-4 flex items-center gap-3">
+      <div className="px-4 py-4 flex gap-3">
+        <div className="flex-1 bg-card rounded-2xl border border-border/30 p-4 flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl gold-gradient flex items-center justify-center">
             <Users className="w-5 h-5 text-primary-foreground" />
           </div>
@@ -88,6 +88,15 @@ const AdminDashboard = () => {
             <p className="font-sans text-xs text-muted-foreground">Total Leads</p>
           </div>
         </div>
+        <Link to="/admin/blog" className="flex-1 bg-card rounded-2xl border border-border/30 p-4 flex items-center gap-3 hover:border-gold/30 transition-colors">
+          <div className="w-10 h-10 rounded-xl gold-gradient flex items-center justify-center">
+            <FileText className="w-5 h-5 text-primary-foreground" />
+          </div>
+          <div>
+            <p className="font-sans text-sm font-bold text-foreground">Blog</p>
+            <p className="font-sans text-xs text-muted-foreground">Manage Posts</p>
+          </div>
+        </Link>
       </div>
 
       {/* Leads List */}
