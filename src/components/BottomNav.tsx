@@ -24,6 +24,7 @@ const BottomNav = () => {
             return (
               <Link
                 key={item.label}
+                href={item.to}
                 className="relative -mt-5 flex flex-col items-center"
               >
                 <div className="w-14 h-14 rounded-full gold-gradient flex items-center justify-center animate-pulse-gold shadow-xl">
