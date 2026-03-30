@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import PortfolioPreview from "@/components/PortfolioPreview";
 import FeaturedProjects from "@/components/FeaturedProjects";
+import ProjectTypeSection from "@/components/ProjectTypeSection";
 import ServicesSection from "@/components/ServicesSection";
 import WhyChooseSection from "@/components/WhyChooseSection";
 import Testimonials from "@/components/Testimonials";
