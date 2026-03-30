@@ -8,26 +8,30 @@ const SUPABASE_PUBLISHABLE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiO
 // Import the supabase client like this:
 // import { supabase } from "@/integrations/supabase/client";
 
-const isBrowser = typeof window !== "undefined";
-
 let browserSupabase: ReturnType<typeof createClient<Database>> | null = null;
 
 // Important: avoid initializing Supabase during SSR/prerender to prevent build-time crashes.
 export function getSupabaseClient() {
-  if (!isBrowser) return null;
+  if (typeof window === "undefined") return null;
   if (browserSupabase) return browserSupabase;
 
-  browserSupabase = createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
-    auth: {
-      storage: window.localStorage,
-      persistSession: true,
-      autoRefreshToken: true,
-    },
-  });
+  try {
+    browserSupabase = createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
+      auth: {
+        // localStorage can throw in some browser/privacy contexts; if it does, we fall back.
+        storage: window.localStorage,
+        persistSession: true,
+        autoRefreshToken: true,
+      },
+    });
+  } catch {
+    // Fallback: initialize without custom storage to avoid crashing the app.
+    browserSupabase = createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+  }
 
   return browserSupabase;
 }
 
-// Backwards-compatible export for any older imports.
-// In browser it resolves to a client; during SSR it is null.
-export const supabase = getSupabaseClient();
+// Deprecated: prefer `getSupabaseClient()` (safe + lazy).
+// Kept only so older imports don't crash at import-time.
+export const supabase = null;
