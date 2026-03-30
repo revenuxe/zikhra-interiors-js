@@ -13,6 +13,11 @@ import Services from "./pages/Services.tsx";
 import PortfolioDetail from "./pages/PortfolioDetail.tsx";
 import AdminLogin from "./pages/AdminLogin.tsx";
 import AdminDashboard from "./pages/AdminDashboard.tsx";
+import AdminBlogManager from "./pages/AdminBlogManager.tsx";
+import Blog from "./pages/Blog.tsx";
+import BlogDetail from "./pages/BlogDetail.tsx";
+import ServiceDetail from "./pages/ServiceDetail.tsx";
+import ProjectTypeLanding from "./pages/ProjectTypeLanding.tsx";
 import ThankYou from "./pages/ThankYou.tsx";
 import Terms from "./pages/Terms.tsx";
 import Privacy from "./pages/Privacy.tsx";
@@ -36,8 +41,13 @@ const App = () => (
           <Route path="/projects/:slug" element={<ProjectDetail />} />
           <Route path="/services" element={<Services />} />
           <Route path="/portfolio/:slug" element={<PortfolioDetail />} />
+          <Route path="/services/:slug" element={<ServiceDetail />} />
+          <Route path="/project-type/:slug" element={<ProjectTypeLanding />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogDetail />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          <Route path="/admin/blog" element={<AdminBlogManager />} />
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />

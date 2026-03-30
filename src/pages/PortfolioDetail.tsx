@@ -13,6 +13,8 @@ import livingroomImg from "@/assets/livingroom.webp";
 import livingroomImg2 from "@/assets/livingroom-2.webp";
 import wardrobeImg from "@/assets/wardrobe.webp";
 import wardrobeImg2 from "@/assets/wardrobe-2.webp";
+import bathroomImg from "@/assets/portfolio-bathroom.webp";
+import studyImg from "@/assets/portfolio-study.webp";
 
 const portfolioData: Record<string, {
   title: string;
@@ -77,6 +79,34 @@ const portfolioData: Record<string, {
       { step: "Layout", desc: "Maximizing every inch with smart modular design" },
       { step: "Material", desc: "High-grade laminates, veneers, and hardware" },
       { step: "Install", desc: "Precision-fitted with zero gaps — factory perfect" },
+    ],
+  },
+  bathroom: {
+    title: "Bathroom Design",
+    tagline: "Luxury Bathroom Interiors in Hyderabad",
+    description: "Transform your bathroom into a spa-like retreat with premium marble, rain showers, gold fixtures, and ambient lighting. Designed for luxury homes across Hyderabad.",
+    heroImage: bathroomImg,
+    galleryImages: [bathroomImg],
+    features: ["Premium Italian marble walls & flooring", "Rain shower with gold fixtures", "LED-lit vanity mirrors", "Custom vanity & storage solutions", "Heated towel rails", "Complete waterproofing solutions"],
+    process: [
+      { step: "Assessment", desc: "Evaluating plumbing, space, and your luxury preferences" },
+      { step: "Design", desc: "3D renders with material and fixture selection" },
+      { step: "Sourcing", desc: "Premium fixtures from top European & Indian brands" },
+      { step: "Installation", desc: "Expert waterproofing and flawless finishing" },
+    ],
+  },
+  "study-room": {
+    title: "Study Room Design",
+    tagline: "Premium Home Office & Study Rooms in Hyderabad",
+    description: "Create the perfect workspace at home. Our study room designs combine functionality with luxury — custom desks, built-in bookshelves, and ambient lighting for focused productivity.",
+    heroImage: studyImg,
+    galleryImages: [studyImg],
+    features: ["Custom solid wood study desk", "Floor-to-ceiling bookshelves", "Ergonomic seating selection", "Task & ambient lighting design", "Cable management solutions", "Acoustic paneling for focus"],
+    process: [
+      { step: "Understand", desc: "Your work style, storage needs, and aesthetic preferences" },
+      { step: "Design", desc: "Ergonomic layout with 3D visualization" },
+      { step: "Craft", desc: "Custom furniture built by master craftsmen" },
+      { step: "Setup", desc: "Complete installation with tech integration" },
     ],
   },
 };

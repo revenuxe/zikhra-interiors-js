@@ -3,12 +3,16 @@ import kitchenImg from "@/assets/kitchen.webp";
 import bedroomImg from "@/assets/bedroom.webp";
 import livingroomImg from "@/assets/livingroom.webp";
 import wardrobeImg from "@/assets/wardrobe.webp";
+import bathroomImg from "@/assets/portfolio-bathroom.webp";
+import studyImg from "@/assets/portfolio-study.webp";
 
 const categories = [
   { name: "Kitchen", image: kitchenImg, slug: "kitchen" },
   { name: "Bedroom", image: bedroomImg, slug: "bedroom" },
   { name: "Living Room", image: livingroomImg, slug: "living-room" },
   { name: "Wardrobe", image: wardrobeImg, slug: "wardrobe" },
+  { name: "Bathroom", image: bathroomImg, slug: "bathroom" },
+  { name: "Study Room", image: studyImg, slug: "study-room" },
 ];
 
 const PortfolioPreview = () => {
