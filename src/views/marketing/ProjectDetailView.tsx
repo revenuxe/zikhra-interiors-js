@@ -24,6 +24,12 @@ export default function ProjectDetailView({ project }: Props) {
             <MapPin className="w-3.5 h-3.5 text-gold" />
             {project.location}
           </div>
+          <Link
+            href="/contact"
+            className="mt-6 inline-flex gold-gradient px-8 py-3.5 rounded-full font-sans text-sm font-medium tracking-wide text-primary-foreground transition-all duration-300 hover:scale-105 gold-glow"
+          >
+            Get Free Consultation
+          </Link>
         </div>
       </section>
       <section className="section-padding">

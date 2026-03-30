@@ -21,6 +21,12 @@ export default function PortfolioDetailView({ item }: { item: PortfolioItem }) {
           <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">{item.title}</p>
           <h1 className="font-serif text-3xl md:text-5xl font-bold gold-text mb-3 leading-tight">{item.tagline}</h1>
           <p className="font-sans text-foreground/80 text-sm max-w-sm">{item.description}</p>
+          <Link
+            href="/contact"
+            className="mt-6 inline-flex gold-gradient px-8 py-3.5 rounded-full font-sans text-sm font-medium tracking-wide text-primary-foreground transition-all duration-300 hover:scale-105 gold-glow"
+          >
+            Get Free Consultation
+          </Link>
         </div>
       </section>
 

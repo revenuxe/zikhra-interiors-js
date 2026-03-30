@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle, Star } from "lucide-react";
+import { CheckCircle, Star } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
@@ -19,6 +19,23 @@ export default function AreaDetailView({ area }: Props) {
       <section className="pt-24 pb-12 px-5 text-center">
         <h1 className="font-serif text-3xl md:text-5xl font-bold gold-text mb-4">Interior Designers in {area.name}</h1>
         <p className="font-sans text-muted-foreground text-sm max-w-md mx-auto">{area.tagline}</p>
+        <Link
+          href="/contact"
+          className="mt-6 inline-flex gold-gradient px-8 py-3.5 rounded-full font-sans text-sm font-medium tracking-wide text-primary-foreground transition-all duration-300 hover:scale-105 gold-glow"
+        >
+          Get Free Consultation
+        </Link>
+        <p className="font-sans text-xs text-muted-foreground mt-4 max-w-md mx-auto">
+          Also explore our{" "}
+          <Link href="/projects" className="text-gold hover:underline">
+            premium interior projects
+          </Link>{" "}
+          and{" "}
+          <Link href="/services" className="text-gold hover:underline">
+            luxury service packages
+          </Link>{" "}
+          in Hyderabad.
+        </p>
       </section>
       <section className="section-padding bg-luxury-dark">
         <div className="max-w-lg mx-auto grid grid-cols-2 gap-3">
@@ -39,22 +56,6 @@ export default function AreaDetailView({ area }: Props) {
             </div>
           ))}
         </div>
-      </section>
-      <section className="section-padding text-center">
-        <Link href="/contact" className="inline-flex items-center gap-2 gold-gradient px-8 py-3.5 rounded-full font-sans text-sm font-medium text-primary-foreground">
-          Get Free Consultation <ArrowRight className="w-4 h-4" />
-        </Link>
-        <p className="font-sans text-xs text-muted-foreground mt-4">
-          Also explore our{" "}
-          <Link href="/projects" className="text-gold hover:underline">
-            premium interior projects
-          </Link>{" "}
-          and{" "}
-          <Link href="/services" className="text-gold hover:underline">
-            luxury service packages
-          </Link>{" "}
-          in Hyderabad.
-        </p>
       </section>
       <ContactForm />
       <Footer />
