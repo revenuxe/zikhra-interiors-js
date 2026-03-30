@@ -61,7 +61,11 @@ const ConsultationPopup = () => {
       >
         {/* Hero Image */}
           <div className="relative h-36 overflow-hidden">
-          <img src={popupHero.src} alt="Luxury Interior Design" className="w-full h-full object-cover" />
+          <img
+            src={popupHero.src}
+            alt="Premium Hyderabad home interior consultation — bespoke living space design by Zikhra"
+            className="w-full h-full object-cover"
+          />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-card" />
           <button
             onClick={close}

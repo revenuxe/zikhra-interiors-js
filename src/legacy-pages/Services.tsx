@@ -221,7 +221,7 @@ const Services = () => {
                 <div className="w-full md:w-1/2 rounded-2xl overflow-hidden group">
                   <img
                     src={svc.image}
-                    alt={`${svc.title} in Hyderabad`}
+                    alt={`${svc.title} — premium luxury interior design service in Hyderabad by Zikhra`}
                     loading="lazy"
                     width={640}
                     height={640}

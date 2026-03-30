@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { getAreaBySlug } from "@/lib/areas-data";
 import AreaDetailView from "@/views/marketing/AreaDetailView";
 import SeoJsonLd from "@/components/SeoJsonLd";
-import { breadcrumbSchema, toJsonLd } from "@/lib/seo";
+import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
 
 type Props = { params: { slug: string } };
 
@@ -15,15 +15,19 @@ export function generateMetadata({ params }: Props): Metadata {
   if (!area) return { title: "Area Not Found" };
   const title = `Luxury Interior Designers in ${area.name} | Zikhra`;
   const description = `Premium interior design services in ${area.name}, Hyderabad. Book a free consultation for high-end home interiors with Zikhra.`;
+  const path = `/area/${area.slug}`;
   return {
     title,
     description,
-    alternates: { canonical: `/area/${area.slug}` },
-    openGraph: {
+    alternates: { canonical: path },
+    openGraph: pageOpenGraph({
       title,
       description,
-      url: `/area/${area.slug}`,
-    },
+      path,
+      imageUrl: DEFAULT_OG_IMAGE_PATH,
+      imageAlt: `Luxury interior designers in ${area.name}, Hyderabad — Zikhra`,
+    }),
+    twitter: twitterSummaryLarge(title, description, DEFAULT_OG_IMAGE_PATH),
   };
 }
 

@@ -4,7 +4,7 @@ import { sanityClient, sanityConfigured } from "@/lib/sanity/client";
 import { blogPostBySlugQuery } from "@/lib/sanity/queries";
 import BlogPostView, { type BlogPost } from "@/views/marketing/BlogPostView";
 import SeoJsonLd from "@/components/SeoJsonLd";
-import { breadcrumbSchema, toJsonLd } from "@/lib/seo";
+import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -19,23 +19,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return { title: "Post Not Found" };
 
   const description = (post.excerpt ?? "").slice(0, 160);
+  const path = `/blog/${post.slug}`;
+  const ogTitle = `${post.title} | Luxury Interior Blog`;
+  const shareImage = post.mainImageUrl ?? DEFAULT_OG_IMAGE_PATH;
   return {
-    title: `${post.title} | Luxury Interior Blog`,
+    title: ogTitle,
     description,
-    alternates: { canonical: `/blog/${post.slug}` },
-    openGraph: {
-      title: `${post.title} | Luxury Interior Blog`,
+    alternates: { canonical: path },
+    openGraph: pageOpenGraph({
+      title: ogTitle,
       description,
-      url: `/blog/${post.slug}`,
+      path,
       type: "article",
-      images: post.mainImageUrl ? [{ url: post.mainImageUrl }] : undefined,
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${post.title} | Luxury Interior Blog`,
-      description,
-      images: post.mainImageUrl ? [post.mainImageUrl] : undefined,
-    },
+      imageUrl: shareImage,
+      imageAlt: `${post.title} — interior design insight luxury homes Hyderabad`,
+    }),
+    twitter: twitterSummaryLarge(ogTitle, description, shareImage),
   };
 }
 

@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { getPortfolioBySlug } from "@/lib/portfolio-data";
 import PortfolioDetailView from "@/views/marketing/PortfolioDetailView";
 import SeoJsonLd from "@/components/SeoJsonLd";
-import { breadcrumbSchema, toJsonLd } from "@/lib/seo";
+import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
 
 type Props = { params: { slug: string } };
 
@@ -15,16 +15,20 @@ export function generateMetadata({ params }: Props): Metadata {
   if (!item) return { title: "Portfolio Not Found" };
   const title = `${item.tagline} | Luxury Interior Portfolio`;
   const description = item.description.slice(0, 160);
+  const path = `/portfolio/${item.slug}`;
   return {
     title,
     description,
-    alternates: { canonical: `/portfolio/${item.slug}` },
-    openGraph: {
+    alternates: { canonical: path },
+    openGraph: pageOpenGraph({
       title,
       description,
-      url: `/portfolio/${item.slug}`,
+      path,
       type: "article",
-    },
+      imageUrl: item.heroImage ?? DEFAULT_OG_IMAGE_PATH,
+      imageAlt: `${item.title} — luxury interior portfolio Hyderabad`,
+    }),
+    twitter: twitterSummaryLarge(title, description, item.heroImage ?? DEFAULT_OG_IMAGE_PATH),
   };
 }
 

@@ -1,5 +1,6 @@
 import whatsappIcon from "@/assets/whatsapp.svg";
 import Link from "next/link";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 const CTASection = () => {
   return (
@@ -17,13 +18,19 @@ const CTASection = () => {
         </p>
 
         <div className="flex flex-col gap-3">
-          <Link
-            href="/contact"
+          <a
+            href={getWhatsAppUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-sans text-sm font-medium gold-gradient text-primary-foreground transition-all duration-300 hover:scale-105 gold-glow"
           >
-            <img src={whatsappIcon.src} alt="" className="w-4 h-4 brightness-0" />
-            Talk to a Designer
-          </Link>
+            <img
+              src={whatsappIcon.src}
+              alt="WhatsApp icon — message Zikhra for premium interior design in Hyderabad"
+              className="w-4 h-4 brightness-0"
+            />
+            WhatsApp a Designer
+          </a>
           <Link
             href="/contact"
             className="gold-gradient px-8 py-3.5 rounded-full font-sans text-sm font-medium text-primary-foreground transition-all duration-300 hover:scale-105 gold-glow"

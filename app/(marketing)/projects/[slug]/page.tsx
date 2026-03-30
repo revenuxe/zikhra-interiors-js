@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { getProjectBySlug } from "@/lib/projects-data";
 import ProjectDetailView from "@/views/marketing/ProjectDetailView";
 import SeoJsonLd from "@/components/SeoJsonLd";
-import { breadcrumbSchema, toJsonLd } from "@/lib/seo";
+import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
 
 type Props = { params: { slug: string } };
 
@@ -15,21 +15,20 @@ export function generateMetadata({ params }: Props): Metadata {
   if (!project) return { title: "Project Not Found" };
   const title = `${project.title} - Premium Interiors in ${project.location}`;
   const description = project.description.slice(0, 160);
+  const path = `/projects/${project.slug}`;
   return {
     title,
     description,
-    alternates: { canonical: `/projects/${project.slug}` },
-    openGraph: {
+    alternates: { canonical: path },
+    openGraph: pageOpenGraph({
       title,
       description,
-      url: `/projects/${project.slug}`,
+      path,
       type: "article",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-    },
+      imageUrl: project.heroImage ?? DEFAULT_OG_IMAGE_PATH,
+      imageAlt: `${project.title} — premium luxury interior project ${project.location}`,
+    }),
+    twitter: twitterSummaryLarge(title, description, project.heroImage ?? DEFAULT_OG_IMAGE_PATH),
   };
 }
 

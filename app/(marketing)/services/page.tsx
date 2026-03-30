@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import ServicesView from "@/views/marketing/ServicesView";
 import SeoJsonLd from "@/components/SeoJsonLd";
-import { breadcrumbSchema, toJsonLd } from "@/lib/seo";
+import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -11,12 +11,19 @@ export const metadata: Metadata = {
   description:
     "Explore Zikhra's premium interior design services in Hyderabad including full home interiors, modular kitchen design, wardrobes, and renovation.",
   alternates: { canonical: "/services" },
-  openGraph: {
+  openGraph: pageOpenGraph({
     title: "Luxury Interior Design Services in Hyderabad",
     description:
       "Premium and high-end home interior services by Zikhra for villas, apartments, and modern residences.",
-    url: "/services",
-  },
+    path: "/services",
+    imageUrl: DEFAULT_OG_IMAGE_PATH,
+    imageAlt: "Zikhra luxury interior design services — turnkey homes Hyderabad",
+  }),
+  twitter: twitterSummaryLarge(
+    "Luxury Interior Design Services in Hyderabad",
+    "Premium and high-end home interior services by Zikhra for villas, apartments, and modern residences.",
+    DEFAULT_OG_IMAGE_PATH,
+  ),
 };
 
 export default function ServicesRoute() {

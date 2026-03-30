@@ -4,11 +4,12 @@ import { Home, FolderKanban, Wrench, Send } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import whatsappIcon from "@/assets/whatsapp.svg";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 const navItems = [
   { icon: Home, label: "Home", to: "/" },
   { icon: FolderKanban, label: "Projects", to: "/projects" },
-  { icon: null, label: "Enquire", to: "/contact" },
+  { icon: null, label: "WhatsApp" },
   { icon: Wrench, label: "Services", to: "/services" },
   { icon: Send, label: "Contact", to: "/contact" },
 ];
@@ -22,16 +23,22 @@ const BottomNav = () => {
         {navItems.map((item, i) => {
           if (i === 2) {
             return (
-              <Link
+              <a
                 key={item.label}
-                href={item.to}
+                href={getWhatsAppUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="relative -mt-5 flex flex-col items-center"
               >
                 <div className="w-14 h-14 rounded-full gold-gradient flex items-center justify-center animate-pulse-gold shadow-xl">
-                  <img src={whatsappIcon.src} alt="WhatsApp" className="w-7 h-7 brightness-0" />
+                  <img
+                    src={whatsappIcon.src}
+                    alt="Chat on WhatsApp with Zikhra luxury interior designers in Hyderabad"
+                    className="w-7 h-7 brightness-0"
+                  />
                 </div>
                 <span className="text-[10px] font-sans text-gold mt-1">{item.label}</span>
-              </Link>
+              </a>
             );
           }
 

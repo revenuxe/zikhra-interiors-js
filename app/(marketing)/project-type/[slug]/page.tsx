@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { getProjectTypeBySlug } from "@/lib/project-types-data";
 import ProjectTypeDetailView from "@/views/marketing/ProjectTypeDetailView";
 import SeoJsonLd from "@/components/SeoJsonLd";
-import { breadcrumbSchema, toJsonLd } from "@/lib/seo";
+import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
 
 type Props = { params: { slug: string } };
 
@@ -15,16 +15,20 @@ export function generateMetadata({ params }: Props): Metadata {
   if (!item) return { title: "Project Type Not Found" };
   const title = `${item.metaTitle} | Premium Interior Design`;
   const description = item.metaDesc;
+  const path = `/project-type/${item.slug}`;
   return {
     title,
     description,
-    alternates: { canonical: `/project-type/${item.slug}` },
-    openGraph: {
+    alternates: { canonical: path },
+    openGraph: pageOpenGraph({
       title,
       description,
-      url: `/project-type/${item.slug}`,
+      path,
       type: "article",
-    },
+      imageUrl: item.heroImage ?? DEFAULT_OG_IMAGE_PATH,
+      imageAlt: `${item.title} — premium ${item.slug} interior design Hyderabad`,
+    }),
+    twitter: twitterSummaryLarge(title, description, item.heroImage ?? DEFAULT_OG_IMAGE_PATH),
   };
 }
 

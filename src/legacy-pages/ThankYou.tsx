@@ -1,6 +1,7 @@
 import { CheckCircle, Home, ArrowRight } from "lucide-react";
 import whatsappIcon from "@/assets/whatsapp.svg";
 import Link from "next/link";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 const ThankYou = () => {
   return (
@@ -28,12 +29,16 @@ const ThankYou = () => {
 
         <div className="flex flex-col gap-3 animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
           <a
-            href="https://wa.me/919886285028?text=Hi%20Zikhra,%20I%20just%20submitted%20a%20form%20on%20your%20website"
+            href={getWhatsAppUrl("Hi Zikhra, I just submitted a form on your website — can we continue the conversation here?")}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-sans text-sm font-medium gold-gradient text-primary-foreground transition-all duration-300 hover:scale-105 gold-glow"
           >
-            <img src={whatsappIcon.src} alt="" className="w-4 h-4 brightness-0" />
+            <img
+              src={whatsappIcon.src}
+              alt="WhatsApp — reach Zikhra’s Hyderabad interior design team after your form submission"
+              className="w-4 h-4 brightness-0"
+            />
             Chat on WhatsApp for Faster Response
           </a>
 

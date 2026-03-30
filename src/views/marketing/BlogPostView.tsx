@@ -42,7 +42,11 @@ export default function BlogPostView({ post }: { post: BlogPost }) {
 
       {post.mainImageUrl && (
         <section className="relative h-[60vh] w-full overflow-hidden">
-          <img src={post.mainImageUrl} alt={post.title} className="absolute inset-0 w-full h-full object-cover" />
+          <img
+            src={post.mainImageUrl}
+            alt={`${post.title} — luxury interior design article and premium home insight by Zikhra Hyderabad`}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
           <div className="absolute inset-0 bg-gradient-to-b from-luxury-black/70 via-luxury-black/50 to-luxury-black/95" />
           <div className="relative z-10 flex flex-col items-center justify-end h-full px-6 pb-12 text-center">
             <Link href="/blog" className="absolute top-28 md:top-24 left-5 flex items-center gap-2 text-gold text-sm font-sans">

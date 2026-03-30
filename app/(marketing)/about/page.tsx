@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
 import About from "@/legacy-pages/About";
 import SeoJsonLd from "@/components/SeoJsonLd";
-import { breadcrumbSchema, localBusinessSchema, toJsonLd } from "@/lib/seo";
+import {
+  breadcrumbSchema,
+  DEFAULT_OG_IMAGE_PATH,
+  localBusinessSchema,
+  pageOpenGraph,
+  toJsonLd,
+  twitterSummaryLarge,
+} from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -11,12 +18,19 @@ export const metadata: Metadata = {
   description:
     "Learn about Zikhra, a premium interior design studio in Hyderabad known for luxury, craftsmanship, transparent execution, and timeless spaces.",
   alternates: { canonical: "/about" },
-  openGraph: {
+  openGraph: pageOpenGraph({
     title: "About Zikhra Luxury Interiors",
     description:
       "Meet the design team behind premium and luxury interior spaces across Hyderabad homes and villas.",
-    url: "/about",
-  },
+    path: "/about",
+    imageUrl: DEFAULT_OG_IMAGE_PATH,
+    imageAlt: "About Zikhra — luxury interior designers and bespoke homes Hyderabad",
+  }),
+  twitter: twitterSummaryLarge(
+    "About Zikhra Luxury Interiors",
+    "Meet the design team behind premium and luxury interior spaces across Hyderabad homes and villas.",
+    DEFAULT_OG_IMAGE_PATH,
+  ),
 };
 
 export default function AboutRoute() {

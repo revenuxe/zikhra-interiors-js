@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import ServiceDetailView from "@/views/marketing/ServiceDetailView";
 import { getServiceBySlug } from "@/lib/services-data";
 import SeoJsonLd from "@/components/SeoJsonLd";
-import { breadcrumbSchema, toJsonLd } from "@/lib/seo";
+import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
 
 type Props = {
   params: {
@@ -25,17 +25,15 @@ export function generateMetadata({ params }: Props): Metadata {
     title,
     description,
     alternates: { canonical: canonicalPath },
-    openGraph: {
+    openGraph: pageOpenGraph({
       title,
       description,
-      url: canonicalPath,
+      path: canonicalPath,
       type: "article",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-    },
+      imageUrl: service.image ?? DEFAULT_OG_IMAGE_PATH,
+      imageAlt: `${service.title} — luxury interior design and turnkey services Hyderabad`,
+    }),
+    twitter: twitterSummaryLarge(title, description, service.image ?? DEFAULT_OG_IMAGE_PATH),
   };
 }
 

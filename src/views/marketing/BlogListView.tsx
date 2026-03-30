@@ -23,12 +23,30 @@ export default function BlogListView({ posts }: { posts: BlogListItem[] }) {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <section className="pt-24 pb-10 px-5 text-center">
+      <section className="pt-24 pb-8 px-5 text-center">
         <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Our Blog</p>
         <h1 className="font-serif text-4xl md:text-5xl font-bold gold-text mb-3">Interior Design Insights</h1>
-        <p className="font-sans text-sm text-muted-foreground max-w-sm mx-auto">
+        <p className="font-sans text-sm text-muted-foreground max-w-xl mx-auto mb-6">
           Premium tips, trends, and inspiration for luxury interiors, modular kitchens, and high-end home design in Hyderabad.
         </p>
+        <div className="max-w-2xl mx-auto text-left space-y-4 font-sans text-sm text-muted-foreground leading-relaxed">
+          <p>
+            Welcome to <strong className="text-foreground font-medium">Interior Design Insights</strong> by Zikhra — practical,
+            idea-rich articles for homeowners who want calmer layouts, better lighting, and materials that age gracefully in
+            Hyderabad&apos;s climate. Each piece translates what we see on premium residential sites into guidance you can discuss
+            with your family or your designer.
+          </p>
+          <p>
+            Expect deep dives on <strong className="text-foreground font-medium">luxury kitchens</strong>, wardrobe ergonomics,
+            subtle colour palettes, and how to brief a studio for a <strong className="text-foreground font-medium">turnkey</strong>{" "}
+            apartment or <strong className="text-foreground font-medium">villa</strong> without losing personality. We write for
+            readers across Jubilee Hills, Gachibowli, and emerging townships who care about craftsmanship as much as aesthetics.
+          </p>
+          <p>
+            Whether you are early in planning or already comparing quotes, these interior design insights help you ask sharper
+            questions, spot durable specification details, and align your budget with the experiences that matter most in your home.
+          </p>
+        </div>
       </section>
 
       <section className="px-5 pb-16">
@@ -49,7 +67,7 @@ export default function BlogListView({ posts }: { posts: BlogListItem[] }) {
                   <div className="relative h-48 overflow-hidden">
                     <img
                       src={post.mainImageUrl}
-                      alt={post.title}
+                      alt={`${post.title} — luxury interior design article and home inspiration`}
                       loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />

@@ -3,7 +3,7 @@ import { sanityClient, sanityConfigured } from "@/lib/sanity/client";
 import { blogListQuery } from "@/lib/sanity/queries";
 import BlogListView, { type BlogListItem } from "@/views/marketing/BlogListView";
 import SeoJsonLd from "@/components/SeoJsonLd";
-import { breadcrumbSchema, toJsonLd } from "@/lib/seo";
+import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -13,11 +13,19 @@ export const metadata: Metadata = {
   description:
     "Read premium interior design insights, trends, and practical guides for luxury homes, modular kitchens, and elegant living spaces.",
   alternates: { canonical: "/blog" },
-  openGraph: {
+  openGraph: pageOpenGraph({
     title: "Luxury Interior Design Blog | Zikhra",
     description: "Expert insights on premium interiors, materials, layouts, and design trends.",
-    url: "/blog",
-  },
+    path: "/blog",
+    type: "website",
+    imageUrl: DEFAULT_OG_IMAGE_PATH,
+    imageAlt: "Interior design insights — luxury and premium home ideas from Zikhra Hyderabad",
+  }),
+  twitter: twitterSummaryLarge(
+    "Luxury Interior Design Blog | Zikhra",
+    "Expert insights on premium interiors, materials, layouts, and design trends.",
+    DEFAULT_OG_IMAGE_PATH,
+  ),
 };
 
 export default async function BlogPage() {

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Providers from "./providers";
-import { SITE_NAME, SITE_URL } from "@/lib/seo";
+import { DEFAULT_OG_IMAGE_PATH, pageOpenGraph, SITE_NAME, SITE_URL, twitterSummaryLarge } from "@/lib/seo";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -15,19 +15,21 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    type: "website",
+    ...pageOpenGraph({
+      title: "Luxury Interior Designers in Hyderabad | Zikhra",
+      description:
+        "Premium and high-end interior design in Hyderabad for villas, apartments, and elegant modern homes.",
+      path: "/",
+      imageUrl: DEFAULT_OG_IMAGE_PATH,
+      imageAlt: "Zikhra luxury interior design studio — elegant bespoke homes in Hyderabad",
+    }),
     siteName: SITE_NAME,
-    title: "Luxury Interior Designers in Hyderabad | Zikhra",
-    description:
-      "Premium and high-end interior design in Hyderabad for villas, apartments, and elegant modern homes.",
-    url: SITE_URL,
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Luxury Interior Designers in Hyderabad | Zikhra",
-    description:
-      "Premium and high-end interior design in Hyderabad for villas, apartments, and elegant modern homes.",
-  },
+  twitter: twitterSummaryLarge(
+    "Luxury Interior Designers in Hyderabad | Zikhra",
+    "Premium and high-end interior design in Hyderabad for villas, apartments, and elegant modern homes.",
+    DEFAULT_OG_IMAGE_PATH,
+  ),
 };
 
 export default function RootLayout({
