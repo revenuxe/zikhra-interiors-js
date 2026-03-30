@@ -1,14 +1,14 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import project2bhk from "@/assets/project-2bhk.webp";
 import project3bhk from "@/assets/project-3bhk.webp";
 import project4bhk from "@/assets/project-4bhk.webp";
 import projectPenthouse from "@/assets/project-penthouse.webp";
 
 const projectTypes = [
-  { name: "2 BHK", image: project2bhk, slug: "2bhk", desc: "Smart luxury for compact spaces" },
-  { name: "3 BHK", image: project3bhk, slug: "3bhk", desc: "Spacious elegance for families" },
-  { name: "4 BHK", image: project4bhk, slug: "4bhk", desc: "Grand living redefined" },
-  { name: "Penthouse", image: projectPenthouse, slug: "penthouse", desc: "Ultra-luxury sky living" },
+  { name: "2 BHK", image: project2bhk.src, slug: "2bhk", desc: "Smart luxury for compact spaces" },
+  { name: "3 BHK", image: project3bhk.src, slug: "3bhk", desc: "Spacious elegance for families" },
+  { name: "4 BHK", image: project4bhk.src, slug: "4bhk", desc: "Grand living redefined" },
+  { name: "Penthouse", image: projectPenthouse.src, slug: "penthouse", desc: "Ultra-luxury sky living" },
 ];
 
 const ProjectTypeSection = () => {
@@ -26,7 +26,7 @@ const ProjectTypeSection = () => {
         {projectTypes.map((pt) => (
           <Link
             key={pt.slug}
-            to={`/project-type/${pt.slug}`}
+              href={`/project-type/${pt.slug}`}
             className="relative rounded-2xl overflow-hidden group cursor-pointer block h-52"
           >
             <img

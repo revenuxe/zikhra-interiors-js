@@ -1,5 +1,8 @@
+"use client";
+
 import { Home, FolderKanban, Wrench, Send } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import whatsappIcon from "@/assets/whatsapp.svg";
 
 const navItems = [
@@ -11,7 +14,7 @@ const navItems = [
 ];
 
 const BottomNav = () => {
-  const location = useLocation();
+  const pathname = usePathname();
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-50 glass-nav safe-area-bottom">
@@ -27,7 +30,7 @@ const BottomNav = () => {
                 className="relative -mt-5 flex flex-col items-center"
               >
                 <div className="w-14 h-14 rounded-full gold-gradient flex items-center justify-center animate-pulse-gold shadow-xl">
-                  <img src={whatsappIcon} alt="WhatsApp" className="w-7 h-7 brightness-0" />
+                  <img src={whatsappIcon.src} alt="WhatsApp" className="w-7 h-7 brightness-0" />
                 </div>
                 <span className="text-[10px] font-sans text-gold mt-1">{item.label}</span>
               </a>
@@ -35,12 +38,12 @@ const BottomNav = () => {
           }
 
           const Icon = item.icon!;
-          const isActive = location.pathname === item.to;
+          const isActive = pathname === item.to;
 
           return (
             <Link
               key={item.label}
-              to={item.to}
+              href={item.to}
               className="flex flex-col items-center py-1 px-3 group"
             >
               <Icon className={`w-5 h-5 transition-colors ${isActive ? "text-gold" : "text-muted-foreground group-hover:text-gold"}`} />

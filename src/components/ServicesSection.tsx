@@ -1,14 +1,14 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import serviceHome from "@/assets/service-home.webp";
 import serviceKitchen from "@/assets/service-kitchen.webp";
 import serviceWardrobe from "@/assets/service-wardrobe.webp";
 import serviceRenovation from "@/assets/service-renovation.webp";
 
 const services = [
-  { image: serviceHome, title: "Full Home Interiors", desc: "Complete luxury home design solutions", slug: "full-home" },
-  { image: serviceKitchen, title: "Modular Kitchen", desc: "Bespoke premium kitchen designs", slug: "modular-kitchen" },
-  { image: serviceWardrobe, title: "Wardrobes", desc: "Custom walk-in closet solutions", slug: "wardrobes" },
-  { image: serviceRenovation, title: "Renovation", desc: "Transform your existing space", slug: "renovation" },
+  { image: serviceHome.src, title: "Full Home Interiors", desc: "Complete luxury home design solutions", slug: "full-home" },
+  { image: serviceKitchen.src, title: "Modular Kitchen", desc: "Bespoke premium kitchen designs", slug: "modular-kitchen" },
+  { image: serviceWardrobe.src, title: "Wardrobes", desc: "Custom walk-in closet solutions", slug: "wardrobes" },
+  { image: serviceRenovation.src, title: "Renovation", desc: "Transform your existing space", slug: "renovation" },
 ];
 
 const ServicesSection = () => {
@@ -26,7 +26,7 @@ const ServicesSection = () => {
         {services.map((svc) => (
           <Link
             key={svc.title}
-            to={`/services#${svc.slug}`}
+            href={`/services#${svc.slug}`}
             className="flex flex-col items-center text-center rounded-2xl overflow-hidden bg-card border border-border/50 transition-all duration-300 hover:border-gold/30 hover:gold-glow group cursor-pointer"
           >
             <div className="relative w-full h-32 overflow-hidden">
@@ -50,7 +50,7 @@ const ServicesSection = () => {
 
       <div className="text-center mt-8">
         <Link
-          to="/services"
+            href="/services"
           className="inline-block px-8 py-3 rounded-full font-sans text-sm font-medium border border-gold/40 text-gold-light transition-all duration-300 hover:border-gold hover:bg-gold/10"
         >
           View All Services

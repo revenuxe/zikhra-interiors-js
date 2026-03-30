@@ -1,5 +1,7 @@
+"use client";
+
 import { useRef } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import areaKitchen from "@/assets/area-kitchen.webp";
 import areaBedroom from "@/assets/area-bedroom.webp";
@@ -7,7 +9,9 @@ import areaLiving from "@/assets/area-living.webp";
 import areaVilla from "@/assets/area-villa.webp";
 import areaBathroom from "@/assets/area-bathroom.webp";
 
-const areaImages = [areaKitchen, areaBedroom, areaLiving, areaVilla, areaBathroom];
+const areaImages = [areaKitchen, areaBedroom, areaLiving, areaVilla, areaBathroom].map((img) =>
+  typeof img === "string" ? img : img.src,
+);
 
 const areas = [
   { name: "Jubilee Hills", slug: "jubilee-hills", tagline: "Where Luxury Meets Legacy" },
@@ -85,7 +89,7 @@ const AreasWeServe = () => {
           {areas.map((area, i) => (
             <Link
               key={area.slug}
-              to={`/area/${area.slug}`}
+              href={`/area/${area.slug}`}
               className="flex-shrink-0 flex flex-col items-center gap-2 group"
             >
               <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-border/50 group-hover:border-gold/60 transition-all duration-300 gold-glow group-hover:scale-105">

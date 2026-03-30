@@ -1,15 +1,17 @@
+"use client";
+
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { X } from "lucide-react";
 import popupHero from "@/assets/popup-hero.webp";
+import { useRouter } from "next/navigation";
 
 const ConsultationPopup = () => {
   const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({ name: "", phone: "", email: "", projectType: "", message: "" });
   const [submitting, setSubmitting] = useState(false);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   useEffect(() => {
     const dismissed = sessionStorage.getItem("popup-dismissed");
@@ -40,7 +42,7 @@ const ConsultationPopup = () => {
       return;
     }
     close();
-    navigate("/thank-you");
+    router.push("/thank-you");
   };
 
   if (!open) return null;
@@ -53,8 +55,8 @@ const ConsultationPopup = () => {
         className="relative w-full max-w-sm bg-card rounded-3xl overflow-hidden border border-border/30 shadow-2xl animate-fade-in-up"
       >
         {/* Hero Image */}
-        <div className="relative h-36 overflow-hidden">
-          <img src={popupHero} alt="Luxury Interior Design" className="w-full h-full object-cover" />
+          <div className="relative h-36 overflow-hidden">
+          <img src={popupHero.src} alt="Luxury Interior Design" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-card" />
           <button
             onClick={close}

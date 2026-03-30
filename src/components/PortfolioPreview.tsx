@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import kitchenImg from "@/assets/kitchen.webp";
 import bedroomImg from "@/assets/bedroom.webp";
 import livingroomImg from "@/assets/livingroom.webp";
@@ -7,12 +7,12 @@ import bathroomImg from "@/assets/portfolio-bathroom.webp";
 import studyImg from "@/assets/portfolio-study.webp";
 
 const categories = [
-  { name: "Kitchen", image: kitchenImg, slug: "kitchen" },
-  { name: "Bedroom", image: bedroomImg, slug: "bedroom" },
-  { name: "Living Room", image: livingroomImg, slug: "living-room" },
-  { name: "Wardrobe", image: wardrobeImg, slug: "wardrobe" },
-  { name: "Bathroom", image: bathroomImg, slug: "bathroom" },
-  { name: "Study Room", image: studyImg, slug: "study-room" },
+  { name: "Kitchen", image: kitchenImg.src, slug: "kitchen" },
+  { name: "Bedroom", image: bedroomImg.src, slug: "bedroom" },
+  { name: "Living Room", image: livingroomImg.src, slug: "living-room" },
+  { name: "Wardrobe", image: wardrobeImg.src, slug: "wardrobe" },
+  { name: "Bathroom", image: bathroomImg.src, slug: "bathroom" },
+  { name: "Study Room", image: studyImg.src, slug: "study-room" },
 ];
 
 const PortfolioPreview = () => {
@@ -30,7 +30,7 @@ const PortfolioPreview = () => {
         {categories.map((cat) => (
           <Link
             key={cat.name}
-            to={`/portfolio/${cat.slug}`}
+              href={`/portfolio/${cat.slug}`}
             className="relative flex-shrink-0 w-64 h-80 rounded-2xl overflow-hidden group snap-center cursor-pointer block"
           >
             <img

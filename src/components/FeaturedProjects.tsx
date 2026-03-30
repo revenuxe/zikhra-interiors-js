@@ -1,14 +1,16 @@
+"use client";
+
 import project2bhk from "@/assets/project-2bhk.webp";
 import projectVilla from "@/assets/project-villa.webp";
 import project3bhk from "@/assets/project-3bhk.webp";
 import { MapPin, ChevronLeft, ChevronRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { useRef, useState } from "react";
 
 const projects = [
-  { image: project2bhk, type: "2BHK Apartment", location: "Gachibowli, Hyderabad", budget: "₹12-18 Lakhs", slug: "2bhk-apartment" },
-  { image: projectVilla, type: "Luxury Villa", location: "Jubilee Hills, Hyderabad", budget: "₹45-60 Lakhs", slug: "luxury-villa" },
-  { image: project3bhk, type: "3BHK Penthouse", location: "Banjara Hills, Hyderabad", budget: "₹25-35 Lakhs", slug: "3bhk-penthouse" },
+  { image: project2bhk.src, type: "2BHK Apartment", location: "Gachibowli, Hyderabad", budget: "₹12-18 Lakhs", slug: "2bhk-apartment" },
+  { image: projectVilla.src, type: "Luxury Villa", location: "Jubilee Hills, Hyderabad", budget: "₹45-60 Lakhs", slug: "luxury-villa" },
+  { image: project3bhk.src, type: "3BHK Penthouse", location: "Banjara Hills, Hyderabad", budget: "₹25-35 Lakhs", slug: "3bhk-penthouse" },
 ];
 
 const FeaturedProjects = () => {
@@ -47,7 +49,7 @@ const FeaturedProjects = () => {
           {projects.map((project) => (
             <Link
               key={project.type}
-              to={`/projects/${project.slug}`}
+              href={`/projects/${project.slug}`}
               className="min-w-[80%] sm:min-w-[70%] snap-center rounded-2xl overflow-hidden bg-card border border-border/50 group cursor-pointer transition-all duration-300 hover:border-gold/30 block flex-shrink-0"
             >
               <div className="relative h-56 overflow-hidden">

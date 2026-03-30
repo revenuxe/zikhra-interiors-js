@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, Instagram, Facebook, Youtube, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { MapPin, Phone, Mail, Instagram, ArrowRight } from "lucide-react";
 import logo from "@/assets/zikhra-logo.webp";
 
 const quickLinks = [
@@ -27,7 +27,7 @@ const Footer = () => {
 
       <div className="max-w-6xl mx-auto px-5 pt-14">
         <div className="flex flex-col items-center text-center mb-12">
-          <img src={logo} alt="Zikhra Interior Designers Hyderabad" className="h-16 w-auto mb-3" />
+          <img src={logo.src} alt="Zikhra Interior Designers Hyderabad" className="h-16 w-auto mb-3" />
           <p className="font-sans text-muted-foreground text-sm max-w-xs">
             Hyderabad's most trusted luxury interior design studio. Crafting timeless spaces since 2018.
           </p>
@@ -39,7 +39,7 @@ const Footer = () => {
             <ul className="space-y-2.5">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <Link to={link.to} className="font-sans text-sm text-muted-foreground hover:text-gold transition-colors flex items-center gap-1.5 group">
+                  <Link href={link.to} className="font-sans text-sm text-muted-foreground hover:text-gold transition-colors flex items-center gap-1.5 group">
                     <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-gold" />
                     {link.label}
                   </Link>
@@ -53,7 +53,7 @@ const Footer = () => {
             <ul className="space-y-2.5">
               {serviceLinks.map((link) => (
                 <li key={link.label}>
-                  <Link to={link.to} className="font-sans text-sm text-muted-foreground hover:text-gold transition-colors flex items-center gap-1.5 group">
+                  <Link href={link.to} className="font-sans text-sm text-muted-foreground hover:text-gold transition-colors flex items-center gap-1.5 group">
                     <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-gold" />
                     {link.label}
                   </Link>
@@ -80,15 +80,15 @@ const Footer = () => {
             </div>
 
             <div className="flex gap-3 mt-5">
-              {[
-                { icon: Instagram, href: "#" },
-                { icon: Facebook, href: "#" },
-                { icon: Youtube, href: "#" },
-              ].map(({ icon: Icon, href }, i) => (
-                <a key={i} href={href} className="w-9 h-9 rounded-full border border-gold/25 flex items-center justify-center transition-all hover:bg-gold/10 hover:border-gold/50 hover:scale-110">
-                  <Icon className="w-4 h-4 text-gold" />
-                </a>
-              ))}
+              <a
+                href="https://www.instagram.com/zikhra.interiors/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="w-9 h-9 rounded-full border border-gold/25 flex items-center justify-center transition-all hover:bg-gold/10 hover:border-gold/50 hover:scale-110"
+              >
+                <Instagram className="w-4 h-4 text-gold" />
+              </a>
             </div>
           </div>
         </div>
@@ -105,9 +105,9 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-2 text-xs font-sans text-muted-foreground/40">
           <p>© 2026 Zikhra Interiors. All rights reserved.</p>
           <div className="flex items-center gap-3">
-            <Link to="/terms" className="hover:text-gold transition-colors">Terms & Conditions</Link>
+            <Link href="/terms" className="hover:text-gold transition-colors">Terms & Conditions</Link>
             <span>·</span>
-            <Link to="/privacy" className="hover:text-gold transition-colors">Privacy Policy</Link>
+            <Link href="/privacy" className="hover:text-gold transition-colors">Privacy Policy</Link>
           </div>
           <p>Designed with passion in Hyderabad</p>
         </div>

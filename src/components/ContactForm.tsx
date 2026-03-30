@@ -1,12 +1,14 @@
+"use client";
+
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({ name: "", phone: "", email: "", projectType: "", message: "" });
   const [submitting, setSubmitting] = useState(false);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,7 +29,7 @@ const ContactForm = () => {
       return;
     }
 
-    navigate("/thank-you");
+    router.push("/thank-you");
   };
 
   return (

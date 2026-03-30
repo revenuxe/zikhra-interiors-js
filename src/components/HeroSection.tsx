@@ -1,12 +1,12 @@
 import heroImage from "@/assets/hero-interior.webp";
 import { ChevronDown } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const HeroSection = () => {
   return (
     <section className="relative h-screen w-full overflow-hidden">
       <img
-        src={heroImage}
+        src={heroImage.src}
         alt="Luxury interior design Hyderabad"
         width={1920}
         height={1080}
@@ -27,13 +27,13 @@ const HeroSection = () => {
 
         <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
           <Link
-            to="/contact"
+            href="/contact"
             className="gold-gradient px-8 py-3.5 rounded-full font-sans text-sm font-medium tracking-wide text-primary-foreground transition-all duration-300 hover:scale-105 gold-glow"
           >
             Get Free Consultation
           </Link>
           <Link
-            to="/services"
+            href="/services"
             className="px-8 py-3.5 rounded-full font-sans text-sm font-medium tracking-wide border border-gold/40 text-gold-light transition-all duration-300 hover:border-gold hover:bg-gold/10 text-center"
           >
             Explore Services
