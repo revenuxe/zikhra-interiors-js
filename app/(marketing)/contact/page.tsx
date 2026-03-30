@@ -3,6 +3,9 @@ import Contact from "@/legacy-pages/Contact";
 import SeoJsonLd from "@/components/SeoJsonLd";
 import { breadcrumbSchema, localBusinessSchema, toJsonLd } from "@/lib/seo";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export const metadata: Metadata = {
   title: "Contact Luxury Interior Designers",
   description:

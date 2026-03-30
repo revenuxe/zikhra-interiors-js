@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
+import { getSupabaseClient } from "@/integrations/supabase/client";
 import { Eye, Trash2, LogOut, Users, X } from "lucide-react";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
@@ -30,11 +30,19 @@ const AdminDashboard = () => {
   }, []);
 
   const checkAuth = async () => {
+    const supabase = getSupabaseClient();
+    if (!supabase) return;
     const { data: { session } } = await supabase.auth.getSession();
     if (!session) router.push("/admin/login");
   };
 
   const fetchLeads = async () => {
+    const supabase = getSupabaseClient();
+    if (!supabase) {
+      toast.error("Dashboard is temporarily unavailable. Please try again in a moment.");
+      setLoading(false);
+      return;
+    }
     const { data, error } = await supabase
       .from("leads")
       .select("*")
@@ -48,6 +56,8 @@ const AdminDashboard = () => {
   };
 
   const handleDelete = async (id: string) => {
+    const supabase = getSupabaseClient();
+    if (!supabase) return;
     const { error } = await supabase.from("leads").delete().eq("id", id);
     if (error) {
       toast.error("Failed to delete lead");
@@ -59,6 +69,8 @@ const AdminDashboard = () => {
   };
 
   const handleLogout = async () => {
+    const supabase = getSupabaseClient();
+    if (!supabase) return;
     await supabase.auth.signOut();
     router.push("/admin/login");
   };

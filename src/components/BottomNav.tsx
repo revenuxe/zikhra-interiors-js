@@ -8,7 +8,7 @@ import whatsappIcon from "@/assets/whatsapp.svg";
 const navItems = [
   { icon: Home, label: "Home", to: "/" },
   { icon: FolderKanban, label: "Projects", to: "/projects" },
-  { icon: null, label: "WhatsApp", to: "" },
+  { icon: null, label: "Enquire", to: "/contact" },
   { icon: Wrench, label: "Services", to: "/services" },
   { icon: Send, label: "Contact", to: "/contact" },
 ];
@@ -22,18 +22,15 @@ const BottomNav = () => {
         {navItems.map((item, i) => {
           if (i === 2) {
             return (
-              <a
+              <Link
                 key={item.label}
-                href="https://wa.me/919886285028"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="relative -mt-5 flex flex-col items-center"
               >
                 <div className="w-14 h-14 rounded-full gold-gradient flex items-center justify-center animate-pulse-gold shadow-xl">
                   <img src={whatsappIcon.src} alt="WhatsApp" className="w-7 h-7 brightness-0" />
                 </div>
                 <span className="text-[10px] font-sans text-gold mt-1">{item.label}</span>
-              </a>
+              </Link>
             );
           }
 

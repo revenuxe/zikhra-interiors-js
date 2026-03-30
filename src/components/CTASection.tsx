@@ -17,15 +17,13 @@ const CTASection = () => {
         </p>
 
         <div className="flex flex-col gap-3">
-          <a
-            href="https://wa.me/919886285028?text=Hi%20Zikhra,%20I%20want%20to%20design%20my%20dream%20space"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/contact"
             className="flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-sans text-sm font-medium gold-gradient text-primary-foreground transition-all duration-300 hover:scale-105 gold-glow"
           >
             <img src={whatsappIcon.src} alt="" className="w-4 h-4 brightness-0" />
-            WhatsApp Now
-          </a>
+            Talk to a Designer
+          </Link>
           <Link
             href="/contact"
             className="gold-gradient px-8 py-3.5 rounded-full font-sans text-sm font-medium text-primary-foreground transition-all duration-300 hover:scale-105 gold-glow"

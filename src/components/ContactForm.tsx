@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
+import { getSupabaseClient } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({ name: "", phone: "", email: "", projectType: "", message: "" });
+  const [formData, setFormData] = useState({ name: "", phone: "", projectType: "", message: "" });
   const [submitting, setSubmitting] = useState(false);
   const router = useRouter();
 
@@ -14,10 +14,16 @@ const ContactForm = () => {
     e.preventDefault();
     setSubmitting(true);
 
+    const supabase = getSupabaseClient();
+    if (!supabase) {
+      toast.error("Form is temporarily unavailable. Please try again in a moment.");
+      setSubmitting(false);
+      return;
+    }
+
     const { error } = await supabase.from("leads").insert({
       name: formData.name.trim(),
       phone: formData.phone.trim(),
-      email: formData.email.trim() || null,
       project_type: formData.projectType.trim() || null,
       message: formData.message.trim() || null,
       source: "website",
@@ -64,13 +70,6 @@ const ContactForm = () => {
             required
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-            className="w-full px-5 py-3.5 rounded-xl bg-card border border-border/50 font-sans text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors"
-          />
-          <input
-            type="email"
-            placeholder="Email (optional)"
-            value={formData.email}
-            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             className="w-full px-5 py-3.5 rounded-xl bg-card border border-border/50 font-sans text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors"
           />
           <input

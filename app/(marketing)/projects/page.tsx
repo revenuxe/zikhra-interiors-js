@@ -3,6 +3,9 @@ import ProjectsView from "@/views/marketing/ProjectsView";
 import SeoJsonLd from "@/components/SeoJsonLd";
 import { breadcrumbSchema, toJsonLd } from "@/lib/seo";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export const metadata: Metadata = {
   title: "Luxury Interior Projects in Hyderabad",
   description:

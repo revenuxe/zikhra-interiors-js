@@ -3,6 +3,9 @@ import Index from "@/legacy-pages/Index";
 import SeoJsonLd from "@/components/SeoJsonLd";
 import { localBusinessSchema, organizationSchema, toJsonLd, websiteSchema } from "@/lib/seo";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export const metadata: Metadata = {
   title: "Luxury Interior Designers in Hyderabad",
   description:

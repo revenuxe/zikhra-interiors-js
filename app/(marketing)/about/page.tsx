@@ -3,6 +3,9 @@ import About from "@/legacy-pages/About";
 import SeoJsonLd from "@/components/SeoJsonLd";
 import { breadcrumbSchema, localBusinessSchema, toJsonLd } from "@/lib/seo";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export const metadata: Metadata = {
   title: "About Zikhra Luxury Interiors",
   description:

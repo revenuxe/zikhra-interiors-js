@@ -6,12 +6,12 @@ import BottomNav from "@/components/BottomNav";
 import contactHero from "@/assets/contact-hero.webp";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
+import { getSupabaseClient } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({ name: "", phone: "", email: "", projectType: "", message: "" });
+  const [formData, setFormData] = useState({ name: "", phone: "", projectType: "", message: "" });
   const [submitting, setSubmitting] = useState(false);
   const router = useRouter();
 
@@ -19,10 +19,16 @@ const Contact = () => {
     e.preventDefault();
     setSubmitting(true);
 
+    const supabase = getSupabaseClient();
+    if (!supabase) {
+      toast.error("Form is temporarily unavailable. Please try again in a moment.");
+      setSubmitting(false);
+      return;
+    }
+
     const { error } = await supabase.from("leads").insert({
       name: formData.name.trim(),
       phone: formData.phone.trim(),
-      email: formData.email.trim() || null,
       project_type: formData.projectType.trim() || null,
       message: formData.message.trim() || null,
       source: "contact-page",
@@ -80,7 +86,6 @@ const Contact = () => {
           <form onSubmit={handleSubmit} className="space-y-4">
             <input type="text" placeholder="Your Name" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} className="w-full px-4 py-3 rounded-xl bg-card border border-border/50 font-sans text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors" />
             <input type="tel" placeholder="Phone Number" required value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className="w-full px-4 py-3 rounded-xl bg-card border border-border/50 font-sans text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors" />
-            <input type="email" placeholder="Email Address" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className="w-full px-4 py-3 rounded-xl bg-card border border-border/50 font-sans text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors" />
             <input type="text" placeholder="Project Type (e.g., 2 BHK, Villa, Duplex)" value={formData.projectType} onChange={(e) => setFormData({ ...formData, projectType: e.target.value })} className="w-full px-4 py-3 rounded-xl bg-card border border-border/50 font-sans text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors" />
             <textarea placeholder="Tell us about your project..." rows={4} required value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} className="w-full px-4 py-3 rounded-xl bg-card border border-border/50 font-sans text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors resize-none" />
             <button type="submit" disabled={submitting} className="w-full gold-gradient py-3.5 rounded-full font-sans text-sm font-medium text-primary-foreground transition-all duration-300 hover:scale-[1.02] gold-glow disabled:opacity-50">

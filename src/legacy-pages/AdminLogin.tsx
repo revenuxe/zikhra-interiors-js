@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
+import { getSupabaseClient } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 
@@ -14,6 +14,12 @@ const AdminLogin = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    const supabase = getSupabaseClient();
+    if (!supabase) {
+      toast.error("Login is temporarily unavailable. Please try again in a moment.");
+      setLoading(false);
+      return;
+    }
     const { error } = await supabase.auth.signInWithPassword({ email, password });
     setLoading(false);
     if (error) {
