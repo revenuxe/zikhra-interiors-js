@@ -13,6 +13,8 @@ import livingroomImg from "@/assets/livingroom.webp";
 import livingroomImg2 from "@/assets/livingroom-2.webp";
 import wardrobeImg from "@/assets/wardrobe.webp";
 import wardrobeImg2 from "@/assets/wardrobe-2.webp";
+import bathroomImg from "@/assets/portfolio-bathroom.webp";
+import studyImg from "@/assets/portfolio-study.webp";
 
 const portfolioData: Record<string, {
   title: string;
