@@ -1,7 +1,6 @@
 import heroImage from "@/assets/hero-interior.webp";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
-import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 const HeroSection = () => {
   return (
@@ -26,7 +25,7 @@ const HeroSection = () => {
           Designing timeless luxury with award-winning interior designers crafting bespoke, high-end homes and villas across Hyderabad
         </p>
 
-        <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+        <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
           <Link
             href="/contact"
             className="gold-gradient px-8 py-3.5 rounded-full font-sans text-sm font-medium tracking-wide text-primary-foreground transition-all duration-300 hover:scale-105 gold-glow"
@@ -39,14 +38,6 @@ const HeroSection = () => {
           >
             Explore Services
           </Link>
-          <a
-            href={getWhatsAppUrl()}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-8 py-3.5 rounded-full font-sans text-sm font-medium tracking-wide border border-gold/40 text-gold-light transition-all duration-300 hover:border-gold hover:bg-gold/10 text-center"
-          >
-            WhatsApp Us
-          </a>
         </div>
 
         <div className="absolute bottom-24 md:bottom-12 animate-scroll-bounce">

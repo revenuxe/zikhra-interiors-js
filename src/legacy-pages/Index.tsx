@@ -19,7 +19,6 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <HeroSection />
-      <HomeStorySection />
       <PortfolioPreview />
       <FeaturedProjects />
       <ProjectTypeSection />
@@ -29,6 +28,7 @@ const Index = () => {
       <CTASection />
       <AreasWeServe />
       <ContactForm />
+      <HomeStorySection />
       <Footer />
       <BottomNav />
       <ConsultationPopup />

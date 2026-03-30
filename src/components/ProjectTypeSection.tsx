@@ -26,22 +26,24 @@ const ProjectTypeSection = () => {
         {projectTypes.map((pt) => (
           <Link
             key={pt.slug}
-              href={`/project-type/${pt.slug}`}
-            className="relative rounded-2xl overflow-hidden group cursor-pointer block h-52"
+            href={`/project-type/${pt.slug}`}
+            className="flex flex-col items-center text-center rounded-2xl overflow-hidden bg-card border border-border/50 transition-all duration-300 hover:border-gold/30 hover:gold-glow group cursor-pointer"
           >
-            <img
-              src={pt.image}
-              alt={`${pt.name} interior design Hyderabad`}
-              loading="lazy"
-              width={800}
-              height={1024}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-luxury-black/85 via-luxury-black/30 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-4">
-              <h3 className="font-serif text-lg text-foreground">{pt.name}</h3>
-              <p className="font-sans text-xs text-foreground/60 mt-1">{pt.desc}</p>
-              <div className="w-8 h-0.5 gold-gradient mt-2 transition-all duration-300 group-hover:w-14" />
+            <div className="relative w-full h-32 overflow-hidden">
+              <img
+                src={pt.image}
+                alt={`${pt.name} interior design Hyderabad`}
+                loading="lazy"
+                width={800}
+                height={1024}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
+            </div>
+            <div className="p-4 -mt-4 relative z-10 w-full">
+              <h3 className="font-serif text-sm text-foreground mb-1">{pt.name}</h3>
+              <p className="text-xs font-sans text-muted-foreground">{pt.desc}</p>
+              <div className="w-8 h-0.5 gold-gradient mt-2 mx-auto transition-all duration-300 group-hover:w-14" />
             </div>
           </Link>
         ))}
