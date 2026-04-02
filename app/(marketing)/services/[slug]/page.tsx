@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ServiceDetailView from "@/views/marketing/ServiceDetailView";
-import { getServiceBySlug } from "@/lib/services-data";
+import { getServiceBySlug, services } from "@/lib/services-data";
 import SeoJsonLd from "@/components/SeoJsonLd";
 import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
 
@@ -11,8 +11,13 @@ type Props = {
   };
 };
 
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
+export const dynamic = "force-static";
+export const dynamicParams = false;
+export const revalidate = 86400;
+
+export function generateStaticParams() {
+  return services.map((service) => ({ slug: service.id }));
+}
 
 export function generateMetadata({ params }: Props): Metadata {
   const service = getServiceBySlug(params.slug);

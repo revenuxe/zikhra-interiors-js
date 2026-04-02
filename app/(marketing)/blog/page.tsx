@@ -5,8 +5,8 @@ import BlogListView, { type BlogListItem } from "@/views/marketing/BlogListView"
 import SeoJsonLd from "@/components/SeoJsonLd";
 import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
 
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
+export const dynamic = "force-static";
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Luxury Interior Design Blog",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 export default async function BlogPage() {
   const posts: BlogListItem[] =
     sanityConfigured && sanityClient
-      ? await sanityClient.fetch(blogListQuery, {}, { cache: "no-store" })
+      ? await sanityClient.fetch(blogListQuery)
       : [];
 
   return (

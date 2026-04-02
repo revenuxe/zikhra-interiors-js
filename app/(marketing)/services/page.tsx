@@ -3,8 +3,8 @@ import ServicesView from "@/views/marketing/ServicesView";
 import SeoJsonLd from "@/components/SeoJsonLd";
 import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
 
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
+export const dynamic = "force-static";
+export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: "Luxury Interior Design Services in Hyderabad",

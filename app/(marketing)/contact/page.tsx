@@ -3,8 +3,8 @@ import Contact from "@/legacy-pages/Contact";
 import SeoJsonLd from "@/components/SeoJsonLd";
 import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, localBusinessSchema, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
 
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
+export const dynamic = "force-static";
+export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: "Contact Luxury Interior Designers",

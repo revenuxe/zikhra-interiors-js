@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getProjectTypeBySlug } from "@/lib/project-types-data";
+import { getProjectTypeBySlug, projectTypes } from "@/lib/project-types-data";
 import ProjectTypeDetailView from "@/views/marketing/ProjectTypeDetailView";
 import SeoJsonLd from "@/components/SeoJsonLd";
 import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
 
 type Props = { params: { slug: string } };
 
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
+export const dynamic = "force-static";
+export const dynamicParams = false;
+export const revalidate = 86400;
+
+export function generateStaticParams() {
+  return projectTypes.map((item) => ({ slug: item.slug }));
+}
 
 export function generateMetadata({ params }: Props): Metadata {
   const item = getProjectTypeBySlug(params.slug);

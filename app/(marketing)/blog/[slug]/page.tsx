@@ -1,21 +1,28 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { sanityClient, sanityConfigured } from "@/lib/sanity/client";
-import { blogPostBySlugQuery } from "@/lib/sanity/queries";
+import { blogPostBySlugQuery, blogSitemapQuery } from "@/lib/sanity/queries";
 import BlogPostView, { type BlogPost } from "@/views/marketing/BlogPostView";
 import SeoJsonLd from "@/components/SeoJsonLd";
 import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
 
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
+export const dynamic = "force-static";
+export const revalidate = 3600;
 
 type Props = { params: { slug: string } };
+type BlogSlugItem = { slug: string };
+
+export async function generateStaticParams() {
+  if (!sanityConfigured || !sanityClient) return [];
+  const posts: BlogSlugItem[] = await sanityClient.fetch(blogSitemapQuery);
+  return posts.map((post) => ({ slug: post.slug }));
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!sanityConfigured || !sanityClient) {
     return { title: "Blog" };
   }
-  const post: BlogPost | null = await sanityClient.fetch(blogPostBySlugQuery, { slug: params.slug }, { cache: "no-store" });
+  const post: BlogPost | null = await sanityClient.fetch(blogPostBySlugQuery, { slug: params.slug });
   if (!post) return { title: "Post Not Found" };
 
   const description = (post.excerpt ?? "").slice(0, 160);
@@ -41,7 +48,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function BlogPostPage({ params }: Props) {
   if (!sanityConfigured || !sanityClient) notFound();
 
-  const post: BlogPost | null = await sanityClient.fetch(blogPostBySlugQuery, { slug: params.slug }, { cache: "no-store" });
+  const post: BlogPost | null = await sanityClient.fetch(blogPostBySlugQuery, { slug: params.slug });
   if (!post) notFound();
 
   return (
