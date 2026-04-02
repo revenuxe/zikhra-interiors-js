@@ -24,10 +24,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ];
 
   const now = new Date();
-  const blogItems: BlogSitemapItem[] =
-    sanityConfigured && sanityClient
-      ? await sanityClient.fetch(blogSitemapQuery, {}, { cache: "no-store" })
-      : [];
+  let blogItems: BlogSitemapItem[] = [];
+  if (sanityConfigured && sanityClient) {
+    try {
+      blogItems = await sanityClient.fetch(blogSitemapQuery);
+    } catch (error) {
+      // Keep sitemap available even if Sanity is temporarily unreachable.
+      console.error("Sitemap blog fetch failed:", error);
+    }
+  }
 
   return [
     ...staticRoutes.map((route) => ({
