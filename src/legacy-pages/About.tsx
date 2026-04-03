@@ -75,6 +75,24 @@ const About = () => {
         </div>
       </section>
 
+      <section className="section-padding pt-0">
+        <div className="max-w-lg mx-auto rounded-2xl border border-border/40 bg-card/30 px-6 py-5 text-center">
+          <p className="text-xs font-sans tracking-[0.2em] uppercase text-muted-foreground mb-2">Digital presence</p>
+          <p className="font-sans text-sm text-foreground/85 leading-relaxed">
+            This website was designed and built by{" "}
+            <a
+              href="https://revenuxe.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gold hover:underline underline-offset-4"
+            >
+              Revenuxe
+            </a>
+            .
+          </p>
+        </div>
+      </section>
+
       <ContactForm />
       <Footer />
       <BottomNav />
