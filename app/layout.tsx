@@ -3,33 +3,31 @@ import "./globals.css";
 import Providers from "./providers";
 import { DEFAULT_OG_IMAGE_PATH, pageOpenGraph, SITE_NAME, SITE_URL, twitterSummaryLarge } from "@/lib/seo";
 
+const defaultTitle = "Luxury Interior Designers Hyderabad & Bangalore | Zikhra";
+const defaultDescription =
+  "Premium luxury interior design studio for Hyderabad and Bangalore — bespoke home interiors, modular kitchens, turnkey villas & apartments. Jubilee Hills to HITEC City; Koramangala to Whitefield.";
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Luxury Interior Designers in Hyderabad | Zikhra",
+    default: defaultTitle,
     template: `%s | ${SITE_NAME}`,
   },
-  description:
-    "Zikhra is a premium luxury interior design studio in Hyderabad delivering bespoke home interiors, modular kitchens, and turnkey execution.",
+  description: defaultDescription,
   alternates: {
     canonical: "/",
   },
   openGraph: {
     ...pageOpenGraph({
-      title: "Luxury Interior Designers in Hyderabad | Zikhra",
-      description:
-        "Premium and high-end interior design in Hyderabad for villas, apartments, and elegant modern homes.",
+      title: defaultTitle,
+      description: defaultDescription,
       path: "/",
       imageUrl: DEFAULT_OG_IMAGE_PATH,
-      imageAlt: "Zikhra luxury interior design studio — elegant bespoke homes in Hyderabad",
+      imageAlt: "Zikhra — luxury interior design Hyderabad and Bangalore",
     }),
     siteName: SITE_NAME,
   },
-  twitter: twitterSummaryLarge(
-    "Luxury Interior Designers in Hyderabad | Zikhra",
-    "Premium and high-end interior design in Hyderabad for villas, apartments, and elegant modern homes.",
-    DEFAULT_OG_IMAGE_PATH,
-  ),
+  twitter: twitterSummaryLarge(defaultTitle, defaultDescription, DEFAULT_OG_IMAGE_PATH),
 };
 
 export default function RootLayout({

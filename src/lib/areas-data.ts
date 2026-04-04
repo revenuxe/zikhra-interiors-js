@@ -1,3 +1,5 @@
+import { hyderabadAreasExtended } from "@/lib/hyderabad-areas-extended";
+
 export type AreaBasePath = "/area" | "/bangalore";
 
 export type AreaItem = {
@@ -119,6 +121,7 @@ export const areas: AreaItem[] = [
     description:
       "Tellapur’s gated communities deserve interiors that match the lifestyle promise. Zikhra designs cohesive full-home packages — living, kitchen, bedrooms, and wardrobes — with a process built for new homeowners who want clarity and quality.",
   },
+  ...hyderabadAreasExtended,
 ];
 
 export function getAreaBySlug(slug: string) {
