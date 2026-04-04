@@ -86,13 +86,5 @@ export function getStaticSiteIndexSections(): SiteIndexSection[] {
       description: "Project stories linked from the Bangalore journey.",
       links: projects.map((p) => ({ label: `${p.title} (Bangalore)`, href: `/bangalore/projects/${p.slug}` })),
     },
-    {
-      title: "Admin",
-      description: "Team-only routes (not indexed for search).",
-      links: [
-        { label: "Admin login", href: "/admin/login" },
-        { label: "Admin dashboard", href: "/admin/dashboard" },
-      ],
-    },
   ];
 }
