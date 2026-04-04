@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import type { MarketId } from "@/lib/market-types";
 import { getMarketCopy } from "@/lib/market-copy";
+import { areas as hyderabadAreas } from "@/lib/areas-data";
 import { bangaloreAreas } from "@/lib/bangalore-areas-data";
 import areaKitchen from "@/assets/area-kitchen.webp";
 import areaBedroom from "@/assets/area-bedroom.webp";
@@ -16,57 +17,6 @@ const areaImages = [areaKitchen, areaBedroom, areaLiving, areaVilla, areaBathroo
   typeof img === "string" ? img : img.src,
 );
 
-const areas = [
-  { name: "Jubilee Hills", slug: "jubilee-hills", tagline: "Where Luxury Meets Legacy" },
-  { name: "Banjara Hills", slug: "banjara-hills", tagline: "Elegant Living Redefined" },
-  { name: "Gachibowli", slug: "gachibowli", tagline: "Modern Homes, Smart Design" },
-  { name: "Kondapur", slug: "kondapur", tagline: "Contemporary Comfort" },
-  { name: "HITEC City", slug: "hitec-city", tagline: "Tech-Forward Interiors" },
-  { name: "Madhapur", slug: "madhapur", tagline: "Stylish Urban Living" },
-  { name: "Kukatpally", slug: "kukatpally", tagline: "Affordable Elegance" },
-  { name: "Manikonda", slug: "manikonda", tagline: "Premium Home Design" },
-  { name: "Narsingi", slug: "narsingi", tagline: "Villa & Apartment Interiors" },
-  { name: "Kokapet", slug: "kokapet", tagline: "Luxury Villa Interiors" },
-  { name: "Miyapur", slug: "miyapur", tagline: "Smart Space Planning" },
-  { name: "Bachupally", slug: "bachupally", tagline: "Budget-Friendly Luxury" },
-  { name: "Kompally", slug: "kompally", tagline: "Modern Home Makeovers" },
-  { name: "Uppal", slug: "uppal", tagline: "Functional & Beautiful" },
-  { name: "LB Nagar", slug: "lb-nagar", tagline: "Complete Home Interiors" },
-  { name: "Secunderabad", slug: "secunderabad", tagline: "Classic & Contemporary" },
-  { name: "Begumpet", slug: "begumpet", tagline: "Sophisticated Interiors" },
-  { name: "Ameerpet", slug: "ameerpet", tagline: "Compact Luxury Design" },
-  { name: "Attapur", slug: "attapur", tagline: "Cozy & Elegant Homes" },
-  { name: "Tolichowki", slug: "tolichowki", tagline: "Heritage Meets Modern" },
-  { name: "Shamshabad", slug: "shamshabad", tagline: "Airport Area Interiors" },
-  { name: "Mehdipatnam", slug: "mehdipatnam", tagline: "Classic Interiors" },
-  { name: "Sainikpuri", slug: "sainikpuri", tagline: "Tranquil Home Design" },
-  { name: "Nizampet", slug: "nizampet", tagline: "Thoughtful Interiors" },
-  { name: "Chandanagar", slug: "chandanagar", tagline: "Smart Home Solutions" },
-  { name: "Nallagandla", slug: "nallagandla", tagline: "Premium Apartment Interiors" },
-  { name: "Financial District", slug: "financial-district", tagline: "High-End Modern Homes" },
-  { name: "Puppalguda", slug: "puppalguda", tagline: "Elegant Home Interiors" },
-  { name: "Dilsukhnagar", slug: "dilsukhnagar", tagline: "Vibrant Living Spaces" },
-  { name: "Habsiguda", slug: "habsiguda", tagline: "Modern Apartment Design" },
-  { name: "Tarnaka", slug: "tarnaka", tagline: "Smart & Stylish Homes" },
-  { name: "Alwal", slug: "alwal", tagline: "Affordable Luxury Design" },
-  { name: "Malkajgiri", slug: "malkajgiri", tagline: "Family Home Interiors" },
-  { name: "Bowenpally", slug: "bowenpally", tagline: "Contemporary Home Design" },
-  { name: "Serilingampally", slug: "serilingampally", tagline: "Premium Living Spaces" },
-  { name: "Lingampally", slug: "lingampally", tagline: "Budget Premium Interiors" },
-  { name: "Patancheru", slug: "patancheru", tagline: "Villa & Farm House Design" },
-  { name: "Bolarum", slug: "bolarum", tagline: "Defense Colony Interiors" },
-  { name: "Trimulgherry", slug: "trimulgherry", tagline: "Heritage Home Makeovers" },
-  { name: "Adibatla", slug: "adibatla", tagline: "New Township Interiors" },
-  { name: "Gandipet", slug: "gandipet", tagline: "Lakeside Villa Design" },
-  { name: "Tellapur", slug: "tellapur", tagline: "Premium Gated Community" },
-  { name: "Pragathi Nagar", slug: "pragathi-nagar", tagline: "Modern Flat Interiors" },
-  { name: "ECIL", slug: "ecil", tagline: "Smart Budget Interiors" },
-  { name: "AS Rao Nagar", slug: "as-rao-nagar", tagline: "Compact Home Design" },
-  { name: "Chanda Nagar", slug: "chanda-nagar", tagline: "Family Living Spaces" },
-];
-
-export { areas };
-
 type Props = { market?: MarketId };
 
 const AreasWeServe = ({ market = "hyderabad" }: Props) => {
@@ -77,7 +27,7 @@ const AreasWeServe = ({ market = "hyderabad" }: Props) => {
     () =>
       market === "bangalore"
         ? bangaloreAreas.map((a) => ({ name: a.name, slug: a.slug, hrefBase: "/bangalore" as const }))
-        : areas.map((a) => ({ name: a.name, slug: a.slug, hrefBase: "/area" as const })),
+        : hyderabadAreas.map((a) => ({ name: a.name, slug: a.slug, hrefBase: "/area" as const })),
     [market],
   );
 
