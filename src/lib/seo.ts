@@ -82,7 +82,18 @@ export function localBusinessSchema() {
       postalCode: "500033",
       addressCountry: "IN",
     },
-    areaServed: ["Hyderabad", "Jubilee Hills", "Banjara Hills", "Gachibowli", "Kondapur", "HITEC City"],
+    areaServed: [
+      "Hyderabad",
+      "Jubilee Hills",
+      "Banjara Hills",
+      "Gachibowli",
+      "Kondapur",
+      "HITEC City",
+      "Bangalore",
+      "Koramangala",
+      "Indiranagar",
+      "Whitefield",
+    ],
   };
 }
 
@@ -109,6 +120,21 @@ export function breadcrumbSchema(items: Array<{ name: string; path: string }>) {
       position: index + 1,
       name: item.name,
       item: absoluteUrl(item.path),
+    })),
+  };
+}
+
+export function faqPageSchema(faqs: { q: string; a: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
     })),
   };
 }

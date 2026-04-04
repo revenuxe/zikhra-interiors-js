@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { MapPin, Phone, Mail, Instagram, ArrowRight } from "lucide-react";
 import logo from "@/assets/zikhra-logo.webp";
+import { bangaloreAreas } from "@/lib/bangalore-areas-data";
 
 const quickLinks = [
   { label: "Home", to: "/" },
@@ -33,7 +34,7 @@ const Footer = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
           <div>
             <h4 className="font-serif text-base text-gold mb-4">Quick Links</h4>
             <ul className="space-y-2.5">
@@ -56,6 +57,33 @@ const Footer = () => {
                   <Link href={link.to} className="font-sans text-sm text-muted-foreground hover:text-gold transition-colors flex items-center gap-1.5 group">
                     <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-gold" />
                     {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="col-span-2 md:col-span-1">
+            <h4 className="font-serif text-base text-gold mb-4">Bangalore</h4>
+            <ul className="space-y-2 mb-4">
+              <li>
+                <Link
+                  href="/bangalore"
+                  className="font-sans text-sm text-foreground/90 hover:text-gold transition-colors flex items-center gap-1.5 group font-medium"
+                >
+                  <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-gold" />
+                  Luxury interiors Bangalore
+                </Link>
+              </li>
+            </ul>
+            <ul className="grid grid-cols-1 gap-y-1.5">
+              {bangaloreAreas.map((area) => (
+                <li key={area.slug}>
+                  <Link
+                    href={`/bangalore/${area.slug}`}
+                    className="font-sans text-xs text-muted-foreground hover:text-gold transition-colors leading-snug block"
+                  >
+                    {area.name}
                   </Link>
                 </li>
               ))}
@@ -96,7 +124,7 @@ const Footer = () => {
         {/* SEO keyword footer */}
         <div className="text-center mb-6">
           <p className="font-sans text-xs text-muted-foreground/30 leading-relaxed">
-            Interior designers in Hyderabad | Home interiors Jubilee Hills | Modular kitchen Hyderabad | Luxury villa interiors Banjara Hills | Best interior design company Gachibowli | Home renovation Kondapur | Wardrobe design HITEC City
+            Interior designers in Hyderabad | Home interiors Jubilee Hills | Modular kitchen Hyderabad | Luxury villa interiors Banjara Hills | Best interior design company Gachibowli | Home renovation Kondapur | Wardrobe design HITEC City | Interior designers Bangalore | Luxury home interiors Koramangala | Modular kitchen Whitefield | HSR Layout interiors | Indiranagar interior designers
           </p>
         </div>
 

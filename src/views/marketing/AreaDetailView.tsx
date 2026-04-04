@@ -1,10 +1,12 @@
 import Link from "next/link";
-import { CheckCircle, Star } from "lucide-react";
+import { CheckCircle, ChevronDown, Star } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import ContactForm from "@/components/ContactForm";
+import SeoJsonLd from "@/components/SeoJsonLd";
 import type { AreaItem } from "@/lib/areas-data";
+import { faqPageSchema, toJsonLd } from "@/lib/seo";
 
 type Props = {
   area: AreaItem;
@@ -15,8 +17,12 @@ const services = ["Full Home Interiors", "Modular Kitchen Design", "Wardrobe Sol
 export default function AreaDetailView({ area }: Props) {
   return (
     <div className="min-h-screen bg-background">
+      {area.faqs && area.faqs.length > 0 ? (
+        <SeoJsonLd id={`area-faq-${area.slug}`} json={toJsonLd(faqPageSchema(area.faqs))} />
+      ) : null}
       <Header />
       <section className="pt-24 pb-12 px-5 text-center">
+        <p className="text-xs font-sans tracking-[0.25em] uppercase text-gold mb-3">{area.city}</p>
         <h1 className="font-serif text-3xl md:text-5xl font-bold gold-text mb-4">Interior Designers in {area.name}</h1>
         <p className="font-sans text-muted-foreground text-sm max-w-md mx-auto">{area.tagline}</p>
         <Link
@@ -34,9 +40,19 @@ export default function AreaDetailView({ area }: Props) {
           <Link href="/services" className="text-gold hover:underline">
             luxury service packages
           </Link>{" "}
-          in Hyderabad.
+          in {area.city}.
         </p>
       </section>
+
+      <section className="section-padding pt-0">
+        <div className="max-w-2xl mx-auto px-1">
+          <h2 className="font-serif text-xl md:text-2xl gold-text text-center mb-6">
+            Luxury home interiors in {area.name}, {area.city}
+          </h2>
+          <p className="font-sans text-sm text-foreground/85 leading-relaxed text-center">{area.description}</p>
+        </div>
+      </section>
+
       <section className="section-padding bg-luxury-dark">
         <div className="max-w-lg mx-auto grid grid-cols-2 gap-3">
           {services.map((svc) => (
@@ -57,6 +73,40 @@ export default function AreaDetailView({ area }: Props) {
           ))}
         </div>
       </section>
+
+      {area.faqs && area.faqs.length > 0 ? (
+        <section className="section-padding bg-luxury-dark/50 border-y border-border/20">
+          <div className="max-w-xl mx-auto px-1">
+            <h2 className="font-serif text-xl md:text-2xl gold-text text-center mb-2">Questions about {area.name}</h2>
+            <p className="font-sans text-xs text-muted-foreground text-center mb-8">
+              Straight answers for homeowners planning interiors in {area.city}.
+            </p>
+            <ul className="space-y-3">
+              {area.faqs.map((f) => (
+                <li key={f.q} className="rounded-2xl border border-border/40 bg-card/40 overflow-hidden">
+                  <details className="group">
+                    <summary className="flex cursor-pointer list-none items-center justify-between gap-3 p-4 font-sans text-sm text-foreground">
+                      {f.q}
+                      <ChevronDown className="w-4 h-4 text-gold shrink-0 transition-transform group-open:rotate-180" />
+                    </summary>
+                    <p className="px-4 pb-4 font-sans text-xs text-muted-foreground leading-relaxed border-t border-border/20 pt-3">{f.a}</p>
+                  </details>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      ) : null}
+
+      <section className="section-padding pt-0">
+        <div className="max-w-xl mx-auto rounded-2xl border border-border/30 bg-card/20 px-5 py-6 text-center">
+          <p className="font-sans text-xs text-muted-foreground uppercase tracking-wider mb-2">Local service</p>
+          <p className="font-sans text-sm text-foreground/90">
+            Zikhra serves {area.name} and surrounding neighbourhoods in {area.city} with the same luxury standards as our Hyderabad studio — book a consultation to discuss your floor plan and style direction.
+          </p>
+        </div>
+      </section>
+
       <ContactForm />
       <Footer />
       <BottomNav />

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { areas, getAreaBySlug } from "@/lib/areas-data";
+import { bangaloreAreas, getBangaloreAreaBySlug } from "@/lib/bangalore-areas-data";
 import AreaDetailView from "@/views/marketing/AreaDetailView";
 import SeoJsonLd from "@/components/SeoJsonLd";
 import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
@@ -12,21 +12,21 @@ export const dynamicParams = false;
 export const revalidate = 86400;
 
 export function generateStaticParams() {
-  return areas.map((area) => ({ slug: area.slug }));
+  return bangaloreAreas.map((area) => ({ slug: area.slug }));
 }
 
 export function generateMetadata({ params }: Props): Metadata {
-  const area = getAreaBySlug(params.slug);
+  const area = getBangaloreAreaBySlug(params.slug);
   if (!area) return { title: "Area Not Found" };
-  const title = `Luxury Interior Designers in ${area.name}, Hyderabad | Zikhra`;
-  const description = `Premium interior design and turnkey home interiors in ${area.name}, Hyderabad. ${area.tagline} Book a free consultation for modular kitchens, wardrobes, and full-home luxury with Zikhra.`;
-  const path = `/area/${area.slug}`;
+  const title = `Luxury Interior Designers in ${area.name}, Bangalore | Zikhra`;
+  const description = `Premium turnkey home interiors in ${area.name}, Bangalore. ${area.tagline} Modular kitchens, wardrobes, and full-home luxury design — book a free consultation.`;
+  const path = `/bangalore/${area.slug}`;
   const keywords = [
     `interior designers ${area.name}`,
-    `${area.name} home interiors Hyderabad`,
-    `luxury interiors ${area.name}`,
+    `${area.name} home interiors`,
+    `luxury interiors ${area.name} Bangalore`,
     `modular kitchen ${area.name}`,
-    "Hyderabad interior design company",
+    "Bangalore interior design company",
   ];
   return {
     title,
@@ -38,24 +38,24 @@ export function generateMetadata({ params }: Props): Metadata {
       description,
       path,
       imageUrl: DEFAULT_OG_IMAGE_PATH,
-      imageAlt: `Luxury interior designers in ${area.name}, Hyderabad — Zikhra`,
+      imageAlt: `Luxury interior designers in ${area.name}, Bangalore — Zikhra`,
     }),
     twitter: twitterSummaryLarge(title, description, DEFAULT_OG_IMAGE_PATH),
   };
 }
 
-export default function AreaDetailPage({ params }: Props) {
-  const area = getAreaBySlug(params.slug);
+export default function BangaloreAreaPage({ params }: Props) {
+  const area = getBangaloreAreaBySlug(params.slug);
   if (!area) notFound();
   return (
     <>
       <SeoJsonLd
-        id={`area-breadcrumb-${area.slug}`}
+        id={`bangalore-area-breadcrumb-${area.slug}`}
         json={toJsonLd(
           breadcrumbSchema([
             { name: "Home", path: "/" },
-            { name: "Areas", path: "/services" },
-            { name: area.name, path: `/area/${area.slug}` },
+            { name: "Bangalore", path: "/bangalore" },
+            { name: area.name, path: `/bangalore/${area.slug}` },
           ]),
         )}
       />
