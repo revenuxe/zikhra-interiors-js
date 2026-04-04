@@ -5,6 +5,7 @@ import { getSupabaseClient } from "@/integrations/supabase/client";
 import { Eye, Trash2, LogOut, Users, X } from "lucide-react";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
+import { useBeginRouteChange } from "@/components/GlobalNavigationLoader";
 
 interface Lead {
   id: string;
@@ -25,6 +26,7 @@ const AdminDashboard = () => {
   const [selectedLead, setSelectedLead] = useState<Lead | null>(null);
   const [deleteId, setDeleteId] = useState<string | null>(null);
   const router = useRouter();
+  const beginRouteChange = useBeginRouteChange();
 
   useEffect(() => {
     checkAuth();
@@ -35,7 +37,10 @@ const AdminDashboard = () => {
     const supabase = getSupabaseClient();
     if (!supabase) return;
     const { data: { session } } = await supabase.auth.getSession();
-    if (!session) router.push("/admin/login");
+    if (!session) {
+      beginRouteChange();
+      router.push("/admin/login");
+    }
   };
 
   const fetchLeads = async () => {
@@ -74,6 +79,7 @@ const AdminDashboard = () => {
     const supabase = getSupabaseClient();
     if (!supabase) return;
     await supabase.auth.signOut();
+    beginRouteChange();
     router.push("/admin/login");
   };
 

@@ -6,13 +6,13 @@ import BottomNav from "@/components/BottomNav";
 import ContactForm from "@/components/ContactForm";
 import type { ProjectItem } from "@/lib/projects-data";
 import type { MarketId } from "@/lib/market-types";
-import { applyMarketToCopy, projectsIndexPath, servicesIndexPath } from "@/lib/marketing-paths";
+import { getProjectDisplayFields } from "@/lib/project-display";
+import { projectsIndexPath, servicesIndexPath } from "@/lib/marketing-paths";
 
 type Props = { project: ProjectItem; market?: MarketId };
 
 export default function ProjectDetailView({ project, market = "hyderabad" }: Props) {
-  const description = applyMarketToCopy(project.description, market);
-  const location = applyMarketToCopy(project.location, market);
+  const { location, description, highlights } = getProjectDisplayFields(project, market);
 
   return (
     <div className="min-h-screen bg-background">
@@ -44,10 +44,10 @@ export default function ProjectDetailView({ project, market = "hyderabad" }: Pro
         <div className="max-w-2xl mx-auto">
           <p className="font-sans text-foreground/80 text-sm leading-relaxed mb-10">{description}</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {project.highlights.map((h) => (
+            {highlights.map((h) => (
               <div key={h} className="flex items-center gap-3 p-3 rounded-xl bg-card border border-border/50">
                 <CheckCircle2 className="w-4 h-4 text-gold flex-shrink-0" />
-                <span className="font-sans text-sm text-foreground/80">{applyMarketToCopy(h, market)}</span>
+                <span className="font-sans text-sm text-foreground/80">{h}</span>
               </div>
             ))}
           </div>

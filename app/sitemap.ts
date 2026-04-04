@@ -117,6 +117,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "weekly" as const,
       priority: 0.75,
     })),
+    {
+      url: absoluteUrl("/admin/login"),
+      lastModified: now,
+      changeFrequency: "yearly" as const,
+      priority: 0.15,
+    },
+    {
+      url: absoluteUrl("/admin/dashboard"),
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.15,
+    },
   ];
 }
 

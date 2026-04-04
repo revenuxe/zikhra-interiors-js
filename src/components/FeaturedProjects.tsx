@@ -1,35 +1,34 @@
 "use client";
 
-import project2bhk from "@/assets/project-2bhk.webp";
-import projectVilla from "@/assets/project-villa.webp";
-import project3bhk from "@/assets/project-3bhk.webp";
 import { MapPin, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { useRef, useState, useMemo } from "react";
 import type { MarketId } from "@/lib/market-types";
 import { getMarketCopy } from "@/lib/market-copy";
 import { projectDetailPath } from "@/lib/marketing-paths";
+import { getProjectBySlug } from "@/lib/projects-data";
+import { getProjectDisplayFields } from "@/lib/project-display";
 
-const baseProjects = [
-  { image: project2bhk.src, type: "2BHK Apartment", location: "Gachibowli, Hyderabad", budget: "₹12-18 Lakhs", slug: "2bhk-apartment" },
-  { image: projectVilla.src, type: "Luxury Villa", location: "Jubilee Hills, Hyderabad", budget: "₹45-60 Lakhs", slug: "luxury-villa" },
-  { image: project3bhk.src, type: "3BHK Penthouse", location: "Banjara Hills, Hyderabad", budget: "₹25-35 Lakhs", slug: "3bhk-penthouse" },
-];
-
-/** Bangalore neighbourhoods paired with each showcase card (same project detail pages; locations are illustrative for the city). */
-const bangaloreLocations = ["Whitefield, Bangalore", "Koramangala, Bangalore", "Indiranagar, Bangalore"];
+const featuredSlugs = ["2bhk-apartment", "luxury-villa", "3bhk-penthouse"] as const;
 
 type Props = { market?: MarketId };
 
 const FeaturedProjects = ({ market = "hyderabad" }: Props) => {
   const copy = getMarketCopy(market);
-  const projects = useMemo(
-    () =>
-      market === "bangalore"
-        ? baseProjects.map((p, i) => ({ ...p, location: bangaloreLocations[i] ?? p.location }))
-        : baseProjects,
-    [market],
-  );
+  const projects = useMemo(() => {
+    return featuredSlugs.map((slug) => {
+      const p = getProjectBySlug(slug);
+      if (!p) return null;
+      const { location } = getProjectDisplayFields(p, market);
+      return {
+        image: p.heroImage,
+        type: p.title,
+        location,
+        budget: p.budget,
+        slug: p.slug,
+      };
+    }).filter(Boolean) as { image: string; type: string; location: string; budget: string; slug: string }[];
+  }, [market]);
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 

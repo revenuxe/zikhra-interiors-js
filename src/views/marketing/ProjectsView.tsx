@@ -6,7 +6,8 @@ import BottomNav from "@/components/BottomNav";
 import ContactForm from "@/components/ContactForm";
 import { projects } from "@/lib/projects-data";
 import type { MarketId } from "@/lib/market-types";
-import { applyMarketToCopy, projectDetailPath, servicesIndexPath } from "@/lib/marketing-paths";
+import { getProjectDisplayFields } from "@/lib/project-display";
+import { projectDetailPath, servicesIndexPath } from "@/lib/marketing-paths";
 
 type Props = { market?: MarketId };
 
@@ -26,7 +27,7 @@ export default function ProjectsView({ market = "hyderabad" }: Props) {
       <section className="px-5 pb-16">
         <div className="flex flex-col gap-5 max-w-lg mx-auto">
           {projects.map((project) => {
-            const location = applyMarketToCopy(project.location, market);
+            const { location } = getProjectDisplayFields(project, market);
             return (
               <Link
                 key={project.slug}

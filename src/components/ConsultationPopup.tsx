@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { getSupabaseClient } from "@/integrations/supabase/client";
 import { insertLead } from "@/lib/lead-insert";
-import LeadAreaSelect from "@/components/LeadAreaSelect";
+import { useBeginRouteChange } from "@/components/GlobalNavigationLoader";
 import { toast } from "sonner";
 import { X } from "lucide-react";
 import popupHero from "@/assets/popup-hero.webp";
@@ -14,6 +14,7 @@ const ConsultationPopup = () => {
   const [formData, setFormData] = useState({ name: "", phone: "", area: "", projectType: "", message: "" });
   const [submitting, setSubmitting] = useState(false);
   const router = useRouter();
+  const beginRouteChange = useBeginRouteChange();
 
   useEffect(() => {
     const dismissed = sessionStorage.getItem("popup-dismissed");
@@ -50,6 +51,7 @@ const ConsultationPopup = () => {
       return;
     }
     close();
+    beginRouteChange();
     router.push("/thank-you");
   };
 
@@ -97,10 +99,13 @@ const ConsultationPopup = () => {
               value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
               className="w-full px-4 py-2.5 rounded-xl bg-background border border-border/50 font-sans text-xs text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors"
             />
-            <LeadAreaSelect
+            <input
+              type="text"
+              placeholder="Area / locality"
+              required
               value={formData.area}
-              onChange={(area) => setFormData({ ...formData, area })}
-              className="w-full px-4 py-2.5 rounded-xl bg-background border border-border/50 font-sans text-xs text-foreground focus:outline-none focus:border-gold/50 transition-colors"
+              onChange={(e) => setFormData({ ...formData, area: e.target.value })}
+              className="w-full px-4 py-2.5 rounded-xl bg-background border border-border/50 font-sans text-xs text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors"
             />
             <input
               type="text" placeholder="Project Type (e.g., 2 BHK, Villa, Duplex)"

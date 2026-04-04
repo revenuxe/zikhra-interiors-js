@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { getSupabaseClient } from "@/integrations/supabase/client";
 import { insertLead } from "@/lib/lead-insert";
-import LeadAreaSelect from "@/components/LeadAreaSelect";
+import { useBeginRouteChange } from "@/components/GlobalNavigationLoader";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 
@@ -11,6 +11,7 @@ const ContactForm = () => {
   const [formData, setFormData] = useState({ name: "", phone: "", area: "", projectType: "", message: "" });
   const [submitting, setSubmitting] = useState(false);
   const router = useRouter();
+  const beginRouteChange = useBeginRouteChange();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -38,6 +39,7 @@ const ContactForm = () => {
       return;
     }
 
+    beginRouteChange();
     router.push("/thank-you");
   };
 
@@ -75,10 +77,13 @@ const ContactForm = () => {
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
             className="w-full px-5 py-3.5 rounded-xl bg-card border border-border/50 font-sans text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors"
           />
-          <LeadAreaSelect
+          <input
+            type="text"
+            placeholder="Area / locality (e.g. Jubilee Hills, Hyderabad or Koramangala, Bangalore)"
+            required
             value={formData.area}
-            onChange={(area) => setFormData({ ...formData, area })}
-            className="w-full px-5 py-3.5 rounded-xl bg-card border border-border/50 font-sans text-sm text-foreground focus:outline-none focus:border-gold/50 transition-colors"
+            onChange={(e) => setFormData({ ...formData, area: e.target.value })}
+            className="w-full px-5 py-3.5 rounded-xl bg-card border border-border/50 font-sans text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors"
           />
           <input
             type="text"

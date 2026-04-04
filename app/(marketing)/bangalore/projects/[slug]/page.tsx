@@ -3,7 +3,8 @@ import { notFound } from "next/navigation";
 import { getProjectBySlug, projects } from "@/lib/projects-data";
 import ProjectDetailView from "@/views/marketing/ProjectDetailView";
 import SeoJsonLd from "@/components/SeoJsonLd";
-import { applyMarketToCopy, projectDetailPath } from "@/lib/marketing-paths";
+import { projectDetailPath } from "@/lib/marketing-paths";
+import { getProjectDisplayFields } from "@/lib/project-display";
 import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
 
 type Props = { params: { slug: string } };
@@ -19,9 +20,9 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: Props): Metadata {
   const project = getProjectBySlug(params.slug);
   if (!project) return { title: "Project Not Found" };
-  const location = applyMarketToCopy(project.location, "bangalore");
+  const { location, description: body } = getProjectDisplayFields(project, "bangalore");
   const title = `${project.title} — Premium Interiors | Bangalore & Bengaluru`;
-  const description = applyMarketToCopy(project.description, "bangalore").slice(0, 160);
+  const description = body.slice(0, 160);
   const path = `/bangalore/projects/${project.slug}`;
   return {
     title,
@@ -42,6 +43,7 @@ export function generateMetadata({ params }: Props): Metadata {
 export default function BangaloreProjectDetailPage({ params }: Props) {
   const project = getProjectBySlug(params.slug);
   if (!project) notFound();
+  const display = getProjectDisplayFields(project, "bangalore");
   return (
     <>
       <SeoJsonLd
@@ -61,8 +63,8 @@ export default function BangaloreProjectDetailPage({ params }: Props) {
           "@context": "https://schema.org",
           "@type": "CreativeWork",
           name: project.title,
-          description: applyMarketToCopy(project.description, "bangalore"),
-          locationCreated: applyMarketToCopy(project.location, "bangalore"),
+          description: display.description,
+          locationCreated: display.location,
           about: "Luxury interior design project — Bangalore funnel",
           url: `https://zikhra.com/bangalore/projects/${project.slug}`,
         })}
