@@ -26,12 +26,8 @@ export type MarketCopy = {
 
 export const MARKET_COPY: Record<MarketId, MarketCopy> = {
   hyderabad: {
-    heroSubline:
-      "Award-winning luxury interior designers crafting bespoke high-end homes, villas, and turnkey premium residences across South India",
-    heroSecondaryLine:
-      "Premium luxury home interiors in Hyderabad and Bangalore — modular kitchens, designer wardrobes, and full-home execution with the same studio standards in both cities.",
-    heroImageAlt:
-      "Luxury interior design studio — bespoke premium home interiors and high-end turnkey spaces in Hyderabad and Bangalore by Zikhra",
+    heroSubline: "Bespoke luxury home interiors in Hyderabad & Bangalore.",
+    heroImageAlt: "Zikhra — luxury interior design, Hyderabad and Bangalore",
     portfolioSub:
       "Luxury interior design portfolio — premium kitchens, bedrooms, and living spaces crafted for discerning homeowners in Hyderabad and Bangalore",
     featuredTitle: "Luxury interior projects — Hyderabad & Bangalore",
@@ -77,10 +73,8 @@ export const MARKET_COPY: Record<MarketId, MarketCopy> = {
       "Premium luxury interiors across Hyderabad neighbourhoods — explore Bangalore areas on our city hub",
   },
   bangalore: {
-    heroSubline:
-      "Designing timeless luxury with award-winning interior designers crafting bespoke, high-end homes and villas across Bangalore",
-    heroImageAlt:
-      "Designing timeless luxury — bespoke premium home interiors in Bangalore by Zikhra luxury interior studio",
+    heroSubline: "Bespoke luxury interiors for homes across Bangalore.",
+    heroImageAlt: "Zikhra — luxury interior design in Bangalore",
     portfolioSub: "Luxury interior design categories — for apartments, villas, and penthouses in Bangalore",
     featuredTitle: "Recent projects — Bangalore style",
     featuredSubtitle:

@@ -27,10 +27,13 @@ const HeroSection = ({ market = "hyderabad" }: Props) => {
           <br />
           <span className="gold-text italic">Timeless Luxury</span>
         </h1>
-        <div className="font-sans text-foreground/80 text-lg md:text-xl max-w-2xl mb-10 font-light animate-fade-in-up space-y-3" style={{ animationDelay: '0.3s' }}>
+        <div
+          className="font-sans text-foreground/75 text-base md:text-lg max-w-md mb-9 font-light animate-fade-in-up space-y-2"
+          style={{ animationDelay: "0.3s" }}
+        >
           <p>{copy.heroSubline}</p>
           {copy.heroSecondaryLine ? (
-            <p className="text-base md:text-lg text-foreground/70 max-w-xl mx-auto">{copy.heroSecondaryLine}</p>
+            <p className="text-sm md:text-base text-foreground/65 font-light">{copy.heroSecondaryLine}</p>
           ) : null}
         </div>
 
