@@ -76,6 +76,11 @@ const Footer = () => {
                   Luxury interiors Bangalore
                 </Link>
               </li>
+              <li>
+                <Link href="/bangalore/services" className="font-sans text-xs text-muted-foreground hover:text-gold transition-colors block">
+                  Services in Bangalore
+                </Link>
+              </li>
             </ul>
             <ul className="grid grid-cols-1 gap-y-1.5">
               {bangaloreAreas.map((area) => (

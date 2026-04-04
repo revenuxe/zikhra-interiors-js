@@ -3,6 +3,7 @@ import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import type { MarketId } from "@/lib/market-types";
 import { getMarketCopy } from "@/lib/market-copy";
+import { servicesIndexPath } from "@/lib/marketing-paths";
 
 type Props = { market?: MarketId };
 
@@ -38,7 +39,7 @@ const HeroSection = ({ market = "hyderabad" }: Props) => {
             Get Free Consultation
           </Link>
           <Link
-            href="/services"
+            href={servicesIndexPath(market)}
             className="px-8 py-3.5 rounded-full font-sans text-sm font-medium tracking-wide border border-gold/40 text-gold-light transition-all duration-300 hover:border-gold hover:bg-gold/10 text-center"
           >
             Explore Services

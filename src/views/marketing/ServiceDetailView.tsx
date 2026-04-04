@@ -5,26 +5,34 @@ import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import ContactForm from "@/components/ContactForm";
 import type { ServiceItem } from "@/lib/services-data";
+import type { MarketId } from "@/lib/market-types";
+import { applyMarketToCopy, cityLabel, portfolioDetailPath, servicesIndexPath } from "@/lib/marketing-paths";
 
 type Props = {
   service: ServiceItem;
+  market?: MarketId;
 };
 
-export default function ServiceDetailView({ service }: Props) {
+export default function ServiceDetailView({ service, market = "hyderabad" }: Props) {
+  const city = cityLabel(market);
+  const subtitle = applyMarketToCopy(service.subtitle, market);
+  const description = applyMarketToCopy(service.description, market);
+  const servicesList = servicesIndexPath(market);
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
 
       <section className="relative h-[70vh] w-full overflow-hidden">
-        <img src={service.image} alt={`${service.title} in Hyderabad`} className="absolute inset-0 w-full h-full object-cover" />
+        <img src={service.image} alt={`${service.title} in ${city}`} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-luxury-black/80 via-luxury-black/60 to-luxury-black/95" />
         <div className="relative z-10 flex flex-col items-center justify-end h-full px-6 pb-16 text-center">
-          <Link href="/services" className="absolute top-28 md:top-24 left-5 flex items-center gap-2 text-gold text-sm font-sans">
+          <Link href={servicesList} className="absolute top-28 md:top-24 left-5 flex items-center gap-2 text-gold text-sm font-sans">
             <ArrowLeft className="w-4 h-4" /> Services
           </Link>
-          <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">{service.subtitle}</p>
+          <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">{subtitle}</p>
           <h1 className="font-serif text-3xl md:text-5xl font-bold gold-text mb-3 leading-tight">{service.title}</h1>
-          <p className="font-sans text-foreground/80 text-sm max-w-md">{service.description}</p>
+          <p className="font-sans text-foreground/80 text-sm max-w-md">{description}</p>
           <span className="font-serif text-lg text-gold mt-4">{service.price}</span>
           <Link
             href="/contact"
@@ -60,7 +68,7 @@ export default function ServiceDetailView({ service }: Props) {
             <Link href="/projects" className="text-gold hover:underline">
               View Premium Projects
             </Link>
-            <Link href="/portfolio/living-room" className="text-gold hover:underline">
+            <Link href={portfolioDetailPath(market, "living-room")} className="text-gold hover:underline">
               Luxury Portfolio Concepts
             </Link>
             <Link href="/contact" className="text-gold hover:underline">

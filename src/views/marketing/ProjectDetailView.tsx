@@ -5,15 +5,20 @@ import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import ContactForm from "@/components/ContactForm";
 import type { ProjectItem } from "@/lib/projects-data";
+import type { MarketId } from "@/lib/market-types";
+import { applyMarketToCopy, servicesIndexPath } from "@/lib/marketing-paths";
 
-type Props = { project: ProjectItem };
+type Props = { project: ProjectItem; market?: MarketId };
 
-export default function ProjectDetailView({ project }: Props) {
+export default function ProjectDetailView({ project, market = "hyderabad" }: Props) {
+  const description = applyMarketToCopy(project.description, market);
+  const location = applyMarketToCopy(project.location, market);
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <section className="relative h-[70vh] w-full overflow-hidden">
-        <img src={project.heroImage} alt={`${project.title} ${project.location}`} className="absolute inset-0 w-full h-full object-cover" />
+        <img src={project.heroImage} alt={`${project.title} ${location}`} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-luxury-black/80 via-luxury-black/60 to-luxury-black/95" />
         <div className="relative z-10 flex flex-col items-center justify-end h-full px-6 pb-16 text-center">
           <Link href="/projects" className="absolute top-28 md:top-24 left-5 flex items-center gap-2 text-gold text-sm font-sans">
@@ -22,7 +27,7 @@ export default function ProjectDetailView({ project }: Props) {
           <h1 className="font-serif text-4xl md:text-5xl font-bold gold-text mb-3">{project.title}</h1>
           <div className="flex items-center gap-1.5 text-foreground/70 text-sm font-sans">
             <MapPin className="w-3.5 h-3.5 text-gold" />
-            {project.location}
+            {location}
           </div>
           <Link
             href="/contact"
@@ -34,12 +39,12 @@ export default function ProjectDetailView({ project }: Props) {
       </section>
       <section className="section-padding">
         <div className="max-w-2xl mx-auto">
-          <p className="font-sans text-foreground/80 text-sm leading-relaxed mb-10">{project.description}</p>
+          <p className="font-sans text-foreground/80 text-sm leading-relaxed mb-10">{description}</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {project.highlights.map((h) => (
               <div key={h} className="flex items-center gap-3 p-3 rounded-xl bg-card border border-border/50">
                 <CheckCircle2 className="w-4 h-4 text-gold flex-shrink-0" />
-                <span className="font-sans text-sm text-foreground/80">{h}</span>
+                <span className="font-sans text-sm text-foreground/80">{applyMarketToCopy(h, market)}</span>
               </div>
             ))}
           </div>
@@ -49,7 +54,7 @@ export default function ProjectDetailView({ project }: Props) {
               Like this premium interior project? Explore related design services and get a personalized proposal for your home.
             </p>
             <div className="flex flex-wrap gap-4 text-sm font-sans">
-              <Link href="/services" className="text-gold hover:underline">
+              <Link href={servicesIndexPath(market)} className="text-gold hover:underline">
                 Explore Interior Services
               </Link>
               <Link href="/blog" className="text-gold hover:underline">

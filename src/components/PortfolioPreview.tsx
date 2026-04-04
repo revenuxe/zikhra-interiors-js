@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { MarketId } from "@/lib/market-types";
 import { getMarketCopy } from "@/lib/market-copy";
+import { portfolioDetailPath } from "@/lib/marketing-paths";
 import kitchenImg from "@/assets/kitchen.webp";
 import bedroomImg from "@/assets/bedroom.webp";
 import livingroomImg from "@/assets/livingroom.webp";
@@ -34,7 +35,7 @@ const PortfolioPreview = ({ market = "hyderabad" }: Props) => {
         {categories.map((cat) => (
           <Link
             key={cat.name}
-              href={`/portfolio/${cat.slug}`}
+              href={portfolioDetailPath(market, cat.slug)}
             className="relative flex-shrink-0 w-64 h-80 rounded-2xl overflow-hidden group snap-center cursor-pointer block"
           >
             <img

@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useRef, useState, useMemo } from "react";
 import type { MarketId } from "@/lib/market-types";
 import { getMarketCopy } from "@/lib/market-copy";
+import { projectDetailPath } from "@/lib/marketing-paths";
 
 const baseProjects = [
   { image: project2bhk.src, type: "2BHK Apartment", location: "Gachibowli, Hyderabad", budget: "₹12-18 Lakhs", slug: "2bhk-apartment" },
@@ -67,7 +68,7 @@ const FeaturedProjects = ({ market = "hyderabad" }: Props) => {
           {projects.map((project) => (
             <Link
               key={project.type}
-              href={`/projects/${project.slug}`}
+              href={projectDetailPath(market, project.slug)}
               className="min-w-[80%] sm:min-w-[70%] snap-center rounded-2xl overflow-hidden bg-card border border-border/50 group cursor-pointer transition-all duration-300 hover:border-gold/30 block flex-shrink-0"
             >
               <div className="relative h-56 overflow-hidden">

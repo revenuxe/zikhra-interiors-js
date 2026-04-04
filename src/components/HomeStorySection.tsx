@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { MarketId } from "@/lib/market-types";
+import { servicesIndexPath } from "@/lib/marketing-paths";
 
 type Props = { market?: MarketId; /** When set with market bangalore, localises the story heading for area SEO pages. */ areaName?: string };
 
@@ -54,7 +55,7 @@ const HomeStorySection = ({ market = "hyderabad", areaName }: Props) => {
                 project stories
               </Link>
               , explore{" "}
-              <Link href="/services" className="text-gold hover:underline">
+              <Link href={servicesIndexPath("bangalore")} className="text-gold hover:underline">
                 services from full home interiors to renovation
               </Link>
               , visit our{" "}

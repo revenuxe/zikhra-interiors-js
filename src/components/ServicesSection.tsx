@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { MarketId } from "@/lib/market-types";
 import { getMarketCopy } from "@/lib/market-copy";
+import { servicesIndexPath } from "@/lib/marketing-paths";
 import serviceHome from "@/assets/service-home.webp";
 import serviceKitchen from "@/assets/service-kitchen.webp";
 import serviceWardrobe from "@/assets/service-wardrobe.webp";
@@ -18,6 +19,7 @@ type Props = { market?: MarketId };
 const ServicesSection = ({ market = "hyderabad" }: Props) => {
   const copy = getMarketCopy(market);
   const city = market === "bangalore" ? "Bangalore" : "Hyderabad";
+  const svcBase = servicesIndexPath(market);
   return (
     <section className="section-padding">
       <div className="text-center mb-10">
@@ -30,7 +32,7 @@ const ServicesSection = ({ market = "hyderabad" }: Props) => {
         {services.map((svc) => (
           <Link
             key={svc.title}
-            href={`/services#${svc.slug}`}
+            href={`${svcBase}#${svc.slug}`}
             className="flex flex-col items-center text-center rounded-2xl overflow-hidden bg-card border border-border/50 transition-all duration-300 hover:border-gold/30 hover:gold-glow group cursor-pointer"
           >
             <div className="relative w-full h-32 overflow-hidden">
@@ -54,7 +56,7 @@ const ServicesSection = ({ market = "hyderabad" }: Props) => {
 
       <div className="text-center mt-8">
         <Link
-            href="/services"
+            href={svcBase}
           className="inline-block px-8 py-3 rounded-full font-sans text-sm font-medium border border-gold/40 text-gold-light transition-all duration-300 hover:border-gold hover:bg-gold/10"
         >
           View All Services

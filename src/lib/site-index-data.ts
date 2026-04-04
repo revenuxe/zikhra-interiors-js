@@ -62,5 +62,28 @@ export function getStaticSiteIndexSections(): SiteIndexSection[] {
         ...bangaloreAreas.map((a) => ({ label: `${a.name}, Bangalore`, href: `/bangalore/${a.slug}` })),
       ],
     },
+    {
+      title: "Bangalore & Bengaluru — services",
+      description: "Same services as Hyderabad, with Bangalore-focused URLs and copy.",
+      links: [
+        { label: "Bangalore services overview", href: "/bangalore/services" },
+        ...services.map((s) => ({ label: `${s.title} (Bangalore)`, href: `/bangalore/services/${s.id}` })),
+      ],
+    },
+    {
+      title: "Bangalore & Bengaluru — project types",
+      description: "Property-type guides for Bangalore homeowners.",
+      links: projectTypes.map((p) => ({ label: `${p.title} (Bangalore)`, href: `/bangalore/project-type/${p.slug}` })),
+    },
+    {
+      title: "Bangalore & Bengaluru — portfolio",
+      description: "Room and space categories — Bangalore funnel.",
+      links: portfolioItems.map((p) => ({ label: `${p.title} (Bangalore)`, href: `/bangalore/portfolio/${p.slug}` })),
+    },
+    {
+      title: "Bangalore & Bengaluru — featured projects",
+      description: "Project stories linked from the Bangalore journey.",
+      links: projects.map((p) => ({ label: `${p.title} (Bangalore)`, href: `/bangalore/projects/${p.slug}` })),
+    },
   ];
 }

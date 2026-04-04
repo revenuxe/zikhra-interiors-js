@@ -68,6 +68,36 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "weekly" as const,
       priority: 0.82,
     })),
+    {
+      url: absoluteUrl("/bangalore/services"),
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.88,
+    },
+    ...services.map((s) => ({
+      url: absoluteUrl(`/bangalore/services/${s.id}`),
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.87,
+    })),
+    ...projectTypes.map((p) => ({
+      url: absoluteUrl(`/bangalore/project-type/${p.slug}`),
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    })),
+    ...portfolioItems.map((p) => ({
+      url: absoluteUrl(`/bangalore/portfolio/${p.slug}`),
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.84,
+    })),
+    ...projects.map((p) => ({
+      url: absoluteUrl(`/bangalore/projects/${p.slug}`),
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.84,
+    })),
     ...portfolioItems.map((p) => ({
       url: absoluteUrl(`/portfolio/${p.slug}`),
       lastModified: now,

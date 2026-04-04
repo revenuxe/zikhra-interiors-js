@@ -11,6 +11,12 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  async redirects() {
+    return [
+      { source: "/bengaluru", destination: "/bangalore", permanent: true },
+      { source: "/bengaluru/:path*", destination: "/bangalore/:path*", permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;

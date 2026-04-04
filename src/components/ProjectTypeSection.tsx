@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { MarketId } from "@/lib/market-types";
 import { getMarketCopy } from "@/lib/market-copy";
+import { projectTypeDetailPath } from "@/lib/marketing-paths";
 import project2bhk from "@/assets/project-2bhk.webp";
 import project3bhk from "@/assets/project-3bhk.webp";
 import project4bhk from "@/assets/project-4bhk.webp";
@@ -30,7 +31,7 @@ const ProjectTypeSection = ({ market = "hyderabad" }: Props) => {
         {projectTypes.map((pt) => (
           <Link
             key={pt.slug}
-            href={`/project-type/${pt.slug}`}
+            href={projectTypeDetailPath(market, pt.slug)}
             className="flex flex-col items-center text-center rounded-2xl overflow-hidden bg-card border border-border/50 transition-all duration-300 hover:border-gold/30 hover:gold-glow group cursor-pointer"
           >
             <div className="relative w-full h-32 overflow-hidden">

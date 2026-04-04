@@ -10,6 +10,7 @@ import SeoJsonLd from "@/components/SeoJsonLd";
 import type { AreaItem } from "@/lib/areas-data";
 import { HomepageMarketingSections } from "@/views/marketing/CityLandingPage";
 import { faqPageSchema, toJsonLd } from "@/lib/seo";
+import { servicesIndexPath } from "@/lib/marketing-paths";
 
 type Props = {
   area: AreaItem;
@@ -19,6 +20,7 @@ const services = ["Full Home Interiors", "Modular Kitchen Design", "Wardrobe Sol
 
 export default function AreaDetailView({ area }: Props) {
   const isBangalore = area.basePath === "/bangalore";
+  const servicesBase = servicesIndexPath(isBangalore ? "bangalore" : "hyderabad");
 
   return (
     <div className="min-h-screen bg-background">
@@ -42,7 +44,7 @@ export default function AreaDetailView({ area }: Props) {
             premium interior projects
           </Link>{" "}
           and{" "}
-          <Link href="/services" className="text-gold hover:underline">
+          <Link href={servicesBase} className="text-gold hover:underline">
             luxury service packages
           </Link>{" "}
           in {area.city}.
@@ -61,7 +63,7 @@ export default function AreaDetailView({ area }: Props) {
       <section className="section-padding bg-luxury-dark">
         <div className="max-w-lg mx-auto grid grid-cols-2 gap-3">
           {services.map((svc) => (
-            <Link key={svc} href="/services" className="p-4 rounded-2xl bg-card border border-border/30 text-center">
+            <Link key={svc} href={servicesBase} className="p-4 rounded-2xl bg-card border border-border/30 text-center">
               <CheckCircle className="w-5 h-5 text-gold mx-auto mb-2" />
               <p className="font-sans text-xs text-foreground">{svc}</p>
             </Link>

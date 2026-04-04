@@ -4,6 +4,8 @@ import BottomNav from "@/components/BottomNav";
 import ContactForm from "@/components/ContactForm";
 import { CheckCircle2 } from "lucide-react";
 import Link from "next/link";
+import type { MarketId } from "@/lib/market-types";
+import { applyMarketToCopy, cityLabel, serviceDetailPath } from "@/lib/marketing-paths";
 
 import serviceHome from "@/assets/service-home.webp";
 import serviceKitchen from "@/assets/service-kitchen.webp";
@@ -198,7 +200,15 @@ const services = [
 
 export { services };
 
-const Services = () => {
+type ServicesProps = { market?: MarketId };
+
+const Services = ({ market = "hyderabad" }: ServicesProps) => {
+  const city = cityLabel(market);
+  const heroLine =
+    market === "bangalore"
+      ? "Premium interior design & renovation across Bangalore & Bengaluru — Whitefield, Koramangala, Indiranagar, HSR & beyond"
+      : "Premium interior design & renovation services across Hyderabad — Jubilee Hills, Gachibowli, Kondapur & beyond";
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -207,9 +217,7 @@ const Services = () => {
       <section className="pt-24 pb-10 px-5 text-center">
         <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Our Expertise</p>
         <h1 className="font-serif text-4xl md:text-5xl font-bold gold-text mb-3">Interior Design Services</h1>
-        <p className="font-sans text-sm text-muted-foreground max-w-sm mx-auto">
-          Premium interior design & renovation services across Hyderabad — Jubilee Hills, Gachibowli, Kondapur & beyond
-        </p>
+        <p className="font-sans text-sm text-muted-foreground max-w-md mx-auto">{heroLine}</p>
       </section>
 
       {/* Services */}
@@ -221,7 +229,7 @@ const Services = () => {
                 <div className="w-full md:w-1/2 rounded-2xl overflow-hidden group">
                   <img
                     src={svc.image}
-                    alt={`${svc.title} — premium luxury interior design service in Hyderabad by Zikhra`}
+                    alt={`${svc.title} — premium luxury interior design service in ${city} by Zikhra`}
                     loading="lazy"
                     width={640}
                     height={640}
@@ -229,9 +237,9 @@ const Services = () => {
                   />
                 </div>
                 <div className="w-full md:w-1/2">
-                  <p className="text-xs font-sans tracking-[0.2em] uppercase text-gold mb-2">{svc.subtitle}</p>
+                  <p className="text-xs font-sans tracking-[0.2em] uppercase text-gold mb-2">{applyMarketToCopy(svc.subtitle, market)}</p>
                   <h2 className="font-serif text-2xl md:text-3xl gold-text mb-3">{svc.title}</h2>
-                  <p className="font-sans text-sm text-muted-foreground leading-relaxed mb-5">{svc.description}</p>
+                  <p className="font-sans text-sm text-muted-foreground leading-relaxed mb-5">{applyMarketToCopy(svc.description, market)}</p>
                   <div className="space-y-2.5 mb-5">
                     {svc.features.map((feat) => (
                       <div key={feat} className="flex items-start gap-2.5">
@@ -243,7 +251,7 @@ const Services = () => {
                   <div className="flex items-center gap-4">
                     <span className="font-serif text-lg text-gold">{svc.price}</span>
                     <Link
-                      href={`/services/${svc.id}`}
+                      href={serviceDetailPath(market, svc.id)}
                       className="gold-gradient px-6 py-2.5 rounded-full font-sans text-xs font-medium text-primary-foreground transition-all duration-300 hover:scale-105 gold-glow inline-block"
                     >
                       View Details
