@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { PortableText } from "@portabletext/react";
 import { ArrowLeft, Calendar, User } from "lucide-react";
+import BlogPortableText from "@/components/BlogPortableText";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
@@ -22,20 +22,6 @@ function formatDate(d: string | null | undefined) {
 }
 
 export default function BlogPostView({ post }: { post: BlogPost }) {
-  const portableTextComponents = {
-    marks: {
-      link: ({ children, value }: { children: React.ReactNode; value?: { href?: string } }) => {
-        const href = value?.href ?? "#";
-        const external = href.startsWith("http");
-        return (
-          <a href={href} target={external ? "_blank" : undefined} rel={external ? "noopener noreferrer" : undefined}>
-            {children}
-          </a>
-        );
-      },
-    },
-  };
-
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -91,11 +77,11 @@ export default function BlogPostView({ post }: { post: BlogPost }) {
           </div>
         )}
 
-        <div className="prose prose-invert prose-sm max-w-none font-sans prose-headings:font-serif prose-headings:text-gold prose-p:text-muted-foreground prose-li:text-muted-foreground">
+        <div className="max-w-none font-sans text-base [&_strong]:font-semibold [&_strong]:text-foreground [&_em]:italic [&_code]:rounded-md [&_code]:bg-muted/80 [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:text-sm [&_del]:opacity-80">
           {post.body && post.body.length > 0 ? (
-            <PortableText value={post.body} components={portableTextComponents} />
+            <BlogPortableText value={post.body as unknown[]} />
           ) : post.excerpt ? (
-            <p>{post.excerpt}</p>
+            <p className="text-muted-foreground leading-relaxed whitespace-pre-wrap">{post.excerpt}</p>
           ) : null}
         </div>
 

@@ -19,7 +19,25 @@ export const blogPostBySlugQuery = groq`
   "slug": coalesce(slug.current, slug),
   excerpt,
   publishedAt,
-  body,
+  "body": body[]{
+    ...,
+    _type == "image" => {
+      _key,
+      _type,
+      alt,
+      caption,
+      crop,
+      hotspot,
+      asset->{
+        _id,
+        url,
+        metadata {
+          dimensions,
+          lqip
+        }
+      }
+    }
+  },
   "mainImageUrl": mainImage.asset->url,
   "authorName": coalesce(author->name, "Zikhra Interiors"),
   "category": categories[0]->title
