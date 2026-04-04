@@ -15,6 +15,7 @@ const mainPages: SiteIndexLink[] = [
   { label: "Contact", href: "/contact" },
   { label: "Services", href: "/services" },
   { label: "Projects", href: "/projects" },
+  { label: "Projects — Bangalore", href: "/bangalore/projects" },
   { label: "Blog", href: "/blog" },
   { label: "Bangalore", href: "/bangalore" },
   { label: "Terms", href: "/terms" },

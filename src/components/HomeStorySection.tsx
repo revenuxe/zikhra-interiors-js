@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { MarketId } from "@/lib/market-types";
-import { servicesIndexPath } from "@/lib/marketing-paths";
+import { projectsIndexPath, servicesIndexPath } from "@/lib/marketing-paths";
 
 type Props = { market?: MarketId; /** When set with market bangalore, localises the story heading for area SEO pages. */ areaName?: string };
 
@@ -51,7 +51,7 @@ const HomeStorySection = ({ market = "hyderabad", areaName }: Props) => {
             <p>
               Comparing <strong className="text-foreground font-medium">interior designers in Bangalore</strong> for a{" "}
               <strong className="text-foreground font-medium">premium home</strong>? Browse our{" "}
-              <Link href="/projects" className="text-gold hover:underline">
+              <Link href={projectsIndexPath("bangalore")} className="text-gold hover:underline">
                 project stories
               </Link>
               , explore{" "}
@@ -80,7 +80,7 @@ const HomeStorySection = ({ market = "hyderabad", areaName }: Props) => {
       <div className="max-w-3xl mx-auto px-5 md:px-8">
         <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-4 text-center">Our Approach</p>
         <h2 className="font-serif text-2xl md:text-3xl gold-text text-center mb-8">
-          Designing timeless luxury for Hyderabad homes
+          Luxury interior design for Hyderabad &amp; Bangalore
         </h2>
 
         <div className="space-y-5 font-sans text-sm md:text-base text-muted-foreground leading-relaxed">
@@ -88,9 +88,24 @@ const HomeStorySection = ({ market = "hyderabad", areaName }: Props) => {
             At Zikhra, we believe <strong className="text-foreground font-medium">designing timeless luxury</strong> is not
             about following short-lived trends. It is about crafting calm, sophisticated rooms that feel effortlessly{" "}
             <strong className="text-foreground font-medium">elegant</strong> today and still feel relevant years from now.
-            Our studio works with discerning homeowners across Hyderabad who want{" "}
-            <strong className="text-foreground font-medium">premium interiors</strong>, honest timelines, and workmanship
+            Our studio works with discerning homeowners across{" "}
+            <strong className="text-foreground font-medium">Hyderabad</strong> and{" "}
+            <strong className="text-foreground font-medium">Bangalore</strong> who want{" "}
+            <strong className="text-foreground font-medium">premium luxury interiors</strong>, honest timelines, and workmanship
             they can trust from first sketch to final styling.
+          </p>
+          <p>
+            Planning <strong className="text-foreground font-medium">luxury home interiors</strong> in Bengaluru? Our Bangalore
+            team delivers the same <strong className="text-foreground font-medium">turnkey</strong> rigour — bespoke modular
+            kitchens, designer wardrobes, layered lighting, and coordinated palettes for apartments and villas from{" "}
+            <strong className="text-foreground font-medium">Whitefield</strong> and{" "}
+            <strong className="text-foreground font-medium">Sarjapur Road</strong> to{" "}
+            <strong className="text-foreground font-medium">Koramangala</strong> and{" "}
+            <strong className="text-foreground font-medium">Indiranagar</strong>. Visit the{" "}
+            <Link href="/bangalore" className="text-gold hover:underline">
+              Bangalore luxury interiors hub
+            </Link>{" "}
+            for neighbourhood-specific guides and services.
           </p>
           <p>
             Whether you are renovating a compact city apartment, fitting out a new <strong className="text-foreground font-medium">villa</strong>{" "}
@@ -121,14 +136,19 @@ const HomeStorySection = ({ market = "hyderabad", areaName }: Props) => {
             and streetscape, not copied from a generic catalogue.
           </p>
           <p>
-            If you are comparing <strong className="text-foreground font-medium">interior designers in Hyderabad</strong> for a{" "}
+            If you are comparing <strong className="text-foreground font-medium">interior designers in Hyderabad</strong> or{" "}
+            <strong className="text-foreground font-medium">luxury interior designers in Bangalore</strong> for a{" "}
             <strong className="text-foreground font-medium">premium home</strong>, start with a conversation. Browse our{" "}
-            <Link href="/projects" className="text-gold hover:underline">
+            <Link href={projectsIndexPath("hyderabad")} className="text-gold hover:underline">
               project stories
             </Link>
             , explore{" "}
             <Link href="/services" className="text-gold hover:underline">
-              services from full home interiors to renovation
+              Hyderabad services — full home interiors to renovation
+            </Link>
+            {" "}or{" "}
+            <Link href="/bangalore/services" className="text-gold hover:underline">
+              Bangalore luxury interior services
             </Link>
             , and{" "}
             <Link href="/contact" className="text-gold hover:underline">

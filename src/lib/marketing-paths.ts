@@ -26,6 +26,11 @@ export function portfolioDetailPath(market: MarketId, slug: string): string {
   return market === "bangalore" ? `/bangalore/portfolio/${slug}` : `/portfolio/${slug}`;
 }
 
+/** Listing page for project case studies (Hyderabad vs Bangalore funnel). */
+export function projectsIndexPath(market: MarketId): string {
+  return market === "bangalore" ? "/bangalore/projects" : "/projects";
+}
+
 export function projectDetailPath(market: MarketId, slug: string): string {
   return market === "bangalore" ? `/bangalore/projects/${slug}` : `/projects/${slug}`;
 }

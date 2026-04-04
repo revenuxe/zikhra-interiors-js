@@ -6,6 +6,8 @@ export type TestimonialCopy = { name: string; location: string; quote: string; r
 
 export type MarketCopy = {
   heroSubline: string;
+  /** Optional second line under hero subline (e.g. dual-city SEO on main homepage). */
+  heroSecondaryLine?: string;
   heroImageAlt: string;
   portfolioSub: string;
   featuredTitle: string;
@@ -25,14 +27,21 @@ export type MarketCopy = {
 export const MARKET_COPY: Record<MarketId, MarketCopy> = {
   hyderabad: {
     heroSubline:
-      "Designing timeless luxury with award-winning interior designers crafting bespoke, high-end homes and villas across Hyderabad",
+      "Award-winning luxury interior designers crafting bespoke high-end homes, villas, and turnkey premium residences across South India",
+    heroSecondaryLine:
+      "Premium luxury home interiors in Hyderabad and Bangalore — modular kitchens, designer wardrobes, and full-home execution with the same studio standards in both cities.",
     heroImageAlt:
-      "Designing timeless luxury — award-winning bespoke living space and premium home interiors in Hyderabad by Zikhra",
-    portfolioSub: "Luxury interior design categories — handcrafted for Hyderabad homes",
-    featuredTitle: "Recent Projects in Hyderabad",
-    projectTypesSub: "Tailored interior solutions for every home type in Hyderabad",
-    servicesSub: "Premium interior design services across Hyderabad — from Jubilee Hills to HITEC City",
-    whyTitle: "Why Hyderabad Trusts Zikhra",
+      "Luxury interior design studio — bespoke premium home interiors and high-end turnkey spaces in Hyderabad and Bangalore by Zikhra",
+    portfolioSub:
+      "Luxury interior design portfolio — premium kitchens, bedrooms, and living spaces crafted for discerning homeowners in Hyderabad and Bangalore",
+    featuredTitle: "Luxury interior projects — Hyderabad & Bangalore",
+    featuredSubtitle:
+      "Explore reference layouts and finishes from our studio. The same bespoke luxury interior approach scales to apartments, villas, and penthouses in Hyderabad; discover neighbourhood-specific luxury home design on our Bangalore hub.",
+    projectTypesSub:
+      "Tailored luxury interior solutions for apartments, villas, and penthouses — Hyderabad flagship studio, Bangalore luxury interiors hub",
+    servicesSub:
+      "Premium interior design services — Jubilee Hills to HITEC City in Hyderabad; Koramangala, Whitefield, and Indiranagar in Bangalore",
+    whyTitle: "Why Hyderabad & Bangalore homeowners choose Zikhra",
     whyPoints: [
       { title: "End-to-End Solutions", desc: "From concept to completion, we handle everything for your Hyderabad home" },
       { title: "Fast Delivery", desc: "On-time project completion guaranteed across Hyderabad" },
@@ -60,9 +69,12 @@ export const MARKET_COPY: Record<MarketId, MarketCopy> = {
         rating: 5,
       },
     ],
-    ctaSubline: "Transform your vision into reality with Zikhra's premium interior solutions in Hyderabad",
-    ctaWhatsappAlt: "WhatsApp icon — message Zikhra for premium interior design in Hyderabad",
-    areasSectionSub: "Premium interior design across Hyderabad",
+    ctaSubline:
+      "Start your luxury home interior journey in Hyderabad or Bangalore — turnkey design, transparent milestones, and premium execution",
+    ctaWhatsappAlt:
+      "WhatsApp icon — message Zikhra for luxury interior design in Hyderabad or Bangalore",
+    areasSectionSub:
+      "Premium luxury interiors across Hyderabad neighbourhoods — explore Bangalore areas on our city hub",
   },
   bangalore: {
     heroSubline:

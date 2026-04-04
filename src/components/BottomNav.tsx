@@ -6,16 +6,31 @@ import { usePathname } from "next/navigation";
 import whatsappIcon from "@/assets/whatsapp.svg";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 
-const navItems = [
-  { icon: Home, label: "Home", to: "/" },
-  { icon: FolderKanban, label: "Projects", to: "/projects" },
-  { icon: null, label: "WhatsApp" },
-  { icon: Wrench, label: "Services", to: "/services" },
-  { icon: Send, label: "Contact", to: "/contact" },
-];
+function useBangaloreFunnel(pathname: string | null) {
+  return pathname?.startsWith("/bangalore") ?? false;
+}
+
+function navActive(pathname: string, itemTo: string): boolean {
+  if (itemTo === "/") return pathname === "/";
+  if (itemTo === "/bangalore") return pathname === "/bangalore" || pathname.startsWith("/bangalore/");
+  return pathname === itemTo || pathname.startsWith(`${itemTo}/`);
+}
 
 const BottomNav = () => {
-  const pathname = usePathname();
+  const pathname = usePathname() ?? "";
+  const bangalore = useBangaloreFunnel(pathname);
+
+  const homeTo = bangalore ? "/bangalore" : "/";
+  const projectsTo = bangalore ? "/bangalore/projects" : "/projects";
+  const servicesTo = bangalore ? "/bangalore/services" : "/services";
+
+  const navItems = [
+    { icon: Home, label: "Home", to: homeTo },
+    { icon: FolderKanban, label: "Projects", to: projectsTo },
+    { icon: null, label: "WhatsApp" },
+    { icon: Wrench, label: "Services", to: servicesTo },
+    { icon: Send, label: "Contact", to: "/contact" },
+  ];
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-50 glass-nav safe-area-bottom">
@@ -33,7 +48,7 @@ const BottomNav = () => {
                 <div className="w-14 h-14 rounded-full gold-gradient flex items-center justify-center animate-pulse-gold shadow-xl">
                   <img
                     src={whatsappIcon.src}
-                    alt="Chat on WhatsApp with Zikhra luxury interior designers in Hyderabad"
+                    alt="Chat on WhatsApp with Zikhra luxury interior designers"
                     className="w-7 h-7 brightness-0"
                   />
                 </div>
@@ -43,16 +58,14 @@ const BottomNav = () => {
           }
 
           const Icon = item.icon!;
-          const isActive = pathname === item.to;
+          const isActive = navActive(pathname, item.to);
 
           return (
-            <Link
-              key={item.label}
-              href={item.to}
-              className="flex flex-col items-center py-1 px-3 group"
-            >
+            <Link key={`${item.label}-${item.to}`} href={item.to} className="flex flex-col items-center py-1 px-3 group">
               <Icon className={`w-5 h-5 transition-colors ${isActive ? "text-gold" : "text-muted-foreground group-hover:text-gold"}`} />
-              <span className={`text-[10px] font-sans mt-1 transition-colors ${isActive ? "text-gold" : "text-muted-foreground group-hover:text-gold"}`}>
+              <span
+                className={`text-[10px] font-sans mt-1 transition-colors ${isActive ? "text-gold" : "text-muted-foreground group-hover:text-gold"}`}
+              >
                 {item.label}
               </span>
             </Link>

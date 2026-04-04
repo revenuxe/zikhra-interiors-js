@@ -50,7 +50,7 @@ export default function BangaloreProjectDetailPage({ params }: Props) {
           breadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "Bangalore", path: "/bangalore" },
-            { name: "Projects", path: "/projects" },
+            { name: "Projects", path: "/bangalore/projects" },
             { name: project.title, path: projectDetailPath("bangalore", project.slug) },
           ]),
         )}

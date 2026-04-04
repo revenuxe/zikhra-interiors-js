@@ -81,6 +81,11 @@ const Footer = () => {
                   Services in Bangalore
                 </Link>
               </li>
+              <li>
+                <Link href="/bangalore/projects" className="font-sans text-xs text-muted-foreground hover:text-gold transition-colors block">
+                  Featured projects — Bangalore
+                </Link>
+              </li>
             </ul>
             <ul className="grid grid-cols-1 gap-y-1.5">
               {bangaloreAreas.map((area) => (

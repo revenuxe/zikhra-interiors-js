@@ -67,7 +67,7 @@ const FeaturedProjects = ({ market = "hyderabad" }: Props) => {
         >
           {projects.map((project) => (
             <Link
-              key={project.type}
+              key={project.slug}
               href={projectDetailPath(market, project.slug)}
               className="min-w-[80%] sm:min-w-[70%] snap-center rounded-2xl overflow-hidden bg-card border border-border/50 group cursor-pointer transition-all duration-300 hover:border-gold/30 block flex-shrink-0"
             >

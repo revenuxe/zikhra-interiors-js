@@ -6,7 +6,7 @@ import BottomNav from "@/components/BottomNav";
 import ContactForm from "@/components/ContactForm";
 import type { ProjectItem } from "@/lib/projects-data";
 import type { MarketId } from "@/lib/market-types";
-import { applyMarketToCopy, servicesIndexPath } from "@/lib/marketing-paths";
+import { applyMarketToCopy, projectsIndexPath, servicesIndexPath } from "@/lib/marketing-paths";
 
 type Props = { project: ProjectItem; market?: MarketId };
 
@@ -21,7 +21,10 @@ export default function ProjectDetailView({ project, market = "hyderabad" }: Pro
         <img src={project.heroImage} alt={`${project.title} ${location}`} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-luxury-black/80 via-luxury-black/60 to-luxury-black/95" />
         <div className="relative z-10 flex flex-col items-center justify-end h-full px-6 pb-16 text-center">
-          <Link href="/projects" className="absolute top-28 md:top-24 left-5 flex items-center gap-2 text-gold text-sm font-sans">
+          <Link
+            href={projectsIndexPath(market)}
+            className="absolute top-28 md:top-24 left-5 flex items-center gap-2 text-gold text-sm font-sans"
+          >
             <ArrowLeft className="w-4 h-4" /> All Projects
           </Link>
           <h1 className="font-serif text-4xl md:text-5xl font-bold gold-text mb-3">{project.title}</h1>

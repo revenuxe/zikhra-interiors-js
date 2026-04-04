@@ -10,7 +10,7 @@ import SeoJsonLd from "@/components/SeoJsonLd";
 import type { AreaItem } from "@/lib/areas-data";
 import { HomepageMarketingSections } from "@/views/marketing/CityLandingPage";
 import { faqPageSchema, toJsonLd } from "@/lib/seo";
-import { servicesIndexPath } from "@/lib/marketing-paths";
+import { projectsIndexPath, servicesIndexPath } from "@/lib/marketing-paths";
 
 type Props = {
   area: AreaItem;
@@ -20,7 +20,9 @@ const services = ["Full Home Interiors", "Modular Kitchen Design", "Wardrobe Sol
 
 export default function AreaDetailView({ area }: Props) {
   const isBangalore = area.basePath === "/bangalore";
-  const servicesBase = servicesIndexPath(isBangalore ? "bangalore" : "hyderabad");
+  const market = isBangalore ? "bangalore" : "hyderabad";
+  const servicesBase = servicesIndexPath(market);
+  const projectsBase = projectsIndexPath(market);
 
   return (
     <div className="min-h-screen bg-background">
@@ -40,7 +42,7 @@ export default function AreaDetailView({ area }: Props) {
         </Link>
         <p className="font-sans text-xs text-muted-foreground mt-4 max-w-md mx-auto">
           Also explore our{" "}
-          <Link href="/projects" className="text-gold hover:underline">
+          <Link href={projectsBase} className="text-gold hover:underline">
             premium interior projects
           </Link>{" "}
           and{" "}
@@ -56,7 +58,17 @@ export default function AreaDetailView({ area }: Props) {
           <h2 className="font-serif text-xl md:text-2xl gold-text text-center mb-6">
             Luxury home interiors in {area.name}, {area.city}
           </h2>
-          <p className="font-sans text-sm text-foreground/85 leading-relaxed text-center">{area.description}</p>
+          <div className="space-y-4 text-left">
+            {area.description
+              .split(/\n\n+/)
+              .map((para) => para.trim())
+              .filter(Boolean)
+              .map((para, i) => (
+                <p key={i} className="font-sans text-sm text-foreground/85 leading-relaxed">
+                  {para}
+                </p>
+              ))}
+          </div>
         </div>
       </section>
 

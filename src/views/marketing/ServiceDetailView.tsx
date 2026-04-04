@@ -6,7 +6,13 @@ import BottomNav from "@/components/BottomNav";
 import ContactForm from "@/components/ContactForm";
 import type { ServiceItem } from "@/lib/services-data";
 import type { MarketId } from "@/lib/market-types";
-import { applyMarketToCopy, cityLabel, portfolioDetailPath, servicesIndexPath } from "@/lib/marketing-paths";
+import {
+  applyMarketToCopy,
+  cityLabel,
+  portfolioDetailPath,
+  projectsIndexPath,
+  servicesIndexPath,
+} from "@/lib/marketing-paths";
 
 type Props = {
   service: ServiceItem;
@@ -65,7 +71,7 @@ export default function ServiceDetailView({ service, market = "hyderabad" }: Pro
             See how this premium service is applied in real homes and discover complete interior packages.
           </p>
           <div className="flex flex-wrap gap-4 text-sm font-sans">
-            <Link href="/projects" className="text-gold hover:underline">
+            <Link href={projectsIndexPath(market)} className="text-gold hover:underline">
               View Premium Projects
             </Link>
             <Link href={portfolioDetailPath(market, "living-room")} className="text-gold hover:underline">

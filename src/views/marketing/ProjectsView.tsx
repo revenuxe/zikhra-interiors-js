@@ -5,36 +5,54 @@ import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import ContactForm from "@/components/ContactForm";
 import { projects } from "@/lib/projects-data";
+import type { MarketId } from "@/lib/market-types";
+import { applyMarketToCopy, projectDetailPath, servicesIndexPath } from "@/lib/marketing-paths";
 
-export default function ProjectsView() {
+type Props = { market?: MarketId };
+
+export default function ProjectsView({ market = "hyderabad" }: Props) {
+  const cityLine =
+    market === "bangalore"
+      ? "Explore premium interior transformations across villas and apartments, delivered with turnkey precision in Bangalore & Bengaluru."
+      : "Explore premium interior transformations across villas and apartments, delivered with turnkey precision in Hyderabad.";
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <section className="pt-24 pb-10 px-5 text-center">
         <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Our Work</p>
         <h1 className="font-serif text-4xl md:text-5xl font-bold gold-text mb-3">Featured Luxury Interior Projects</h1>
-        <p className="font-sans text-sm text-muted-foreground max-w-lg mx-auto">
-          Explore premium interior transformations across villas and apartments, delivered with turnkey precision in Hyderabad.
-        </p>
+        <p className="font-sans text-sm text-muted-foreground max-w-lg mx-auto">{cityLine}</p>
       </section>
       <section className="px-5 pb-16">
         <div className="flex flex-col gap-5 max-w-lg mx-auto">
-          {projects.map((project) => (
-            <Link key={project.slug} href={`/projects/${project.slug}`} className="rounded-2xl overflow-hidden bg-card border border-border/50 group block">
-              <div className="relative h-56 overflow-hidden">
-                <img src={project.heroImage} alt={`${project.title} ${project.location}`} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-luxury-black/60 to-transparent" />
-              </div>
-              <div className="p-5">
-                <h3 className="font-serif text-lg text-foreground mb-1">{project.title}</h3>
-                <div className="flex items-center gap-1.5 text-muted-foreground text-sm font-sans mb-2">
-                  <MapPin className="w-3.5 h-3.5 text-gold" />
-                  {project.location}
+          {projects.map((project) => {
+            const location = applyMarketToCopy(project.location, market);
+            return (
+              <Link
+                key={project.slug}
+                href={projectDetailPath(market, project.slug)}
+                className="rounded-2xl overflow-hidden bg-card border border-border/50 group block"
+              >
+                <div className="relative h-56 overflow-hidden">
+                  <img
+                    src={project.heroImage}
+                    alt={`${project.title} ${location}`}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-luxury-black/60 to-transparent" />
                 </div>
-                <p className="text-xs font-sans text-gold/80 tracking-wide">{project.budget}</p>
-              </div>
-            </Link>
-          ))}
+                <div className="p-5">
+                  <h3 className="font-serif text-lg text-foreground mb-1">{project.title}</h3>
+                  <div className="flex items-center gap-1.5 text-muted-foreground text-sm font-sans mb-2">
+                    <MapPin className="w-3.5 h-3.5 text-gold" />
+                    {location}
+                  </div>
+                  <p className="text-xs font-sans text-gold/80 tracking-wide">{project.budget}</p>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </section>
       <section className="px-5 pb-10">
@@ -44,7 +62,7 @@ export default function ProjectsView() {
             Discover the services behind these projects and connect with our design team for your home.
           </p>
           <div className="flex flex-wrap gap-4 text-sm font-sans">
-            <Link href="/services" className="text-gold hover:underline">
+            <Link href={servicesIndexPath(market)} className="text-gold hover:underline">
               Explore Interior Services
             </Link>
             <Link href="/contact" className="text-gold hover:underline">

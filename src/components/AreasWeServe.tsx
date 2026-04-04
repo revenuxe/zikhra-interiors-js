@@ -92,6 +92,15 @@ const AreasWeServe = ({ market = "hyderabad" }: Props) => {
         <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Locations</p>
         <h2 className="font-serif text-3xl md:text-4xl gold-text mb-3">Areas We Serve</h2>
         <p className="font-sans text-muted-foreground text-sm">{copy.areasSectionSub}</p>
+        {market === "hyderabad" ? (
+          <p className="font-sans text-muted-foreground text-xs mt-3 max-w-md mx-auto leading-relaxed">
+            Looking for{" "}
+            <Link href="/bangalore" className="text-gold hover:underline">
+              luxury interior design in Bangalore
+            </Link>
+            ? Explore premium home interiors by neighbourhood — Koramangala, Whitefield, Indiranagar, and more.
+          </p>
+        ) : null}
       </div>
 
       <div className="relative max-w-2xl mx-auto">
