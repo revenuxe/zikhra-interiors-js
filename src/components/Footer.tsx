@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MapPin, Phone, Mail, Instagram, ArrowRight } from "lucide-react";
+import { MapPin, Phone, Mail, Instagram, Linkedin, ArrowRight } from "lucide-react";
 import logo from "@/assets/zikhra-logo.webp";
 import { bangaloreAreas } from "@/lib/bangalore-areas-data";
 
@@ -128,6 +128,15 @@ const Footer = () => {
                 className="w-9 h-9 rounded-full border border-gold/25 flex items-center justify-center transition-all hover:bg-gold/10 hover:border-gold/50 hover:scale-110"
               >
                 <Instagram className="w-4 h-4 text-gold" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/zikhra/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Zikhra on LinkedIn"
+                className="w-9 h-9 rounded-full border border-gold/25 flex items-center justify-center transition-all hover:bg-gold/10 hover:border-gold/50 hover:scale-110"
+              >
+                <Linkedin className="w-4 h-4 text-gold" />
               </a>
             </div>
           </div>
