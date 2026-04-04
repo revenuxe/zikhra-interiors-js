@@ -1,8 +1,13 @@
 import whatsappIcon from "@/assets/whatsapp.svg";
 import Link from "next/link";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
+import type { MarketId } from "@/lib/market-types";
+import { getMarketCopy } from "@/lib/market-copy";
 
-const CTASection = () => {
+type Props = { market?: MarketId };
+
+const CTASection = ({ market = "hyderabad" }: Props) => {
+  const copy = getMarketCopy(market);
   return (
     <section className="section-padding bg-luxury-dark relative overflow-hidden">
       <div className="absolute inset-0 opacity-20">
@@ -13,9 +18,7 @@ const CTASection = () => {
         <h2 className="font-serif text-3xl md:text-4xl gold-text mb-4">
           Let's Design Your Dream Space
         </h2>
-        <p className="font-sans text-muted-foreground text-sm mb-8">
-          Transform your vision into reality with Zikhra's premium interior solutions in Hyderabad
-        </p>
+        <p className="font-sans text-muted-foreground text-sm mb-8">{copy.ctaSubline}</p>
 
         <div className="flex flex-col gap-3">
           <a
@@ -26,7 +29,7 @@ const CTASection = () => {
           >
             <img
               src={whatsappIcon.src}
-              alt="WhatsApp icon — message Zikhra for premium interior design in Hyderabad"
+              alt={copy.ctaWhatsappAlt}
               className="w-4 h-4 brightness-0"
             />
             WhatsApp a Designer

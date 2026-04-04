@@ -1,13 +1,18 @@
 import heroImage from "@/assets/hero-interior.webp";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
+import type { MarketId } from "@/lib/market-types";
+import { getMarketCopy } from "@/lib/market-copy";
 
-const HeroSection = () => {
+type Props = { market?: MarketId };
+
+const HeroSection = ({ market = "hyderabad" }: Props) => {
+  const copy = getMarketCopy(market);
   return (
     <section className="relative h-screen w-full overflow-hidden">
       <img
         src={heroImage.src}
-        alt="Designing timeless luxury — award-winning bespoke living space and premium home interiors in Hyderabad by Zikhra"
+        alt={copy.heroImageAlt}
         width={1920}
         height={1080}
         className="absolute inset-0 w-full h-full object-cover"
@@ -22,7 +27,7 @@ const HeroSection = () => {
           <span className="gold-text italic">Timeless Luxury</span>
         </h1>
         <p className="font-sans text-foreground/80 text-lg md:text-xl max-w-xl mb-10 font-light animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-          Designing timeless luxury with award-winning interior designers crafting bespoke, high-end homes and villas across Hyderabad
+          {copy.heroSubline}
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>

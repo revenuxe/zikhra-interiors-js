@@ -1,37 +1,22 @@
 "use client";
 
 import { Star } from "lucide-react";
-import { useState } from "react";
+import { useState, useMemo } from "react";
+import type { MarketId } from "@/lib/market-types";
+import { getMarketCopy } from "@/lib/market-copy";
 
-const testimonials = [
-  {
-    name: "Priya Reddy",
-    location: "Jubilee Hills, Hyderabad",
-    quote: "Zikhra transformed our villa into a masterpiece. Every detail was perfect, beyond our expectations.",
-    rating: 5,
-  },
-  {
-    name: "Rajesh Kumar",
-    location: "Gachibowli, Hyderabad",
-    quote: "The attention to detail and premium quality is unmatched. Our apartment looks straight out of a magazine.",
-    rating: 5,
-  },
-  {
-    name: "Ananya Sharma",
-    location: "Banjara Hills, Hyderabad",
-    quote: "Professional, timely, and stunning results. Best interior designers in Hyderabad, hands down.",
-    rating: 5,
-  },
-];
+type Props = { market?: MarketId };
 
-const Testimonials = () => {
+const Testimonials = ({ market = "hyderabad" }: Props) => {
+  const copy = getMarketCopy(market);
+  const testimonials = useMemo(() => copy.testimonials, [copy.testimonials]);
   const [active, setActive] = useState(0);
 
   return (
     <section className="section-padding">
       <div className="text-center mb-10">
         <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Testimonials</p>
-        <h2 className="font-serif text-3xl md:text-4xl gold-text">What Hyderabad Says</h2>
+        <h2 className="font-serif text-3xl md:text-4xl gold-text">{copy.testimonialsTitle}</h2>
       </div>
 
       <div className="max-w-md mx-auto text-center">

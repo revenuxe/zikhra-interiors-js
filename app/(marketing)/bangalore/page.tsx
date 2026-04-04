@@ -1,8 +1,18 @@
 import type { Metadata } from "next";
-import BangaloreHubView from "@/views/marketing/BangaloreHubView";
+import CityLandingPage from "@/views/marketing/CityLandingPage";
 import SeoJsonLd from "@/components/SeoJsonLd";
 import { bangaloreAreas } from "@/lib/bangalore-areas-data";
-import { absoluteUrl, breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
+import {
+  absoluteUrl,
+  breadcrumbSchema,
+  DEFAULT_OG_IMAGE_PATH,
+  localBusinessSchema,
+  organizationSchema,
+  pageOpenGraph,
+  toJsonLd,
+  twitterSummaryLarge,
+  websiteSchema,
+} from "@/lib/seo";
 
 export const dynamic = "force-static";
 export const revalidate = 86400;
@@ -53,12 +63,15 @@ export default function BangaloreHubPage() {
 
   return (
     <>
+      <SeoJsonLd id="bangalore-org-schema" json={toJsonLd(organizationSchema())} />
+      <SeoJsonLd id="bangalore-local-schema" json={toJsonLd(localBusinessSchema())} />
+      <SeoJsonLd id="bangalore-website-schema" json={toJsonLd(websiteSchema())} />
       <SeoJsonLd
         id="bangalore-breadcrumb"
         json={toJsonLd(breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Bangalore", path: "/bangalore" }]))}
       />
       <SeoJsonLd id="bangalore-area-itemlist" json={toJsonLd(itemList)} />
-      <BangaloreHubView />
+      <CityLandingPage market="bangalore" />
     </>
   );
 }

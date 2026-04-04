@@ -1,8 +1,11 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useMemo } from "react";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import type { MarketId } from "@/lib/market-types";
+import { getMarketCopy } from "@/lib/market-copy";
+import { bangaloreAreas } from "@/lib/bangalore-areas-data";
 import areaKitchen from "@/assets/area-kitchen.webp";
 import areaBedroom from "@/assets/area-bedroom.webp";
 import areaLiving from "@/assets/area-living.webp";
@@ -64,8 +67,19 @@ const areas = [
 
 export { areas };
 
-const AreasWeServe = () => {
+type Props = { market?: MarketId };
+
+const AreasWeServe = ({ market = "hyderabad" }: Props) => {
+  const copy = getMarketCopy(market);
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  const displayAreas = useMemo(
+    () =>
+      market === "bangalore"
+        ? bangaloreAreas.map((a) => ({ name: a.name, slug: a.slug, hrefBase: "/bangalore" as const }))
+        : areas.map((a) => ({ name: a.name, slug: a.slug, hrefBase: "/area" as const })),
+    [market],
+  );
 
   const scroll = (dir: "left" | "right") => {
     if (!scrollRef.current) return;
@@ -77,7 +91,7 @@ const AreasWeServe = () => {
       <div className="text-center mb-8">
         <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Locations</p>
         <h2 className="font-serif text-3xl md:text-4xl gold-text mb-3">Areas We Serve</h2>
-        <p className="font-sans text-muted-foreground text-sm">Premium interior design across Hyderabad</p>
+        <p className="font-sans text-muted-foreground text-sm">{copy.areasSectionSub}</p>
       </div>
 
       <div className="relative max-w-2xl mx-auto">
@@ -86,10 +100,10 @@ const AreasWeServe = () => {
           className="flex gap-4 overflow-x-auto scrollbar-hide px-4 py-2"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
-          {areas.map((area, i) => (
+          {displayAreas.map((area, i) => (
             <Link
-              key={area.slug}
-              href={`/area/${area.slug}`}
+              key={`${area.hrefBase}-${area.slug}`}
+              href={`${area.hrefBase}/${area.slug}`}
               className="flex-shrink-0 flex flex-col items-center gap-2 group"
             >
               <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-border/50 group-hover:border-gold/60 transition-all duration-300 gold-glow group-hover:scale-105">

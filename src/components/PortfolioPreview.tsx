@@ -1,4 +1,6 @@
 import Link from "next/link";
+import type { MarketId } from "@/lib/market-types";
+import { getMarketCopy } from "@/lib/market-copy";
 import kitchenImg from "@/assets/kitchen.webp";
 import bedroomImg from "@/assets/bedroom.webp";
 import livingroomImg from "@/assets/livingroom.webp";
@@ -15,15 +17,17 @@ const categories = [
   { name: "Study Room", image: studyImg.src, slug: "study-room" },
 ];
 
-const PortfolioPreview = () => {
+type Props = { market?: MarketId };
+
+const PortfolioPreview = ({ market = "hyderabad" }: Props) => {
+  const copy = getMarketCopy(market);
+  const city = market === "bangalore" ? "Bangalore" : "Hyderabad";
   return (
     <section className="section-padding">
       <div className="text-center mb-10">
         <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Portfolio</p>
         <h2 className="font-serif text-3xl md:text-4xl gold-text">Explore Our Craft</h2>
-        <p className="font-sans text-muted-foreground text-sm mt-3 max-w-sm mx-auto">
-          Luxury interior design categories — handcrafted for Hyderabad homes
-        </p>
+        <p className="font-sans text-muted-foreground text-sm mt-3 max-w-sm mx-auto">{copy.portfolioSub}</p>
       </div>
 
       <div className="flex gap-4 overflow-x-auto hide-scrollbar pb-4 -mx-5 px-5 snap-x snap-mandatory">
@@ -35,7 +39,7 @@ const PortfolioPreview = () => {
           >
             <img
               src={cat.image}
-              alt={`${cat.name} interior design Hyderabad`}
+              alt={`${cat.name} interior design ${city}`}
               loading="lazy"
               width={800}
               height={1024}

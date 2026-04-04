@@ -1,4 +1,6 @@
 import Link from "next/link";
+import type { MarketId } from "@/lib/market-types";
+import { getMarketCopy } from "@/lib/market-copy";
 import project2bhk from "@/assets/project-2bhk.webp";
 import project3bhk from "@/assets/project-3bhk.webp";
 import project4bhk from "@/assets/project-4bhk.webp";
@@ -11,15 +13,17 @@ const projectTypes = [
   { name: "Penthouse", image: projectPenthouse.src, slug: "penthouse", desc: "Ultra-luxury sky living" },
 ];
 
-const ProjectTypeSection = () => {
+type Props = { market?: MarketId };
+
+const ProjectTypeSection = ({ market = "hyderabad" }: Props) => {
+  const copy = getMarketCopy(market);
+  const city = market === "bangalore" ? "Bangalore" : "Hyderabad";
   return (
     <section className="section-padding">
       <div className="text-center mb-10">
         <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">By Property</p>
         <h2 className="font-serif text-3xl md:text-4xl gold-text">Project Types</h2>
-        <p className="font-sans text-muted-foreground text-sm mt-3 max-w-sm mx-auto">
-          Tailored interior solutions for every home type in Hyderabad
-        </p>
+        <p className="font-sans text-muted-foreground text-sm mt-3 max-w-sm mx-auto">{copy.projectTypesSub}</p>
       </div>
 
       <div className="grid grid-cols-2 gap-4 max-w-lg mx-auto">
@@ -32,7 +36,7 @@ const ProjectTypeSection = () => {
             <div className="relative w-full h-32 overflow-hidden">
               <img
                 src={pt.image}
-                alt={`${pt.name} interior design Hyderabad`}
+                alt={`${pt.name} interior design ${city}`}
                 loading="lazy"
                 width={800}
                 height={1024}

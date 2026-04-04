@@ -4,8 +4,11 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import ContactForm from "@/components/ContactForm";
+import HomeStorySection from "@/components/HomeStorySection";
+import ConsultationPopup from "@/components/ConsultationPopup";
 import SeoJsonLd from "@/components/SeoJsonLd";
 import type { AreaItem } from "@/lib/areas-data";
+import { HomepageMarketingSections } from "@/views/marketing/CityLandingPage";
 import { faqPageSchema, toJsonLd } from "@/lib/seo";
 
 type Props = {
@@ -15,6 +18,8 @@ type Props = {
 const services = ["Full Home Interiors", "Modular Kitchen Design", "Wardrobe Solutions", "Living Room Design"];
 
 export default function AreaDetailView({ area }: Props) {
+  const isBangalore = area.basePath === "/bangalore";
+
   return (
     <div className="min-h-screen bg-background">
       {area.faqs && area.faqs.length > 0 ? (
@@ -107,9 +112,18 @@ export default function AreaDetailView({ area }: Props) {
         </div>
       </section>
 
-      <ContactForm />
+      {isBangalore ? (
+        <>
+          <HomepageMarketingSections market="bangalore" />
+          <ContactForm />
+          <HomeStorySection market="bangalore" areaName={area.name} />
+        </>
+      ) : (
+        <ContactForm />
+      )}
       <Footer />
       <BottomNav />
+      {isBangalore ? <ConsultationPopup /> : null}
     </div>
   );
 }

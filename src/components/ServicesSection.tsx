@@ -1,4 +1,6 @@
 import Link from "next/link";
+import type { MarketId } from "@/lib/market-types";
+import { getMarketCopy } from "@/lib/market-copy";
 import serviceHome from "@/assets/service-home.webp";
 import serviceKitchen from "@/assets/service-kitchen.webp";
 import serviceWardrobe from "@/assets/service-wardrobe.webp";
@@ -11,15 +13,17 @@ const services = [
   { image: serviceRenovation.src, title: "Renovation", desc: "Transform your existing space", slug: "renovation" },
 ];
 
-const ServicesSection = () => {
+type Props = { market?: MarketId };
+
+const ServicesSection = ({ market = "hyderabad" }: Props) => {
+  const copy = getMarketCopy(market);
+  const city = market === "bangalore" ? "Bangalore" : "Hyderabad";
   return (
     <section className="section-padding">
       <div className="text-center mb-10">
         <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">What We Do</p>
         <h2 className="font-serif text-3xl md:text-4xl gold-text">Our Services</h2>
-        <p className="font-sans text-muted-foreground text-sm mt-3 max-w-sm mx-auto">
-          Premium interior design services across Hyderabad — from Jubilee Hills to HITEC City
-        </p>
+        <p className="font-sans text-muted-foreground text-sm mt-3 max-w-sm mx-auto">{copy.servicesSub}</p>
       </div>
 
       <div className="grid grid-cols-2 gap-4 max-w-lg mx-auto">
@@ -32,7 +36,7 @@ const ServicesSection = () => {
             <div className="relative w-full h-32 overflow-hidden">
               <img
                 src={svc.image}
-                alt={`${svc.title} in Hyderabad`}
+                alt={`${svc.title} in ${city}`}
                 loading="lazy"
                 width={640}
                 height={640}

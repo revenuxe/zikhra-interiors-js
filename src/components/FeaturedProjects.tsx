@@ -5,15 +5,33 @@ import projectVilla from "@/assets/project-villa.webp";
 import project3bhk from "@/assets/project-3bhk.webp";
 import { MapPin, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useRef, useState, useMemo } from "react";
+import type { MarketId } from "@/lib/market-types";
+import { getMarketCopy } from "@/lib/market-copy";
 
-const projects = [
+const baseProjects = [
   { image: project2bhk.src, type: "2BHK Apartment", location: "Gachibowli, Hyderabad", budget: "₹12-18 Lakhs", slug: "2bhk-apartment" },
   { image: projectVilla.src, type: "Luxury Villa", location: "Jubilee Hills, Hyderabad", budget: "₹45-60 Lakhs", slug: "luxury-villa" },
   { image: project3bhk.src, type: "3BHK Penthouse", location: "Banjara Hills, Hyderabad", budget: "₹25-35 Lakhs", slug: "3bhk-penthouse" },
 ];
 
-const FeaturedProjects = () => {
+const bangaloreLocations = [
+  "Studio reference — Gachibowli, Hyderabad (same team for Bangalore)",
+  "Studio reference — Jubilee Hills, Hyderabad (same team for Bangalore)",
+  "Studio reference — Banjara Hills, Hyderabad (same team for Bangalore)",
+];
+
+type Props = { market?: MarketId };
+
+const FeaturedProjects = ({ market = "hyderabad" }: Props) => {
+  const copy = getMarketCopy(market);
+  const projects = useMemo(
+    () =>
+      market === "bangalore"
+        ? baseProjects.map((p, i) => ({ ...p, location: bangaloreLocations[i] ?? p.location }))
+        : baseProjects,
+    [market],
+  );
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -36,7 +54,10 @@ const FeaturedProjects = () => {
     <section className="section-padding">
       <div className="text-center mb-10">
         <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Featured</p>
-        <h2 className="font-serif text-3xl md:text-4xl gold-text">Recent Projects in Hyderabad</h2>
+        <h2 className="font-serif text-3xl md:text-4xl gold-text">{copy.featuredTitle}</h2>
+        {copy.featuredSubtitle ? (
+          <p className="font-sans text-muted-foreground text-sm mt-3 max-w-md mx-auto leading-relaxed">{copy.featuredSubtitle}</p>
+        ) : null}
       </div>
 
       <div className="relative max-w-2xl mx-auto">
