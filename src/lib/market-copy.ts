@@ -70,9 +70,9 @@ export const MARKET_COPY: Record<MarketId, MarketCopy> = {
     heroImageAlt:
       "Designing timeless luxury — bespoke premium home interiors in Bangalore by Zikhra luxury interior studio",
     portfolioSub: "Luxury interior design categories — for apartments, villas, and penthouses in Bangalore",
-    featuredTitle: "Signature project quality",
+    featuredTitle: "Recent projects — Bangalore style",
     featuredSubtitle:
-      "Representative turnkey interiors from our studio — same design rigour and execution standards we bring to Bangalore homes.",
+      "Explore the craftsmanship and layouts we deliver — from compact city homes to villas and penthouses across Bangalore.",
     projectTypesSub: "Tailored interior solutions for every home type — now in Bangalore",
     servicesSub: "Premium interior design in Bangalore — Koramangala, Whitefield, Indiranagar, HSR & across the city",
     whyTitle: "Why Bangalore Chooses Zikhra",

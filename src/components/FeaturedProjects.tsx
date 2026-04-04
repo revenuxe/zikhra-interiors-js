@@ -15,11 +15,8 @@ const baseProjects = [
   { image: project3bhk.src, type: "3BHK Penthouse", location: "Banjara Hills, Hyderabad", budget: "₹25-35 Lakhs", slug: "3bhk-penthouse" },
 ];
 
-const bangaloreLocations = [
-  "Studio reference — Gachibowli, Hyderabad (same team for Bangalore)",
-  "Studio reference — Jubilee Hills, Hyderabad (same team for Bangalore)",
-  "Studio reference — Banjara Hills, Hyderabad (same team for Bangalore)",
-];
+/** Bangalore neighbourhoods paired with each showcase card (same project detail pages; locations are illustrative for the city). */
+const bangaloreLocations = ["Whitefield, Bangalore", "Koramangala, Bangalore", "Indiranagar, Bangalore"];
 
 type Props = { market?: MarketId };
 

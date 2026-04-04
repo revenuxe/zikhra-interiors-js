@@ -10,6 +10,7 @@ const quickLinks = [
   { label: "Projects", to: "/projects" },
   { label: "Blog", to: "/blog" },
   { label: "Contact", to: "/contact" },
+  { label: "All pages", to: "/all-pages" },
 ];
 
 const serviceLinks = [
@@ -132,7 +133,9 @@ const Footer = () => {
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-2 text-xs font-sans text-muted-foreground/40">
           <p>© 2026 Zikhra Interiors. All rights reserved.</p>
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+            <Link href="/all-pages" className="hover:text-gold transition-colors">All pages</Link>
+            <span>·</span>
             <Link href="/terms" className="hover:text-gold transition-colors">Terms & Conditions</Link>
             <span>·</span>
             <Link href="/privacy" className="hover:text-gold transition-colors">Privacy Policy</Link>
