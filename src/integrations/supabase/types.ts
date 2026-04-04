@@ -73,6 +73,7 @@ export type Database = {
       }
       leads: {
         Row: {
+          area: string | null
           created_at: string
           email: string | null
           id: string
@@ -84,6 +85,7 @@ export type Database = {
           status: string | null
         }
         Insert: {
+          area?: string | null
           created_at?: string
           email?: string | null
           id?: string
@@ -95,6 +97,7 @@ export type Database = {
           status?: string | null
         }
         Update: {
+          area?: string | null
           created_at?: string
           email?: string | null
           id?: string

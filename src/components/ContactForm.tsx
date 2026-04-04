@@ -2,11 +2,13 @@
 
 import { useState } from "react";
 import { getSupabaseClient } from "@/integrations/supabase/client";
+import { insertLead } from "@/lib/lead-insert";
+import LeadAreaSelect from "@/components/LeadAreaSelect";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({ name: "", phone: "", projectType: "", message: "" });
+  const [formData, setFormData] = useState({ name: "", phone: "", area: "", projectType: "", message: "" });
   const [submitting, setSubmitting] = useState(false);
   const router = useRouter();
 
@@ -21,11 +23,12 @@ const ContactForm = () => {
       return;
     }
 
-    const { error } = await supabase.from("leads").insert({
-      name: formData.name.trim(),
-      phone: formData.phone.trim(),
-      project_type: formData.projectType.trim() || null,
-      message: formData.message.trim() || null,
+    const { error } = await insertLead(supabase, {
+      name: formData.name,
+      phone: formData.phone,
+      area: formData.area,
+      projectType: formData.projectType,
+      message: formData.message,
       source: "website",
     });
 
@@ -71,6 +74,11 @@ const ContactForm = () => {
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
             className="w-full px-5 py-3.5 rounded-xl bg-card border border-border/50 font-sans text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors"
+          />
+          <LeadAreaSelect
+            value={formData.area}
+            onChange={(area) => setFormData({ ...formData, area })}
+            className="w-full px-5 py-3.5 rounded-xl bg-card border border-border/50 font-sans text-sm text-foreground focus:outline-none focus:border-gold/50 transition-colors"
           />
           <input
             type="text"

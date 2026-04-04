@@ -11,6 +11,8 @@ interface Lead {
   name: string;
   phone: string;
   email: string | null;
+  area: string | null;
+  project_type: string | null;
   message: string | null;
   source: string | null;
   status: string | null;
@@ -118,6 +120,9 @@ const AdminDashboard = () => {
                   <div className="flex-1 min-w-0">
                     <p className="font-sans text-sm font-medium text-foreground truncate">{lead.name}</p>
                     <p className="font-sans text-xs text-muted-foreground mt-0.5">{lead.phone}</p>
+                    {lead.area ? (
+                      <p className="font-sans text-[10px] text-gold/90 mt-0.5 truncate">{lead.area}</p>
+                    ) : null}
                     <p className="font-sans text-[10px] text-muted-foreground/60 mt-1">{formatDate(lead.created_at)}</p>
                   </div>
                   <div className="flex items-center gap-2 ml-3">
@@ -164,6 +169,18 @@ const AdminDashboard = () => {
                 <div>
                   <p className="text-[10px] font-sans uppercase tracking-wider text-muted-foreground mb-0.5">Email</p>
                   <a href={`mailto:${selectedLead.email}`} className="text-sm font-sans text-gold">{selectedLead.email}</a>
+                </div>
+              )}
+              {selectedLead.area && (
+                <div>
+                  <p className="text-[10px] font-sans uppercase tracking-wider text-muted-foreground mb-0.5">Area</p>
+                  <p className="text-sm font-sans text-foreground">{selectedLead.area}</p>
+                </div>
+              )}
+              {selectedLead.project_type && (
+                <div>
+                  <p className="text-[10px] font-sans uppercase tracking-wider text-muted-foreground mb-0.5">Project type</p>
+                  <p className="text-sm font-sans text-foreground">{selectedLead.project_type}</p>
                 </div>
               )}
               {selectedLead.message && (

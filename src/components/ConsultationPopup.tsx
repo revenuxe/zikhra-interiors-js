@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { getSupabaseClient } from "@/integrations/supabase/client";
+import { insertLead } from "@/lib/lead-insert";
+import LeadAreaSelect from "@/components/LeadAreaSelect";
 import { toast } from "sonner";
 import { X } from "lucide-react";
 import popupHero from "@/assets/popup-hero.webp";
@@ -9,7 +11,7 @@ import { useRouter } from "next/navigation";
 
 const ConsultationPopup = () => {
   const [open, setOpen] = useState(false);
-  const [formData, setFormData] = useState({ name: "", phone: "", projectType: "", message: "" });
+  const [formData, setFormData] = useState({ name: "", phone: "", area: "", projectType: "", message: "" });
   const [submitting, setSubmitting] = useState(false);
   const router = useRouter();
 
@@ -34,11 +36,12 @@ const ConsultationPopup = () => {
       setSubmitting(false);
       return;
     }
-    const { error } = await supabase.from("leads").insert({
-      name: formData.name.trim(),
-      phone: formData.phone.trim(),
-      project_type: formData.projectType.trim() || null,
-      message: formData.message.trim() || null,
+    const { error } = await insertLead(supabase, {
+      name: formData.name,
+      phone: formData.phone,
+      area: formData.area,
+      projectType: formData.projectType,
+      message: formData.message,
       source: "popup",
     });
     if (error) {
@@ -93,6 +96,11 @@ const ConsultationPopup = () => {
               type="tel" placeholder="Phone Number" required
               value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
               className="w-full px-4 py-2.5 rounded-xl bg-background border border-border/50 font-sans text-xs text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors"
+            />
+            <LeadAreaSelect
+              value={formData.area}
+              onChange={(area) => setFormData({ ...formData, area })}
+              className="w-full px-4 py-2.5 rounded-xl bg-background border border-border/50 font-sans text-xs text-foreground focus:outline-none focus:border-gold/50 transition-colors"
             />
             <input
               type="text" placeholder="Project Type (e.g., 2 BHK, Villa, Duplex)"
