@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { sanityClient, sanityConfigured } from "@/lib/sanity/client";
+import { sanityClient, sanityConfigured, sanityLiveFetchOptions } from "@/lib/sanity/client";
 import { blogListQuery } from "@/lib/sanity/queries";
 import BlogListView, { type BlogListItem } from "@/views/marketing/BlogListView";
 import SeoJsonLd from "@/components/SeoJsonLd";
@@ -12,8 +12,7 @@ import {
   twitterSummaryLarge,
 } from "@/lib/seo";
 
-export const dynamic = "force-static";
-export const revalidate = 3600;
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Luxury Interior Design Blog",
@@ -38,7 +37,7 @@ export const metadata: Metadata = {
 export default async function BlogPage() {
   const posts: BlogListItem[] =
     sanityConfigured && sanityClient
-      ? await sanityClient.fetch(blogListQuery)
+      ? await sanityClient.fetch(blogListQuery, {}, sanityLiveFetchOptions)
       : [];
 
   return (

@@ -6,7 +6,7 @@ import { bangaloreAreas } from "@/lib/bangalore-areas-data";
 import { portfolioItems } from "@/lib/portfolio-data";
 import { projectTypes } from "@/lib/project-types-data";
 import { absoluteUrl } from "@/lib/seo";
-import { sanityClient, sanityConfigured } from "@/lib/sanity/client";
+import { sanityClient, sanityConfigured, sanitySitemapFetchOptions } from "@/lib/sanity/client";
 import { blogSitemapQuery } from "@/lib/sanity/queries";
 
 type BlogSitemapItem = { slug: string; _updatedAt?: string };
@@ -31,7 +31,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   let blogItems: BlogSitemapItem[] = [];
   if (sanityConfigured && sanityClient) {
     try {
-      blogItems = await sanityClient.fetch(blogSitemapQuery);
+      blogItems = await sanityClient.fetch(blogSitemapQuery, {}, sanitySitemapFetchOptions);
     } catch (error) {
       // Keep sitemap available even if Sanity is temporarily unreachable.
       console.error("Sitemap blog fetch failed:", error);

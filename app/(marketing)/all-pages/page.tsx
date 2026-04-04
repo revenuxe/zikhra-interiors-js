@@ -2,12 +2,11 @@ import type { Metadata } from "next";
 import AllPagesView from "@/views/marketing/AllPagesView";
 import SeoJsonLd from "@/components/SeoJsonLd";
 import { getStaticSiteIndexSections, type SiteIndexSection } from "@/lib/site-index-data";
-import { sanityClient, sanityConfigured } from "@/lib/sanity/client";
+import { sanityClient, sanityConfigured, sanityLiveFetchOptions } from "@/lib/sanity/client";
 import { blogListQuery } from "@/lib/sanity/queries";
 import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
 
-export const dynamic = "force-static";
-export const revalidate = 3600;
+export const dynamic = "force-dynamic";
 
 const title = "All pages | Zikhra Luxury Interiors";
 const description =
@@ -36,7 +35,7 @@ export default async function AllPagesRoute() {
   let blogSection: SiteIndexSection | null = null;
   if (sanityConfigured && sanityClient) {
     try {
-      const posts: BlogListRow[] = await sanityClient.fetch(blogListQuery);
+      const posts: BlogListRow[] = await sanityClient.fetch(blogListQuery, {}, sanityLiveFetchOptions);
       if (posts.length > 0) {
         blogSection = {
           title: "Blog posts",

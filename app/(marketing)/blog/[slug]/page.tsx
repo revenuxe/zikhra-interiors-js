@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { sanityClient, sanityConfigured } from "@/lib/sanity/client";
+import {
+  sanityClient,
+  sanityConfigured,
+  sanityLiveFetchOptions,
+  sanitySitemapFetchOptions,
+} from "@/lib/sanity/client";
 import { blogPostBySlugQuery, blogSitemapQuery } from "@/lib/sanity/queries";
 import BlogPostView, { type BlogPost } from "@/views/marketing/BlogPostView";
 import SeoJsonLd from "@/components/SeoJsonLd";
@@ -13,15 +18,14 @@ import {
   twitterSummaryLarge,
 } from "@/lib/seo";
 
-export const dynamic = "force-static";
-export const revalidate = 3600;
+export const dynamic = "force-dynamic";
 
 type Props = { params: { slug: string } };
 type BlogSlugItem = { slug: string };
 
 export async function generateStaticParams() {
   if (!sanityConfigured || !sanityClient) return [];
-  const posts: BlogSlugItem[] = await sanityClient.fetch(blogSitemapQuery);
+  const posts: BlogSlugItem[] = await sanityClient.fetch(blogSitemapQuery, {}, sanitySitemapFetchOptions);
   return posts.map((post) => ({ slug: post.slug }));
 }
 
@@ -29,7 +33,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!sanityConfigured || !sanityClient) {
     return { title: "Blog" };
   }
-  const post: BlogPost | null = await sanityClient.fetch(blogPostBySlugQuery, { slug: params.slug });
+  const post: BlogPost | null = await sanityClient.fetch(
+    blogPostBySlugQuery,
+    { slug: params.slug },
+    sanityLiveFetchOptions,
+  );
   if (!post) return { title: "Post Not Found" };
 
   const description = (post.excerpt ?? "").slice(0, 160);
@@ -55,7 +63,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function BlogPostPage({ params }: Props) {
   if (!sanityConfigured || !sanityClient) notFound();
 
-  const post: BlogPost | null = await sanityClient.fetch(blogPostBySlugQuery, { slug: params.slug });
+  const post: BlogPost | null = await sanityClient.fetch(
+    blogPostBySlugQuery,
+    { slug: params.slug },
+    sanityLiveFetchOptions,
+  );
   if (!post) notFound();
 
   return (

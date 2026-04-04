@@ -1,10 +1,10 @@
 import groq from "groq";
 
 export const blogListQuery = groq`
-*[_type == "post" && defined(slug.current)] | order(publishedAt desc) {
+*[_type == "post" && defined(coalesce(slug.current, slug))] | order(coalesce(publishedAt, _createdAt) desc) {
   _id,
   title,
-  "slug": slug.current,
+  "slug": coalesce(slug.current, slug),
   excerpt,
   publishedAt,
   "mainImageUrl": mainImage.asset->url,
@@ -13,10 +13,10 @@ export const blogListQuery = groq`
 `;
 
 export const blogPostBySlugQuery = groq`
-*[_type == "post" && slug.current == $slug][0]{
+*[_type == "post" && (slug.current == $slug || slug == $slug)][0]{
   _id,
   title,
-  "slug": slug.current,
+  "slug": coalesce(slug.current, slug),
   excerpt,
   publishedAt,
   body,
@@ -27,8 +27,8 @@ export const blogPostBySlugQuery = groq`
 `;
 
 export const blogSitemapQuery = groq`
-*[_type == "post" && defined(slug.current)]{
-  "slug": slug.current,
+*[_type == "post" && defined(coalesce(slug.current, slug))]{
+  "slug": coalesce(slug.current, slug),
   _updatedAt
 }
 `;
