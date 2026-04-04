@@ -4,7 +4,14 @@ import ServiceDetailView from "@/views/marketing/ServiceDetailView";
 import { getServiceBySlug, services } from "@/lib/services-data";
 import SeoJsonLd from "@/components/SeoJsonLd";
 import { applyMarketToCopy, serviceDetailPath, servicesIndexPath } from "@/lib/marketing-paths";
-import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
+import {
+  breadcrumbSchema,
+  DEFAULT_OG_IMAGE_PATH,
+  pageOpenGraph,
+  SITE_URL,
+  toJsonLd,
+  twitterSummaryLarge,
+} from "@/lib/seo";
 
 type Props = { params: { slug: string } };
 
@@ -68,7 +75,7 @@ export default function BangaloreServiceDetailPage({ params }: Props) {
           provider: {
             "@type": "Organization",
             name: "Zikhra Luxury Interiors",
-            url: "https://zikhra.com",
+            url: SITE_URL,
           },
         })}
       />

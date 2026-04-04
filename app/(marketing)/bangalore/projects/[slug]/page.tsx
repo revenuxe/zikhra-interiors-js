@@ -5,7 +5,14 @@ import ProjectDetailView from "@/views/marketing/ProjectDetailView";
 import SeoJsonLd from "@/components/SeoJsonLd";
 import { projectDetailPath } from "@/lib/marketing-paths";
 import { getProjectDisplayFields } from "@/lib/project-display";
-import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
+import {
+  absoluteUrl,
+  breadcrumbSchema,
+  DEFAULT_OG_IMAGE_PATH,
+  pageOpenGraph,
+  toJsonLd,
+  twitterSummaryLarge,
+} from "@/lib/seo";
 
 type Props = { params: { slug: string } };
 
@@ -66,7 +73,7 @@ export default function BangaloreProjectDetailPage({ params }: Props) {
           description: display.description,
           locationCreated: display.location,
           about: "Luxury interior design project — Bangalore funnel",
-          url: `https://zikhra.com/bangalore/projects/${project.slug}`,
+          url: absoluteUrl(`/bangalore/projects/${project.slug}`),
         })}
       />
       <ProjectDetailView project={project} market="bangalore" />

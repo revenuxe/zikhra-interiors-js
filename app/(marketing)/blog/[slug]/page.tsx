@@ -4,7 +4,14 @@ import { sanityClient, sanityConfigured } from "@/lib/sanity/client";
 import { blogPostBySlugQuery, blogSitemapQuery } from "@/lib/sanity/queries";
 import BlogPostView, { type BlogPost } from "@/views/marketing/BlogPostView";
 import SeoJsonLd from "@/components/SeoJsonLd";
-import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
+import {
+  absoluteUrl,
+  breadcrumbSchema,
+  DEFAULT_OG_IMAGE_PATH,
+  pageOpenGraph,
+  toJsonLd,
+  twitterSummaryLarge,
+} from "@/lib/seo";
 
 export const dynamic = "force-static";
 export const revalidate = 3600;
@@ -77,7 +84,7 @@ export default async function BlogPostPage({ params }: Props) {
           },
           image: post.mainImageUrl ? [post.mainImageUrl] : undefined,
           description: post.excerpt ?? "",
-          mainEntityOfPage: `https://zikhra.com/blog/${post.slug}`,
+          mainEntityOfPage: absoluteUrl(`/blog/${post.slug}`),
           publisher: {
             "@type": "Organization",
             name: "Zikhra Luxury Interiors",

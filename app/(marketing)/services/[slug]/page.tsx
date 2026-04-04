@@ -3,7 +3,14 @@ import { notFound } from "next/navigation";
 import ServiceDetailView from "@/views/marketing/ServiceDetailView";
 import { getServiceBySlug, services } from "@/lib/services-data";
 import SeoJsonLd from "@/components/SeoJsonLd";
-import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
+import {
+  breadcrumbSchema,
+  DEFAULT_OG_IMAGE_PATH,
+  pageOpenGraph,
+  SITE_URL,
+  toJsonLd,
+  twitterSummaryLarge,
+} from "@/lib/seo";
 
 type Props = {
   params: {
@@ -68,7 +75,7 @@ export default function ServiceDetailRoute({ params }: Props) {
           provider: {
             "@type": "Organization",
             name: "Zikhra Luxury Interiors",
-            url: "https://zikhra.com",
+            url: SITE_URL,
           },
         })}
       />

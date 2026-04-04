@@ -3,7 +3,14 @@ import { notFound } from "next/navigation";
 import { getProjectBySlug, projects } from "@/lib/projects-data";
 import ProjectDetailView from "@/views/marketing/ProjectDetailView";
 import SeoJsonLd from "@/components/SeoJsonLd";
-import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
+import {
+  absoluteUrl,
+  breadcrumbSchema,
+  DEFAULT_OG_IMAGE_PATH,
+  pageOpenGraph,
+  toJsonLd,
+  twitterSummaryLarge,
+} from "@/lib/seo";
 
 type Props = { params: { slug: string } };
 
@@ -61,7 +68,7 @@ export default function ProjectDetailPage({ params }: Props) {
           description: project.description,
           locationCreated: project.location,
           about: "Luxury interior design project",
-          url: `https://zikhra.com/projects/${project.slug}`,
+          url: absoluteUrl(`/projects/${project.slug}`),
         })}
       />
       <ProjectDetailView project={project} />

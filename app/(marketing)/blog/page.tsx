@@ -3,7 +3,14 @@ import { sanityClient, sanityConfigured } from "@/lib/sanity/client";
 import { blogListQuery } from "@/lib/sanity/queries";
 import BlogListView, { type BlogListItem } from "@/views/marketing/BlogListView";
 import SeoJsonLd from "@/components/SeoJsonLd";
-import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
+import {
+  absoluteUrl,
+  breadcrumbSchema,
+  DEFAULT_OG_IMAGE_PATH,
+  pageOpenGraph,
+  toJsonLd,
+  twitterSummaryLarge,
+} from "@/lib/seo";
 
 export const dynamic = "force-static";
 export const revalidate = 3600;
@@ -47,7 +54,7 @@ export default async function BlogPage() {
           "@type": "CollectionPage",
           name: "Luxury Interior Design Blog",
           description: "Premium interior design tips, trends, and inspiration from Zikhra.",
-          url: "https://zikhra.com/blog",
+          url: absoluteUrl("/blog"),
         })}
       />
       <BlogListView posts={posts} />

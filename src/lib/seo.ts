@@ -1,6 +1,18 @@
 import type { Metadata } from "next";
 
-export const SITE_URL = "https://zikhra.com";
+/**
+ * Must match the final URL after hosting redirects. Apex zikhra.com 301s to www on Vercel — canonicals must use www
+ * or Ahrefs/Google flag "canonical points to redirect".
+ */
+function resolveSiteUrl(): string {
+  const raw = typeof process.env.NEXT_PUBLIC_SITE_URL === "string" ? process.env.NEXT_PUBLIC_SITE_URL.trim() : "";
+  if (raw && /^https?:\/\//i.test(raw)) {
+    return raw.replace(/\/$/, "");
+  }
+  return "https://www.zikhra.com";
+}
+
+export const SITE_URL = resolveSiteUrl();
 export const SITE_NAME = "Zikhra Luxury Interiors";
 /** Served from `/public` for reliable social previews. */
 export const DEFAULT_OG_IMAGE_PATH = "/og-image.webp";
