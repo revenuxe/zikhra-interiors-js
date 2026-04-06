@@ -6,10 +6,21 @@ import type { Metadata } from "next";
  */
 function resolveSiteUrl(): string {
   const raw = typeof process.env.NEXT_PUBLIC_SITE_URL === "string" ? process.env.NEXT_PUBLIC_SITE_URL.trim() : "";
-  if (raw && /^https?:\/\//i.test(raw)) {
-    return raw.replace(/\/$/, "");
+  const fallback = "https://www.zikhra.com";
+  if (!raw || !/^https?:\/\//i.test(raw)) return fallback;
+
+  try {
+    const url = new URL(raw);
+    const host = url.hostname.toLowerCase();
+    // Keep one canonical host for SEO consistency.
+    if (host === "zikhra.com" || host === "www.zikhra.com") {
+      return `https://www.zikhra.com${url.pathname === "/" ? "" : url.pathname}`.replace(/\/$/, "");
+    }
+    if (url.protocol === "http:") url.protocol = "https:";
+    return url.toString().replace(/\/$/, "");
+  } catch {
+    return fallback;
   }
-  return "https://www.zikhra.com";
 }
 
 export const SITE_URL = resolveSiteUrl();
