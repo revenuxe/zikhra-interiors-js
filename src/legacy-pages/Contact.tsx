@@ -67,7 +67,7 @@ const Contact = () => {
       <section className="section-padding">
         <div className="grid grid-cols-2 gap-3 max-w-lg mx-auto mb-10">
           {[
-            { icon: Phone, title: "Call Us", detail: "+91 98862 85028" },
+            { icon: Phone, title: "Call Us", detail: "9886579923" },
             { icon: Mail, title: "Email", detail: "zikhraofficial@gmail.com" },
             { icon: MapPin, title: "Visit", detail: "Jubilee Hills, Hyderabad" },
             { icon: Clock, title: "Hours", detail: "Mon–Sat, 10am–7pm" },

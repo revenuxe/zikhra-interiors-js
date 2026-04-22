@@ -96,7 +96,7 @@ export function localBusinessSchema() {
     name: SITE_NAME,
     url: SITE_URL,
     email: "zikhraofficial@gmail.com",
-    telephone: "+91 98862 85028",
+    telephone: "9886579923",
     image: DEFAULT_OG_IMAGE,
     address: {
       "@type": "PostalAddress",

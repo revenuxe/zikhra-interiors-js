@@ -139,7 +139,7 @@ const Privacy = () => {
                 <p className="text-foreground font-medium">Zikhra Interiors — Grievance Officer</p>
                 <p className="text-muted-foreground">Jubilee Hills, Hyderabad, Telangana 500033</p>
                 <p className="text-muted-foreground">Email: <a href="mailto:zikhraofficial@gmail.com" className="text-gold hover:underline">zikhraofficial@gmail.com</a></p>
-                <p className="text-muted-foreground">Phone: <a href="tel:+919886285028" className="text-gold hover:underline">+91 98862 85028</a></p>
+                <p className="text-muted-foreground">Phone: <a href="tel:+919886579923" className="text-gold hover:underline">9886579923</a></p>
                 <p className="text-muted-foreground text-xs mt-1">Grievances will be addressed within 30 days of receipt.</p>
               </div>
             </section>

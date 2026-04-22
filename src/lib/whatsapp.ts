@@ -1,5 +1,5 @@
 /** WhatsApp Business number without + prefix (India). */
-export const WHATSAPP_E164_LOCAL = "919886285028";
+export const WHATSAPP_E164_LOCAL = "919886579923";
 
 export const DEFAULT_WHATSAPP_MESSAGE =
   "Hi Zikhra, I'd like to speak about luxury interior design for my home in Hyderabad.";
