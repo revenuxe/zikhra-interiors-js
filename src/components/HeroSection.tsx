@@ -26,12 +26,14 @@ const HeroSection = ({ market = "hyderabad" }: Props) => {
           <span className="gold-text">Best Interior</span>
           <br />
           <span className="gold-text italic">Designer</span>
+          <br />
+          <span className="gold-text text-3xl sm:text-4xl md:text-5xl lg:text-6xl">2 BHK Starts from Rs. 3.5 Lakhs</span>
         </h1>
         <div
           className="font-sans text-foreground/75 text-base md:text-lg max-w-md mb-9 font-light animate-fade-in-up space-y-2"
           style={{ animationDelay: "0.3s" }}
         >
-          <p>2 BHK starts from Rs. 3.5 Lakhs.</p>
+          <p>10-year warranty, transparent pricing, and supervised turnkey execution.</p>
           <p>{copy.heroSubline}</p>
           {copy.heroSecondaryLine ? (
             <p className="text-sm md:text-base text-foreground/65 font-light">{copy.heroSecondaryLine}</p>
