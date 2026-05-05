@@ -39,7 +39,7 @@ export const projectTypes: ProjectTypeItem[] = [
       { name: "Living + Dining", desc: "Open-plan layout with designer sofa, dining table, and accent wall" },
       { name: "Master Bedroom", desc: "King-size bed, wardrobe, dresser, and ambient ceiling" },
     ],
-    pricing: "Room-wise estimate after floor plan review",
+    pricing: "Starts from Rs. 3.5 Lakhs",
     timeline: "30 - 45 Days",
     faqs: [
       {
@@ -60,7 +60,7 @@ export const projectTypes: ProjectTypeItem[] = [
       "A 3 BHK home is the perfect canvas for creating distinct zones - entertainment, relaxation, productivity, and family storage.",
     features: ["Separate living and family room design", "Premium modular kitchen with island option"],
     rooms: [{ name: "Grand Living Room", desc: "Statement sofa, accent wall, chandelier, and entertainment unit" }],
-    pricing: "Room-wise estimate after floor plan review",
+    pricing: "Starts from Rs. 5.5 Lakhs",
     timeline: "45 - 60 Days",
     faqs: [{ q: "What does a 3 BHK interior package include?", a: "Modular kitchen, wardrobes, false ceiling, TV unit and more." }],
   },
@@ -76,7 +76,7 @@ export const projectTypes: ProjectTypeItem[] = [
       "A 4 BHK home demands grandeur. Every space is crafted to feel refined, functional, and premium with strong material and lighting discipline.",
     features: ["Double-height living room design", "Premium marble flooring"],
     rooms: [{ name: "Grand Foyer", desc: "Impressive entrance with statement lighting" }],
-    pricing: "Custom estimate after site review",
+    pricing: "Starts from Rs. 8.5 Lakhs",
     timeline: "60 - 90 Days",
     faqs: [{ q: "Do you design 4 BHK villas too?", a: "Yes - we handle apartments and villas across Hyderabad." }],
   },

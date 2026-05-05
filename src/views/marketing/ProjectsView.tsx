@@ -21,7 +21,9 @@ export default function ProjectsView({ market = "hyderabad" }: Props) {
       <Header />
       <section className="pt-32 md:pt-28 pb-10 px-5 text-center">
         <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Our Work</p>
-        <h1 className="font-serif text-4xl md:text-5xl font-bold gold-text mb-3">Featured Interior Projects</h1>
+        <h1 className="font-serif text-4xl md:text-5xl font-bold gold-text mb-3">
+          Featured Interior Projects in {market === "bangalore" ? "Bangalore" : "Hyderabad"}
+        </h1>
         <p className="font-sans text-sm text-muted-foreground max-w-lg mx-auto">{cityLine}</p>
       </section>
       <section className="px-5 pb-16">

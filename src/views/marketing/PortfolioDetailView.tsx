@@ -14,6 +14,7 @@ export default function PortfolioDetailView({ item, market = "hyderabad" }: Prop
   const city = cityLabel(market);
   const description = applyMarketToCopy(item.description, market);
   const tagline = applyMarketToCopy(item.tagline, market);
+  const heroTitle = `${item.title} in ${city}`;
 
   return (
     <div className="min-h-screen bg-background">
@@ -30,9 +31,9 @@ export default function PortfolioDetailView({ item, market = "hyderabad" }: Prop
             <ArrowLeft className="w-4 h-4" /> {market === "bangalore" ? "Bangalore" : "Home"}
           </Link>
           <div className="mx-auto flex w-full max-w-md flex-col items-center">
-            <p className="mb-4 text-xs font-sans uppercase tracking-[0.36em] text-gold">{item.title}</p>
+            <p className="mb-4 text-xs font-sans uppercase tracking-[0.36em] text-gold">{tagline}</p>
             <h1 className="mb-5 max-w-[20rem] break-words font-serif text-3xl font-bold leading-[1.12] gold-text sm:max-w-md md:max-w-3xl md:text-5xl">
-              {tagline}
+              {heroTitle}
             </h1>
             <p className="max-w-md font-sans text-[15px] leading-relaxed text-foreground/85 md:text-sm">{description}</p>
           </div>

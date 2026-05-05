@@ -36,7 +36,7 @@ export const services: ServiceItem[] = [
       "Wall paneling, textures & accent walls",
       "Smart home integration ready",
     ],
-    price: "Custom estimate after floor plan review",
+    price: "2 BHK starts from Rs. 3.5 Lakhs",
   },
   {
     id: "modular-kitchen",
@@ -53,7 +53,7 @@ export const services: ServiceItem[] = [
       "Space-optimized modular island layouts",
       "Waterproof & termite-proof BWR plywood",
     ],
-    price: "Custom estimate after layout review",
+    price: "Starts from Rs. 1.5 Lakhs",
   },
   {
     id: "wardrobes",
@@ -70,7 +70,7 @@ export const services: ServiceItem[] = [
       "Anti-dust sealed compartments",
       "Premium lacquer & veneer finishes",
     ],
-    price: "Custom estimate after storage review",
+    price: "Starts from Rs. 90,000",
   },
   {
     id: "living-room",
@@ -87,7 +87,7 @@ export const services: ServiceItem[] = [
       "Curtain & blind coordination",
       "Art curation & styling",
     ],
-    price: "Custom estimate after room review",
+    price: "Starts from Rs. 1.2 Lakhs",
   },
   {
     id: "bedroom",
@@ -104,7 +104,7 @@ export const services: ServiceItem[] = [
       "Blackout curtain solutions",
       "En-suite bathroom coordination",
     ],
-    price: "Custom estimate after room review",
+    price: "Starts from Rs. 1.5 Lakhs",
   },
   {
     id: "bathroom",
@@ -121,7 +121,7 @@ export const services: ServiceItem[] = [
       "Heated towel rails & accessories",
       "Waterproofing & drainage solutions",
     ],
-    price: "Custom estimate after scope review",
+    price: "Starts from Rs. 1.25 Lakhs",
   },
   {
     id: "false-ceiling",
@@ -138,7 +138,7 @@ export const services: ServiceItem[] = [
       "POP & wooden ceiling options",
       "Smart lighting automation",
     ],
-    price: "Custom estimate after ceiling plan review",
+    price: "Starts from Rs. 75,000",
   },
   {
     id: "tv-unit",
@@ -155,7 +155,7 @@ export const services: ServiceItem[] = [
       "Premium wood & lacquer finishes",
       "Sound system integration",
     ],
-    price: "Custom estimate after wall review",
+    price: "Starts from Rs. 80,000",
   },
   {
     id: "pooja-room",
@@ -172,7 +172,7 @@ export const services: ServiceItem[] = [
       "Bell & diya holder integration",
       "Vastu-compliant layouts",
     ],
-    price: "Custom estimate after design review",
+    price: "Starts from Rs. 75,000",
   },
   {
     id: "renovation",

@@ -25,7 +25,9 @@ export default function BlogListView({ posts }: { posts: BlogListItem[] }) {
 
       <section className="pt-32 md:pt-28 pb-8 px-5 text-center">
         <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Our Blog</p>
-        <h1 className="font-serif text-4xl md:text-5xl font-bold gold-text mb-3">Interior Design Insights</h1>
+        <h1 className="font-serif text-4xl md:text-5xl font-bold gold-text mb-3">
+          Interior Design Insights for Hyderabad & Bangalore
+        </h1>
         <p className="font-sans text-sm text-muted-foreground max-w-xl mx-auto mb-6">
           Pricing guides, planning advice, and premium interior design insights for Hyderabad and Bangalore homes.
         </p>

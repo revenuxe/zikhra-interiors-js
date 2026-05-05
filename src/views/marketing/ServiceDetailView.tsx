@@ -24,6 +24,7 @@ export default function ServiceDetailView({ service, market = "hyderabad" }: Pro
   const subtitle = applyMarketToCopy(service.subtitle, market);
   const description = applyMarketToCopy(service.description, market);
   const servicesList = servicesIndexPath(market);
+  const serviceTitle = `${service.title} in ${city}`;
 
   return (
     <div className="min-h-screen bg-background">
@@ -37,8 +38,10 @@ export default function ServiceDetailView({ service, market = "hyderabad" }: Pro
             <ArrowLeft className="w-4 h-4" /> Services
           </Link>
           <div className="mx-auto flex w-full max-w-md flex-col items-center">
-            <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-4">{subtitle}</p>
-            <h1 className="font-serif text-3xl md:text-5xl font-bold gold-text mb-4 leading-tight">{service.title}</h1>
+            <p className="max-w-sm text-xs font-sans tracking-[0.16em] uppercase leading-relaxed text-gold mb-4">
+              {subtitle} | {service.price}
+            </p>
+            <h1 className="font-serif text-3xl md:text-5xl font-bold gold-text mb-4 leading-tight">{serviceTitle}</h1>
             <p className="font-sans text-foreground/85 text-[15px] leading-relaxed max-w-md">{description}</p>
             <span className="font-serif text-lg text-gold mt-5">{service.price}</span>
           </div>

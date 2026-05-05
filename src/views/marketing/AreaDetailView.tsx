@@ -33,7 +33,9 @@ export default function AreaDetailView({ area }: Props) {
       <Header />
       <section className="pt-32 md:pt-28 pb-12 px-5 text-center">
         <p className="text-xs font-sans tracking-[0.25em] uppercase text-gold mb-3">{area.city}</p>
-        <h1 className="font-serif text-3xl md:text-5xl font-bold gold-text mb-4">Best Interior Designers in {area.name}</h1>
+        <h1 className="font-serif text-3xl md:text-5xl font-bold gold-text mb-4">
+          Best Interior Designer in {area.name}, {area.city}
+        </h1>
         <p className="font-sans text-muted-foreground text-sm max-w-md mx-auto">{area.tagline}</p>
         <Link
           href="/contact"

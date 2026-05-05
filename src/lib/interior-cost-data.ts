@@ -149,8 +149,10 @@ export function getCostGuideConfig(city: CostCity, homeType: CostHomeType, canon
       : `Interior design cost in ${suffix}: compare practical, premium, and signature home interior packages by Zikhra with clear scope planning.`,
     h1,
     intro: isSpecificHome
-      ? `Plan your ${homeLabel} interiors with clear package bands, room-wise costs, and upgrade options before you begin design.`
-      : "Plan your home interiors with clear package bands, room-wise costs, and upgrade options before you begin design.",
+      ? `${homeLabel} interiors ${
+          homeType === "2bhk" ? "start from Rs. 3.5 Lakhs" : "start from Rs. 5.5 Lakhs"
+        }. Plan with clear package bands, room-wise costs, and upgrade options before you begin design.`
+      : "2 BHK interiors start from Rs. 3.5 Lakhs and 3 BHK interiors start from Rs. 5.5 Lakhs. Plan your home interiors with clear package bands, room-wise costs, and upgrade options before you begin design.",
     locationLabel: suffix,
     heroNote:
       "A final estimate is prepared after floor plan review, site condition check, material selection, and scope finalisation.",

@@ -34,7 +34,7 @@ const services = [
       "Wall paneling, textures & accent walls",
       "Smart home integration ready",
     ],
-    price: "Custom estimate after floor plan review",
+    price: "2 BHK starts from Rs. 3.5 Lakhs",
   },
   {
     id: "modular-kitchen",
@@ -50,7 +50,7 @@ const services = [
       "Space-optimized modular island layouts",
       "Waterproof & termite-proof BWR plywood",
     ],
-    price: "Custom estimate after layout review",
+    price: "Starts from Rs. 1.5 Lakhs",
   },
   {
     id: "wardrobes",
@@ -66,7 +66,7 @@ const services = [
       "Anti-dust sealed compartments",
       "Premium lacquer & veneer finishes",
     ],
-    price: "Custom estimate after storage review",
+    price: "Starts from Rs. 90,000",
   },
   {
     id: "living-room",
@@ -82,7 +82,7 @@ const services = [
       "Curtain & blind coordination",
       "Art curation & styling",
     ],
-    price: "Custom estimate after room review",
+    price: "Starts from Rs. 1.2 Lakhs",
   },
   {
     id: "bedroom",
@@ -98,7 +98,7 @@ const services = [
       "Blackout curtain solutions",
       "En-suite bathroom coordination",
     ],
-    price: "Custom estimate after room review",
+    price: "Starts from Rs. 1.5 Lakhs",
   },
   {
     id: "bathroom",
@@ -114,7 +114,7 @@ const services = [
       "Heated towel rails & accessories",
       "Waterproofing & drainage solutions",
     ],
-    price: "Custom estimate after scope review",
+    price: "Starts from Rs. 1.25 Lakhs",
   },
   {
     id: "false-ceiling",
@@ -130,7 +130,7 @@ const services = [
       "POP & wooden ceiling options",
       "Smart lighting automation",
     ],
-    price: "Custom estimate after ceiling plan review",
+    price: "Starts from Rs. 75,000",
   },
   {
     id: "tv-unit",
@@ -146,7 +146,7 @@ const services = [
       "Premium wood & lacquer finishes",
       "Sound system integration",
     ],
-    price: "Custom estimate after wall review",
+    price: "Starts from Rs. 80,000",
   },
   {
     id: "pooja-room",
@@ -162,7 +162,7 @@ const services = [
       "Bell & diya holder integration",
       "Vastu-compliant layouts",
     ],
-    price: "Custom estimate after design review",
+    price: "Starts from Rs. 75,000",
   },
   {
     id: "renovation",
@@ -204,10 +204,11 @@ type ServicesProps = { market?: MarketId };
 
 const Services = ({ market = "hyderabad" }: ServicesProps) => {
   const city = cityLabel(market);
+  const servicesStartPrice = "2 BHK starts from Rs. 3.5 Lakhs";
   const heroLine =
     market === "bangalore"
-      ? "2 BHK, 3 BHK, villa, modular kitchen, and renovation packages across Bangalore with clear scope planning"
-      : "2 BHK, 3 BHK, villa, modular kitchen, and renovation packages across Hyderabad with clear scope planning";
+      ? `${servicesStartPrice}. 3 BHK starts from Rs. 5.5 Lakhs. Modular kitchen and renovation packages across Bangalore with clear scope planning.`
+      : `${servicesStartPrice}. 3 BHK starts from Rs. 5.5 Lakhs. Modular kitchen and renovation packages across Hyderabad with clear scope planning.`;
 
   return (
     <div className="min-h-screen bg-background">
@@ -216,7 +217,7 @@ const Services = ({ market = "hyderabad" }: ServicesProps) => {
       {/* Hero */}
       <section className="pt-32 md:pt-28 pb-10 px-5 text-center">
         <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Our Expertise</p>
-        <h1 className="font-serif text-4xl md:text-5xl font-bold gold-text mb-3">Interior Design Services</h1>
+        <h1 className="font-serif text-4xl md:text-5xl font-bold gold-text mb-3">Interior Design Services in {city}</h1>
         <p className="font-sans text-sm text-muted-foreground max-w-md mx-auto">{heroLine}</p>
         <p className="font-sans text-xs text-muted-foreground mt-4 max-w-md mx-auto">
           Compare packages in our{" "}

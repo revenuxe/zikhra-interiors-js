@@ -6,13 +6,19 @@ import BottomNav from "@/components/BottomNav";
 import ContactForm from "@/components/ContactForm";
 import type { ProjectTypeItem } from "@/lib/project-types-data";
 import type { MarketId } from "@/lib/market-types";
-import { applyMarketToCopy, backHubPath } from "@/lib/marketing-paths";
+import { applyMarketToCopy, backHubPath, cityLabel } from "@/lib/marketing-paths";
 
 type Props = { item: ProjectTypeItem; market?: MarketId };
 
 export default function ProjectTypeDetailView({ item, market = "hyderabad" }: Props) {
   const intro = applyMarketToCopy(item.intro, market);
   const tagline = applyMarketToCopy(item.tagline, market);
+  const city = cityLabel(market);
+  const heroTitle = `${item.title.replace("Design", "Designer")} in ${city}`;
+  const heroIntro =
+    item.pricing.toLowerCase().includes("starts")
+      ? `${item.pricing}. ${intro}`
+      : intro;
 
   return (
     <div className="min-h-screen bg-background">
@@ -26,9 +32,11 @@ export default function ProjectTypeDetailView({ item, market = "hyderabad" }: Pr
             <ArrowLeft className="w-4 h-4" /> {market === "bangalore" ? "Bangalore" : "Home"}
           </Link>
           <div className="mx-auto flex w-full max-w-md flex-col items-center">
-            <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-4">Project Type</p>
-            <h1 className="font-serif text-3xl md:text-5xl font-bold gold-text mb-4 leading-tight">{tagline}</h1>
-            <p className="font-sans text-foreground/85 text-[15px] leading-relaxed max-w-md">{intro}</p>
+            <p className="max-w-sm text-xs font-sans tracking-[0.16em] uppercase leading-relaxed text-gold mb-4">
+              {tagline}
+            </p>
+            <h1 className="font-serif text-3xl md:text-5xl font-bold gold-text mb-4 leading-tight">{heroTitle}</h1>
+            <p className="font-sans text-foreground/85 text-[15px] leading-relaxed max-w-md">{heroIntro}</p>
           </div>
           <Link
             href="/contact"

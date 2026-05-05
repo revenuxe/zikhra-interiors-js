@@ -14,7 +14,9 @@ export default function AllPagesView({ sections }: Props) {
       <Header />
       <main className="pt-32 md:pt-28 pb-16 px-5 max-w-4xl mx-auto">
         <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3 text-center">Sitemap</p>
-        <h1 className="font-serif text-3xl md:text-4xl gold-text text-center mb-2">All pages</h1>
+        <h1 className="font-serif text-3xl md:text-4xl gold-text text-center mb-2">
+          All Interior Design Pages in Hyderabad & Bangalore
+        </h1>
         <p className="font-sans text-sm text-muted-foreground text-center max-w-xl mx-auto mb-12">
           Every major URL on Zikhra — services, project types, portfolio, Hyderabad and Bangalore locations, and more.
         </p>

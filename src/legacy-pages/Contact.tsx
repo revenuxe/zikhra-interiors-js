@@ -57,9 +57,11 @@ const Contact = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-luxury-black/80 via-luxury-black/60 to-luxury-black/95" />
         <div className="relative z-10 flex flex-col items-center justify-end h-full px-6 pb-14 text-center">
           <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Contact</p>
-          <h1 className="font-serif text-4xl md:text-5xl font-bold gold-text mb-3">Get In Touch</h1>
+          <h1 className="font-serif text-4xl md:text-5xl font-bold gold-text mb-3">
+            Contact Interior Designer in Hyderabad & Bangalore
+          </h1>
           <p className="font-sans text-foreground/80 text-sm max-w-sm">
-            Ready to transform your Hyderabad home? We'd love to hear from you.
+            Ready to transform your Hyderabad or Bangalore home? We'd love to hear from you.
           </p>
         </div>
       </section>

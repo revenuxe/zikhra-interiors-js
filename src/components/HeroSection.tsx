@@ -3,12 +3,13 @@ import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import type { MarketId } from "@/lib/market-types";
 import { getMarketCopy } from "@/lib/market-copy";
-import { servicesIndexPath } from "@/lib/marketing-paths";
+import { cityLabel, servicesIndexPath } from "@/lib/marketing-paths";
 
 type Props = { market?: MarketId };
 
 const HeroSection = ({ market = "hyderabad" }: Props) => {
   const copy = getMarketCopy(market);
+  const city = cityLabel(market);
   return (
     <section className="relative h-screen w-full overflow-hidden">
       <img
@@ -22,10 +23,10 @@ const HeroSection = ({ market = "hyderabad" }: Props) => {
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center">
         
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in-up leading-[1.05]">
+        <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in-up leading-[1.08]">
           <span className="gold-text">Best Interior</span>
           <br />
-          <span className="gold-text italic">Designer</span>
+          <span className="gold-text italic">Designer in {city}</span>
         </h1>
         <div
           className="font-sans text-foreground/75 text-base md:text-lg max-w-md mb-9 font-light animate-fade-in-up space-y-2"

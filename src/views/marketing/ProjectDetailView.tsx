@@ -28,7 +28,9 @@ export default function ProjectDetailView({ project, market = "hyderabad" }: Pro
             <ArrowLeft className="w-4 h-4" /> All Projects
           </Link>
           <div className="mx-auto flex w-full max-w-md flex-col items-center">
-            <h1 className="font-serif text-4xl md:text-5xl font-bold gold-text mb-4 leading-tight">{project.title}</h1>
+            <h1 className="font-serif text-4xl md:text-5xl font-bold gold-text mb-4 leading-tight">
+              {project.title} Interior Design in {location}
+            </h1>
             <div className="flex items-center gap-1.5 text-foreground/75 text-sm font-sans">
               <MapPin className="w-3.5 h-3.5 text-gold" />
               {location}
