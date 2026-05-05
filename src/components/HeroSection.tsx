@@ -11,7 +11,7 @@ const HeroSection = ({ market = "hyderabad" }: Props) => {
   const copy = getMarketCopy(market);
   const heroTitle =
     market === "bangalore"
-      ? "Best Interior Designer in Bangalore, 2 BHK Starts from Rs. 3.5 Lakhs"
+      ? "Best Interior Designer in Bangalore"
       : "Best Interior Designer, 2 BHK Starts from Rs. 3.5 Lakhs";
 
   return (
