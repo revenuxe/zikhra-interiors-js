@@ -26,14 +26,10 @@ const HeroSection = ({ market = "hyderabad" }: Props) => {
           <span className="gold-text">Best Interior Designer, 2 BHK Starts from Rs. 3.5 Lakhs</span>
         </h1>
         <div
-          className="font-sans text-foreground/75 text-base md:text-lg max-w-md mb-9 font-light animate-fade-in-up space-y-2"
+          className="font-sans text-foreground/75 text-base md:text-lg max-w-xl mb-9 font-light animate-fade-in-up"
           style={{ animationDelay: "0.3s" }}
         >
-          <p>10-year warranty, transparent pricing, and supervised turnkey execution.</p>
-          <p>{copy.heroSubline}</p>
-          {copy.heroSecondaryLine ? (
-            <p className="text-sm md:text-base text-foreground/65 font-light">{copy.heroSecondaryLine}</p>
-          ) : null}
+          <p>10-year warranty, transparent pricing, and premium turnkey execution for beautiful homes.</p>
         </div>
 
         <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
