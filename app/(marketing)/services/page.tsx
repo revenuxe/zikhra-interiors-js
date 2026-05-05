@@ -6,24 +6,22 @@ import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitt
 export const dynamic = "force-static";
 export const revalidate = 86400;
 
+const title = "Interior Design Services in Hyderabad | Zikhra";
+const description =
+  "Explore Zikhra's home interior services in Hyderabad including 2 BHK interiors, full home interiors, modular kitchens, wardrobes, renovation, and premium upgrades.";
+
 export const metadata: Metadata = {
-  title: "Luxury Interior Design Services in Hyderabad",
-  description:
-    "Explore Zikhra's premium interior design services in Hyderabad including full home interiors, modular kitchen design, wardrobes, and renovation.",
+  title,
+  description,
   alternates: { canonical: "/services" },
   openGraph: pageOpenGraph({
-    title: "Luxury Interior Design Services in Hyderabad",
-    description:
-      "Premium and high-end home interior services by Zikhra for villas, apartments, and modern residences.",
+    title,
+    description,
     path: "/services",
     imageUrl: DEFAULT_OG_IMAGE_PATH,
-    imageAlt: "Zikhra luxury interior design services — turnkey homes Hyderabad",
+    imageAlt: "Zikhra interior design services and home interior packages in Hyderabad",
   }),
-  twitter: twitterSummaryLarge(
-    "Luxury Interior Design Services in Hyderabad",
-    "Premium and high-end home interior services by Zikhra for villas, apartments, and modern residences.",
-    DEFAULT_OG_IMAGE_PATH,
-  ),
+  twitter: twitterSummaryLarge(title, description, DEFAULT_OG_IMAGE_PATH),
 };
 
 export default function ServicesRoute() {
@@ -37,4 +35,3 @@ export default function ServicesRoute() {
     </>
   );
 }
-

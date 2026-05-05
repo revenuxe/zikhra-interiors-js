@@ -1,4 +1,5 @@
 import type { PortableTextComponents } from "@portabletext/react";
+import type { TypedObject } from "@portabletext/types";
 import { PortableText } from "@portabletext/react";
 
 type BodyImageValue = {
@@ -79,6 +80,6 @@ export const blogPortableTextComponents: PortableTextComponents = {
     },
 };
 
-export default function BlogPortableText({ value }: { value: unknown[] }) {
+export default function BlogPortableText({ value }: { value: TypedObject[] }) {
   return <PortableText value={value} components={blogPortableTextComponents} />;
 }

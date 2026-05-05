@@ -14,21 +14,21 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "About Zikhra Luxury Interiors",
+  title: "About Zikhra Interiors",
   description:
-    "Learn about Zikhra, a premium interior design studio in Hyderabad known for luxury, craftsmanship, transparent execution, and timeless spaces.",
+    "Learn about Zikhra, a premium interior design studio in Hyderabad known for craftsmanship, transparent execution, and timeless spaces.",
   alternates: { canonical: "/about" },
   openGraph: pageOpenGraph({
-    title: "About Zikhra Luxury Interiors",
+    title: "About Zikhra Interiors",
     description:
-      "Meet the design team behind premium and luxury interior spaces across Hyderabad homes and villas.",
+      "Meet the design team behind premium interior spaces across Hyderabad homes and villas.",
     path: "/about",
     imageUrl: DEFAULT_OG_IMAGE_PATH,
-    imageAlt: "About Zikhra — luxury interior designers and bespoke homes Hyderabad",
+    imageAlt: "About Zikhra — premium interior designers and bespoke homes Hyderabad",
   }),
   twitter: twitterSummaryLarge(
-    "About Zikhra Luxury Interiors",
-    "Meet the design team behind premium and luxury interior spaces across Hyderabad homes and villas.",
+    "About Zikhra Interiors",
+    "Meet the design team behind premium interior spaces across Hyderabad homes and villas.",
     DEFAULT_OG_IMAGE_PATH,
   ),
 };

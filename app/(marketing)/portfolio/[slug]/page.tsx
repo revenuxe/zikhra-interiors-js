@@ -18,7 +18,7 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: Props): Metadata {
   const item = getPortfolioBySlug(params.slug);
   if (!item) return { title: "Portfolio Not Found" };
-  const title = `${item.tagline} | Luxury Interior Portfolio`;
+  const title = `${item.tagline} | Premium Interior Portfolio`;
   const description = item.description.slice(0, 160);
   const path = `/portfolio/${item.slug}`;
   return {
@@ -31,7 +31,7 @@ export function generateMetadata({ params }: Props): Metadata {
       path,
       type: "article",
       imageUrl: item.heroImage ?? DEFAULT_OG_IMAGE_PATH,
-      imageAlt: `${item.title} — luxury interior portfolio Hyderabad`,
+      imageAlt: `${item.title} — premium interior portfolio Hyderabad`,
     }),
     twitter: twitterSummaryLarge(title, description, item.heroImage ?? DEFAULT_OG_IMAGE_PATH),
   };

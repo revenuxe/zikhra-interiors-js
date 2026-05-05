@@ -32,7 +32,7 @@ const Footer = () => {
         <div className="flex flex-col items-center text-center mb-12">
           <img src={logo.src} alt="Zikhra Interior Designers Hyderabad" className="h-16 w-auto mb-3" />
           <p className="font-sans text-muted-foreground text-sm max-w-xs">
-            Hyderabad's most trusted luxury interior design studio. Crafting timeless spaces since 2018.
+            Hyderabad's trusted premium interior design studio. Crafting timeless spaces since 2018.
           </p>
         </div>
 
@@ -74,7 +74,7 @@ const Footer = () => {
                   className="font-sans text-sm text-foreground/90 hover:text-gold transition-colors flex items-center gap-1.5 group font-medium"
                 >
                   <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-gold" />
-                  Luxury interiors Bangalore
+                  Premium interiors Bangalore
                 </Link>
               </li>
               <li>
@@ -145,7 +145,7 @@ const Footer = () => {
         {/* SEO keyword footer */}
         <div className="text-center mb-6">
           <p className="font-sans text-xs text-muted-foreground/30 leading-relaxed">
-            Interior designers in Hyderabad | Home interiors Jubilee Hills | Modular kitchen Hyderabad | Luxury villa interiors Banjara Hills | Best interior design company Gachibowli | Home renovation Kondapur | Wardrobe design HITEC City | Interior designers Bangalore | Luxury home interiors Koramangala | Modular kitchen Whitefield | HSR Layout interiors | Indiranagar interior designers
+            Interior designers in Hyderabad | Home interiors Jubilee Hills | Modular kitchen Hyderabad | Premium villa interiors Banjara Hills | Best interior design company Gachibowli | Home renovation Kondapur | Wardrobe design HITEC City | Interior designers Bangalore | Premium home interiors Koramangala | Modular kitchen Whitefield | HSR Layout interiors | Indiranagar interior designers
           </p>
         </div>
 

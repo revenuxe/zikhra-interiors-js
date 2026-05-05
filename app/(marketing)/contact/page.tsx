@@ -7,19 +7,19 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Contact Luxury Interior Designers",
+  title: "Contact Zikhra Interior Designers",
   description:
-    "Book a free consultation with Zikhra for premium and luxury interior design in Hyderabad, including turnkey home interiors and modular kitchens.",
+    "Book a free estimate with Zikhra for premium interior design in Hyderabad, including 2 BHK interiors, turnkey home interiors, and modular kitchens.",
   alternates: { canonical: "/contact" },
   openGraph: pageOpenGraph({
-    title: "Contact Zikhra Luxury Interiors",
+    title: "Contact Zikhra Interiors",
     description: "Speak with Hyderabad's premium interior design team for your villa or apartment interiors.",
     path: "/contact",
     imageUrl: DEFAULT_OG_IMAGE_PATH,
-    imageAlt: "Contact Zikhra for bespoke luxury home interiors in Hyderabad",
+    imageAlt: "Contact Zikhra for bespoke premium home interiors in Hyderabad",
   }),
   twitter: twitterSummaryLarge(
-    "Contact Zikhra Luxury Interiors",
+    "Contact Zikhra Interiors",
     "Speak with Hyderabad's premium interior design team for your villa or apartment interiors.",
     DEFAULT_OG_IMAGE_PATH,
   ),

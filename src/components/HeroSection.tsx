@@ -22,10 +22,10 @@ const HeroSection = ({ market = "hyderabad" }: Props) => {
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center">
         
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-9xl font-bold mb-6 animate-fade-in-up leading-[1.05]">
-          <span className="gold-text">Designing</span>
+        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in-up leading-[1.05]">
+          <span className="gold-text">Best Interior</span>
           <br />
-          <span className="gold-text italic">Timeless Luxury</span>
+          <span className="gold-text italic">Designer</span>
         </h1>
         <div
           className="font-sans text-foreground/75 text-base md:text-lg max-w-md mb-9 font-light animate-fade-in-up space-y-2"
@@ -42,13 +42,13 @@ const HeroSection = ({ market = "hyderabad" }: Props) => {
             href="/contact"
             className="gold-gradient px-8 py-3.5 rounded-full font-sans text-sm font-medium tracking-wide text-primary-foreground transition-all duration-300 hover:scale-105 gold-glow"
           >
-            Get Free Consultation
+            Get Free Estimate
           </Link>
           <Link
             href={servicesIndexPath(market)}
             className="px-8 py-3.5 rounded-full font-sans text-sm font-medium tracking-wide border border-gold/40 text-gold-light transition-all duration-300 hover:border-gold hover:bg-gold/10 text-center"
           >
-            Explore Services
+            View Packages
           </Link>
         </div>
 

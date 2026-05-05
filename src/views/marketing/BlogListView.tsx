@@ -27,17 +27,17 @@ export default function BlogListView({ posts }: { posts: BlogListItem[] }) {
         <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Our Blog</p>
         <h1 className="font-serif text-4xl md:text-5xl font-bold gold-text mb-3">Interior Design Insights</h1>
         <p className="font-sans text-sm text-muted-foreground max-w-xl mx-auto mb-6">
-          Premium tips, trends, and inspiration for luxury interiors, modular kitchens, and high-end home design in Hyderabad.
+          Pricing guides, planning advice, and premium interior design insights for Hyderabad and Bangalore homes.
         </p>
         <div className="max-w-2xl mx-auto text-left space-y-4 font-sans text-sm text-muted-foreground leading-relaxed">
           <p>
-            Welcome to <strong className="text-foreground font-medium">Interior Design Insights</strong> by Zikhra — practical,
+            Welcome to <strong className="text-foreground font-medium">Interior Design Insights</strong> by Zikhra - practical,
             idea-rich articles for homeowners who want calmer layouts, better lighting, and materials that age gracefully in
             Hyderabad&apos;s climate. Each piece translates what we see on premium residential sites into guidance you can discuss
             with your family or your designer.
           </p>
           <p>
-            Expect deep dives on <strong className="text-foreground font-medium">luxury kitchens</strong>, wardrobe ergonomics,
+            Expect deep dives on <strong className="text-foreground font-medium">premium kitchens</strong>, wardrobe ergonomics,
             subtle colour palettes, and how to brief a studio for a <strong className="text-foreground font-medium">turnkey</strong>{" "}
             apartment or <strong className="text-foreground font-medium">villa</strong> without losing personality. We write for
             readers across Jubilee Hills, Gachibowli, and emerging townships who care about craftsmanship as much as aesthetics.
@@ -67,7 +67,7 @@ export default function BlogListView({ posts }: { posts: BlogListItem[] }) {
                   <div className="relative h-48 overflow-hidden">
                     <img
                       src={post.mainImageUrl}
-                      alt={`${post.title} — luxury interior design article and home inspiration`}
+                      alt={`${post.title} — premium interior design article and home inspiration`}
                       loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
@@ -94,16 +94,19 @@ export default function BlogListView({ posts }: { posts: BlogListItem[] }) {
 
       <section className="px-5 pb-10">
         <div className="max-w-5xl mx-auto rounded-2xl border border-border/50 bg-card p-5 md:p-7">
-          <h2 className="font-serif text-2xl gold-text mb-2">Explore More Luxury Interior Resources</h2>
+          <h2 className="font-serif text-2xl gold-text mb-2">Explore More Interior Planning Resources</h2>
           <p className="font-sans text-sm text-muted-foreground mb-4">
             Continue your planning journey with our premium service breakdowns and curated project case studies.
           </p>
           <div className="flex flex-wrap gap-4 text-sm font-sans">
             <Link href="/services" className="text-gold hover:underline">
-              Luxury Interior Services
+              Interior Services
+            </Link>
+            <Link href="/interior-design-cost" className="text-gold hover:underline">
+              Interior Design Cost Guide
             </Link>
             <Link href="/projects" className="text-gold hover:underline">
-              High-End Interior Projects
+              Premium Interior Projects
             </Link>
             <Link href="/contact" className="text-gold hover:underline">
               Talk to a Designer

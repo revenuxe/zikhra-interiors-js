@@ -31,7 +31,7 @@ const About = () => {
           <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">About Us</p>
           <h1 className="font-serif text-4xl md:text-5xl font-bold gold-text mb-3">The Zikhra Story</h1>
           <p className="font-sans text-foreground/80 text-sm max-w-sm">
-            Hyderabad's most trusted luxury interior design studio
+            Hyderabad's most trusted premium interior design studio
           </p>
         </div>
       </section>

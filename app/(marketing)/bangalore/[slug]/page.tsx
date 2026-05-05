@@ -18,14 +18,18 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: Props): Metadata {
   const area = getBangaloreAreaBySlug(params.slug);
   if (!area) return { title: "Area Not Found" };
-  const title = `Luxury Interior Designers in ${area.name}, Bangalore | Zikhra`;
-  const description = `Premium turnkey home interiors in ${area.name}, Bangalore. ${area.tagline} Modular kitchens, wardrobes, and full-home luxury design — book a free consultation.`;
+  const title = `Best Interior Designer in ${area.name}, Bangalore | Zikhra`;
+  const description = `Looking for the best interior designer in ${area.name}, Bangalore? Zikhra designs premium 2 BHK, 3 BHK, villa, modular kitchen, and turnkey home interiors with clear scope planning.`;
   const path = `/bangalore/${area.slug}`;
   const keywords = [
     `interior designers ${area.name}`,
+    `best interior designer ${area.name}`,
+    `best interior designers in ${area.name} Bangalore`,
     `${area.name} home interiors`,
-    `luxury interiors ${area.name} Bangalore`,
+    `2 BHK interiors ${area.name}`,
+    `3 BHK interiors ${area.name}`,
     `modular kitchen ${area.name}`,
+    `interior design cost ${area.name}`,
     "Bangalore interior design company",
   ];
   return {
@@ -38,7 +42,7 @@ export function generateMetadata({ params }: Props): Metadata {
       description,
       path,
       imageUrl: DEFAULT_OG_IMAGE_PATH,
-      imageAlt: `Luxury interior designers in ${area.name}, Bangalore — Zikhra`,
+      imageAlt: `Best interior designer in ${area.name}, Bangalore - Zikhra`,
     }),
     twitter: twitterSummaryLarge(title, description, DEFAULT_OG_IMAGE_PATH),
   };

@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "check": "tsc --noEmit --pretty false",
     "start": "next start",
     "sanity:dev": "sanity dev --port 3333",
     "sanity:deploy": "sanity deploy",

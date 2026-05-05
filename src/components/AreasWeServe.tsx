@@ -44,13 +44,25 @@ const AreasWeServe = ({ market = "hyderabad" }: Props) => {
         <p className="font-sans text-muted-foreground text-sm">{copy.areasSectionSub}</p>
         {market === "hyderabad" ? (
           <p className="font-sans text-muted-foreground text-xs mt-3 max-w-md mx-auto leading-relaxed">
-            Looking for{" "}
+            Compare{" "}
+            <Link href="/hyderabad/interior-design-cost" className="text-gold hover:underline">
+              Hyderabad interior design costs
+            </Link>{" "}
+            or explore{" "}
             <Link href="/bangalore" className="text-gold hover:underline">
-              luxury interior design in Bangalore
+              interior design in Bangalore
             </Link>
-            ? Explore premium home interiors by neighbourhood — Koramangala, Whitefield, Indiranagar, and more.
+            , including Koramangala, Whitefield, Indiranagar, and more.
           </p>
-        ) : null}
+        ) : (
+          <p className="font-sans text-muted-foreground text-xs mt-3 max-w-md mx-auto leading-relaxed">
+            Compare{" "}
+            <Link href="/bangalore/interior-design-cost" className="text-gold hover:underline">
+              Bangalore interior design costs
+            </Link>{" "}
+            before shortlisting your neighbourhood package.
+          </p>
+        )}
       </div>
 
       <div className="relative max-w-2xl mx-auto">

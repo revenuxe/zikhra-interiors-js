@@ -13,13 +13,13 @@ const HomeStorySection = ({ market = "hyderabad", areaName }: Props) => {
           <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-4 text-center">Our Approach</p>
           <h2 className="font-serif text-2xl md:text-3xl gold-text text-center mb-8">
             {areaName
-              ? `Designing timeless luxury in ${areaName}, Bangalore`
-              : "Designing timeless luxury for Bangalore homes"}
+              ? `Designing timeless interiors in ${areaName}, Bangalore`
+              : "Designing timeless interiors for Bangalore homes"}
           </h2>
 
           <div className="space-y-5 font-sans text-sm md:text-base text-muted-foreground leading-relaxed">
             <p>
-              At Zikhra, we believe <strong className="text-foreground font-medium">designing timeless luxury</strong> means
+              At Zikhra, we believe <strong className="text-foreground font-medium">designing timeless interiors</strong> means
               creating calm, sophisticated rooms that feel effortlessly <strong className="text-foreground font-medium">elegant</strong>{" "}
               today and stay relevant for years. As we expand our presence in{" "}
               <strong className="text-foreground font-medium">Bangalore</strong>, we bring the same studio discipline —
@@ -35,7 +35,7 @@ const HomeStorySection = ({ market = "hyderabad", areaName }: Props) => {
               daylight, ventilation, storage, and the rhythm of everyday routines — not generic catalogue layouts.
             </p>
             <p>
-              <strong className="text-foreground font-medium">Luxury interior design</strong> in Bangalore should feel
+              <strong className="text-foreground font-medium">Premium interior design</strong> in Bangalore should feel
               grounded in climate and context. We layer textures, warm metallics, and sculptural lighting so your home feels
               inviting. Kitchens get durable worktops, intelligent storage, and{" "}
               <strong className="text-foreground font-medium">modular</strong> systems suited to Indian cooking and
@@ -66,7 +66,7 @@ const HomeStorySection = ({ market = "hyderabad", areaName }: Props) => {
               <Link href="/contact" className="text-gold hover:underline">
                 book a consultation
               </Link>{" "}
-              when you are ready to translate <strong className="text-foreground font-medium">timeless luxury</strong> into a
+              when you are ready to translate <strong className="text-foreground font-medium">timeless design</strong> into a
               home you will love living in.
             </p>
           </div>
@@ -80,22 +80,22 @@ const HomeStorySection = ({ market = "hyderabad", areaName }: Props) => {
       <div className="max-w-3xl mx-auto px-5 md:px-8">
         <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-4 text-center">Our Approach</p>
         <h2 className="font-serif text-2xl md:text-3xl gold-text text-center mb-8">
-          Luxury interior design for Hyderabad &amp; Bangalore
+          Premium interior design for Hyderabad &amp; Bangalore
         </h2>
 
         <div className="space-y-5 font-sans text-sm md:text-base text-muted-foreground leading-relaxed">
           <p>
-            At Zikhra, we believe <strong className="text-foreground font-medium">designing timeless luxury</strong> is not
+            At Zikhra, we believe <strong className="text-foreground font-medium">designing timeless interiors</strong> is not
             about following short-lived trends. It is about crafting calm, sophisticated rooms that feel effortlessly{" "}
             <strong className="text-foreground font-medium">elegant</strong> today and still feel relevant years from now.
             Our studio works with discerning homeowners across{" "}
             <strong className="text-foreground font-medium">Hyderabad</strong> and{" "}
             <strong className="text-foreground font-medium">Bangalore</strong> who want{" "}
-            <strong className="text-foreground font-medium">premium luxury interiors</strong>, honest timelines, and workmanship
+            <strong className="text-foreground font-medium">premium interiors</strong>, honest timelines, and workmanship
             they can trust from first sketch to final styling.
           </p>
           <p>
-            Planning <strong className="text-foreground font-medium">luxury home interiors</strong> in Bengaluru? Our Bangalore
+            Planning <strong className="text-foreground font-medium">premium home interiors</strong> in Bengaluru? Our Bangalore
             team delivers the same <strong className="text-foreground font-medium">turnkey</strong> rigour — bespoke modular
             kitchens, designer wardrobes, layered lighting, and coordinated palettes for apartments and villas from{" "}
             <strong className="text-foreground font-medium">Whitefield</strong> and{" "}
@@ -103,7 +103,7 @@ const HomeStorySection = ({ market = "hyderabad", areaName }: Props) => {
             <strong className="text-foreground font-medium">Koramangala</strong> and{" "}
             <strong className="text-foreground font-medium">Indiranagar</strong>. Visit the{" "}
             <Link href="/bangalore" className="text-gold hover:underline">
-              Bangalore luxury interiors hub
+              Bangalore interiors hub
             </Link>{" "}
             for neighbourhood-specific guides and services.
           </p>
@@ -115,7 +115,7 @@ const HomeStorySection = ({ market = "hyderabad", areaName }: Props) => {
             layouts, joinery, and <strong className="text-foreground font-medium">high-end</strong> materials that suit both climate and culture in Telangana.
           </p>
           <p>
-            <strong className="text-foreground font-medium">Luxury interior design</strong>, in our view, should feel grounded.
+            <strong className="text-foreground font-medium">Premium interior design</strong>, in our view, should feel grounded.
             We layer textures, warm metallics, and sculptural lighting so your home feels inviting rather than imposing. For
             kitchens, we specify durable worktops, intelligent storage, and{" "}
             <strong className="text-foreground font-medium">modular</strong> systems that make everyday cooking a pleasure. For
@@ -137,7 +137,7 @@ const HomeStorySection = ({ market = "hyderabad", areaName }: Props) => {
           </p>
           <p>
             If you are comparing <strong className="text-foreground font-medium">interior designers in Hyderabad</strong> or{" "}
-            <strong className="text-foreground font-medium">luxury interior designers in Bangalore</strong> for a{" "}
+            <strong className="text-foreground font-medium">premium interior designers in Bangalore</strong> for a{" "}
             <strong className="text-foreground font-medium">premium home</strong>, start with a conversation. Browse our{" "}
             <Link href={projectsIndexPath("hyderabad")} className="text-gold hover:underline">
               project stories
@@ -148,13 +148,13 @@ const HomeStorySection = ({ market = "hyderabad", areaName }: Props) => {
             </Link>
             {" "}or{" "}
             <Link href="/bangalore/services" className="text-gold hover:underline">
-              Bangalore luxury interior services
+              Bangalore interior services
             </Link>
             , and{" "}
             <Link href="/contact" className="text-gold hover:underline">
               book a consultation
             </Link>{" "}
-            when you are ready to translate <strong className="text-foreground font-medium">timeless luxury</strong> into a home
+            when you are ready to translate <strong className="text-foreground font-medium">timeless design</strong> into a home
             you will love living in.
           </p>
         </div>

@@ -66,7 +66,7 @@ export default function ServiceDetailView({ service, market = "hyderabad" }: Pro
 
       <section className="section-padding">
         <div className="max-w-lg mx-auto rounded-2xl border border-border/50 bg-card p-5">
-          <h2 className="font-serif text-xl gold-text mb-2">Explore Related Luxury Inspiration</h2>
+          <h2 className="font-serif text-xl gold-text mb-2">Explore Related Design Inspiration</h2>
           <p className="font-sans text-sm text-muted-foreground mb-4">
             See how this premium service is applied in real homes and discover complete interior packages.
           </p>
@@ -75,7 +75,7 @@ export default function ServiceDetailView({ service, market = "hyderabad" }: Pro
               View Premium Projects
             </Link>
             <Link href={portfolioDetailPath(market, "living-room")} className="text-gold hover:underline">
-              Luxury Portfolio Concepts
+              Premium Portfolio Concepts
             </Link>
             <Link href="/contact" className="text-gold hover:underline">
               Get a Free Consultation

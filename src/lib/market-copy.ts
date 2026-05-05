@@ -26,23 +26,24 @@ export type MarketCopy = {
 
 export const MARKET_COPY: Record<MarketId, MarketCopy> = {
   hyderabad: {
-    heroSubline: "Bespoke luxury home interiors in Hyderabad & Bangalore.",
-    heroImageAlt: "Zikhra — luxury interior design, Hyderabad and Bangalore",
+    heroSubline: "Premium home interiors in Hyderabad & Bangalore with clear scope planning.",
+    heroSecondaryLine: "2 BHK, 3 BHK, villa, modular kitchen, and turnkey interior design by Zikhra.",
+    heroImageAlt: "Zikhra - best interior designer in Hyderabad and Bangalore",
     portfolioSub:
-      "Luxury interior design portfolio — premium kitchens, bedrooms, and living spaces crafted for discerning homeowners in Hyderabad and Bangalore",
-    featuredTitle: "Luxury interior projects — Hyderabad & Bangalore",
+      "Premium interior design portfolio - kitchens, bedrooms, and living spaces crafted for homeowners in Hyderabad and Bangalore",
+    featuredTitle: "Premium interior projects - Hyderabad & Bangalore",
     featuredSubtitle:
-      "Explore reference layouts and finishes from our studio. The same bespoke luxury interior approach scales to apartments, villas, and penthouses in Hyderabad; discover neighbourhood-specific luxury home design on our Bangalore hub.",
+      "Explore reference layouts and finishes from our studio. The same premium interior approach scales to apartments, villas, and penthouses in Hyderabad; discover neighbourhood-specific home design on our Bangalore hub.",
     projectTypesSub:
-      "Tailored luxury interior solutions for apartments, villas, and penthouses — Hyderabad flagship studio, Bangalore luxury interiors hub",
+      "Tailored interior solutions for 2 BHK, 3 BHK, villas, and penthouses - Hyderabad flagship studio, Bangalore interiors hub",
     servicesSub:
-      "Premium interior design services — Jubilee Hills to HITEC City in Hyderabad; Koramangala, Whitefield, and Indiranagar in Bangalore",
+      "Home interior packages for 2 BHK, 3 BHK, villas, modular kitchens, and renovations - Hyderabad to Bangalore",
     whyTitle: "Why Hyderabad & Bangalore homeowners choose Zikhra",
     whyPoints: [
-      { title: "End-to-End Solutions", desc: "From concept to completion, we handle everything for your Hyderabad home" },
-      { title: "Fast Delivery", desc: "On-time project completion guaranteed across Hyderabad" },
-      { title: "Premium Materials", desc: "Only the finest imported materials and finishes" },
-      { title: "Transparent Pricing", desc: "No hidden costs, complete clarity on every project" },
+      { title: "End-to-End Solutions", desc: "From concept to completion, we handle everything for your home" },
+      { title: "Clear Estimates", desc: "Room-wise planning for practical, premium, and signature scopes" },
+      { title: "Premium Materials", desc: "Quality hardware, finishes, and materials selected for Indian homes" },
+      { title: "Transparent Process", desc: "Clear milestones, supervised execution, and no vague cost surprises" },
     ],
     testimonialsTitle: "What Hyderabad Says",
     testimonials: [
@@ -66,27 +67,27 @@ export const MARKET_COPY: Record<MarketId, MarketCopy> = {
       },
     ],
     ctaSubline:
-      "Start your luxury home interior journey in Hyderabad or Bangalore — turnkey design, transparent milestones, and premium execution",
-    ctaWhatsappAlt:
-      "WhatsApp icon — message Zikhra for luxury interior design in Hyderabad or Bangalore",
+      "Get a clear estimate for your 2 BHK, 3 BHK, villa, or modular kitchen - premium design with transparent milestones",
+    ctaWhatsappAlt: "WhatsApp icon - message Zikhra for interior design planning in Hyderabad or Bangalore",
     areasSectionSub:
-      "Premium luxury interiors across Hyderabad neighbourhoods — explore Bangalore areas on our city hub",
+      "Premium interiors across Hyderabad neighbourhoods - explore Bangalore areas on our city hub",
   },
   bangalore: {
-    heroSubline: "Bespoke luxury interiors for homes across Bangalore.",
-    heroImageAlt: "Zikhra — luxury interior design in Bangalore",
-    portfolioSub: "Luxury interior design categories — for apartments, villas, and penthouses in Bangalore",
-    featuredTitle: "Recent projects — Bangalore style",
+    heroSubline: "Premium home interiors across Bangalore with clear scope planning.",
+    heroSecondaryLine: "2 BHK, 3 BHK, villa, modular kitchen, and turnkey interiors by Zikhra.",
+    heroImageAlt: "Zikhra - best interior designer in Bangalore",
+    portfolioSub: "Premium interior design categories - for apartments, villas, and penthouses in Bangalore",
+    featuredTitle: "Recent projects - Bangalore style",
     featuredSubtitle:
-      "Explore the craftsmanship and layouts we deliver — from compact city homes to villas and penthouses across Bangalore.",
-    projectTypesSub: "Tailored interior solutions for every home type — now in Bangalore",
-    servicesSub: "Premium interior design in Bangalore — Koramangala, Whitefield, Indiranagar, HSR & across the city",
+      "Explore the craftsmanship and layouts we deliver - from compact city homes to villas and penthouses across Bangalore.",
+    projectTypesSub: "Tailored interior solutions for every home type - now in Bangalore",
+    servicesSub: "2 BHK, 3 BHK, villa, modular kitchen, and renovation packages across Bangalore",
     whyTitle: "Why Bangalore Chooses Zikhra",
     whyPoints: [
       { title: "End-to-End Solutions", desc: "From concept to completion, we handle everything for your Bangalore home" },
-      { title: "Fast Delivery", desc: "Structured timelines and clear milestones for projects across Bangalore" },
-      { title: "Premium Materials", desc: "Imported finishes, hardware, and materials curated for luxury Indian homes" },
-      { title: "Transparent Pricing", desc: "No hidden costs — clarity on scope, samples, and execution before you commit" },
+      { title: "Clear Estimates", desc: "Room-wise planning for practical, premium, and signature scopes" },
+      { title: "Premium Materials", desc: "Quality hardware, finishes, and materials selected for Indian homes" },
+      { title: "Transparent Process", desc: "Clear milestones, supervised execution, and no vague cost surprises" },
     ],
     testimonialsTitle: "What Bangalore Homeowners Say",
     testimonials: [
@@ -94,7 +95,7 @@ export const MARKET_COPY: Record<MarketId, MarketCopy> = {
         name: "Kavya N.",
         location: "Koramangala, Bangalore",
         quote:
-          "Our apartment fit-out felt effortless. The kitchen and wardrobes are stunning — exactly the calm, luxury look we wanted.",
+          "Our apartment fit-out felt effortless. The kitchen and wardrobes are stunning - exactly the calm, premium look we wanted.",
         rating: 5,
       },
       {
@@ -112,8 +113,8 @@ export const MARKET_COPY: Record<MarketId, MarketCopy> = {
         rating: 5,
       },
     ],
-    ctaSubline: "Transform your vision into reality with Zikhra's premium interior solutions in Bangalore",
-    ctaWhatsappAlt: "WhatsApp icon — message Zikhra for premium interior design in Bangalore",
+    ctaSubline: "Get a clear estimate for premium home interiors and modular kitchens in Bangalore",
+    ctaWhatsappAlt: "WhatsApp icon - message Zikhra for interior design planning in Bangalore",
     areasSectionSub: "Premium interior design across Bangalore neighbourhoods",
   },
 };

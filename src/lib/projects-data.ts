@@ -30,17 +30,17 @@ export const projects: ProjectItem[] = [
     slug: "2bhk-apartment",
     title: "2BHK Apartment",
     location: "Gachibowli, Hyderabad",
-    budget: "₹12-18 Lakhs",
+    budget: "Full-home apartment scope",
     duration: "45 Days",
     heroImage: project2bhk.src,
     description:
-      "A complete transformation of a 2BHK apartment in Gachibowli, designed with modern luxury aesthetics. Every room was reimagined with premium materials, smart storage, and ambient lighting to maximize the compact space.",
+      "A complete transformation of a 2BHK apartment in Gachibowli, designed with modern premium aesthetics. Every room was reimagined with quality materials, smart storage, and ambient lighting to maximize the compact space.",
     highlights: ["Space-optimized design", "Premium laminate finishes", "Smart storage solutions", "Ambient cove lighting"],
     scope: ["Living Room", "Master Bedroom", "Guest Bedroom", "Modular Kitchen", "2 Bathrooms", "Balcony"],
     bangalore: {
       location: "Whitefield, Bangalore",
       description:
-        "A complete transformation of a 2BHK apartment in Whitefield, designed with modern luxury aesthetics. Every room was reimagined with premium materials, smart storage, and ambient lighting to maximise the compact footprint typical of East Bangalore towers.",
+        "A complete transformation of a 2BHK apartment in Whitefield, designed with modern premium aesthetics. Every room was reimagined with quality materials, smart storage, and ambient lighting to maximise the compact footprint typical of East Bangalore towers.",
       highlights: [
         "Space-optimised layouts for IT corridor homes",
         "Premium laminate and veneer finishes",
@@ -51,19 +51,19 @@ export const projects: ProjectItem[] = [
   },
   {
     slug: "luxury-villa",
-    title: "Luxury Villa",
+    title: "Signature Villa",
     location: "Jubilee Hills, Hyderabad",
-    budget: "₹45-60 Lakhs",
+    budget: "Villa turnkey scope",
     duration: "90 Days",
     heroImage: projectVilla.src,
     description:
-      "A grand luxury villa transformation in the heart of Jubilee Hills. Italian marble flooring, custom chandeliers, and bespoke furniture pieces create an atmosphere of unparalleled opulence.",
+      "A grand villa transformation in the heart of Jubilee Hills. Italian marble flooring, custom chandeliers, and bespoke furniture pieces create a composed, high-end atmosphere.",
     highlights: ["Italian marble throughout", "Custom designer furniture", "Home automation integrated", "Landscape design included"],
     scope: ["Grand Living Room", "4 Bedrooms", "Gourmet Kitchen", "Home Theatre", "5 Bathrooms", "Garden & Patio"],
     bangalore: {
       location: "Koramangala, Bangalore",
       description:
-        "A grand luxury villa fit-out in Koramangala — Italian marble flooring, custom chandeliers, and bespoke furniture tailored to South Bangalore’s design-conscious homeowners. Indoor–outdoor flow and landscape touches complete the experience.",
+        "A grand villa fit-out in Koramangala — Italian marble flooring, custom chandeliers, and bespoke furniture tailored to South Bangalore’s design-conscious homeowners. Indoor–outdoor flow and landscape touches complete the experience.",
       highlights: [
         "Italian marble and large-format stone",
         "Bespoke furniture and joinery",
@@ -76,7 +76,7 @@ export const projects: ProjectItem[] = [
     slug: "3bhk-penthouse",
     title: "3BHK Penthouse",
     location: "Banjara Hills, Hyderabad",
-    budget: "₹25-35 Lakhs",
+    budget: "Penthouse turnkey scope",
     duration: "60 Days",
     heroImage: project3bhk.src,
     description:
@@ -99,7 +99,7 @@ export const projects: ProjectItem[] = [
     slug: "modular-kitchen-project",
     title: "Modular Kitchen",
     location: "Kondapur, Hyderabad",
-    budget: "₹8-12 Lakhs",
+    budget: "Kitchen remodel scope",
     duration: "30 Days",
     heroImage: kitchenImg.src,
     description:
@@ -117,17 +117,17 @@ export const projects: ProjectItem[] = [
     slug: "master-bedroom",
     title: "Master Bedroom Suite",
     location: "HITEC City, Hyderabad",
-    budget: "₹6-10 Lakhs",
+    budget: "Bedroom suite scope",
     duration: "25 Days",
     heroImage: bedroomImg.src,
     description:
-      "A luxurious master bedroom suite designed as a personal sanctuary with custom headboard, ambient lighting, and walk-in wardrobe.",
+      "A refined master bedroom suite designed as a personal sanctuary with custom headboard, ambient lighting, and walk-in wardrobe.",
     highlights: ["Custom king-size bed", "Walk-in wardrobe", "Ambient mood lighting", "Premium wall paneling"],
     scope: ["Bedroom Design", "Walk-in Closet", "Dressing Area", "Reading Corner", "En-suite Bathroom"],
     bangalore: {
       location: "Hebbal, Bangalore",
       description:
-        "A luxurious master suite in a Hebbal high-rise — custom headboard, walk-in wardrobe with integrated lighting, and quiet wall panelling that suits North Bangalore’s contemporary towers.",
+        "A refined master suite in a Hebbal high-rise — custom headboard, walk-in wardrobe with integrated lighting, and quiet wall panelling that suits North Bangalore’s contemporary towers.",
       highlights: ["Custom bed wall and headboard", "Walk-in wardrobe with lighting", "Mood lighting layers", "Premium veneer and fabric panels"],
     },
   },
@@ -135,7 +135,7 @@ export const projects: ProjectItem[] = [
     slug: "living-room-makeover",
     title: "Living Room Makeover",
     location: "Madhapur, Hyderabad",
-    budget: "₹10-15 Lakhs",
+    budget: "Living-dining remodel scope",
     duration: "35 Days",
     heroImage: livingroomImg.src,
     description:

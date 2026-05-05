@@ -18,15 +18,15 @@ export const areas: AreaItem[] = [
   {
     name: "Jubilee Hills",
     slug: "jubilee-hills",
-    tagline: "Where Luxury Meets Legacy",
+    tagline: "Where Premium Meets Legacy",
     city: "Hyderabad",
     basePath: "/area",
     description:
-      "Jubilee Hills is Hyderabad’s signature luxury address — and Zikhra designs homes here with the same level of refinement. From statement living rooms to bespoke modular kitchens and walk-in wardrobes, we deliver turnkey interiors with transparent pricing and designer-led execution.",
+      "Jubilee Hills is Hyderabad’s signature premium address — and Zikhra designs homes here with the same level of refinement. From statement living rooms to bespoke modular kitchens and walk-in wardrobes, we deliver turnkey interiors with transparent scope planning and designer-led execution.",
     faqs: [
       {
         q: "Do you design full villas in Jubilee Hills?",
-        a: "Yes. Zikhra handles end-to-end luxury interiors for villas and large apartments in Jubilee Hills, including civil coordination, custom furniture, and lighting design.",
+        a: "Yes. Zikhra handles end-to-end premium interiors for villas and large apartments in Jubilee Hills, including civil coordination, custom furniture, and lighting design.",
       },
       {
         q: "How long does a typical Jubilee Hills home interior take?",
@@ -56,7 +56,7 @@ export const areas: AreaItem[] = [
     city: "Hyderabad",
     basePath: "/area",
     description:
-      "Gachibowli’s fast-paced lifestyle calls for smart space planning and modern luxury. Zikhra specialises in optimising apartments and premium residences with modular kitchens, efficient storage, and lighting that makes compact layouts feel expansive.",
+      "Gachibowli’s fast-paced lifestyle calls for smart space planning and modern premium interiors. Zikhra specialises in optimising apartments and premium residences with modular kitchens, efficient storage, and lighting that makes compact layouts feel expansive.",
   },
   {
     name: "Kondapur",
@@ -74,7 +74,7 @@ export const areas: AreaItem[] = [
     city: "Hyderabad",
     basePath: "/area",
     description:
-      "HITEC City homes often need efficiency without compromising luxury. Zikhra blends clean modern lines, premium finishes, and practical layouts for busy professionals who want a polished home that is easy to maintain.",
+      "HITEC City homes often need efficiency without compromising finish quality. Zikhra blends clean modern lines, premium finishes, and practical layouts for busy professionals who want a polished home that is easy to maintain.",
   },
   {
     name: "Madhapur",
@@ -92,12 +92,12 @@ export const areas: AreaItem[] = [
     city: "Hyderabad",
     basePath: "/area",
     description:
-      "Narsingi’s mix of villas and premium apartments needs scalable luxury. Zikhra supports both compact homes and larger formats with customised design, 3D visualisation, and end-to-end execution aligned to possession timelines.",
+      "Narsingi’s mix of villas and premium apartments needs scalable interior planning. Zikhra supports both compact homes and larger formats with customised design, 3D visualisation, and end-to-end execution aligned to possession timelines.",
   },
   {
     name: "Kokapet",
     slug: "kokapet",
-    tagline: "Luxury Villa Interiors",
+    tagline: "Premium Villa Interiors",
     city: "Hyderabad",
     basePath: "/area",
     description:
@@ -110,7 +110,7 @@ export const areas: AreaItem[] = [
     city: "Hyderabad",
     basePath: "/area",
     description:
-      "The Financial District attracts buyers who value sleek, modern luxury. Our interiors emphasise clean geometry, rich textures, and intelligent storage — perfect for premium towers and large-format apartments in the corridor.",
+      "The Financial District attracts buyers who value sleek, modern premium interiors. Our interiors emphasise clean geometry, rich textures, and intelligent storage — perfect for premium towers and large-format apartments in the corridor.",
   },
   {
     name: "Tellapur",
@@ -121,7 +121,7 @@ export const areas: AreaItem[] = [
     description:
       "Tellapur’s gated communities deserve interiors that match the lifestyle promise. Zikhra designs cohesive full-home packages — living, kitchen, bedrooms, and wardrobes — with a process built for new homeowners who want clarity and quality.",
   },
-  ...hyderabadAreasExtended,
+  ...(hyderabadAreasExtended as AreaItem[]),
 ];
 
 export function getAreaBySlug(slug: string) {

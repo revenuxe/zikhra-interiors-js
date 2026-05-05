@@ -25,9 +25,9 @@ export const services: ServiceItem[] = [
     id: "full-home",
     image: serviceHome.src,
     title: "Full Home Interiors",
-    subtitle: "Complete Luxury Home Design in Hyderabad",
+    subtitle: "Complete Premium Home Design in Hyderabad",
     description:
-      "From conceptualization to execution, we design every corner of your home with precision and elegance. Our full home interior service covers living rooms, bedrooms, kitchens, bathrooms, and all transitional spaces — creating a cohesive luxury experience throughout your Hyderabad home.",
+      "From conceptualization to execution, we design every corner of your home with precision and elegance. Our full home interior service covers living rooms, bedrooms, kitchens, bathrooms, and all transitional spaces — creating a cohesive premium experience throughout your Hyderabad home.",
     features: [
       "Complete space planning & 3D visualization",
       "Custom furniture design & procurement",
@@ -36,7 +36,7 @@ export const services: ServiceItem[] = [
       "Wall paneling, textures & accent walls",
       "Smart home integration ready",
     ],
-    price: "Starting from ₹8 Lakhs",
+    price: "Custom estimate after floor plan review",
   },
   {
     id: "modular-kitchen",
@@ -44,7 +44,7 @@ export const services: ServiceItem[] = [
     title: "Modular Kitchen",
     subtitle: "Premium Kitchen Design Across Hyderabad",
     description:
-      "Our modular kitchens combine European aesthetics with Indian functionality. Every surface, handle, and fixture is selected with intent — creating spaces where cooking becomes a luxury experience.",
+      "Our modular kitchens combine European aesthetics with Indian functionality. Every surface, handle, and fixture is selected with intent — creating spaces where cooking feels polished, efficient, and personal.",
     features: [
       "Premium Italian marble & quartz countertops",
       "Soft-close German Hettich/Blum hardware",
@@ -53,7 +53,7 @@ export const services: ServiceItem[] = [
       "Space-optimized modular island layouts",
       "Waterproof & termite-proof BWR plywood",
     ],
-    price: "Starting from ₹4 Lakhs",
+    price: "Custom estimate after layout review",
   },
   {
     id: "wardrobes",
@@ -70,7 +70,7 @@ export const services: ServiceItem[] = [
       "Anti-dust sealed compartments",
       "Premium lacquer & veneer finishes",
     ],
-    price: "Starting from ₹2.5 Lakhs",
+    price: "Custom estimate after storage review",
   },
   {
     id: "living-room",
@@ -87,15 +87,15 @@ export const services: ServiceItem[] = [
       "Curtain & blind coordination",
       "Art curation & styling",
     ],
-    price: "Starting from ₹3 Lakhs",
+    price: "Custom estimate after room review",
   },
   {
     id: "bedroom",
     image: serviceBedroom.src,
     title: "Bedroom Interiors",
-    subtitle: "Luxury Bedroom Design in Hyderabad",
+    subtitle: "Premium Bedroom Design in Hyderabad",
     description:
-      "Your bedroom should be a sanctuary. We design bedrooms that promote relaxation and reflect luxury — from custom headboards to ambient lighting that sets the perfect mood.",
+      "Your bedroom should be a sanctuary. We design bedrooms that promote relaxation and reflect your personal style — from custom headboards to ambient lighting that sets the perfect mood.",
     features: [
       "Custom upholstered headboard designs",
       "Walk-in wardrobe integration",
@@ -104,7 +104,7 @@ export const services: ServiceItem[] = [
       "Blackout curtain solutions",
       "En-suite bathroom coordination",
     ],
-    price: "Starting from ₹2 Lakhs",
+    price: "Custom estimate after room review",
   },
   {
     id: "bathroom",
@@ -112,7 +112,7 @@ export const services: ServiceItem[] = [
     title: "Bathroom Interiors",
     subtitle: "Premium Bathroom Design in Hyderabad",
     description:
-      "Transform your bathroom into a spa-like retreat. From premium fixtures to marble finishes, we create bathrooms that are both functional and luxurious.",
+      "Transform your bathroom into a spa-like retreat. From premium fixtures to marble finishes, we create bathrooms that are both functional and refined.",
     features: [
       "Premium marble & tile selection",
       "Rain shower & premium fixtures",
@@ -121,7 +121,7 @@ export const services: ServiceItem[] = [
       "Heated towel rails & accessories",
       "Waterproofing & drainage solutions",
     ],
-    price: "Starting from ₹2.5 Lakhs",
+    price: "Custom estimate after scope review",
   },
   {
     id: "false-ceiling",
@@ -138,7 +138,7 @@ export const services: ServiceItem[] = [
       "POP & wooden ceiling options",
       "Smart lighting automation",
     ],
-    price: "Starting from ₹1.5 Lakhs",
+    price: "Custom estimate after ceiling plan review",
   },
   {
     id: "tv-unit",
@@ -155,7 +155,7 @@ export const services: ServiceItem[] = [
       "Premium wood & lacquer finishes",
       "Sound system integration",
     ],
-    price: "Starting from ₹1.2 Lakhs",
+    price: "Custom estimate after wall review",
   },
   {
     id: "pooja-room",
@@ -172,7 +172,7 @@ export const services: ServiceItem[] = [
       "Bell & diya holder integration",
       "Vastu-compliant layouts",
     ],
-    price: "Starting from ₹1 Lakh",
+    price: "Custom estimate after design review",
   },
   {
     id: "renovation",
@@ -180,7 +180,7 @@ export const services: ServiceItem[] = [
     title: "Home Renovation",
     subtitle: "Transform Your Existing Hyderabad Home",
     description:
-      "Breathe new life into your existing space. Our renovation service covers everything from structural changes to cosmetic upgrades — transforming outdated interiors into modern luxury living spaces.",
+      "Breathe new life into your existing space. Our renovation service covers everything from structural changes to cosmetic upgrades — transforming outdated interiors into modern, polished living spaces.",
     features: [
       "Complete demolition & reconstruction",
       "Electrical & plumbing rework",
@@ -189,7 +189,7 @@ export const services: ServiceItem[] = [
       "Painting, textures & wall treatments",
       "Project managed end-to-end",
     ],
-    price: "Starting from ₹5 Lakhs",
+    price: "Custom estimate after site review",
   },
   {
     id: "commercial",
@@ -206,7 +206,7 @@ export const services: ServiceItem[] = [
       "Restaurant & café interiors",
       "Brand-aligned design language",
     ],
-    price: "Starting from ₹6 Lakhs",
+    price: "Custom estimate after site review",
   },
 ];
 

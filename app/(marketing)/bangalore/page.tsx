@@ -17,13 +17,16 @@ import {
 export const dynamic = "force-static";
 export const revalidate = 86400;
 
-const title = "Luxury Interior Designers in Bangalore | Zikhra";
+const title = "Best Interior Designer in Bangalore | Zikhra";
 const description =
-  "Premium home interiors and modular kitchens in Bangalore — Koramangala, Indiranagar, Whitefield, HSR Layout, and more. Book a free consultation with Zikhra for turnkey luxury execution.";
+  "Zikhra designs premium 2 BHK, 3 BHK, villa, modular kitchen, and turnkey home interiors in Bangalore. Serving Koramangala, Indiranagar, Whitefield, HSR Layout, and more.";
 
 const keywords = [
   "interior designers Bangalore",
-  "luxury home interiors Bangalore",
+  "best interior designer Bangalore",
+  "2 BHK interiors Bangalore",
+  "3 BHK interiors Bangalore",
+  "interior design cost Bangalore",
   "modular kitchen Bangalore",
   "Koramangala interior designers",
   "Whitefield home interiors",
@@ -43,7 +46,7 @@ export const metadata: Metadata = {
     description,
     path: "/bangalore",
     imageUrl: DEFAULT_OG_IMAGE_PATH,
-    imageAlt: "Luxury interior designers in Bangalore — Zikhra",
+    imageAlt: "Best interior designer in Bangalore - Zikhra",
   }),
   twitter: twitterSummaryLarge(title, description, DEFAULT_OG_IMAGE_PATH),
 };
@@ -52,7 +55,7 @@ export default function BangaloreHubPage() {
   const itemList = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Bangalore neighbourhoods — Zikhra luxury interiors",
+    name: "Bangalore neighbourhoods - Zikhra premium interiors",
     itemListElement: bangaloreAreas.map((area, index) => ({
       "@type": "ListItem",
       position: index + 1,

@@ -41,7 +41,7 @@ export function generateMetadata({ params }: Props): Metadata {
       path,
       type: "article",
       imageUrl: project.heroImage ?? DEFAULT_OG_IMAGE_PATH,
-      imageAlt: `${project.title} — luxury interior project ${location}`,
+      imageAlt: `${project.title} — premium interior project ${location}`,
     }),
     twitter: twitterSummaryLarge(title, description, project.heroImage ?? DEFAULT_OG_IMAGE_PATH),
   };
@@ -72,7 +72,7 @@ export default function BangaloreProjectDetailPage({ params }: Props) {
           name: project.title,
           description: display.description,
           locationCreated: display.location,
-          about: "Luxury interior design project — Bangalore funnel",
+          about: "Premium interior design project — Bangalore funnel",
           url: absoluteUrl(`/bangalore/projects/${project.slug}`),
         })}
       />

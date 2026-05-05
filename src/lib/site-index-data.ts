@@ -1,4 +1,4 @@
-import { areas } from "@/lib/areas-data";
+﻿import { areas } from "@/lib/areas-data";
 import { bangaloreAreas } from "@/lib/bangalore-areas-data";
 import { portfolioItems } from "@/lib/portfolio-data";
 import { projectTypes } from "@/lib/project-types-data";
@@ -14,6 +14,13 @@ const mainPages: SiteIndexLink[] = [
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
   { label: "Services", href: "/services" },
+  { label: "Interior design cost", href: "/interior-design-cost" },
+  { label: "Hyderabad interior design cost", href: "/hyderabad/interior-design-cost" },
+  { label: "Bangalore interior design cost", href: "/bangalore/interior-design-cost" },
+  { label: "2 BHK interior design cost Hyderabad", href: "/2bhk-interior-design-cost-hyderabad" },
+  { label: "2 BHK interior design cost Bangalore", href: "/2bhk-interior-design-cost-bangalore" },
+  { label: "3 BHK interior design cost Hyderabad", href: "/3bhk-interior-design-cost-hyderabad" },
+  { label: "3 BHK interior design cost Bangalore", href: "/3bhk-interior-design-cost-bangalore" },
   { label: "Projects", href: "/projects" },
   { label: "Projects — Bangalore", href: "/bangalore/projects" },
   { label: "Blog", href: "/blog" },
@@ -32,7 +39,7 @@ export function getStaticSiteIndexSections(): SiteIndexSection[] {
     },
     {
       title: "Services",
-      description: "Luxury interior services — each with its own detail page.",
+      description: "Premium interior services — each with its own detail page.",
       links: services.map((s) => ({ label: s.title, href: `/services/${s.id}` })),
     },
     {
@@ -59,7 +66,7 @@ export function getStaticSiteIndexSections(): SiteIndexSection[] {
       title: "Bangalore areas",
       description: "Local interior design landing pages in Bangalore.",
       links: [
-        { label: "Bangalore — luxury interiors hub", href: "/bangalore" },
+        { label: "Bangalore — premium interiors hub", href: "/bangalore" },
         ...bangaloreAreas.map((a) => ({ label: `${a.name}, Bangalore`, href: `/bangalore/${a.slug}` })),
       ],
     },

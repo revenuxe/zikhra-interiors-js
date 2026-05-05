@@ -7,7 +7,7 @@ export const hyderabadAreasExtended = [
     city: "Hyderabad",
     basePath: "/area",
     description:
-      "Kukatpally’s dense apartment stock rewards clever storage and calm palettes. Zikhra delivers modular kitchens, full-height wardrobes, and turnkey luxury interiors tuned to family budgets without compromising finish quality.",
+      "Kukatpally’s dense apartment stock rewards clever storage and calm palettes. Zikhra delivers modular kitchens, full-height wardrobes, and turnkey premium interiors tuned to family budgets without compromising finish quality.",
   },
   {
     name: "Manikonda",
@@ -25,12 +25,12 @@ export const hyderabadAreasExtended = [
     city: "Hyderabad",
     basePath: "/area",
     description:
-      "Miyapur families need interiors that grow with them. Our luxury interior design focuses on durable finishes, efficient kitchens, and wardrobes that maximise every corner — with transparent pricing and clear site milestones.",
+      "Miyapur families need interiors that grow with them. Our premium interior design focuses on durable finishes, efficient kitchens, and wardrobes that maximise every corner — with transparent pricing and clear site milestones.",
   },
   {
     name: "Bachupally",
     slug: "bachupally",
-    tagline: "Budget-Friendly Luxury",
+    tagline: "Budget-Friendly Premium",
     city: "Hyderabad",
     basePath: "/area",
     description:
@@ -43,7 +43,7 @@ export const hyderabadAreasExtended = [
     city: "Hyderabad",
     basePath: "/area",
     description:
-      "Kompally’s mix of villas and apartments calls for flexible luxury packages. We handle renovations and fresh fit-outs with coordinated civil touch-ups, services, and finishes that read as one cohesive story.",
+      "Kompally’s mix of villas and apartments calls for flexible premium packages. We handle renovations and fresh fit-outs with coordinated civil touch-ups, services, and finishes that read as one cohesive story.",
   },
   {
     name: "Uppal",
@@ -70,7 +70,7 @@ export const hyderabadAreasExtended = [
     city: "Hyderabad",
     basePath: "/area",
     description:
-      "Secunderabad’s character homes and newer builds both deserve thoughtful luxury. Zikhra blends classic material warmth with contemporary layouts, lighting layers, and joinery that suits older structures and new towers alike.",
+      "Secunderabad’s character homes and newer builds both deserve thoughtful premium. Zikhra blends classic material warmth with contemporary layouts, lighting layers, and joinery that suits older structures and new towers alike.",
   },
   {
     name: "Begumpet",
@@ -84,11 +84,11 @@ export const hyderabadAreasExtended = [
   {
     name: "Ameerpet",
     slug: "ameerpet",
-    tagline: "Compact Luxury Design",
+    tagline: "Compact Premium Design",
     city: "Hyderabad",
     basePath: "/area",
     description:
-      "Compact footprints in Ameerpet need intelligent luxury — integrated study corners, sliding wardrobes, and kitchens with tall units. Zikhra maximises carpet area while keeping the aesthetic refined.",
+      "Compact footprints in Ameerpet need intelligent premium — integrated study corners, sliding wardrobes, and kitchens with tall units. Zikhra maximises carpet area while keeping the aesthetic refined.",
   },
   {
     name: "Attapur",
@@ -106,7 +106,7 @@ export const hyderabadAreasExtended = [
     city: "Hyderabad",
     basePath: "/area",
     description:
-      "Tolichowki’s diverse housing benefits from designers who respect context. Zikhra delivers modern modular systems and luxury finishes while working sensitively with existing layouts and community norms.",
+      "Tolichowki’s diverse housing benefits from designers who respect context. Zikhra delivers modern modular systems and premium finishes while working sensitively with existing layouts and community norms.",
   },
   {
     name: "Shamshabad",
@@ -133,7 +133,7 @@ export const hyderabadAreasExtended = [
     city: "Hyderabad",
     basePath: "/area",
     description:
-      "Sainikpuri’s greener, quieter setting pairs with calm luxury interiors. We emphasise natural tones, soft ambient light, and outdoor-connected living zones where your floor plan allows.",
+      "Sainikpuri’s greener, quieter setting pairs with calm premium interiors. We emphasise natural tones, soft ambient light, and outdoor-connected living zones where your floor plan allows.",
   },
   {
     name: "Nizampet",
@@ -151,7 +151,7 @@ export const hyderabadAreasExtended = [
     city: "Hyderabad",
     basePath: "/area",
     description:
-      "Chanda Nagar homeowners choose Zikhra for family-first layouts — open dining, safe finishes for children, and storage that hides clutter. Our luxury interior studio delivers the same rigour as our Jubilee Hills projects.",
+      "Chanda Nagar homeowners choose Zikhra for family-first layouts — open dining, safe finishes for children, and storage that hides clutter. Our premium interior studio delivers the same rigour as our Jubilee Hills projects.",
   },
   {
     name: "Nallagandla",
@@ -169,7 +169,7 @@ export const hyderabadAreasExtended = [
     city: "Hyderabad",
     basePath: "/area",
     description:
-      "Puppalguda’s premium communities expect turnkey luxury. Zikhra coordinates living, kitchen, and bedroom packages with one design language — ideal for busy buyers who want clarity from 3D sign-off to handover.",
+      "Puppalguda’s premium communities expect turnkey premium. Zikhra coordinates living, kitchen, and bedroom packages with one design language — ideal for busy buyers who want clarity from 3D sign-off to handover.",
   },
   {
     name: "Dilsukhnagar",
@@ -196,16 +196,16 @@ export const hyderabadAreasExtended = [
     city: "Hyderabad",
     basePath: "/area",
     description:
-      "Tarnaka’s academic and professional residents want efficient luxury. We design work-from-home corners, compact dining solutions, and premium finishes that photograph well for resale when life moves on.",
+      "Tarnaka’s academic and professional residents want efficient premium. We design work-from-home corners, compact dining solutions, and premium finishes that photograph well for resale when life moves on.",
   },
   {
     name: "Alwal",
     slug: "alwal",
-    tagline: "Affordable Luxury Design",
+    tagline: "Affordable Premium Design",
     city: "Hyderabad",
     basePath: "/area",
     description:
-      "Alwal offers strong value for homeowners upgrading interiors. Zikhra packages scope clearly — essentials first, optional upgrades sequenced — so you control spend while achieving a cohesive luxury look.",
+      "Alwal offers strong value for homeowners upgrading interiors. Zikhra packages scope clearly — essentials first, optional upgrades sequenced — so you control spend while achieving a cohesive premium look.",
   },
   {
     name: "Malkajgiri",
@@ -232,7 +232,7 @@ export const hyderabadAreasExtended = [
     city: "Hyderabad",
     basePath: "/area",
     description:
-      "Serilingampally towers benefit from orientation-smart palettes and joinery. We integrate AC ducts, curtain pockets, and TV walls so services disappear into architecture — hallmark of our luxury execution.",
+      "Serilingampally towers benefit from orientation-smart palettes and joinery. We integrate AC ducts, curtain pockets, and TV walls so services disappear into architecture — hallmark of our premium execution.",
   },
   {
     name: "Lingampally",
@@ -250,7 +250,7 @@ export const hyderabadAreasExtended = [
     city: "Hyderabad",
     basePath: "/area",
     description:
-      "Larger plots and farmhouses near Patancheru need scale-aware luxury — expansive living, outdoor connectivity, and kitchens suited to entertaining. Zikhra handles phased execution when you live on site.",
+      "Larger plots and farmhouses near Patancheru need scale-aware premium — expansive living, outdoor connectivity, and kitchens suited to entertaining. Zikhra handles phased execution when you live on site.",
   },
   {
     name: "Bolarum",
@@ -286,7 +286,7 @@ export const hyderabadAreasExtended = [
     city: "Hyderabad",
     basePath: "/area",
     description:
-      "Gandipet villas invite indoor–outdoor luxury — large glazing, terrace seating, and finishes that handle humidity near the lake. Zikhra choreographs lighting and furniture layouts around views and breeze paths.",
+      "Gandipet villas invite indoor–outdoor premium — large glazing, terrace seating, and finishes that handle humidity near the lake. Zikhra choreographs lighting and furniture layouts around views and breeze paths.",
   },
   {
     name: "Pragathi Nagar",
@@ -304,7 +304,7 @@ export const hyderabadAreasExtended = [
     city: "Hyderabad",
     basePath: "/area",
     description:
-      "ECIL homeowners appreciate transparent packages. Zikhra scopes living, kitchen, and bedroom essentials clearly, then layers upgrades you can add later — so luxury feels achievable and planned.",
+      "ECIL homeowners appreciate transparent packages. Zikhra scopes living, kitchen, and bedroom essentials clearly, then layers upgrades you can add later — so premium feels achievable and planned.",
   },
   {
     name: "AS Rao Nagar",

@@ -6,7 +6,7 @@ import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitt
 export const dynamic = "force-static";
 export const revalidate = 86400;
 
-const title = "Luxury Interior Design Services in Bangalore & Bengaluru | Zikhra";
+const title = "Premium Interior Design Services in Bangalore & Bengaluru | Zikhra";
 const description =
   "Premium home interiors, modular kitchens, wardrobes, and renovation in Bangalore and Bengaluru — Koramangala, Whitefield, Indiranagar, HSR, and across the city.";
 
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     description,
     path: "/bangalore/services",
     imageUrl: DEFAULT_OG_IMAGE_PATH,
-    imageAlt: "Zikhra luxury interior design services — Bangalore & Bengaluru",
+    imageAlt: "Zikhra premium interior design services — Bangalore & Bengaluru",
   }),
   twitter: twitterSummaryLarge(title, description, DEFAULT_OG_IMAGE_PATH),
 };

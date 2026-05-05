@@ -6,9 +6,9 @@ import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitt
 export const dynamic = "force-static";
 export const revalidate = 86400;
 
-const title = "Luxury Interior Projects in Bangalore & Bengaluru | Zikhra";
+const title = "Premium Interior Projects in Bangalore & Bengaluru | Zikhra";
 const description =
-  "Browse premium and luxury interior design projects by Zikhra across villas, apartments, and modern homes in Bangalore — same craftsmanship as our Hyderabad studio.";
+  "Browse premium interior design projects by Zikhra across villas, apartments, and modern homes in Bangalore — same craftsmanship as our Hyderabad studio.";
 
 export const metadata: Metadata = {
   title,
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     description,
     path: "/bangalore/projects",
     imageUrl: DEFAULT_OG_IMAGE_PATH,
-    imageAlt: "Premium interior design portfolio — luxury Bangalore residential projects by Zikhra",
+    imageAlt: "Premium interior design portfolio — Bangalore residential projects by Zikhra",
   }),
   twitter: twitterSummaryLarge(title, description, DEFAULT_OG_IMAGE_PATH),
 };

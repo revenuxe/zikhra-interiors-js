@@ -26,7 +26,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Kitchen Design",
     tagline: "Premium Modular Kitchens in Hyderabad",
     description:
-      "Our modular kitchens blend European functionality with Indian cooking needs. Every surface, handle, and fixture is placed with intent — creating luxury kitchen experiences across Jubilee Hills, Gachibowli, and HITEC City.",
+      "Our modular kitchens blend European functionality with Indian cooking needs. Every surface, handle, and fixture is placed with intent — creating premium kitchen experiences across Jubilee Hills, Gachibowli, and HITEC City.",
     heroImage: kitchenImg.src,
     galleryImages: [kitchenImg.src, kitchenImg2.src],
     features: [
@@ -47,7 +47,7 @@ export const portfolioItems: PortfolioItem[] = [
   {
     slug: "bedroom",
     title: "Bedroom Design",
-    tagline: "Luxury Bedroom Interiors in Hyderabad",
+    tagline: "Premium Bedroom Interiors in Hyderabad",
     description:
       "We design bedrooms that are personal retreats. Plush textures, moody lighting, and bespoke furniture come together to create your perfect sanctuary in Hyderabad.",
     heroImage: bedroomImg.src,
@@ -95,7 +95,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Wardrobe Design",
     tagline: "Custom Wardrobes & Walk-in Closets in Hyderabad",
     description:
-      "Walk-in closets and built-in wardrobes that turn your everyday routine into a boutique experience. Designed for luxury Hyderabad homes.",
+      "Walk-in closets and built-in wardrobes that turn your everyday routine into a boutique experience. Designed for premium Hyderabad homes.",
     heroImage: wardrobeImg.src,
     galleryImages: [wardrobeImg.src, wardrobeImg2.src],
     features: [
@@ -116,9 +116,9 @@ export const portfolioItems: PortfolioItem[] = [
   {
     slug: "bathroom",
     title: "Bathroom Design",
-    tagline: "Luxury Bathroom Interiors in Hyderabad",
+    tagline: "Premium Bathroom Interiors in Hyderabad",
     description:
-      "Transform your bathroom into a spa-like retreat with premium marble, rain showers, gold fixtures, and ambient lighting. Designed for luxury homes across Hyderabad.",
+      "Transform your bathroom into a spa-like retreat with premium marble, rain showers, gold fixtures, and ambient lighting. Designed for premium homes across Hyderabad.",
     heroImage: bathroomImg.src,
     galleryImages: [bathroomImg.src],
     features: [
@@ -130,7 +130,7 @@ export const portfolioItems: PortfolioItem[] = [
       "Complete waterproofing solutions",
     ],
     process: [
-      { step: "Assessment", desc: "Evaluating plumbing, space, and your luxury preferences" },
+      { step: "Assessment", desc: "Evaluating plumbing, space, and your finish preferences" },
       { step: "Design", desc: "3D renders with material and fixture selection" },
       { step: "Sourcing", desc: "Premium fixtures from top brands" },
       { step: "Installation", desc: "Expert waterproofing and flawless finishing" },
@@ -141,7 +141,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Study Room Design",
     tagline: "Premium Home Office & Study Rooms in Hyderabad",
     description:
-      "Create the perfect workspace at home. Our study room designs combine functionality with luxury — custom desks, built-in bookshelves, and ambient lighting for focused productivity.",
+      "Create the perfect workspace at home. Our study room designs combine functionality with refinement — custom desks, built-in bookshelves, and ambient lighting for focused productivity.",
     heroImage: studyImg.src,
     galleryImages: [studyImg.src],
     features: [

@@ -6,8 +6,9 @@ import { bangaloreAreas } from "@/lib/bangalore-areas-data";
 import { portfolioItems } from "@/lib/portfolio-data";
 import { projectTypes } from "@/lib/project-types-data";
 import { absoluteUrl } from "@/lib/seo";
-import { sanityClient, sanityConfigured, sanitySitemapFetchOptions } from "@/lib/sanity/client";
+import { sanityClient, sanityConfigured, sanitySitemapFetchOptions, skipSanityDuringBuild } from "@/lib/sanity/client";
 import { blogSitemapQuery } from "@/lib/sanity/queries";
+import { localBlogPosts } from "@/lib/local-blog-posts";
 
 type BlogSitemapItem = { slug: string; _updatedAt?: string };
 
@@ -17,19 +18,26 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/about",
     "/contact",
     "/services",
+    "/interior-design-cost",
+    "/hyderabad/interior-design-cost",
+    "/2bhk-interior-design-cost-hyderabad",
+    "/2bhk-interior-design-cost-bangalore",
+    "/3bhk-interior-design-cost-hyderabad",
+    "/3bhk-interior-design-cost-bangalore",
     "/projects",
     "/blog",
     "/terms",
     "/privacy",
     "/thank-you",
     "/bangalore",
+    "/bangalore/interior-design-cost",
     "/bangalore/projects",
     "/all-pages",
   ];
 
   const now = new Date();
   let blogItems: BlogSitemapItem[] = [];
-  if (sanityConfigured && sanityClient) {
+  if (sanityConfigured && sanityClient && !skipSanityDuringBuild) {
     try {
       blogItems = await sanityClient.fetch(blogSitemapQuery, {}, sanitySitemapFetchOptions);
     } catch (error) {
@@ -111,7 +119,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),
-    ...blogItems.map((post) => ({
+    ...localBlogPosts.map((post) => ({
+      url: absoluteUrl(`/blog/${post.slug}`),
+      lastModified: post.publishedAt ? new Date(post.publishedAt) : now,
+      changeFrequency: "monthly" as const,
+      priority: 0.82,
+    })),
+    ...blogItems.filter((post) => !localBlogPosts.some((localPost) => localPost.slug === post.slug)).map((post) => ({
       url: absoluteUrl(`/blog/${post.slug}`),
       lastModified: post._updatedAt ? new Date(post._updatedAt) : now,
       changeFrequency: "weekly" as const,

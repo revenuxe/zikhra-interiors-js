@@ -24,8 +24,8 @@ const services = [
     id: "full-home",
     image: serviceHome.src,
     title: "Full Home Interiors",
-    subtitle: "Complete Luxury Home Design in Hyderabad",
-    description: "From conceptualization to execution, we design every corner of your home with precision and elegance. Our full home interior service covers living rooms, bedrooms, kitchens, bathrooms, and all transitional spaces — creating a cohesive luxury experience throughout your Hyderabad home.",
+    subtitle: "Complete Premium Home Design in Hyderabad",
+    description: "From conceptualization to execution, we design every corner of your home with precision and elegance. Our full home interior service covers living rooms, bedrooms, kitchens, bathrooms, and all transitional spaces — creating a cohesive premium experience throughout your Hyderabad home.",
     features: [
       "Complete space planning & 3D visualization",
       "Custom furniture design & procurement",
@@ -34,14 +34,14 @@ const services = [
       "Wall paneling, textures & accent walls",
       "Smart home integration ready",
     ],
-    price: "Starting from ₹8 Lakhs",
+    price: "Custom estimate after floor plan review",
   },
   {
     id: "modular-kitchen",
     image: serviceKitchen.src,
     title: "Modular Kitchen",
     subtitle: "Premium Kitchen Design Across Hyderabad",
-    description: "Our modular kitchens combine European aesthetics with Indian functionality. Every surface, handle, and fixture is selected with intent — creating spaces where cooking becomes a luxury experience.",
+    description: "Our modular kitchens combine European aesthetics with Indian functionality. Every surface, handle, and fixture is selected with intent — creating spaces where cooking feels polished, efficient, and personal.",
     features: [
       "Premium Italian marble & quartz countertops",
       "Soft-close German Hettich/Blum hardware",
@@ -50,7 +50,7 @@ const services = [
       "Space-optimized modular island layouts",
       "Waterproof & termite-proof BWR plywood",
     ],
-    price: "Starting from ₹4 Lakhs",
+    price: "Custom estimate after layout review",
   },
   {
     id: "wardrobes",
@@ -66,7 +66,7 @@ const services = [
       "Anti-dust sealed compartments",
       "Premium lacquer & veneer finishes",
     ],
-    price: "Starting from ₹2.5 Lakhs",
+    price: "Custom estimate after storage review",
   },
   {
     id: "living-room",
@@ -82,14 +82,14 @@ const services = [
       "Curtain & blind coordination",
       "Art curation & styling",
     ],
-    price: "Starting from ₹3 Lakhs",
+    price: "Custom estimate after room review",
   },
   {
     id: "bedroom",
     image: serviceBedroom.src,
     title: "Bedroom Interiors",
-    subtitle: "Luxury Bedroom Design in Hyderabad",
-    description: "Your bedroom should be a sanctuary. We design bedrooms that promote relaxation and reflect luxury — from custom headboards to ambient lighting that sets the perfect mood.",
+    subtitle: "Premium Bedroom Design in Hyderabad",
+    description: "Your bedroom should be a sanctuary. We design bedrooms that promote relaxation and reflect your personal style — from custom headboards to ambient lighting that sets the perfect mood.",
     features: [
       "Custom upholstered headboard designs",
       "Walk-in wardrobe integration",
@@ -98,7 +98,7 @@ const services = [
       "Blackout curtain solutions",
       "En-suite bathroom coordination",
     ],
-    price: "Starting from ₹2 Lakhs",
+    price: "Custom estimate after room review",
   },
   {
     id: "bathroom",
@@ -114,7 +114,7 @@ const services = [
       "Heated towel rails & accessories",
       "Waterproofing & drainage solutions",
     ],
-    price: "Starting from ₹2.5 Lakhs",
+    price: "Custom estimate after scope review",
   },
   {
     id: "false-ceiling",
@@ -130,7 +130,7 @@ const services = [
       "POP & wooden ceiling options",
       "Smart lighting automation",
     ],
-    price: "Starting from ₹1.5 Lakhs",
+    price: "Custom estimate after ceiling plan review",
   },
   {
     id: "tv-unit",
@@ -146,7 +146,7 @@ const services = [
       "Premium wood & lacquer finishes",
       "Sound system integration",
     ],
-    price: "Starting from ₹1.2 Lakhs",
+    price: "Custom estimate after wall review",
   },
   {
     id: "pooja-room",
@@ -162,14 +162,14 @@ const services = [
       "Bell & diya holder integration",
       "Vastu-compliant layouts",
     ],
-    price: "Starting from ₹1 Lakh",
+    price: "Custom estimate after design review",
   },
   {
     id: "renovation",
     image: serviceRenovation.src,
     title: "Home Renovation",
     subtitle: "Transform Your Existing Hyderabad Home",
-    description: "Breathe new life into your existing space. Our renovation service covers everything from structural changes to cosmetic upgrades — transforming outdated interiors into modern luxury living spaces.",
+    description: "Breathe new life into your existing space. Our renovation service covers everything from structural changes to cosmetic upgrades — transforming outdated interiors into modern, polished living spaces.",
     features: [
       "Complete demolition & reconstruction",
       "Electrical & plumbing rework",
@@ -178,7 +178,7 @@ const services = [
       "Painting, textures & wall treatments",
       "Project managed end-to-end",
     ],
-    price: "Starting from ₹5 Lakhs",
+    price: "Custom estimate after site review",
   },
   {
     id: "commercial",
@@ -194,7 +194,7 @@ const services = [
       "Restaurant & café interiors",
       "Brand-aligned design language",
     ],
-    price: "Starting from ₹6 Lakhs",
+    price: "Custom estimate after site review",
   },
 ];
 
@@ -206,8 +206,8 @@ const Services = ({ market = "hyderabad" }: ServicesProps) => {
   const city = cityLabel(market);
   const heroLine =
     market === "bangalore"
-      ? "Premium interior design & renovation across Bangalore & Bengaluru — Whitefield, Koramangala, Indiranagar, HSR & beyond"
-      : "Premium interior design & renovation services across Hyderabad — Jubilee Hills, Gachibowli, Kondapur & beyond";
+      ? "2 BHK, 3 BHK, villa, modular kitchen, and renovation packages across Bangalore with clear scope planning"
+      : "2 BHK, 3 BHK, villa, modular kitchen, and renovation packages across Hyderabad with clear scope planning";
 
   return (
     <div className="min-h-screen bg-background">
@@ -218,6 +218,13 @@ const Services = ({ market = "hyderabad" }: ServicesProps) => {
         <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Our Expertise</p>
         <h1 className="font-serif text-4xl md:text-5xl font-bold gold-text mb-3">Interior Design Services</h1>
         <p className="font-sans text-sm text-muted-foreground max-w-md mx-auto">{heroLine}</p>
+        <p className="font-sans text-xs text-muted-foreground mt-4 max-w-md mx-auto">
+          Compare packages in our{" "}
+          <Link href={market === "bangalore" ? "/bangalore/interior-design-cost" : "/hyderabad/interior-design-cost"} className="text-gold hover:underline">
+            interior design cost guide
+          </Link>
+          , including room-wise planning for practical, premium, and signature scopes.
+        </p>
       </section>
 
       {/* Services */}
@@ -229,7 +236,7 @@ const Services = ({ market = "hyderabad" }: ServicesProps) => {
                 <div className="w-full md:w-1/2 rounded-2xl overflow-hidden group">
                   <img
                     src={svc.image}
-                    alt={`${svc.title} — premium luxury interior design service in ${city} by Zikhra`}
+                    alt={`${svc.title} interior design service in ${city} by Zikhra`}
                     loading="lazy"
                     width={640}
                     height={640}

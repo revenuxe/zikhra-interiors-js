@@ -24,7 +24,7 @@ function resolveSiteUrl(): string {
 }
 
 export const SITE_URL = resolveSiteUrl();
-export const SITE_NAME = "Zikhra Luxury Interiors";
+export const SITE_NAME = "Zikhra Interiors";
 /** Served from `/public` for reliable social previews. */
 export const DEFAULT_OG_IMAGE_PATH = "/og-image.webp";
 

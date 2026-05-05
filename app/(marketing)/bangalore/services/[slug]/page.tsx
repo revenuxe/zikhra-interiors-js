@@ -28,7 +28,7 @@ export function generateMetadata({ params }: Props): Metadata {
   if (!service) return { title: "Service Not Found" };
 
   const canonicalPath = `/bangalore/services/${params.slug}`;
-  const title = `Luxury ${service.title} in Bangalore & Bengaluru | Zikhra`;
+  const title = `${service.title} in Bangalore & Bengaluru | Zikhra Interiors`;
   const description = applyMarketToCopy(service.description, "bangalore").slice(0, 160);
 
   return {
@@ -41,7 +41,7 @@ export function generateMetadata({ params }: Props): Metadata {
       path: canonicalPath,
       type: "article",
       imageUrl: service.image ?? DEFAULT_OG_IMAGE_PATH,
-      imageAlt: `${service.title} — luxury interior design Bangalore Bengaluru`,
+      imageAlt: `${service.title} interior design service in Bangalore Bengaluru`,
     }),
     twitter: twitterSummaryLarge(title, description, service.image ?? DEFAULT_OG_IMAGE_PATH),
   };
@@ -74,7 +74,7 @@ export default function BangaloreServiceDetailPage({ params }: Props) {
           areaServed: ["Bangalore", "Bengaluru"],
           provider: {
             "@type": "Organization",
-            name: "Zikhra Luxury Interiors",
+            name: "Zikhra Interiors",
             url: SITE_URL,
           },
         })}

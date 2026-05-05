@@ -32,7 +32,7 @@ export function generateMetadata({ params }: Props): Metadata {
       path,
       type: "article",
       imageUrl: item.heroImage ?? DEFAULT_OG_IMAGE_PATH,
-      imageAlt: `${item.title} — luxury interior portfolio Bangalore Bengaluru`,
+      imageAlt: `${item.title} — premium interior portfolio Bangalore Bengaluru`,
     }),
     twitter: twitterSummaryLarge(title, desc, item.heroImage ?? DEFAULT_OG_IMAGE_PATH),
   };

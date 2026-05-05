@@ -52,7 +52,7 @@ export default function ProjectDetailView({ project, market = "hyderabad" }: Pro
             ))}
           </div>
           <div className="mt-8 rounded-2xl border border-border/50 bg-card p-5">
-            <h2 className="font-serif text-xl gold-text mb-2">Plan Your Luxury Interior</h2>
+            <h2 className="font-serif text-xl gold-text mb-2">Plan Your Premium Interior</h2>
             <p className="font-sans text-sm text-muted-foreground mb-4">
               Like this premium interior project? Explore related design services and get a personalized proposal for your home.
             </p>

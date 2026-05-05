@@ -68,9 +68,9 @@ const FeaturedProjects = ({ market = "hyderabad" }: Props) => {
             <Link
               key={project.slug}
               href={projectDetailPath(market, project.slug)}
-              className="min-w-[80%] sm:min-w-[70%] snap-center rounded-2xl overflow-hidden bg-card border border-border/50 group cursor-pointer transition-all duration-300 hover:border-gold/30 block flex-shrink-0"
+              className="min-w-[78%] max-w-sm sm:min-w-[60%] snap-center rounded-xl overflow-hidden bg-card border border-border/50 group cursor-pointer transition-all duration-300 hover:border-gold/30 block flex-shrink-0"
             >
-              <div className="relative h-56 overflow-hidden">
+              <div className="relative aspect-[4/3] max-h-52 overflow-hidden">
                 <img
                   src={project.image}
                   alt={`${project.type} interior design ${project.location}`}

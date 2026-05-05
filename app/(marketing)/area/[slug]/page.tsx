@@ -18,14 +18,18 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: Props): Metadata {
   const area = getAreaBySlug(params.slug);
   if (!area) return { title: "Area Not Found" };
-  const title = `Luxury Interior Designers in ${area.name}, Hyderabad | Zikhra`;
-  const description = `Premium interior design and turnkey home interiors in ${area.name}, Hyderabad. ${area.tagline} Book a free consultation for modular kitchens, wardrobes, and full-home luxury with Zikhra.`;
+  const title = `Best Interior Designer in ${area.name}, Hyderabad | Zikhra`;
+  const description = `Looking for the best interior designer in ${area.name}, Hyderabad? Zikhra designs premium 2 BHK, 3 BHK, villa, modular kitchen, and turnkey home interiors with clear scope planning.`;
   const path = `/area/${area.slug}`;
   const keywords = [
     `interior designers ${area.name}`,
+    `best interior designer ${area.name}`,
+    `best interior designers in ${area.name} Hyderabad`,
     `${area.name} home interiors Hyderabad`,
-    `luxury interiors ${area.name}`,
+    `2 BHK interiors ${area.name}`,
+    `3 BHK interiors ${area.name}`,
     `modular kitchen ${area.name}`,
+    `interior design cost ${area.name}`,
     "Hyderabad interior design company",
   ];
   return {
@@ -38,7 +42,7 @@ export function generateMetadata({ params }: Props): Metadata {
       description,
       path,
       imageUrl: DEFAULT_OG_IMAGE_PATH,
-      imageAlt: `Luxury interior designers in ${area.name}, Hyderabad — Zikhra`,
+      imageAlt: `Best interior designer in ${area.name}, Hyderabad - Zikhra`,
     }),
     twitter: twitterSummaryLarge(title, description, DEFAULT_OG_IMAGE_PATH),
   };

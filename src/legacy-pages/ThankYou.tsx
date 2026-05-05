@@ -60,7 +60,7 @@ const ThankYou = () => {
         </div>
 
         <p className="font-sans text-[10px] text-muted-foreground/40 mt-12 animate-fade-in-up" style={{ animationDelay: "0.7s" }}>
-          Zikhra Interiors — Crafting Timeless Luxury in Hyderabad
+          Zikhra Interiors — Crafting Timeless Premium Interiors in Hyderabad
         </p>
       </div>
     </div>

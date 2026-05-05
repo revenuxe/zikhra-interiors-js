@@ -6,6 +6,10 @@ import { usePathname } from "next/navigation";
 import whatsappIcon from "@/assets/whatsapp.svg";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 
+type NavItem =
+  | { icon: typeof Home; label: string; to: string }
+  | { icon: null; label: "WhatsApp"; to?: never };
+
 function useBangaloreFunnel(pathname: string | null) {
   return pathname?.startsWith("/bangalore") ?? false;
 }
@@ -24,7 +28,7 @@ const BottomNav = () => {
   const projectsTo = bangalore ? "/bangalore/projects" : "/projects";
   const servicesTo = bangalore ? "/bangalore/services" : "/services";
 
-  const navItems = [
+  const navItems: NavItem[] = [
     { icon: Home, label: "Home", to: homeTo },
     { icon: FolderKanban, label: "Projects", to: projectsTo },
     { icon: null, label: "WhatsApp" },
@@ -35,8 +39,8 @@ const BottomNav = () => {
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-50 glass-nav safe-area-bottom">
       <div className="flex items-end justify-around px-2 pt-2 pb-2">
-        {navItems.map((item, i) => {
-          if (i === 2) {
+        {navItems.map((item) => {
+          if (item.icon === null) {
             return (
               <a
                 key={item.label}
@@ -48,7 +52,7 @@ const BottomNav = () => {
                 <div className="w-14 h-14 rounded-full gold-gradient flex items-center justify-center animate-pulse-gold shadow-xl">
                   <img
                     src={whatsappIcon.src}
-                    alt="Chat on WhatsApp with Zikhra luxury interior designers"
+                    alt="Chat on WhatsApp with Zikhra interior designers"
                     className="w-7 h-7 brightness-0"
                   />
                 </div>
@@ -57,7 +61,7 @@ const BottomNav = () => {
             );
           }
 
-          const Icon = item.icon!;
+          const Icon = item.icon;
           const isActive = navActive(pathname, item.to);
 
           return (

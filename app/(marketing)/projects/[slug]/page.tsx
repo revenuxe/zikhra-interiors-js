@@ -38,7 +38,7 @@ export function generateMetadata({ params }: Props): Metadata {
       path,
       type: "article",
       imageUrl: project.heroImage ?? DEFAULT_OG_IMAGE_PATH,
-      imageAlt: `${project.title} — premium luxury interior project ${project.location}`,
+      imageAlt: `${project.title} — premium interior project ${project.location}`,
     }),
     twitter: twitterSummaryLarge(title, description, project.heroImage ?? DEFAULT_OG_IMAGE_PATH),
   };
@@ -67,7 +67,7 @@ export default function ProjectDetailPage({ params }: Props) {
           name: project.title,
           description: project.description,
           locationCreated: project.location,
-          about: "Luxury interior design project",
+          about: "Premium interior design project",
           url: absoluteUrl(`/projects/${project.slug}`),
         })}
       />

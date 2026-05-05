@@ -31,7 +31,7 @@ export function generateMetadata({ params }: Props): Metadata {
   if (!service) return { title: "Service Not Found" };
 
   const canonicalPath = `/services/${params.slug}`;
-  const title = `Luxury ${service.title} in Hyderabad`;
+  const title = `${service.title} in Hyderabad | Zikhra Interiors`;
   const description = service.description.slice(0, 160);
   return {
     title,
@@ -43,7 +43,7 @@ export function generateMetadata({ params }: Props): Metadata {
       path: canonicalPath,
       type: "article",
       imageUrl: service.image ?? DEFAULT_OG_IMAGE_PATH,
-      imageAlt: `${service.title} — luxury interior design and turnkey services Hyderabad`,
+      imageAlt: `${service.title} interior design and turnkey services in Hyderabad`,
     }),
     twitter: twitterSummaryLarge(title, description, service.image ?? DEFAULT_OG_IMAGE_PATH),
   };
@@ -74,7 +74,7 @@ export default function ServiceDetailRoute({ params }: Props) {
           areaServed: "Hyderabad",
           provider: {
             "@type": "Organization",
-            name: "Zikhra Luxury Interiors",
+            name: "Zikhra Interiors",
             url: SITE_URL,
           },
         })}

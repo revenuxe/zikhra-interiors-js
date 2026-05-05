@@ -7,7 +7,7 @@ export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: "Terms and Conditions",
-  description: "Read the terms and conditions for using Zikhra's website and luxury interior design services.",
+  description: "Read the terms and conditions for using Zikhra's website and premium interior design services.",
   alternates: { canonical: "/terms" },
   openGraph: pageOpenGraph({
     title: "Terms and Conditions | Zikhra",

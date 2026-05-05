@@ -23,6 +23,7 @@ export default function AreaDetailView({ area }: Props) {
   const market = isBangalore ? "bangalore" : "hyderabad";
   const servicesBase = servicesIndexPath(market);
   const projectsBase = projectsIndexPath(market);
+  const costGuidePath = isBangalore ? "/bangalore/interior-design-cost" : "/hyderabad/interior-design-cost";
 
   return (
     <div className="min-h-screen bg-background">
@@ -32,13 +33,13 @@ export default function AreaDetailView({ area }: Props) {
       <Header />
       <section className="pt-24 pb-12 px-5 text-center">
         <p className="text-xs font-sans tracking-[0.25em] uppercase text-gold mb-3">{area.city}</p>
-        <h1 className="font-serif text-3xl md:text-5xl font-bold gold-text mb-4">Interior Designers in {area.name}</h1>
+        <h1 className="font-serif text-3xl md:text-5xl font-bold gold-text mb-4">Best Interior Designers in {area.name}</h1>
         <p className="font-sans text-muted-foreground text-sm max-w-md mx-auto">{area.tagline}</p>
         <Link
           href="/contact"
           className="mt-6 inline-flex gold-gradient px-8 py-3.5 rounded-full font-sans text-sm font-medium tracking-wide text-primary-foreground transition-all duration-300 hover:scale-105 gold-glow"
         >
-          Get Free Consultation
+          Get Free Estimate
         </Link>
         <p className="font-sans text-xs text-muted-foreground mt-4 max-w-md mx-auto">
           Also explore our{" "}
@@ -47,7 +48,11 @@ export default function AreaDetailView({ area }: Props) {
           </Link>{" "}
           and{" "}
           <Link href={servicesBase} className="text-gold hover:underline">
-            luxury service packages
+            premium service packages
+          </Link>
+          , and{" "}
+          <Link href={costGuidePath} className="text-gold hover:underline">
+            interior design costs
           </Link>{" "}
           in {area.city}.
         </p>
@@ -56,7 +61,7 @@ export default function AreaDetailView({ area }: Props) {
       <section className="section-padding pt-0">
         <div className="max-w-2xl mx-auto px-1">
           <h2 className="font-serif text-xl md:text-2xl gold-text text-center mb-6">
-            Luxury home interiors in {area.name}, {area.city}
+            Premium home interiors in {area.name}, {area.city}
           </h2>
           <div className="space-y-4 text-left">
             {area.description
@@ -84,7 +89,7 @@ export default function AreaDetailView({ area }: Props) {
       </section>
       <section className="section-padding">
         <div className="max-w-lg mx-auto space-y-3">
-          {["500+ Homes Transformed", "10-Year Warranty", "Transparent Pricing"].map((item) => (
+          {["500+ Homes Transformed", "10-Year Warranty", "Transparent Planning"].map((item) => (
             <div key={item} className="flex items-center gap-3 p-4 rounded-2xl bg-card border border-border/30">
               <Star className="w-4 h-4 text-gold" />
               <p className="font-sans text-sm text-foreground">{item}</p>
@@ -121,7 +126,7 @@ export default function AreaDetailView({ area }: Props) {
         <div className="max-w-xl mx-auto rounded-2xl border border-border/30 bg-card/20 px-5 py-6 text-center">
           <p className="font-sans text-xs text-muted-foreground uppercase tracking-wider mb-2">Local service</p>
           <p className="font-sans text-sm text-foreground/90">
-            Zikhra serves {area.name} and surrounding neighbourhoods in {area.city} with the same luxury standards as our Hyderabad studio — book a consultation to discuss your floor plan and style direction.
+            Zikhra serves {area.name} and surrounding neighbourhoods in {area.city} with the same premium standards as our Hyderabad studio — book a consultation to discuss your floor plan and style direction.
           </p>
         </div>
       </section>

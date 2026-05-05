@@ -31,12 +31,12 @@ const PortfolioPreview = ({ market = "hyderabad" }: Props) => {
         <p className="font-sans text-muted-foreground text-sm mt-3 max-w-sm mx-auto">{copy.portfolioSub}</p>
       </div>
 
-      <div className="flex gap-4 overflow-x-auto hide-scrollbar pb-4 -mx-5 px-5 snap-x snap-mandatory">
+      <div className="flex gap-4 overflow-x-auto hide-scrollbar pb-4 -mx-5 px-5 snap-x snap-mandatory md:justify-center md:mx-auto md:max-w-5xl">
         {categories.map((cat) => (
           <Link
             key={cat.name}
               href={portfolioDetailPath(market, cat.slug)}
-            className="relative flex-shrink-0 w-64 h-80 rounded-2xl overflow-hidden group snap-center cursor-pointer block"
+            className="relative flex-shrink-0 w-[72vw] max-w-56 aspect-[4/5] rounded-xl overflow-hidden group snap-center cursor-pointer block md:w-40 lg:w-44"
           >
             <img
               src={cat.image}
@@ -47,8 +47,8 @@ const PortfolioPreview = ({ market = "hyderabad" }: Props) => {
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-luxury-black/80 via-transparent to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-5">
-              <h3 className="font-serif text-xl text-foreground">{cat.name}</h3>
+            <div className="absolute bottom-0 left-0 right-0 p-4">
+              <h3 className="font-serif text-base text-foreground">{cat.name}</h3>
               <div className="w-8 h-0.5 gold-gradient mt-2 transition-all duration-300 group-hover:w-14" />
             </div>
           </Link>

@@ -8,10 +8,10 @@ import project4bhk from "@/assets/project-4bhk.webp";
 import projectPenthouse from "@/assets/project-penthouse.webp";
 
 const projectTypes = [
-  { name: "2 BHK", image: project2bhk.src, slug: "2bhk", desc: "Smart luxury for compact spaces" },
+  { name: "2 BHK", image: project2bhk.src, slug: "2bhk", desc: "Smart planning for compact spaces" },
   { name: "3 BHK", image: project3bhk.src, slug: "3bhk", desc: "Spacious elegance for families" },
   { name: "4 BHK", image: project4bhk.src, slug: "4bhk", desc: "Grand living redefined" },
-  { name: "Penthouse", image: projectPenthouse.src, slug: "penthouse", desc: "Ultra-luxury sky living" },
+  { name: "Penthouse", image: projectPenthouse.src, slug: "penthouse", desc: "Elevated sky living" },
 ];
 
 type Props = { market?: MarketId };
@@ -32,9 +32,9 @@ const ProjectTypeSection = ({ market = "hyderabad" }: Props) => {
           <Link
             key={pt.slug}
             href={projectTypeDetailPath(market, pt.slug)}
-            className="flex flex-col items-center text-center rounded-2xl overflow-hidden bg-card border border-border/50 transition-all duration-300 hover:border-gold/30 hover:gold-glow group cursor-pointer"
+            className="flex flex-col items-center text-center rounded-xl overflow-hidden bg-card border border-border/50 transition-all duration-300 hover:border-gold/30 hover:gold-glow group cursor-pointer"
           >
-            <div className="relative w-full h-32 overflow-hidden">
+            <div className="relative w-full aspect-[4/3] max-h-32 overflow-hidden">
               <img
                 src={pt.image}
                 alt={`${pt.name} interior design ${city}`}
@@ -45,7 +45,7 @@ const ProjectTypeSection = ({ market = "hyderabad" }: Props) => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
             </div>
-            <div className="p-4 -mt-4 relative z-10 w-full">
+            <div className="p-3 -mt-3 relative z-10 w-full">
               <h3 className="font-serif text-sm text-foreground mb-1">{pt.name}</h3>
               <p className="text-xs font-sans text-muted-foreground">{pt.desc}</p>
               <div className="w-8 h-0.5 gold-gradient mt-2 mx-auto transition-all duration-300 group-hover:w-14" />

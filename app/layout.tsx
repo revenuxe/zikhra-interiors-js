@@ -3,9 +3,9 @@ import "./globals.css";
 import Providers from "./providers";
 import { DEFAULT_OG_IMAGE_PATH, pageOpenGraph, SITE_NAME, SITE_URL, twitterSummaryLarge } from "@/lib/seo";
 
-const defaultTitle = "Luxury Interior Designers Hyderabad & Bangalore | Zikhra";
+const defaultTitle = "Best Interior Designer in Hyderabad & Bangalore | Zikhra";
 const defaultDescription =
-  "Premium luxury interior design studio for Hyderabad and Bangalore — bespoke home interiors, modular kitchens, turnkey villas & apartments. Jubilee Hills to HITEC City; Koramangala to Whitefield.";
+  "Premium home interiors, modular kitchens, and turnkey execution in Hyderabad and Bangalore with clear scope planning and supervised delivery.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
       description: defaultDescription,
       path: "/",
       imageUrl: DEFAULT_OG_IMAGE_PATH,
-      imageAlt: "Zikhra — luxury interior design Hyderabad and Bangalore",
+      imageAlt: "Zikhra - best interior designer in Hyderabad and Bangalore",
     }),
     siteName: SITE_NAME,
   },
@@ -43,4 +43,3 @@ export default function RootLayout({
     </html>
   );
 }
-

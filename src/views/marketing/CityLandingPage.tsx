@@ -5,6 +5,7 @@ import PortfolioPreview from "@/components/PortfolioPreview";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import ProjectTypeSection from "@/components/ProjectTypeSection";
 import ServicesSection from "@/components/ServicesSection";
+import PricingPreview from "@/components/PricingPreview";
 import WhyChooseSection from "@/components/WhyChooseSection";
 import Testimonials from "@/components/Testimonials";
 import CTASection from "@/components/CTASection";
@@ -23,6 +24,7 @@ export function HomepageMarketingSections({ market }: { market: MarketId }) {
       <FeaturedProjects market={market} />
       <ProjectTypeSection market={market} />
       <ServicesSection market={market} />
+      <PricingPreview market={market} />
       <WhyChooseSection market={market} />
       <Testimonials market={market} />
       <CTASection market={market} />
