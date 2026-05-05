@@ -24,7 +24,7 @@ export default function ServiceDetailView({ service, market = "hyderabad" }: Pro
   const subtitle = applyMarketToCopy(service.subtitle, market);
   const description = applyMarketToCopy(service.description, market);
   const servicesList = servicesIndexPath(market);
-  const serviceTitle = `${service.title} in ${city}`;
+  const serviceTitle = `Best Interior Designer in ${city} for ${service.title}`;
 
   return (
     <div className="min-h-screen bg-background">

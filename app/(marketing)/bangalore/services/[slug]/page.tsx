@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!service) return { title: "Service Not Found" };
 
   const canonicalPath = `/bangalore/services/${slug}`;
-  const title = `${service.title} in Bangalore & Bengaluru | Zikhra Interiors`;
+  const title = `Best Interior Designer in Bangalore for ${service.title} | Zikhra Interiors`;
   const description = applyMarketToCopy(service.description, "bangalore").slice(0, 160);
 
   return {

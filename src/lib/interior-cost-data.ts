@@ -136,8 +136,8 @@ export function getCostGuideConfig(city: CostCity, homeType: CostHomeType, canon
   const isSpecificHome = homeType !== "all";
   const suffix = city === "all" ? "Hyderabad & Bangalore" : cityLabel;
   const h1 = isSpecificHome
-    ? `${homeLabel} Interior Design Cost in ${suffix}`
-    : `Interior Design Cost in ${suffix}`;
+    ? `Best Interior Designer Pricing for ${homeLabel} Interior Design Cost in ${suffix}`
+    : `Best Interior Designer Pricing and Interior Design Cost in ${suffix}`;
 
   return {
     city,

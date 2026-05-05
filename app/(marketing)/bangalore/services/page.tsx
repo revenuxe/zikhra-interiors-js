@@ -6,7 +6,7 @@ import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitt
 export const dynamic = "force-static";
 export const revalidate = 86400;
 
-const title = "Premium Interior Design Services in Bangalore & Bengaluru | Zikhra";
+const title = "Best Interior Designer in Bangalore for Interior Design Services | Zikhra";
 const description =
   "Premium home interiors, modular kitchens, wardrobes, and renovation in Bangalore and Bengaluru — Koramangala, Whitefield, Indiranagar, HSR, and across the city.";
 

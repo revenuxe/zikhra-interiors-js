@@ -6,7 +6,7 @@ import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitt
 export const dynamic = "force-static";
 export const revalidate = 86400;
 
-const title = "Interior Design Services in Hyderabad | Zikhra";
+const title = "Best Interior Designer in Hyderabad for Interior Design Services | Zikhra";
 const description =
   "Explore Zikhra's home interior services in Hyderabad including 2 BHK interiors, full home interiors, modular kitchens, wardrobes, renovation, and premium upgrades.";
 

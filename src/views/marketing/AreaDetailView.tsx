@@ -36,7 +36,9 @@ export default function AreaDetailView({ area }: Props) {
         <h1 className="font-serif text-3xl md:text-5xl font-bold gold-text mb-4">
           Best Interior Designer in {area.name}, {area.city}
         </h1>
-        <p className="font-sans text-muted-foreground text-sm max-w-md mx-auto">{area.tagline}</p>
+        <p className="font-sans text-muted-foreground text-sm max-w-md mx-auto">
+          {area.tagline} 2 BHK pricing starts from Rs. 3.5 Lakhs and 3 BHK pricing starts from Rs. 5.5 Lakhs.
+        </p>
         <Link
           href="/contact"
           className="mt-6 inline-flex gold-gradient px-8 py-3.5 rounded-full font-sans text-sm font-medium tracking-wide text-primary-foreground transition-all duration-300 hover:scale-105 gold-glow"

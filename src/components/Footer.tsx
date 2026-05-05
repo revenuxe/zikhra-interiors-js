@@ -23,6 +23,16 @@ const serviceLinks = [
   { label: "Bedroom Design", to: "/portfolio/bedroom" },
 ];
 
+const pricingLinks = [
+  { label: "Interior Design Cost", to: "/interior-design-cost" },
+  { label: "Hyderabad Cost Guide", to: "/hyderabad/interior-design-cost" },
+  { label: "Bangalore Cost Guide", to: "/bangalore/interior-design-cost" },
+  { label: "2 BHK Cost Hyderabad", to: "/2bhk-interior-design-cost-hyderabad" },
+  { label: "2 BHK Cost Bangalore", to: "/2bhk-interior-design-cost-bangalore" },
+  { label: "3 BHK Cost Hyderabad", to: "/3bhk-interior-design-cost-hyderabad" },
+  { label: "3 BHK Cost Bangalore", to: "/3bhk-interior-design-cost-bangalore" },
+];
+
 const Footer = () => {
   return (
     <footer className="bg-luxury-dark border-t border-border/20 pb-24">
@@ -36,7 +46,7 @@ const Footer = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-8 mb-12">
           <div>
             <h4 className="font-serif text-base text-gold mb-4">Quick Links</h4>
             <ul className="space-y-2.5">
@@ -55,6 +65,20 @@ const Footer = () => {
             <h4 className="font-serif text-base text-gold mb-4">Services</h4>
             <ul className="space-y-2.5">
               {serviceLinks.map((link) => (
+                <li key={link.label}>
+                  <Link href={link.to} className="font-sans text-sm text-muted-foreground hover:text-gold transition-colors flex items-center gap-1.5 group">
+                    <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-gold" />
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-serif text-base text-gold mb-4">Pricing</h4>
+            <ul className="space-y-2.5">
+              {pricingLinks.map((link) => (
                 <li key={link.label}>
                   <Link href={link.to} className="font-sans text-sm text-muted-foreground hover:text-gold transition-colors flex items-center gap-1.5 group">
                     <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-gold" />

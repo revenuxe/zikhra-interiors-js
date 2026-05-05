@@ -207,8 +207,8 @@ const Services = ({ market = "hyderabad" }: ServicesProps) => {
   const servicesStartPrice = "2 BHK starts from Rs. 3.5 Lakhs";
   const heroLine =
     market === "bangalore"
-      ? `${servicesStartPrice}. 3 BHK starts from Rs. 5.5 Lakhs. Modular kitchen and renovation packages across Bangalore with clear scope planning.`
-      : `${servicesStartPrice}. 3 BHK starts from Rs. 5.5 Lakhs. Modular kitchen and renovation packages across Hyderabad with clear scope planning.`;
+      ? `${servicesStartPrice}. 3 BHK starts from Rs. 5.5 Lakhs. Pricing for modular kitchen, wardrobes, renovation, and full home interior services across Bangalore comes with clear scope planning.`
+      : `${servicesStartPrice}. 3 BHK starts from Rs. 5.5 Lakhs. Pricing for modular kitchen, wardrobes, renovation, and full home interior services across Hyderabad comes with clear scope planning.`;
 
   return (
     <div className="min-h-screen bg-background">
@@ -217,7 +217,9 @@ const Services = ({ market = "hyderabad" }: ServicesProps) => {
       {/* Hero */}
       <section className="pt-32 md:pt-28 pb-10 px-5 text-center">
         <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Our Expertise</p>
-        <h1 className="font-serif text-4xl md:text-5xl font-bold gold-text mb-3">Interior Design Services in {city}</h1>
+        <h1 className="font-serif text-4xl md:text-5xl font-bold gold-text mb-3">
+          Best Interior Designer in {city} for Interior Design Services
+        </h1>
         <p className="font-sans text-sm text-muted-foreground max-w-md mx-auto">{heroLine}</p>
         <p className="font-sans text-xs text-muted-foreground mt-4 max-w-md mx-auto">
           Compare packages in our{" "}

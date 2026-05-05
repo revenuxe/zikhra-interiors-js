@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!service) return { title: "Service Not Found" };
 
   const canonicalPath = `/services/${slug}`;
-  const title = `${service.title} in Hyderabad | Zikhra Interiors`;
+  const title = `Best Interior Designer in Hyderabad for ${service.title} | Zikhra Interiors`;
   const description = service.description.slice(0, 160);
   return {
     title,

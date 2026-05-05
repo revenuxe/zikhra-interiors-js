@@ -9,6 +9,11 @@ type Props = { market?: MarketId };
 
 const HeroSection = ({ market = "hyderabad" }: Props) => {
   const copy = getMarketCopy(market);
+  const heroTitle =
+    market === "bangalore"
+      ? "Best Interior Designer in Bangalore, 2 BHK Starts from Rs. 3.5 Lakhs"
+      : "Best Interior Designer, 2 BHK Starts from Rs. 3.5 Lakhs";
+
   return (
     <section className="relative h-screen w-full overflow-hidden">
       <img
@@ -23,7 +28,7 @@ const HeroSection = ({ market = "hyderabad" }: Props) => {
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center">
         
         <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in-up leading-[1.1] max-w-5xl text-balance">
-          <span className="gold-text">Best Interior Designer, 2 BHK Starts from Rs. 3.5 Lakhs</span>
+          <span className="gold-text">{heroTitle}</span>
         </h1>
         <div
           className="font-sans text-foreground/75 text-base md:text-lg max-w-xl mb-9 font-light animate-fade-in-up"
