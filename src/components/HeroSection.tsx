@@ -22,12 +22,8 @@ const HeroSection = ({ market = "hyderabad" }: Props) => {
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center">
         
-        <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in-up leading-[1.08]">
-          <span className="gold-text">Best Interior</span>
-          <br />
-          <span className="gold-text italic">Designer</span>
-          <br />
-          <span className="gold-text text-3xl sm:text-4xl md:text-5xl lg:text-6xl">2 BHK Starts from Rs. 3.5 Lakhs</span>
+        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in-up leading-[1.1] max-w-5xl text-balance">
+          <span className="gold-text">Best Interior Designer, 2 BHK Starts from Rs. 3.5 Lakhs</span>
         </h1>
         <div
           className="font-sans text-foreground/75 text-base md:text-lg max-w-md mb-9 font-light animate-fade-in-up space-y-2"
