@@ -13,9 +13,9 @@ import {
 } from "@/lib/seo";
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 export const dynamic = "force-static";
@@ -26,11 +26,12 @@ export function generateStaticParams() {
   return services.map((service) => ({ slug: service.id }));
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const service = getServiceBySlug(params.slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const service = getServiceBySlug(slug);
   if (!service) return { title: "Service Not Found" };
 
-  const canonicalPath = `/services/${params.slug}`;
+  const canonicalPath = `/services/${slug}`;
   const title = `${service.title} in Hyderabad | Zikhra Interiors`;
   const description = service.description.slice(0, 160);
   return {
@@ -49,23 +50,24 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
-export default function ServiceDetailRoute({ params }: Props) {
-  const service = getServiceBySlug(params.slug);
+export default async function ServiceDetailRoute({ params }: Props) {
+  const { slug } = await params;
+  const service = getServiceBySlug(slug);
   if (!service) notFound();
   return (
     <>
       <SeoJsonLd
-        id={`service-breadcrumb-${params.slug}`}
+        id={`service-breadcrumb-${slug}`}
         json={toJsonLd(
           breadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "Services", path: "/services" },
-            { name: service.title, path: `/services/${params.slug}` },
+            { name: service.title, path: `/services/${slug}` },
           ]),
         )}
       />
       <SeoJsonLd
-        id={`service-schema-${params.slug}`}
+        id={`service-schema-${slug}`}
         json={toJsonLd({
           "@context": "https://schema.org",
           "@type": "Service",

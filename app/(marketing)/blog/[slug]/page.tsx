@@ -22,7 +22,7 @@ import {
 
 export const dynamic = "force-dynamic";
 
-type Props = { params: { slug: string } };
+type Props = { params: Promise<{ slug: string }> };
 type BlogSlugItem = { slug: string };
 
 export async function generateStaticParams() {
@@ -34,7 +34,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const localPost = getLocalBlogPostBySlug(params.slug);
+  const { slug } = await params;
+  const localPost = getLocalBlogPostBySlug(slug);
   if (localPost) {
     const description = (localPost.excerpt ?? "").slice(0, 160);
     const path = `/blog/${localPost.slug}`;
@@ -59,7 +60,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   const post: BlogPost | null = await sanityClient.fetch(
     blogPostBySlugQuery,
-    { slug: params.slug },
+    { slug },
     sanityLiveFetchOptions,
   );
   if (!post) return { title: "Post Not Found" };
@@ -85,7 +86,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function BlogPostPage({ params }: Props) {
-  const localPost = getLocalBlogPostBySlug(params.slug);
+  const { slug } = await params;
+  const localPost = getLocalBlogPostBySlug(slug);
   if (localPost) {
     return (
       <>
@@ -122,7 +124,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   const post: BlogPost | null = await sanityClient.fetch(
     blogPostBySlugQuery,
-    { slug: params.slug },
+    { slug },
     sanityLiveFetchOptions,
   );
   if (!post) notFound();

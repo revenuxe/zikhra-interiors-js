@@ -6,7 +6,7 @@ import SeoJsonLd from "@/components/SeoJsonLd";
 import { applyMarketToCopy, projectTypeDetailPath } from "@/lib/marketing-paths";
 import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
 
-type Props = { params: { slug: string } };
+type Props = { params: Promise<{ slug: string }> };
 
 export const dynamic = "force-static";
 export const dynamicParams = false;
@@ -16,8 +16,9 @@ export function generateStaticParams() {
   return projectTypes.map((item) => ({ slug: item.slug }));
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const item = getProjectTypeBySlug(params.slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const item = getProjectTypeBySlug(slug);
   if (!item) return { title: "Project Type Not Found" };
   const title = `${applyMarketToCopy(item.metaTitle, "bangalore")} | Bangalore & Bengaluru`;
   const description = applyMarketToCopy(item.metaDesc, "bangalore");
@@ -38,8 +39,9 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
-export default function BangaloreProjectTypePage({ params }: Props) {
-  const item = getProjectTypeBySlug(params.slug);
+export default async function BangaloreProjectTypePage({ params }: Props) {
+  const { slug } = await params;
+  const item = getProjectTypeBySlug(slug);
   if (!item) notFound();
   return (
     <>

@@ -3,19 +3,19 @@ import type { MarketId } from "@/lib/market-types";
 
 const packages = [
   {
-    name: "Practical",
-    price: "Core home scope",
-    desc: "Modular kitchen, wardrobes, TV unit, and practical storage for move-in-ready homes.",
+    name: "2 BHK",
+    price: "Starts from Rs. 3.5 Lakhs",
+    desc: "Modular kitchen, two wardrobes, TV unit, basic storage, and practical finishes for compact apartments.",
   },
   {
-    name: "Premium",
-    price: "Enhanced room scope",
-    desc: "Better finishes, detailed storage, lighting, wall treatments, and coordinated room design.",
+    name: "3 BHK",
+    price: "Starts from Rs. 5.5 Lakhs",
+    desc: "Kitchen, three bedrooms, living room, wardrobes, lighting, and coordinated finishes for family homes.",
   },
   {
-    name: "Signature",
-    price: "Full custom scope",
-    desc: "Premium materials, custom detailing, feature lighting, panelling, and elevated turnkey execution.",
+    name: "4 BHK / Villa",
+    price: "Starts from Rs. 8.5 Lakhs",
+    desc: "Expanded room scope with premium materials, custom storage, feature lighting, panelling, and turnkey execution.",
   },
 ];
 
@@ -28,11 +28,11 @@ export default function PricingPreview({ market = "hyderabad" }: Props) {
     <section className="section-padding bg-luxury-dark/40 border-y border-border/30">
       <div className="max-w-5xl mx-auto px-6">
         <div className="text-center mb-10">
-          <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Scope Planning</p>
-          <h2 className="font-serif text-3xl md:text-4xl gold-text">Home Interior Packages in {city}</h2>
+          <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Pricing</p>
+          <h2 className="font-serif text-3xl md:text-4xl gold-text">Home Interior Pricing in {city}</h2>
           <p className="font-sans text-muted-foreground text-sm mt-3 max-w-xl mx-auto">
-            Start with a clear scope, then upgrade finishes, storage, lighting, and styling based on how complete you
-            want the final home to feel.
+            Clear starting budgets for practical home interiors. Final pricing is refined after we review your floor
+            plan, materials, site condition, and room-wise scope.
           </p>
         </div>
 

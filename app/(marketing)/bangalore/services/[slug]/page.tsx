@@ -13,7 +13,7 @@ import {
   twitterSummaryLarge,
 } from "@/lib/seo";
 
-type Props = { params: { slug: string } };
+type Props = { params: Promise<{ slug: string }> };
 
 export const dynamic = "force-static";
 export const dynamicParams = false;
@@ -23,11 +23,12 @@ export function generateStaticParams() {
   return services.map((service) => ({ slug: service.id }));
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const service = getServiceBySlug(params.slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const service = getServiceBySlug(slug);
   if (!service) return { title: "Service Not Found" };
 
-  const canonicalPath = `/bangalore/services/${params.slug}`;
+  const canonicalPath = `/bangalore/services/${slug}`;
   const title = `${service.title} in Bangalore & Bengaluru | Zikhra Interiors`;
   const description = applyMarketToCopy(service.description, "bangalore").slice(0, 160);
 
@@ -47,25 +48,26 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
-export default function BangaloreServiceDetailPage({ params }: Props) {
-  const service = getServiceBySlug(params.slug);
+export default async function BangaloreServiceDetailPage({ params }: Props) {
+  const { slug } = await params;
+  const service = getServiceBySlug(slug);
   if (!service) notFound();
 
   return (
     <>
       <SeoJsonLd
-        id={`bangalore-service-breadcrumb-${params.slug}`}
+        id={`bangalore-service-breadcrumb-${slug}`}
         json={toJsonLd(
           breadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "Bangalore", path: "/bangalore" },
             { name: "Services", path: servicesIndexPath("bangalore") },
-            { name: service.title, path: serviceDetailPath("bangalore", params.slug) },
+            { name: service.title, path: serviceDetailPath("bangalore", slug) },
           ]),
         )}
       />
       <SeoJsonLd
-        id={`bangalore-service-schema-${params.slug}`}
+        id={`bangalore-service-schema-${slug}`}
         json={toJsonLd({
           "@context": "https://schema.org",
           "@type": "Service",

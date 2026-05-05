@@ -28,15 +28,15 @@ export default function BlogPostView({ post }: { post: BlogPost }) {
       <Header />
 
       {post.mainImageUrl && (
-        <section className="relative h-[60vh] w-full overflow-hidden">
+        <section className="relative min-h-[620px] w-full overflow-hidden md:h-[60vh] md:min-h-[520px]">
           <img
             src={post.mainImageUrl}
             alt={`${post.title} — premium interior design article and home insight by Zikhra Hyderabad`}
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-luxury-black/70 via-luxury-black/50 to-luxury-black/95" />
-          <div className="relative z-10 flex flex-col items-center justify-end h-full px-6 pb-12 text-center">
-            <Link href="/blog" className="absolute top-28 md:top-24 left-5 flex items-center gap-2 text-gold text-sm font-sans">
+          <div className="relative z-10 flex min-h-[620px] flex-col px-6 pb-12 pt-32 text-center md:h-full md:min-h-[520px] md:items-center md:justify-end md:px-8 md:pt-0">
+            <Link href="/blog" className="mb-10 inline-flex w-fit items-center gap-2 text-sm font-sans font-medium text-gold md:absolute md:left-5 md:top-28 md:mb-0">
               <ArrowLeft className="w-4 h-4" /> Blog
             </Link>
             <h1 className="font-serif text-2xl md:text-4xl font-bold gold-text leading-tight max-w-2xl">{post.title}</h1>

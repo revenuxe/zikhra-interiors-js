@@ -6,7 +6,7 @@ import SeoJsonLd from "@/components/SeoJsonLd";
 import { applyMarketToCopy, portfolioDetailPath } from "@/lib/marketing-paths";
 import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
 
-type Props = { params: { slug: string } };
+type Props = { params: Promise<{ slug: string }> };
 
 export const dynamic = "force-static";
 export const dynamicParams = false;
@@ -16,8 +16,9 @@ export function generateStaticParams() {
   return portfolioItems.map((item) => ({ slug: item.slug }));
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const item = getPortfolioBySlug(params.slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const item = getPortfolioBySlug(slug);
   if (!item) return { title: "Portfolio Not Found" };
   const desc = applyMarketToCopy(item.description, "bangalore").slice(0, 160);
   const title = `${applyMarketToCopy(item.tagline, "bangalore")} | Bangalore & Bengaluru`;
@@ -38,8 +39,9 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
-export default function BangalorePortfolioPage({ params }: Props) {
-  const item = getPortfolioBySlug(params.slug);
+export default async function BangalorePortfolioPage({ params }: Props) {
+  const { slug } = await params;
+  const item = getPortfolioBySlug(slug);
   if (!item) notFound();
   return (
     <>

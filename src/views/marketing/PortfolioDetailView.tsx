@@ -22,10 +22,10 @@ export default function PortfolioDetailView({ item, market = "hyderabad" }: Prop
       <section className="relative min-h-[640px] w-full overflow-hidden md:h-[70vh] md:min-h-0">
         <img src={item.heroImage} alt={`${item.title} ${city}`} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-luxury-black/80 via-luxury-black/60 to-luxury-black/95" />
-        <div className="relative z-10 flex min-h-[640px] flex-col px-6 pb-14 pt-28 text-center md:h-full md:min-h-0 md:items-center md:justify-end md:px-8 md:pb-16 md:pt-0">
+        <div className="relative z-10 flex min-h-[640px] flex-col px-6 pb-14 pt-32 text-center md:h-full md:min-h-0 md:items-center md:justify-end md:px-8 md:pb-16 md:pt-0">
           <Link
             href={backHubPath(market)}
-            className="mb-10 inline-flex w-fit items-center gap-2 text-sm font-sans font-medium text-gold md:absolute md:left-5 md:top-24 md:mb-0"
+            className="mb-10 inline-flex w-fit items-center gap-2 text-sm font-sans font-medium text-gold md:absolute md:left-5 md:top-28 md:mb-0"
           >
             <ArrowLeft className="w-4 h-4" /> {market === "bangalore" ? "Bangalore" : "Home"}
           </Link>

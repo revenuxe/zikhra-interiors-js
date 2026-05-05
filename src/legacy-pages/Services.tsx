@@ -214,7 +214,7 @@ const Services = ({ market = "hyderabad" }: ServicesProps) => {
       <Header />
 
       {/* Hero */}
-      <section className="pt-24 pb-10 px-5 text-center">
+      <section className="pt-32 md:pt-28 pb-10 px-5 text-center">
         <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Our Expertise</p>
         <h1 className="font-serif text-4xl md:text-5xl font-bold gold-text mb-3">Interior Design Services</h1>
         <p className="font-sans text-sm text-muted-foreground max-w-md mx-auto">{heroLine}</p>

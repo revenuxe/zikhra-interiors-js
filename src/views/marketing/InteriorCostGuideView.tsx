@@ -19,7 +19,7 @@ export default function InteriorCostGuideView({ config }: Props) {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <section className="pt-24 pb-12 px-5 text-center">
+      <section className="pt-32 md:pt-28 pb-12 px-5 text-center">
         <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Interior Pricing Guide</p>
         <h1 className="font-serif text-3xl md:text-5xl font-bold gold-text mb-4">{config.h1}</h1>
         <p className="font-sans text-sm text-muted-foreground max-w-2xl mx-auto leading-relaxed">{config.intro}</p>

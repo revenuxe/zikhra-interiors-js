@@ -32,20 +32,20 @@ export type CostGuideConfig = {
 
 const standardPackages: CostPackage[] = [
   {
-    name: "Practical",
-    price: "Estimate after floor plan review",
-    desc: "A practical package for homeowners who need clean, functional interiors with a controlled scope.",
+    name: "2 BHK",
+    price: "Starts from Rs. 3.5 Lakhs",
+    desc: "A practical package for homeowners who need clean, functional interiors with a controlled 2 BHK scope.",
     includes: ["Modular kitchen", "Bedroom wardrobes", "TV unit", "Basic storage", "Standard laminate finishes"],
   },
   {
-    name: "Premium",
-    price: "Estimate after scope review",
-    desc: "The recommended package for families who want better finishes, more storage, and a more cohesive design story.",
+    name: "3 BHK",
+    price: "Starts from Rs. 5.5 Lakhs",
+    desc: "The recommended package for families who want better finishes, more storage, and a cohesive 3 BHK design story.",
     includes: ["Better hardware", "More wardrobe storage", "Wall treatments", "Lighting plan", "Detailed room coordination"],
   },
   {
-    name: "Signature",
-    price: "Custom estimate after design review",
+    name: "4 BHK / Villa",
+    price: "Starts from Rs. 8.5 Lakhs",
     desc: "A high-detail package for homeowners who want premium materials, statement finishes, and elevated turnkey execution.",
     includes: ["PU/acrylic or veneer options", "Feature lighting", "Panelling", "Custom detailing", "Premium styling"],
   },
@@ -95,20 +95,20 @@ function packagesFor(homeType: CostHomeType): CostPackage[] {
   if (homeType === "3bhk") {
     return [
       {
-        name: "Premium",
-        price: "Estimate after floor plan review",
+        name: "3 BHK Practical",
+        price: "Starts from Rs. 5.5 Lakhs",
         desc: "A complete 3 BHK scope for families who need better storage, a finished living-dining area, and coordinated bedrooms.",
         includes: ["Modular kitchen", "Three bedrooms", "Living and dining", "Wardrobes", "Lighting and ceiling scope"],
       },
       {
-        name: "Signature",
-        price: "Custom estimate after design review",
+        name: "3 BHK Premium",
+        price: "Starts from Rs. 7.5 Lakhs",
         desc: "A richer 3 BHK scope with premium finishes, wall treatments, larger storage, and more custom detailing.",
         includes: ["Premium finishes", "Custom panelling", "Advanced lighting", "High-storage wardrobes", "Styling support"],
       },
       {
         name: "Villa-Ready",
-        price: "Custom estimate after site review",
+        price: "Starts from Rs. 10 Lakhs",
         desc: "For larger apartments, duplexes, and villas where the scope extends beyond standard modular interiors.",
         includes: ["Turnkey coordination", "Civil planning", "Custom furniture", "Premium materials", "Site supervision"],
       },

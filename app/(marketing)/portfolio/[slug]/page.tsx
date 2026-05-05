@@ -5,7 +5,7 @@ import PortfolioDetailView from "@/views/marketing/PortfolioDetailView";
 import SeoJsonLd from "@/components/SeoJsonLd";
 import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
 
-type Props = { params: { slug: string } };
+type Props = { params: Promise<{ slug: string }> };
 
 export const dynamic = "force-static";
 export const dynamicParams = false;
@@ -15,8 +15,9 @@ export function generateStaticParams() {
   return portfolioItems.map((item) => ({ slug: item.slug }));
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const item = getPortfolioBySlug(params.slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const item = getPortfolioBySlug(slug);
   if (!item) return { title: "Portfolio Not Found" };
   const title = `${item.tagline} | Premium Interior Portfolio`;
   const description = item.description.slice(0, 160);
@@ -37,8 +38,9 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
-export default function PortfolioDetailPage({ params }: Props) {
-  const item = getPortfolioBySlug(params.slug);
+export default async function PortfolioDetailPage({ params }: Props) {
+  const { slug } = await params;
+  const item = getPortfolioBySlug(slug);
   if (!item) notFound();
   return (
     <>

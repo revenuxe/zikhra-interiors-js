@@ -14,7 +14,7 @@ import {
   twitterSummaryLarge,
 } from "@/lib/seo";
 
-type Props = { params: { slug: string } };
+type Props = { params: Promise<{ slug: string }> };
 
 export const dynamic = "force-static";
 export const dynamicParams = false;
@@ -24,8 +24,9 @@ export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const project = getProjectBySlug(params.slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
   if (!project) return { title: "Project Not Found" };
   const { location, description: body } = getProjectDisplayFields(project, "bangalore");
   const title = `${project.title} — Premium Interiors | Bangalore & Bengaluru`;
@@ -47,8 +48,9 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
-export default function BangaloreProjectDetailPage({ params }: Props) {
-  const project = getProjectBySlug(params.slug);
+export default async function BangaloreProjectDetailPage({ params }: Props) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
   if (!project) notFound();
   const display = getProjectDisplayFields(project, "bangalore");
   return (

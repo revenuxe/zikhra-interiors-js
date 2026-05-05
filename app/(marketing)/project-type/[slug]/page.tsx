@@ -5,7 +5,7 @@ import ProjectTypeDetailView from "@/views/marketing/ProjectTypeDetailView";
 import SeoJsonLd from "@/components/SeoJsonLd";
 import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
 
-type Props = { params: { slug: string } };
+type Props = { params: Promise<{ slug: string }> };
 
 export const dynamic = "force-static";
 export const dynamicParams = false;
@@ -15,8 +15,9 @@ export function generateStaticParams() {
   return projectTypes.map((item) => ({ slug: item.slug }));
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const item = getProjectTypeBySlug(params.slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const item = getProjectTypeBySlug(slug);
   if (!item) return { title: "Project Type Not Found" };
   const title = `${item.metaTitle} | Premium Interior Design`;
   const description = item.metaDesc;
@@ -37,8 +38,9 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
-export default function ProjectTypePage({ params }: Props) {
-  const item = getProjectTypeBySlug(params.slug);
+export default async function ProjectTypePage({ params }: Props) {
+  const { slug } = await params;
+  const item = getProjectTypeBySlug(slug);
   if (!item) notFound();
   return (
     <>

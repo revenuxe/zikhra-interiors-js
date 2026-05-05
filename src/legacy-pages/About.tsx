@@ -24,10 +24,10 @@ const About = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <section className="relative h-[60vh] w-full overflow-hidden">
+      <section className="relative min-h-[560px] w-full overflow-hidden md:h-[60vh] md:min-h-[520px]">
         <img src={aboutHero.src} alt="About Zikhra Interior Designers Hyderabad" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-luxury-black/80 via-luxury-black/60 to-luxury-black/95" />
-        <div className="relative z-10 flex flex-col items-center justify-end h-full px-6 pb-16 text-center">
+        <div className="relative z-10 flex min-h-[560px] flex-col items-center justify-end px-6 pb-14 pt-32 text-center md:h-full md:min-h-[520px] md:pb-16 md:pt-0">
           <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">About Us</p>
           <h1 className="font-serif text-4xl md:text-5xl font-bold gold-text mb-3">The Zikhra Story</h1>
           <p className="font-sans text-foreground/80 text-sm max-w-sm">
