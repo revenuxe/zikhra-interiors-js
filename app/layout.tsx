@@ -3,9 +3,9 @@ import "./globals.css";
 import Providers from "./providers";
 import { DEFAULT_OG_IMAGE_PATH, pageOpenGraph, SITE_NAME, SITE_URL, twitterSummaryLarge } from "@/lib/seo";
 
-const defaultTitle = "Best Interior Designer in Hyderabad & Bangalore | Zikhra";
+const defaultTitle = "Best Interior Designer in Bangalore & Bengaluru | Zikhra";
 const defaultDescription =
-  "Premium home interiors, modular kitchens, and turnkey execution in Hyderabad and Bangalore with clear scope planning and supervised delivery.";
+  "Premium home interiors, modular kitchens, and turnkey execution in Bangalore and Bengaluru with clear scope planning and supervised delivery.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
       description: defaultDescription,
       path: "/",
       imageUrl: DEFAULT_OG_IMAGE_PATH,
-      imageAlt: "Zikhra - best interior designer in Hyderabad and Bangalore",
+      imageAlt: "Zikhra - best interior designer in Bangalore and Bengaluru",
     }),
     siteName: SITE_NAME,
   },

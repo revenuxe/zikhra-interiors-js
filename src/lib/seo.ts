@@ -100,23 +100,89 @@ export function localBusinessSchema() {
     image: DEFAULT_OG_IMAGE,
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Hyderabad",
-      addressRegion: "Telangana",
-      postalCode: "500033",
+      addressLocality: "Bangalore",
+      addressRegion: "Karnataka",
+      postalCode: "560034",
       addressCountry: "IN",
     },
     areaServed: [
-      "Hyderabad",
-      "Jubilee Hills",
-      "Banjara Hills",
-      "Gachibowli",
-      "Kondapur",
-      "HITEC City",
       "Bangalore",
       "Koramangala",
       "Indiranagar",
       "Whitefield",
+      "HSR Layout",
+      "Electronic City",
+      "Sarjapur Road",
+      "Hebbal",
+      "Bellandur",
+      "JP Nagar",
     ],
+  };
+}
+
+export function webPageSchema(input: { name: string; description: string; path: string; keywords?: string[] }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: input.name,
+    description: input.description,
+    url: absoluteUrl(input.path),
+    keywords: input.keywords?.join(", "),
+    isPartOf: {
+      "@type": "WebSite",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+  };
+}
+
+export function localServiceSchema(input: {
+  name: string;
+  description: string;
+  path: string;
+  areaServed?: string[];
+  serviceType?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: input.name,
+    serviceType: input.serviceType ?? "Interior design",
+    description: input.description,
+    url: absoluteUrl(input.path),
+    areaServed: (input.areaServed ?? ["Bangalore", "Bengaluru"]).map((name) => ({
+      "@type": "Place",
+      name,
+    })),
+    provider: {
+      "@type": "InteriorDesignBusiness",
+      name: SITE_NAME,
+      url: SITE_URL,
+      telephone: "9886579923",
+      email: "zikhraofficial@gmail.com",
+    },
+  };
+}
+
+export function serviceCatalogSchema(items: Array<{ name: string; path: string; description?: string }>) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "OfferCatalog",
+    name: "Zikhra Bangalore Interior Design Services",
+    itemListElement: items.map((item) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: item.name,
+        description: item.description,
+        url: absoluteUrl(item.path),
+        provider: {
+          "@type": "InteriorDesignBusiness",
+          name: SITE_NAME,
+          url: SITE_URL,
+        },
+      },
+    })),
   };
 }
 

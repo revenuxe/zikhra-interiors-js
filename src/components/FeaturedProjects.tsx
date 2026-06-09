@@ -13,7 +13,7 @@ const featuredSlugs = ["2bhk-apartment", "luxury-villa", "3bhk-penthouse"] as co
 
 type Props = { market?: MarketId };
 
-const FeaturedProjects = ({ market = "hyderabad" }: Props) => {
+const FeaturedProjects = ({ market = "bangalore" }: Props) => {
   const copy = getMarketCopy(market);
   const projects = useMemo(() => {
     return featuredSlugs.map((slug) => {

@@ -13,6 +13,7 @@ import {
   toJsonLd,
   twitterSummaryLarge,
 } from "@/lib/seo";
+import { BANGALORE_CORE_KEYWORDS, uniqueKeywords } from "@/lib/seo-keywords";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -35,6 +36,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description,
+    keywords: uniqueKeywords(
+      [
+        `${project.title} Bangalore`,
+        `${project.title} interior design Bangalore`,
+        `${location} interior project`,
+        `premium interiors ${location}`,
+      ],
+      BANGALORE_CORE_KEYWORDS,
+    ),
     alternates: { canonical: path },
     openGraph: pageOpenGraph({
       title,

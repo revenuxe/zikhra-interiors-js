@@ -20,9 +20,9 @@ const categories = [
 
 type Props = { market?: MarketId };
 
-const PortfolioPreview = ({ market = "hyderabad" }: Props) => {
+const PortfolioPreview = ({ market = "bangalore" }: Props) => {
   const copy = getMarketCopy(market);
-  const city = market === "bangalore" ? "Bangalore" : "Hyderabad";
+  const city = "Bangalore";
   return (
     <section className="section-padding">
       <div className="text-center mb-10">

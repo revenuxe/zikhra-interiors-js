@@ -19,11 +19,10 @@ type Props = {
 const services = ["Full Home Interiors", "Modular Kitchen Design", "Wardrobe Solutions", "Living Room Design"];
 
 export default function AreaDetailView({ area }: Props) {
-  const isBangalore = area.basePath === "/bangalore";
-  const market = isBangalore ? "bangalore" : "hyderabad";
+  const market = "bangalore";
   const servicesBase = servicesIndexPath(market);
   const projectsBase = projectsIndexPath(market);
-  const costGuidePath = isBangalore ? "/bangalore/interior-design-cost" : "/hyderabad/interior-design-cost";
+  const costGuidePath = "/bangalore/interior-design-cost";
 
   return (
     <div className="min-h-screen bg-background">
@@ -130,23 +129,19 @@ export default function AreaDetailView({ area }: Props) {
         <div className="max-w-xl mx-auto rounded-2xl border border-border/30 bg-card/20 px-5 py-6 text-center">
           <p className="font-sans text-xs text-muted-foreground uppercase tracking-wider mb-2">Local service</p>
           <p className="font-sans text-sm text-foreground/90">
-            Zikhra serves {area.name} and surrounding neighbourhoods in {area.city} with the same premium standards as our Hyderabad studio — book a consultation to discuss your floor plan and style direction.
+            Zikhra serves {area.name} and surrounding neighbourhoods in {area.city} with the same premium standards as our Bangalore studio — book a consultation to discuss your floor plan and style direction.
           </p>
         </div>
       </section>
 
-      {isBangalore ? (
-        <>
-          <HomepageMarketingSections market="bangalore" />
-          <ContactForm />
-          <HomeStorySection market="bangalore" areaName={area.name} />
-        </>
-      ) : (
+      <>
+        <HomepageMarketingSections market="bangalore" />
         <ContactForm />
-      )}
+        <HomeStorySection market="bangalore" areaName={area.name} />
+      </>
       <Footer />
       <BottomNav />
-      {isBangalore ? <ConsultationPopup /> : null}
+      <ConsultationPopup />
     </div>
   );
 }

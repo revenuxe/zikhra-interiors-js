@@ -24,9 +24,9 @@ export const portfolioItems: PortfolioItem[] = [
   {
     slug: "kitchen",
     title: "Kitchen Design",
-    tagline: "Premium Modular Kitchens in Hyderabad",
+    tagline: "Premium Modular Kitchens in Bangalore",
     description:
-      "Our modular kitchens blend European functionality with Indian cooking needs. Every surface, handle, and fixture is placed with intent — creating premium kitchen experiences across Jubilee Hills, Gachibowli, and HITEC City.",
+      "Our modular kitchens blend European functionality with Indian cooking needs. Every surface, handle, and fixture is placed with intent — creating premium kitchen experiences across Koramangala, Whitefield, and Electronic City.",
     heroImage: kitchenImg.src,
     galleryImages: [kitchenImg.src, kitchenImg2.src],
     features: [
@@ -47,9 +47,9 @@ export const portfolioItems: PortfolioItem[] = [
   {
     slug: "bedroom",
     title: "Bedroom Design",
-    tagline: "Premium Bedroom Interiors in Hyderabad",
+    tagline: "Premium Bedroom Interiors in Bangalore",
     description:
-      "We design bedrooms that are personal retreats. Plush textures, moody lighting, and bespoke furniture come together to create your perfect sanctuary in Hyderabad.",
+      "We design bedrooms that are personal retreats. Plush textures, moody lighting, and bespoke furniture come together to create your perfect sanctuary in Bangalore.",
     heroImage: bedroomImg.src,
     galleryImages: [bedroomImg.src, bedroomImg2.src],
     features: [
@@ -70,9 +70,9 @@ export const portfolioItems: PortfolioItem[] = [
   {
     slug: "living-room",
     title: "Living Room Design",
-    tagline: "Elegant Living Rooms Across Hyderabad",
+    tagline: "Elegant Living Rooms Across Bangalore",
     description:
-      "Grand yet inviting, our living rooms are designed to impress and comfort. Statement furniture and curated art walls reflect refined taste for Hyderabad homes.",
+      "Grand yet inviting, our living rooms are designed to impress and comfort. Statement furniture and curated art walls reflect refined taste for Bangalore homes.",
     heroImage: livingroomImg.src,
     galleryImages: [livingroomImg.src, livingroomImg2.src],
     features: [
@@ -93,9 +93,9 @@ export const portfolioItems: PortfolioItem[] = [
   {
     slug: "wardrobe",
     title: "Wardrobe Design",
-    tagline: "Custom Wardrobes & Walk-in Closets in Hyderabad",
+    tagline: "Custom Wardrobes & Walk-in Closets in Bangalore",
     description:
-      "Walk-in closets and built-in wardrobes that turn your everyday routine into a boutique experience. Designed for premium Hyderabad homes.",
+      "Walk-in closets and built-in wardrobes that turn your everyday routine into a boutique experience. Designed for premium Bangalore homes.",
     heroImage: wardrobeImg.src,
     galleryImages: [wardrobeImg.src, wardrobeImg2.src],
     features: [
@@ -116,9 +116,9 @@ export const portfolioItems: PortfolioItem[] = [
   {
     slug: "bathroom",
     title: "Bathroom Design",
-    tagline: "Premium Bathroom Interiors in Hyderabad",
+    tagline: "Premium Bathroom Interiors in Bangalore",
     description:
-      "Transform your bathroom into a spa-like retreat with premium marble, rain showers, gold fixtures, and ambient lighting. Designed for premium homes across Hyderabad.",
+      "Transform your bathroom into a spa-like retreat with premium marble, rain showers, gold fixtures, and ambient lighting. Designed for premium homes across Bangalore.",
     heroImage: bathroomImg.src,
     galleryImages: [bathroomImg.src],
     features: [
@@ -139,7 +139,7 @@ export const portfolioItems: PortfolioItem[] = [
   {
     slug: "study-room",
     title: "Study Room Design",
-    tagline: "Premium Home Office & Study Rooms in Hyderabad",
+    tagline: "Premium Home Office & Study Rooms in Bangalore",
     description:
       "Create the perfect workspace at home. Our study room designs combine functionality with refinement — custom desks, built-in bookshelves, and ambient lighting for focused productivity.",
     heroImage: studyImg.src,

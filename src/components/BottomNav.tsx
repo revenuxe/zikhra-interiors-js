@@ -25,8 +25,8 @@ const BottomNav = () => {
   const bangalore = useBangaloreFunnel(pathname);
 
   const homeTo = bangalore ? "/bangalore" : "/";
-  const projectsTo = bangalore ? "/bangalore/projects" : "/projects";
-  const servicesTo = bangalore ? "/bangalore/services" : "/services";
+  const projectsTo = "/bangalore/projects";
+  const servicesTo = "/bangalore/services";
 
   const navItems: NavItem[] = [
     { icon: Home, label: "Home", to: homeTo },

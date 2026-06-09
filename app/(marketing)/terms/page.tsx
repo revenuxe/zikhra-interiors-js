@@ -11,14 +11,14 @@ export const metadata: Metadata = {
   alternates: { canonical: "/terms" },
   openGraph: pageOpenGraph({
     title: "Terms and Conditions | Zikhra",
-    description: "Legal terms for using Zikhra’s website and interior design services in Hyderabad.",
+    description: "Legal terms for using Zikhra’s website and interior design services in Bangalore.",
     path: "/terms",
     imageUrl: DEFAULT_OG_IMAGE_PATH,
     imageAlt: "Zikhra terms and conditions",
   }),
   twitter: twitterSummaryLarge(
     "Terms and Conditions | Zikhra",
-    "Legal terms for using Zikhra’s website and interior design services in Hyderabad.",
+    "Legal terms for using Zikhra’s website and interior design services in Bangalore.",
     DEFAULT_OG_IMAGE_PATH,
   ),
 };

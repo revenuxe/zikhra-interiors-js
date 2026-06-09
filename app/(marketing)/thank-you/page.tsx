@@ -12,14 +12,14 @@ export const metadata: Metadata = {
   robots: { index: false, follow: true },
   openGraph: pageOpenGraph({
     title: "Thank You | Zikhra Interiors",
-    description: "Your enquiry was received — our Hyderabad interior design team will respond soon.",
+    description: "Your enquiry was received — our Bangalore interior design team will respond soon.",
     path: "/thank-you",
     imageUrl: DEFAULT_OG_IMAGE_PATH,
-    imageAlt: "Thank you — Zikhra premium interiors Hyderabad",
+    imageAlt: "Thank you — Zikhra premium interiors Bangalore",
   }),
   twitter: twitterSummaryLarge(
     "Thank You | Zikhra Interiors",
-    "Your enquiry was received — our Hyderabad interior design team will respond soon.",
+    "Your enquiry was received — our Bangalore interior design team will respond soon.",
     DEFAULT_OG_IMAGE_PATH,
   ),
 };

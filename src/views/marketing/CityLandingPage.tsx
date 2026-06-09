@@ -35,7 +35,7 @@ export function HomepageMarketingSections({ market }: { market: MarketId }) {
 
 type Props = { market: MarketId };
 
-/** Full homepage layout for a market (Hyderabad or Bangalore): hero, all marketing sections, contact, story, footer. */
+/** Full homepage layout for Bangalore: hero, all marketing sections, contact, story, footer. */
 export default function CityLandingPage({ market }: Props) {
   return (
     <div className="min-h-screen bg-background">

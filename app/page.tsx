@@ -11,13 +11,14 @@ import {
   twitterSummaryLarge,
   websiteSchema,
 } from "@/lib/seo";
+import { BANGALORE_CORE_KEYWORDS, BANGALORE_COST_KEYWORDS, BANGALORE_SERVICE_KEYWORDS, uniqueKeywords } from "@/lib/seo-keywords";
 
 export const dynamic = "force-static";
 export const revalidate = 86400;
 
-const homeTitle = "Best Interior Designer in Hyderabad & Bangalore | Zikhra";
+const homeTitle = "Best Interior Designer in Bangalore & Bengaluru | Zikhra";
 const homeDescription =
-  "Zikhra Interiors designs premium 2 BHK, 3 BHK, villa, and apartment interiors in Hyderabad and Bangalore with clear scope planning and turnkey execution.";
+  "Zikhra Interiors designs premium 2 BHK, 3 BHK, villa, and apartment interiors in Bangalore and Bengaluru with clear scope planning and turnkey execution.";
 
 const homeFaqs = [
   {
@@ -25,8 +26,8 @@ const homeFaqs = [
     a: "Zikhra reviews your floor plan, storage needs, finishes, and site conditions before preparing a room-wise estimate. This keeps the scope clear before production begins.",
   },
   {
-    q: "Does Zikhra provide turnkey interior design in Hyderabad and Bangalore?",
-    a: "Yes. Zikhra provides turnkey interior design for apartments, villas, modular kitchens, wardrobes, living rooms, bedrooms, and renovation projects across Hyderabad and Bangalore.",
+    q: "Does Zikhra provide turnkey interior design in Bangalore and Bengaluru?",
+    a: "Yes. Zikhra provides turnkey interior design for apartments, villas, modular kitchens, wardrobes, living rooms, bedrooms, and renovation projects across Bangalore and Bengaluru.",
   },
   {
     q: "Does Zikhra offer premium interior design packages?",
@@ -37,35 +38,25 @@ const homeFaqs = [
 export const metadata: Metadata = {
   title: homeTitle,
   description: homeDescription,
-  keywords: [
-    "best interior designer Hyderabad",
-    "best interior designer Bangalore",
-    "interior designers Hyderabad",
-    "interior designers Bangalore",
-    "2 BHK interior design cost Hyderabad",
-    "2 BHK interior design estimate",
-    "home interior packages Hyderabad",
-    "home interior packages Bangalore",
-    "modular kitchen Hyderabad",
-    "modular kitchen Bangalore",
-    "turnkey home interiors",
-    "villa interior design",
-    "Jubilee Hills interior designers",
-    "Banjara Hills interiors",
-    "Gachibowli home interiors",
-    "Koramangala interior designers",
-    "Whitefield home interiors",
-    "premium home interiors",
-    "premium interior designers Hyderabad",
-    "premium interior designers Bangalore",
-  ],
+  keywords: uniqueKeywords(
+    BANGALORE_CORE_KEYWORDS,
+    BANGALORE_SERVICE_KEYWORDS,
+    BANGALORE_COST_KEYWORDS,
+    [
+      "Koramangala interior designers",
+      "Indiranagar interiors",
+      "Whitefield home interiors",
+      "HSR Layout interiors",
+      "Sarjapur Road interiors",
+    ],
+  ),
   alternates: { canonical: "/" },
   openGraph: pageOpenGraph({
     title: homeTitle,
     description: homeDescription,
     path: "/",
     imageUrl: DEFAULT_OG_IMAGE_PATH,
-    imageAlt: "Zikhra - best interior designer in Hyderabad and Bangalore",
+    imageAlt: "Zikhra - best interior designer in Bangalore and Bengaluru",
   }),
   twitter: twitterSummaryLarge(homeTitle, homeDescription, DEFAULT_OG_IMAGE_PATH),
 };

@@ -11,9 +11,8 @@ type Props = {
 };
 
 export default function InteriorCostGuideView({ config }: Props) {
-  const isBangalore = config.city === "bangalore";
-  const servicesPath = isBangalore ? "/bangalore/services" : "/services";
-  const projectTypeBase = isBangalore ? "/bangalore/project-type" : "/project-type";
+  const servicesPath = "/bangalore/services";
+  const projectTypeBase = "/bangalore/project-type";
 
   return (
     <div className="min-h-screen bg-background">

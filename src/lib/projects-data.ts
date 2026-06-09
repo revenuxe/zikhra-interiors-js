@@ -5,7 +5,7 @@ import kitchenImg from "@/assets/kitchen.webp";
 import bedroomImg from "@/assets/bedroom.webp";
 import livingroomImg from "@/assets/livingroom.webp";
 
-/** Bangalore funnel copy — real neighbourhoods; avoids Hyderabad micro-areas showing on /bangalore/projects. */
+/** Bangalore funnel copy with real neighbourhoods for /bangalore/projects. */
 export type ProjectBangaloreCopy = {
   location: string;
   description: string;
@@ -29,12 +29,12 @@ export const projects: ProjectItem[] = [
   {
     slug: "2bhk-apartment",
     title: "2BHK Apartment",
-    location: "Gachibowli, Hyderabad",
+    location: "Whitefield, Bangalore",
     budget: "Full-home apartment scope",
     duration: "45 Days",
     heroImage: project2bhk.src,
     description:
-      "A complete transformation of a 2BHK apartment in Gachibowli, designed with modern premium aesthetics. Every room was reimagined with quality materials, smart storage, and ambient lighting to maximize the compact space.",
+      "A complete transformation of a 2BHK apartment in Whitefield, designed with modern premium aesthetics. Every room was reimagined with quality materials, smart storage, and ambient lighting to maximize the compact space.",
     highlights: ["Space-optimized design", "Premium laminate finishes", "Smart storage solutions", "Ambient cove lighting"],
     scope: ["Living Room", "Master Bedroom", "Guest Bedroom", "Modular Kitchen", "2 Bathrooms", "Balcony"],
     bangalore: {
@@ -52,12 +52,12 @@ export const projects: ProjectItem[] = [
   {
     slug: "luxury-villa",
     title: "Signature Villa",
-    location: "Jubilee Hills, Hyderabad",
+    location: "Koramangala, Bangalore",
     budget: "Villa turnkey scope",
     duration: "90 Days",
     heroImage: projectVilla.src,
     description:
-      "A grand villa transformation in the heart of Jubilee Hills. Italian marble flooring, custom chandeliers, and bespoke furniture pieces create a composed, high-end atmosphere.",
+      "A grand villa transformation in the heart of Koramangala. Italian marble flooring, custom chandeliers, and bespoke furniture pieces create a composed, high-end atmosphere.",
     highlights: ["Italian marble throughout", "Custom designer furniture", "Home automation integrated", "Landscape design included"],
     scope: ["Grand Living Room", "4 Bedrooms", "Gourmet Kitchen", "Home Theatre", "5 Bathrooms", "Garden & Patio"],
     bangalore: {
@@ -75,12 +75,12 @@ export const projects: ProjectItem[] = [
   {
     slug: "3bhk-penthouse",
     title: "3BHK Penthouse",
-    location: "Banjara Hills, Hyderabad",
+    location: "Indiranagar, Bangalore",
     budget: "Penthouse turnkey scope",
     duration: "60 Days",
     heroImage: project3bhk.src,
     description:
-      "A stunning penthouse project in Banjara Hills featuring panoramic city views complemented by interior design that brings the outdoors in.",
+      "A stunning penthouse project in Indiranagar featuring panoramic city views complemented by interior design that brings the outdoors in.",
     highlights: ["Panoramic view optimization", "Natural stone accents", "Floor-to-ceiling glazing", "Terrace lounge design"],
     scope: ["Open Living & Dining", "3 Bedrooms", "Island Kitchen", "Study Room", "3 Bathrooms", "Terrace"],
     bangalore: {
@@ -98,12 +98,12 @@ export const projects: ProjectItem[] = [
   {
     slug: "modular-kitchen-project",
     title: "Modular Kitchen",
-    location: "Kondapur, Hyderabad",
+    location: "HSR Layout, Bangalore",
     budget: "Kitchen remodel scope",
     duration: "30 Days",
     heroImage: kitchenImg.src,
     description:
-      "A premium modular kitchen transformation in Kondapur featuring marble countertops, gold hardware accents, and state-of-the-art fittings.",
+      "A premium modular kitchen transformation in HSR Layout featuring marble countertops, gold hardware accents, and state-of-the-art fittings.",
     highlights: ["Quartz countertops", "German Hettich hardware", "Integrated chimney & hob", "Pull-out pantry system"],
     scope: ["L-shaped Kitchen Layout", "Breakfast Counter", "Tall Unit", "Pantry Pull-outs", "Under-cabinet Lighting"],
     bangalore: {
@@ -116,7 +116,7 @@ export const projects: ProjectItem[] = [
   {
     slug: "master-bedroom",
     title: "Master Bedroom Suite",
-    location: "HITEC City, Hyderabad",
+    location: "Electronic City, Bangalore",
     budget: "Bedroom suite scope",
     duration: "25 Days",
     heroImage: bedroomImg.src,
@@ -134,7 +134,7 @@ export const projects: ProjectItem[] = [
   {
     slug: "living-room-makeover",
     title: "Living Room Makeover",
-    location: "Madhapur, Hyderabad",
+    location: "Bellandur, Bangalore",
     budget: "Living-dining remodel scope",
     duration: "35 Days",
     heroImage: livingroomImg.src,

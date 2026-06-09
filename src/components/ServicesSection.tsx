@@ -16,9 +16,9 @@ const services = [
 
 type Props = { market?: MarketId };
 
-const ServicesSection = ({ market = "hyderabad" }: Props) => {
+const ServicesSection = ({ market = "bangalore" }: Props) => {
   const copy = getMarketCopy(market);
-  const city = market === "bangalore" ? "Bangalore" : "Hyderabad";
+  const city = "Bangalore";
   const svcBase = servicesIndexPath(market);
   return (
     <section className="section-padding">

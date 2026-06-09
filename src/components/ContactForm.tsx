@@ -56,7 +56,7 @@ const ContactForm = () => {
             Book Your Free Consultation
           </h2>
           <p className="font-sans text-muted-foreground text-sm">
-            Best interior designers in Hyderabad — tell us about your dream space
+            Best interior designers in Bangalore — tell us about your dream space
           </p>
         </div>
 
@@ -79,7 +79,7 @@ const ContactForm = () => {
           />
           <input
             type="text"
-            placeholder="Area / locality (e.g. Jubilee Hills, Hyderabad or Koramangala, Bangalore)"
+            placeholder="Area / locality (e.g. Koramangala, Whitefield, Indiranagar)"
             required
             value={formData.area}
             onChange={(e) => setFormData({ ...formData, area: e.target.value })}
@@ -110,7 +110,7 @@ const ContactForm = () => {
         </form>
 
         <p className="text-center font-sans text-xs text-muted-foreground/50 mt-4">
-          Serving Hyderabad, Jubilee Hills, Banjara Hills, Gachibowli, Kondapur & HITEC City
+          Serving Bangalore, Koramangala, Indiranagar, Whitefield, HSR Layout & Electronic City
         </p>
       </div>
     </section>

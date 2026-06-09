@@ -137,7 +137,7 @@ const Privacy = () => {
               <p>In accordance with the Information Technology Act, 2000, the name and contact details of the Grievance Officer are:</p>
               <div className="mt-2 p-4 rounded-xl bg-card border border-border/30 space-y-1">
                 <p className="text-foreground font-medium">Zikhra Interiors — Grievance Officer</p>
-                <p className="text-muted-foreground">Jubilee Hills, Hyderabad, Telangana 500033</p>
+                <p className="text-muted-foreground">Koramangala, Bangalore, Karnataka 560034</p>
                 <p className="text-muted-foreground">Email: <a href="mailto:zikhraofficial@gmail.com" className="text-gold hover:underline">zikhraofficial@gmail.com</a></p>
                 <p className="text-muted-foreground">Phone: <a href="tel:+919886579923" className="text-gold hover:underline">9886579923</a></p>
                 <p className="text-muted-foreground text-xs mt-1">Grievances will be addressed within 30 days of receipt.</p>

@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next";
 import { services } from "@/lib/services-data";
 import { projects } from "@/lib/projects-data";
-import { areas } from "@/lib/areas-data";
 import { bangaloreAreas } from "@/lib/bangalore-areas-data";
 import { portfolioItems } from "@/lib/portfolio-data";
 import { projectTypes } from "@/lib/project-types-data";
@@ -17,20 +16,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "",
     "/about",
     "/contact",
-    "/services",
-    "/interior-design-cost",
-    "/hyderabad/interior-design-cost",
-    "/2bhk-interior-design-cost-hyderabad",
+    "/bangalore/interior-design-cost",
     "/2bhk-interior-design-cost-bangalore",
-    "/3bhk-interior-design-cost-hyderabad",
     "/3bhk-interior-design-cost-bangalore",
-    "/projects",
     "/blog",
     "/terms",
     "/privacy",
     "/thank-you",
     "/bangalore",
-    "/bangalore/interior-design-cost",
     "/bangalore/projects",
     "/all-pages",
   ];
@@ -52,24 +45,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: now,
       changeFrequency: "weekly" as const,
       priority: route === "" ? 1 : route === "/bangalore" ? 0.9 : 0.8,
-    })),
-    ...services.map((s) => ({
-      url: absoluteUrl(`/services/${s.id}`),
-      lastModified: now,
-      changeFrequency: "weekly" as const,
-      priority: 0.9,
-    })),
-    ...projects.map((p) => ({
-      url: absoluteUrl(`/projects/${p.slug}`),
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
-    })),
-    ...areas.map((a) => ({
-      url: absoluteUrl(`/area/${a.slug}`),
-      lastModified: now,
-      changeFrequency: "weekly" as const,
-      priority: 0.8,
     })),
     ...bangaloreAreas.map((a) => ({
       url: absoluteUrl(`/bangalore/${a.slug}`),
@@ -106,18 +81,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.84,
-    })),
-    ...portfolioItems.map((p) => ({
-      url: absoluteUrl(`/portfolio/${p.slug}`),
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    })),
-    ...projectTypes.map((p) => ({
-      url: absoluteUrl(`/project-type/${p.slug}`),
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
     })),
     ...localBlogPosts.map((post) => ({
       url: absoluteUrl(`/blog/${post.slug}`),

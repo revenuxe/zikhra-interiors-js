@@ -7,19 +7,19 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Premium Interior Projects in Hyderabad",
+  title: "Premium Interior Projects in Bangalore",
   description:
-    "Browse premium interior design projects by Zikhra across villas, apartments, and modern homes in Hyderabad.",
+    "Browse premium interior design projects by Zikhra across villas, apartments, and modern homes in Bangalore.",
   alternates: { canonical: "/projects" },
   openGraph: pageOpenGraph({
-    title: "Premium Interior Projects in Hyderabad",
+    title: "Premium Interior Projects in Bangalore",
     description: "Discover Zikhra's high-end interior portfolio and turnkey project execution quality.",
     path: "/projects",
     imageUrl: DEFAULT_OG_IMAGE_PATH,
-    imageAlt: "Premium interior design portfolio — Hyderabad residential projects",
+    imageAlt: "Premium interior design portfolio — Bangalore residential projects",
   }),
   twitter: twitterSummaryLarge(
-    "Premium Interior Projects in Hyderabad",
+    "Premium Interior Projects in Bangalore",
     "Discover Zikhra's high-end interior portfolio and turnkey project execution quality.",
     DEFAULT_OG_IMAGE_PATH,
   ),

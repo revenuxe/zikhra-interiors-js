@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       path,
       type: "article",
       imageUrl: item.heroImage ?? DEFAULT_OG_IMAGE_PATH,
-      imageAlt: `${item.title} — premium interior portfolio Hyderabad`,
+      imageAlt: `${item.title} — premium interior portfolio Bangalore`,
     }),
     twitter: twitterSummaryLarge(title, description, item.heroImage ?? DEFAULT_OG_IMAGE_PATH),
   };

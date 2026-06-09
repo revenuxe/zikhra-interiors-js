@@ -21,8 +21,9 @@ const packages = [
 
 type Props = { market?: MarketId };
 
-export default function PricingPreview({ market = "hyderabad" }: Props) {
-  const city = market === "bangalore" ? "Bangalore" : "Hyderabad";
+export default function PricingPreview({ market = "bangalore" }: Props) {
+  void market;
+  const city = "Bangalore";
 
   return (
     <section className="section-padding bg-luxury-dark/40 border-y border-border/30">
@@ -52,7 +53,7 @@ export default function PricingPreview({ market = "hyderabad" }: Props) {
 
         <div className="text-center mt-8">
           <Link
-            href="/interior-design-cost"
+            href="/bangalore/interior-design-cost"
             className="inline-block px-8 py-3.5 rounded-full font-sans text-sm font-medium border border-gold/40 text-gold-light transition-all duration-300 hover:border-gold hover:bg-gold/10"
           >
             View Full Cost Guide

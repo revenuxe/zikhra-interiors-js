@@ -6,27 +6,27 @@ import { SITE_NAME, SITE_URL } from "@/lib/seo";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Best Interior Designer in Hyderabad & Bangalore | Zikhra",
+    default: "Best Interior Designer in Bangalore & Bengaluru | Zikhra",
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    "Zikhra designs premium home interiors, modular kitchens, and turnkey interiors in Hyderabad and Bangalore with clear scope planning and supervised delivery.",
+    "Zikhra designs premium home interiors, modular kitchens, and turnkey interiors in Bangalore and Bengaluru with clear scope planning and supervised delivery.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     siteName: "Zikhra Interiors",
-    title: "Best Interior Designer in Hyderabad & Bangalore | Zikhra",
+    title: "Best Interior Designer in Bangalore & Bengaluru | Zikhra",
     description:
-      "Premium and high-end interior design in Hyderabad for villas, apartments, and modern homes.",
+      "Premium and high-end interior design in Bangalore for villas, apartments, and modern homes.",
     url: SITE_URL,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Best Interior Designer in Hyderabad & Bangalore | Zikhra",
+    title: "Best Interior Designer in Bangalore & Bengaluru | Zikhra",
     description:
-      "Premium and high-end interior design in Hyderabad for villas, apartments, and modern homes.",
+      "Premium and high-end interior design in Bangalore for villas, apartments, and modern homes.",
   },
 };
 

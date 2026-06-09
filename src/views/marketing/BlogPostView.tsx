@@ -31,7 +31,7 @@ export default function BlogPostView({ post }: { post: BlogPost }) {
         <section className="relative min-h-[620px] w-full overflow-hidden md:h-[60vh] md:min-h-[520px]">
           <img
             src={post.mainImageUrl}
-            alt={`${post.title} — premium interior design article and home insight by Zikhra Hyderabad`}
+            alt={`${post.title} — premium interior design article and home insight by Zikhra Bangalore`}
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-luxury-black/70 via-luxury-black/50 to-luxury-black/95" />
@@ -89,16 +89,16 @@ export default function BlogPostView({ post }: { post: BlogPost }) {
         <section className="mt-12 p-5 rounded-2xl border border-border/50 bg-card">
           <h2 className="font-serif text-xl gold-text mb-2">Plan Your Premium Interior Project</h2>
           <p className="font-sans text-sm text-muted-foreground mb-4">
-            Planning interiors in Hyderabad or Bangalore? Compare package pricing, explore services, and review premium projects before booking your estimate.
+            Planning interiors in Bangalore? Compare package pricing, explore services, and review premium projects before booking your estimate.
           </p>
           <div className="flex flex-wrap gap-3 text-sm font-sans">
-            <Link href="/services" className="text-gold hover:underline">
+            <Link href="/bangalore/services" className="text-gold hover:underline">
               Interior Services
             </Link>
-            <Link href="/interior-design-cost" className="text-gold hover:underline">
+            <Link href="/bangalore/interior-design-cost" className="text-gold hover:underline">
               Interior Design Cost Guide
             </Link>
-            <Link href="/projects" className="text-gold hover:underline">
+            <Link href="/bangalore/projects" className="text-gold hover:underline">
               Premium Project Portfolio
             </Link>
             <Link href="/contact" className="text-gold hover:underline">

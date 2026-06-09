@@ -11,7 +11,7 @@ import { projectsIndexPath, servicesIndexPath } from "@/lib/marketing-paths";
 
 type Props = { project: ProjectItem; market?: MarketId };
 
-export default function ProjectDetailView({ project, market = "hyderabad" }: Props) {
+export default function ProjectDetailView({ project, market = "bangalore" }: Props) {
   const { location, description, highlights } = getProjectDisplayFields(project, market);
 
   return (

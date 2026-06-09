@@ -5,7 +5,6 @@ import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import type { MarketId } from "@/lib/market-types";
 import { getMarketCopy } from "@/lib/market-copy";
-import { areas as hyderabadAreas } from "@/lib/areas-data";
 import { bangaloreAreas } from "@/lib/bangalore-areas-data";
 import areaKitchen from "@/assets/area-kitchen.webp";
 import areaBedroom from "@/assets/area-bedroom.webp";
@@ -19,16 +18,14 @@ const areaImages = [areaKitchen, areaBedroom, areaLiving, areaVilla, areaBathroo
 
 type Props = { market?: MarketId };
 
-const AreasWeServe = ({ market = "hyderabad" }: Props) => {
+const AreasWeServe = ({ market = "bangalore" }: Props) => {
   const copy = getMarketCopy(market);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const displayAreas = useMemo(
     () =>
-      market === "bangalore"
-        ? bangaloreAreas.map((a) => ({ name: a.name, slug: a.slug, hrefBase: "/bangalore" as const }))
-        : hyderabadAreas.map((a) => ({ name: a.name, slug: a.slug, hrefBase: "/area" as const })),
-    [market],
+      bangaloreAreas.map((a) => ({ name: a.name, slug: a.slug, hrefBase: "/bangalore" as const })),
+    [],
   );
 
   const scroll = (dir: "left" | "right") => {
@@ -42,27 +39,17 @@ const AreasWeServe = ({ market = "hyderabad" }: Props) => {
         <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Locations</p>
         <h2 className="font-serif text-3xl md:text-4xl gold-text mb-3">Areas We Serve</h2>
         <p className="font-sans text-muted-foreground text-sm">{copy.areasSectionSub}</p>
-        {market === "hyderabad" ? (
-          <p className="font-sans text-muted-foreground text-xs mt-3 max-w-md mx-auto leading-relaxed">
-            Compare{" "}
-            <Link href="/hyderabad/interior-design-cost" className="text-gold hover:underline">
-              Hyderabad interior design costs
-            </Link>{" "}
-            or explore{" "}
-            <Link href="/bangalore" className="text-gold hover:underline">
-              interior design in Bangalore
-            </Link>
-            , including Koramangala, Whitefield, Indiranagar, and more.
-          </p>
-        ) : (
-          <p className="font-sans text-muted-foreground text-xs mt-3 max-w-md mx-auto leading-relaxed">
-            Compare{" "}
-            <Link href="/bangalore/interior-design-cost" className="text-gold hover:underline">
-              Bangalore interior design costs
-            </Link>{" "}
-            before shortlisting your neighbourhood package.
-          </p>
-        )}
+        <p className="font-sans text-muted-foreground text-xs mt-3 max-w-md mx-auto leading-relaxed">
+          Compare{" "}
+          <Link href="/bangalore/interior-design-cost" className="text-gold hover:underline">
+            Bangalore interior design costs
+          </Link>{" "}
+          or explore{" "}
+          <Link href="/bangalore" className="text-gold hover:underline">
+            interior design in Bangalore
+          </Link>
+          , including Koramangala, Whitefield, Indiranagar, and more.
+        </p>
       </div>
 
       <div className="relative max-w-2xl mx-auto">

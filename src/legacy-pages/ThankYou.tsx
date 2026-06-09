@@ -36,7 +36,7 @@ const ThankYou = () => {
           >
             <img
               src={whatsappIcon.src}
-              alt="WhatsApp — reach Zikhra’s Hyderabad interior design team after your form submission"
+              alt="WhatsApp — reach Zikhra’s Bangalore interior design team after your form submission"
               className="w-4 h-4 brightness-0"
             />
             Chat on WhatsApp for Faster Response
@@ -51,7 +51,7 @@ const ThankYou = () => {
           </Link>
 
           <Link
-            href="/projects"
+            href="/bangalore/projects"
             className="flex items-center justify-center gap-2 font-sans text-xs text-muted-foreground hover:text-gold transition-colors mt-2"
           >
             Explore Our Projects
@@ -60,7 +60,7 @@ const ThankYou = () => {
         </div>
 
         <p className="font-sans text-[10px] text-muted-foreground/40 mt-12 animate-fade-in-up" style={{ animationDelay: "0.7s" }}>
-          Zikhra Interiors — Crafting Timeless Premium Interiors in Hyderabad
+          Zikhra Interiors — Crafting Timeless Premium Interiors in Bangalore
         </p>
       </div>
     </div>

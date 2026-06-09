@@ -2,17 +2,29 @@ import type { Metadata } from "next";
 import ProjectsView from "@/views/marketing/ProjectsView";
 import SeoJsonLd from "@/components/SeoJsonLd";
 import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
+import { BANGALORE_CORE_KEYWORDS, BANGALORE_SERVICE_KEYWORDS, uniqueKeywords } from "@/lib/seo-keywords";
 
 export const dynamic = "force-static";
 export const revalidate = 86400;
 
 const title = "Premium Interior Projects in Bangalore & Bengaluru | Zikhra";
 const description =
-  "Browse premium interior design projects by Zikhra across villas, apartments, and modern homes in Bangalore — same craftsmanship as our Hyderabad studio.";
+  "Browse premium interior design projects by Zikhra across villas, apartments, and modern homes in Bangalore and Bengaluru.";
 
 export const metadata: Metadata = {
   title,
   description,
+  keywords: uniqueKeywords(
+    [
+      "interior design projects Bangalore",
+      "home interior portfolio Bangalore",
+      "premium interior projects Bangalore",
+      "villa interior projects Bangalore",
+      "apartment interior projects Bangalore",
+    ],
+    BANGALORE_CORE_KEYWORDS,
+    BANGALORE_SERVICE_KEYWORDS,
+  ),
   alternates: { canonical: "/bangalore/projects" },
   openGraph: pageOpenGraph({
     title,

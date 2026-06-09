@@ -53,15 +53,15 @@ const Contact = () => {
       <Header />
 
       <section className="relative h-[50vh] w-full overflow-hidden">
-        <img src={contactHero.src} alt="Contact Zikhra Interior Designers Hyderabad" className="absolute inset-0 w-full h-full object-cover" />
+        <img src={contactHero.src} alt="Contact Zikhra Interior Designers Bangalore" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-luxury-black/80 via-luxury-black/60 to-luxury-black/95" />
         <div className="relative z-10 flex flex-col items-center justify-end h-full px-6 pb-14 text-center">
           <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Contact</p>
           <h1 className="font-serif text-4xl md:text-5xl font-bold gold-text mb-3">
-            Contact Interior Designer in Hyderabad & Bangalore
+            Contact Interior Designer in Bangalore & Bengaluru
           </h1>
           <p className="font-sans text-foreground/80 text-sm max-w-sm">
-            Ready to transform your Hyderabad or Bangalore home? We'd love to hear from you.
+            Ready to transform your Bangalore home? We'd love to hear from you.
           </p>
         </div>
       </section>
@@ -71,7 +71,7 @@ const Contact = () => {
           {[
             { icon: Phone, title: "Call Us", detail: "9886579923" },
             { icon: Mail, title: "Email", detail: "zikhraofficial@gmail.com" },
-            { icon: MapPin, title: "Visit", detail: "Jubilee Hills, Hyderabad" },
+            { icon: MapPin, title: "Visit", detail: "Koramangala, Bangalore" },
             { icon: Clock, title: "Hours", detail: "Mon–Sat, 10am–7pm" },
           ].map((item) => (
             <div key={item.title} className="p-4 rounded-2xl bg-card border border-border/50 text-center">
@@ -95,7 +95,7 @@ const Contact = () => {
             <input type="tel" placeholder="Phone Number" required value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className="w-full px-4 py-3 rounded-xl bg-card border border-border/50 font-sans text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors" />
             <input
               type="text"
-              placeholder="Area / locality (e.g. Banjara Hills or Whitefield)"
+              placeholder="Area / locality (e.g. Indiranagar or Whitefield)"
               required
               value={formData.area}
               onChange={(e) => setFormData({ ...formData, area: e.target.value })}

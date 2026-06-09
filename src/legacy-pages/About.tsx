@@ -13,7 +13,7 @@ const stats = [
 ];
 
 const values = [
-  { icon: Award, title: "Excellence", desc: "We never settle for ordinary. Every Hyderabad project is a masterpiece." },
+  { icon: Award, title: "Excellence", desc: "We never settle for ordinary. Every Bangalore project is a masterpiece." },
   { icon: Users, title: "Client First", desc: "Your vision drives our design. We listen, understand, and deliver." },
   { icon: Clock, title: "On Time", desc: "We respect your time. Projects delivered as promised, always." },
   { icon: Target, title: "Precision", desc: "Every millimeter matters. We obsess over the details so you don't have to." },
@@ -25,15 +25,15 @@ const About = () => {
       <Header />
 
       <section className="relative min-h-[560px] w-full overflow-hidden md:h-[60vh] md:min-h-[520px]">
-        <img src={aboutHero.src} alt="About Zikhra Interior Designers Hyderabad" className="absolute inset-0 w-full h-full object-cover" />
+        <img src={aboutHero.src} alt="About Zikhra Interior Designers Bangalore" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-luxury-black/80 via-luxury-black/60 to-luxury-black/95" />
         <div className="relative z-10 flex min-h-[560px] flex-col items-center justify-end px-6 pb-14 pt-32 text-center md:h-full md:min-h-[520px] md:pb-16 md:pt-0">
           <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">About Us</p>
           <h1 className="font-serif text-4xl md:text-5xl font-bold gold-text mb-3">
-            About Zikhra Interior Designers in Hyderabad & Bangalore
+            About Zikhra Interior Designers in Bangalore & Bengaluru
           </h1>
           <p className="font-sans text-foreground/80 text-sm max-w-sm">
-            Hyderabad's most trusted premium interior design studio
+            Bangalore's most trusted premium interior design studio
           </p>
         </div>
       </section>
@@ -41,7 +41,7 @@ const About = () => {
       <section className="section-padding max-w-2xl mx-auto text-center">
         <h2 className="font-serif text-2xl gold-text mb-6">Our Philosophy</h2>
         <p className="font-sans text-foreground/80 text-sm leading-relaxed mb-4">
-          At Zikhra, we believe that interior design is not just about aesthetics — it's about creating environments that elevate the way you live. Founded in Hyderabad, we've grown from a boutique studio into one of the city's most sought-after interior design firms, serving Jubilee Hills, Banjara Hills, Gachibowli, Kondapur, HITEC City and beyond.
+          At Zikhra, we believe that interior design is not just about aesthetics — it's about creating environments that elevate the way you live. Founded in Bangalore, we've grown from a boutique studio into one of the city's most sought-after interior design firms, serving Koramangala, Indiranagar, Whitefield, HSR Layout, Electronic City and beyond.
         </p>
         <p className="font-sans text-foreground/80 text-sm leading-relaxed">
           Our team of passionate designers, architects, and craftsmen work in harmony to deliver spaces that are both timeless and deeply personal. We don't follow trends — we set them.

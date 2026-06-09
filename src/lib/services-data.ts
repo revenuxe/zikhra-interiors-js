@@ -25,9 +25,9 @@ export const services: ServiceItem[] = [
     id: "full-home",
     image: serviceHome.src,
     title: "Full Home Interiors",
-    subtitle: "Complete Premium Home Design in Hyderabad",
+    subtitle: "Complete Premium Home Design in Bangalore",
     description:
-      "From conceptualization to execution, we design every corner of your home with precision and elegance. Our full home interior service covers living rooms, bedrooms, kitchens, bathrooms, and all transitional spaces — creating a cohesive premium experience throughout your Hyderabad home.",
+      "From conceptualization to execution, we design every corner of your home with precision and elegance. Our full home interior service covers living rooms, bedrooms, kitchens, bathrooms, and all transitional spaces — creating a cohesive premium experience throughout your Bangalore home.",
     features: [
       "Complete space planning & 3D visualization",
       "Custom furniture design & procurement",
@@ -42,7 +42,7 @@ export const services: ServiceItem[] = [
     id: "modular-kitchen",
     image: serviceKitchen.src,
     title: "Modular Kitchen",
-    subtitle: "Premium Kitchen Design Across Hyderabad",
+    subtitle: "Premium Kitchen Design Across Bangalore",
     description:
       "Our modular kitchens combine European aesthetics with Indian functionality. Every surface, handle, and fixture is selected with intent — creating spaces where cooking feels polished, efficient, and personal.",
     features: [
@@ -59,7 +59,7 @@ export const services: ServiceItem[] = [
     id: "wardrobes",
     image: serviceWardrobe.src,
     title: "Wardrobes & Walk-in Closets",
-    subtitle: "Custom Storage Solutions in Hyderabad",
+    subtitle: "Custom Storage Solutions in Bangalore",
     description:
       "Walk-in closets and built-in wardrobes that turn your everyday routine into a boutique experience. Every shelf, drawer, and hanger is designed with purpose.",
     features: [
@@ -76,7 +76,7 @@ export const services: ServiceItem[] = [
     id: "living-room",
     image: serviceLivingroom.src,
     title: "Living Room Design",
-    subtitle: "Elegant Living Spaces in Hyderabad",
+    subtitle: "Elegant Living Spaces in Bangalore",
     description:
       "Create a stunning first impression with our bespoke living room designs. From statement walls to premium seating arrangements, we craft spaces that reflect your personality and lifestyle.",
     features: [
@@ -93,7 +93,7 @@ export const services: ServiceItem[] = [
     id: "bedroom",
     image: serviceBedroom.src,
     title: "Bedroom Interiors",
-    subtitle: "Premium Bedroom Design in Hyderabad",
+    subtitle: "Premium Bedroom Design in Bangalore",
     description:
       "Your bedroom should be a sanctuary. We design bedrooms that promote relaxation and reflect your personal style — from custom headboards to ambient lighting that sets the perfect mood.",
     features: [
@@ -110,7 +110,7 @@ export const services: ServiceItem[] = [
     id: "bathroom",
     image: serviceBathroom.src,
     title: "Bathroom Interiors",
-    subtitle: "Premium Bathroom Design in Hyderabad",
+    subtitle: "Premium Bathroom Design in Bangalore",
     description:
       "Transform your bathroom into a spa-like retreat. From premium fixtures to marble finishes, we create bathrooms that are both functional and refined.",
     features: [
@@ -127,7 +127,7 @@ export const services: ServiceItem[] = [
     id: "false-ceiling",
     image: serviceCeiling.src,
     title: "False Ceiling & Lighting",
-    subtitle: "Designer Ceilings Across Hyderabad",
+    subtitle: "Designer Ceilings Across Bangalore",
     description:
       "Elevate your interiors with stunning false ceiling designs that add depth, dimension, and drama. Combined with expert lighting design, we create atmospheres that transform spaces.",
     features: [
@@ -144,7 +144,7 @@ export const services: ServiceItem[] = [
     id: "tv-unit",
     image: serviceTvunit.src,
     title: "TV Unit & Entertainment",
-    subtitle: "Custom Entertainment Units in Hyderabad",
+    subtitle: "Custom Entertainment Units in Bangalore",
     description:
       "Statement TV units that serve as the focal point of your living room. From floating designs to full wall units with integrated storage and lighting.",
     features: [
@@ -161,7 +161,7 @@ export const services: ServiceItem[] = [
     id: "pooja-room",
     image: servicePooja.src,
     title: "Pooja Room Design",
-    subtitle: "Sacred Space Design in Hyderabad",
+    subtitle: "Sacred Space Design in Bangalore",
     description:
       "Create a serene and beautiful pooja room that blends tradition with modern aesthetics. From marble temples to intricately carved wooden mandirs, we design spaces that inspire devotion.",
     features: [
@@ -178,7 +178,7 @@ export const services: ServiceItem[] = [
     id: "renovation",
     image: serviceRenovation.src,
     title: "Home Renovation",
-    subtitle: "Transform Your Existing Hyderabad Home",
+    subtitle: "Transform Your Existing Bangalore Home",
     description:
       "Breathe new life into your existing space. Our renovation service covers everything from structural changes to cosmetic upgrades — transforming outdated interiors into modern, polished living spaces.",
     features: [
@@ -195,7 +195,7 @@ export const services: ServiceItem[] = [
     id: "commercial",
     image: serviceCommercial.src,
     title: "Commercial & Office Interiors",
-    subtitle: "Professional Workspace Design in Hyderabad",
+    subtitle: "Professional Workspace Design in Bangalore",
     description:
       "From startups to corporate offices, retail stores to restaurants — we design commercial spaces that impress clients and boost productivity.",
     features: [

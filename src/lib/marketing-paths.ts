@@ -1,17 +1,18 @@
 import type { MarketId } from "@/lib/market-types";
 
-/** Localise body copy when rendering Bangalore funnel pages (shared CMS/data still mentions Hyderabad). */
+/** Keep shared marketing copy normalised for the Bangalore-only site. */
 export function applyMarketToCopy(text: string, market: MarketId): string {
-  if (market !== "bangalore") return text;
+  void market;
   return text
-    .replace(/\bHyderabad\b/g, "Bangalore")
-    .replace(/\bhyderabad\b/g, "Bangalore")
-    .replace(/\bTelangana\b/g, "Karnataka")
-    .replace(/\btelangana\b/g, "Karnataka");
+    .replace(/\bBangalore\b/g, "Bangalore")
+    .replace(/\bbangalore\b/g, "Bangalore")
+    .replace(/\bKarnataka\b/g, "Karnataka")
+    .replace(/\bkarnataka\b/g, "Karnataka");
 }
 
 export function servicesIndexPath(market: MarketId): string {
-  return market === "bangalore" ? "/bangalore/services" : "/services";
+  void market;
+  return "/bangalore/services";
 }
 
 export function serviceDetailPath(market: MarketId, slug: string): string {
@@ -19,30 +20,36 @@ export function serviceDetailPath(market: MarketId, slug: string): string {
 }
 
 export function projectTypeDetailPath(market: MarketId, slug: string): string {
-  return market === "bangalore" ? `/bangalore/project-type/${slug}` : `/project-type/${slug}`;
+  void market;
+  return `/bangalore/project-type/${slug}`;
 }
 
 export function portfolioDetailPath(market: MarketId, slug: string): string {
-  return market === "bangalore" ? `/bangalore/portfolio/${slug}` : `/portfolio/${slug}`;
+  void market;
+  return `/bangalore/portfolio/${slug}`;
 }
 
-/** Listing page for project case studies (Hyderabad vs Bangalore funnel). */
 export function projectsIndexPath(market: MarketId): string {
-  return market === "bangalore" ? "/bangalore/projects" : "/projects";
+  void market;
+  return "/bangalore/projects";
 }
 
 export function projectDetailPath(market: MarketId, slug: string): string {
-  return market === "bangalore" ? `/bangalore/projects/${slug}` : `/projects/${slug}`;
+  void market;
+  return `/bangalore/projects/${slug}`;
 }
 
 export function cityLabel(market: MarketId): string {
-  return market === "bangalore" ? "Bangalore" : "Hyderabad";
+  void market;
+  return "Bangalore";
 }
 
 export function cityLabelSeo(market: MarketId): string {
-  return market === "bangalore" ? "Bangalore & Bengaluru" : "Hyderabad";
+  void market;
+  return "Bangalore & Bengaluru";
 }
 
 export function backHubPath(market: MarketId): string {
-  return market === "bangalore" ? "/bangalore" : "/";
+  void market;
+  return "/bangalore";
 }

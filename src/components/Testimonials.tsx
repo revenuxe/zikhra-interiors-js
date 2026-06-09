@@ -7,7 +7,7 @@ import { getMarketCopy } from "@/lib/market-copy";
 
 type Props = { market?: MarketId };
 
-const Testimonials = ({ market = "hyderabad" }: Props) => {
+const Testimonials = ({ market = "bangalore" }: Props) => {
   const copy = getMarketCopy(market);
   const testimonials = useMemo(() => copy.testimonials, [copy.testimonials]);
   const [active, setActive] = useState(0);

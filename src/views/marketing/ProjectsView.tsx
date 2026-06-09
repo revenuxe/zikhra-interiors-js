@@ -11,18 +11,16 @@ import { projectDetailPath, servicesIndexPath } from "@/lib/marketing-paths";
 
 type Props = { market?: MarketId };
 
-export default function ProjectsView({ market = "hyderabad" }: Props) {
+export default function ProjectsView({ market = "bangalore" }: Props) {
   const cityLine =
-    market === "bangalore"
-      ? "Explore premium interior transformations across villas and apartments, delivered with turnkey precision in Bangalore & Bengaluru."
-      : "Explore premium interior transformations across villas and apartments, delivered with turnkey precision in Hyderabad.";
+    "Explore premium interior transformations across villas and apartments, delivered with turnkey precision in Bangalore & Bengaluru.";
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <section className="pt-32 md:pt-28 pb-10 px-5 text-center">
         <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Our Work</p>
         <h1 className="font-serif text-4xl md:text-5xl font-bold gold-text mb-3">
-          Featured Interior Projects in {market === "bangalore" ? "Bangalore" : "Hyderabad"}
+          Featured Interior Projects in Bangalore
         </h1>
         <p className="font-sans text-sm text-muted-foreground max-w-lg mx-auto">{cityLine}</p>
       </section>

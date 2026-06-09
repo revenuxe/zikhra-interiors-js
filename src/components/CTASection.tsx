@@ -6,7 +6,7 @@ import { getMarketCopy } from "@/lib/market-copy";
 
 type Props = { market?: MarketId };
 
-const CTASection = ({ market = "hyderabad" }: Props) => {
+const CTASection = ({ market = "bangalore" }: Props) => {
   const copy = getMarketCopy(market);
   return (
     <section className="section-padding bg-luxury-dark relative overflow-hidden">

@@ -11,7 +11,7 @@ export const dynamic = "force-dynamic";
 
 const title = "All pages | Zikhra Interiors";
 const description =
-  "Full list of Zikhra website pages: interior design services, project types, portfolio, Hyderabad and Bangalore area pages, and blog posts.";
+  "Full list of Zikhra website pages: interior design services, project types, portfolio, Bangalore and Bengaluru area pages, and blog posts.";
 
 export const metadata: Metadata = {
   title,

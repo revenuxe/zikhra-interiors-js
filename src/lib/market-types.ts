@@ -1,1 +1,1 @@
-export type MarketId = "hyderabad" | "bangalore";
+export type MarketId = "bangalore";

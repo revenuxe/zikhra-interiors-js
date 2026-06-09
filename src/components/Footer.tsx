@@ -6,30 +6,25 @@ import { bangaloreAreas } from "@/lib/bangalore-areas-data";
 const quickLinks = [
   { label: "Home", to: "/" },
   { label: "About Us", to: "/about" },
-  { label: "Services", to: "/services" },
-  { label: "Projects", to: "/projects" },
-  { label: "Projects — Bangalore", to: "/bangalore/projects" },
+  { label: "Services", to: "/bangalore/services" },
+  { label: "Projects", to: "/bangalore/projects" },
   { label: "Blog", to: "/blog" },
   { label: "Contact", to: "/contact" },
   { label: "All pages", to: "/all-pages" },
 ];
 
 const serviceLinks = [
-  { label: "Full Home Interiors", to: "/services#full-home" },
-  { label: "Modular Kitchen", to: "/services#modular-kitchen" },
-  { label: "Wardrobes", to: "/services#wardrobes" },
-  { label: "Renovation", to: "/services#renovation" },
-  { label: "Kitchen Design", to: "/portfolio/kitchen" },
-  { label: "Bedroom Design", to: "/portfolio/bedroom" },
+  { label: "Full Home Interiors", to: "/bangalore/services#full-home" },
+  { label: "Modular Kitchen", to: "/bangalore/services#modular-kitchen" },
+  { label: "Wardrobes", to: "/bangalore/services#wardrobes" },
+  { label: "Renovation", to: "/bangalore/services#renovation" },
+  { label: "Kitchen Design", to: "/bangalore/portfolio/kitchen" },
+  { label: "Bedroom Design", to: "/bangalore/portfolio/bedroom" },
 ];
 
 const pricingLinks = [
-  { label: "Interior Design Cost", to: "/interior-design-cost" },
-  { label: "Hyderabad Cost Guide", to: "/hyderabad/interior-design-cost" },
-  { label: "Bangalore Cost Guide", to: "/bangalore/interior-design-cost" },
-  { label: "2 BHK Cost Hyderabad", to: "/2bhk-interior-design-cost-hyderabad" },
+  { label: "Interior Design Cost", to: "/bangalore/interior-design-cost" },
   { label: "2 BHK Cost Bangalore", to: "/2bhk-interior-design-cost-bangalore" },
-  { label: "3 BHK Cost Hyderabad", to: "/3bhk-interior-design-cost-hyderabad" },
   { label: "3 BHK Cost Bangalore", to: "/3bhk-interior-design-cost-bangalore" },
 ];
 
@@ -40,9 +35,9 @@ const Footer = () => {
 
       <div className="max-w-6xl mx-auto px-5 pt-14">
         <div className="flex flex-col items-center text-center mb-12">
-          <img src={logo.src} alt="Zikhra Interior Designers Hyderabad" className="h-16 w-auto mb-3" />
+          <img src={logo.src} alt="Zikhra Interior Designers Bangalore" className="h-16 w-auto mb-3" />
           <p className="font-sans text-muted-foreground text-sm max-w-xs">
-            Hyderabad's trusted premium interior design studio. Crafting timeless spaces since 2018.
+            Bangalore's trusted premium interior design studio. Crafting timeless spaces since 2018.
           </p>
         </div>
 
@@ -108,7 +103,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link href="/bangalore/projects" className="font-sans text-xs text-muted-foreground hover:text-gold transition-colors block">
-                  Featured projects — Bangalore
+                  Featured projects in Bangalore
                 </Link>
               </li>
             </ul>
@@ -131,7 +126,7 @@ const Footer = () => {
             <div className="space-y-3 text-sm font-sans text-muted-foreground">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-gold mt-0.5 flex-shrink-0" />
-                <span>Jubilee Hills, Hyderabad,<br />Telangana 500033</span>
+                <span>Koramangala, Bangalore,<br />Karnataka 560034</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-gold flex-shrink-0" />
@@ -166,25 +161,24 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* SEO keyword footer */}
         <div className="text-center mb-6">
           <p className="font-sans text-xs text-muted-foreground/30 leading-relaxed">
-            Interior designers in Hyderabad | Home interiors Jubilee Hills | Modular kitchen Hyderabad | Premium villa interiors Banjara Hills | Best interior design company Gachibowli | Home renovation Kondapur | Wardrobe design HITEC City | Interior designers Bangalore | Premium home interiors Koramangala | Modular kitchen Whitefield | HSR Layout interiors | Indiranagar interior designers
+            Interior designers in Bangalore | Home interiors Koramangala | Modular kitchen Bangalore | Premium villa interiors Indiranagar | Best interior design company Whitefield | Home renovation HSR Layout | Wardrobe design Electronic City | Premium home interiors Sarjapur Road | Modular kitchen Whitefield | JP Nagar interiors | Hebbal interior designers
           </p>
         </div>
 
         <div className="h-px bg-border/20 mb-6" />
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-2 text-xs font-sans text-muted-foreground/40">
-          <p>© 2026 Zikhra Interiors. All rights reserved.</p>
+          <p>&copy; 2026 Zikhra Interiors. All rights reserved.</p>
           <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
             <Link href="/all-pages" className="hover:text-gold transition-colors">All pages</Link>
-            <span>·</span>
+            <span>|</span>
             <Link href="/terms" className="hover:text-gold transition-colors">Terms & Conditions</Link>
-            <span>·</span>
+            <span>|</span>
             <Link href="/privacy" className="hover:text-gold transition-colors">Privacy Policy</Link>
           </div>
-          <p>Designed with passion in Hyderabad</p>
+          <p>Designed with passion in Bangalore</p>
         </div>
       </div>
     </footer>

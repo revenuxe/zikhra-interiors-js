@@ -26,23 +26,23 @@ export default function BlogListView({ posts }: { posts: BlogListItem[] }) {
       <section className="pt-32 md:pt-28 pb-8 px-5 text-center">
         <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Our Blog</p>
         <h1 className="font-serif text-4xl md:text-5xl font-bold gold-text mb-3">
-          Interior Design Insights for Hyderabad & Bangalore
+          Interior Design Insights for Bangalore & Bengaluru
         </h1>
         <p className="font-sans text-sm text-muted-foreground max-w-xl mx-auto mb-6">
-          Pricing guides, planning advice, and premium interior design insights for Hyderabad and Bangalore homes.
+          Pricing guides, planning advice, and premium interior design insights for Bangalore and Bengaluru homes.
         </p>
         <div className="max-w-2xl mx-auto text-left space-y-4 font-sans text-sm text-muted-foreground leading-relaxed">
           <p>
             Welcome to <strong className="text-foreground font-medium">Interior Design Insights</strong> by Zikhra - practical,
             idea-rich articles for homeowners who want calmer layouts, better lighting, and materials that age gracefully in
-            Hyderabad&apos;s climate. Each piece translates what we see on premium residential sites into guidance you can discuss
+            Bangalore&apos;s climate. Each piece translates what we see on premium residential sites into guidance you can discuss
             with your family or your designer.
           </p>
           <p>
             Expect deep dives on <strong className="text-foreground font-medium">premium kitchens</strong>, wardrobe ergonomics,
             subtle colour palettes, and how to brief a studio for a <strong className="text-foreground font-medium">turnkey</strong>{" "}
             apartment or <strong className="text-foreground font-medium">villa</strong> without losing personality. We write for
-            readers across Jubilee Hills, Gachibowli, and emerging townships who care about craftsmanship as much as aesthetics.
+            readers across Koramangala, Whitefield, and emerging townships who care about craftsmanship as much as aesthetics.
           </p>
           <p>
             Whether you are early in planning or already comparing quotes, these interior design insights help you ask sharper
@@ -101,13 +101,13 @@ export default function BlogListView({ posts }: { posts: BlogListItem[] }) {
             Continue your planning journey with our premium service breakdowns and curated project case studies.
           </p>
           <div className="flex flex-wrap gap-4 text-sm font-sans">
-            <Link href="/services" className="text-gold hover:underline">
+            <Link href="/bangalore/services" className="text-gold hover:underline">
               Interior Services
             </Link>
-            <Link href="/interior-design-cost" className="text-gold hover:underline">
+            <Link href="/bangalore/interior-design-cost" className="text-gold hover:underline">
               Interior Design Cost Guide
             </Link>
-            <Link href="/projects" className="text-gold hover:underline">
+            <Link href="/bangalore/projects" className="text-gold hover:underline">
               Premium Interior Projects
             </Link>
             <Link href="/contact" className="text-gold hover:underline">

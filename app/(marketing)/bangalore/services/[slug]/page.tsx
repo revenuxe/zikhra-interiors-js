@@ -7,11 +7,12 @@ import { applyMarketToCopy, serviceDetailPath, servicesIndexPath } from "@/lib/m
 import {
   breadcrumbSchema,
   DEFAULT_OG_IMAGE_PATH,
+  localServiceSchema,
   pageOpenGraph,
-  SITE_URL,
   toJsonLd,
   twitterSummaryLarge,
 } from "@/lib/seo";
+import { serviceSeoKeywords } from "@/lib/seo-keywords";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -35,6 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description,
+    keywords: serviceSeoKeywords(service.title),
     alternates: { canonical: canonicalPath },
     openGraph: pageOpenGraph({
       title,
@@ -68,18 +70,14 @@ export default async function BangaloreServiceDetailPage({ params }: Props) {
       />
       <SeoJsonLd
         id={`bangalore-service-schema-${slug}`}
-        json={toJsonLd({
-          "@context": "https://schema.org",
-          "@type": "Service",
-          name: service.title,
-          description: applyMarketToCopy(service.description, "bangalore"),
-          areaServed: ["Bangalore", "Bengaluru"],
-          provider: {
-            "@type": "Organization",
-            name: "Zikhra Interiors",
-            url: SITE_URL,
-          },
-        })}
+        json={toJsonLd(
+          localServiceSchema({
+            name: `${service.title} in Bangalore`,
+            description: applyMarketToCopy(service.description, "bangalore"),
+            path: serviceDetailPath("bangalore", slug),
+            serviceType: service.title,
+          }),
+        )}
       />
       <ServiceDetailView service={service} market="bangalore" />
     </>

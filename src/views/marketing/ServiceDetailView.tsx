@@ -19,7 +19,7 @@ type Props = {
   market?: MarketId;
 };
 
-export default function ServiceDetailView({ service, market = "hyderabad" }: Props) {
+export default function ServiceDetailView({ service, market = "bangalore" }: Props) {
   const city = cityLabel(market);
   const subtitle = applyMarketToCopy(service.subtitle, market);
   const description = applyMarketToCopy(service.description, market);

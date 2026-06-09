@@ -5,6 +5,7 @@ import PortfolioDetailView from "@/views/marketing/PortfolioDetailView";
 import SeoJsonLd from "@/components/SeoJsonLd";
 import { applyMarketToCopy, portfolioDetailPath } from "@/lib/marketing-paths";
 import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
+import { BANGALORE_CORE_KEYWORDS, uniqueKeywords } from "@/lib/seo-keywords";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -26,6 +27,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description: desc,
+    keywords: uniqueKeywords(
+      [
+        `${item.title} Bangalore`,
+        `${item.title} Bengaluru`,
+        `${item.slug} interior design Bangalore`,
+        `premium ${item.title.toLowerCase()} Bangalore`,
+        `luxury ${item.title.toLowerCase()} Bangalore`,
+      ],
+      BANGALORE_CORE_KEYWORDS,
+    ),
     alternates: { canonical: path },
     openGraph: pageOpenGraph({
       title,

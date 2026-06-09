@@ -6,7 +6,7 @@ const icons = [Shield, Zap, Gem, BadgeCheck] as const;
 
 type Props = { market?: MarketId };
 
-const WhyChooseSection = ({ market = "hyderabad" }: Props) => {
+const WhyChooseSection = ({ market = "bangalore" }: Props) => {
   const copy = getMarketCopy(market);
   const points = copy.whyPoints.map((pt, i) => ({ ...pt, icon: icons[i] ?? Shield }));
   return (

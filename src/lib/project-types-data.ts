@@ -22,13 +22,13 @@ export const projectTypes: ProjectTypeItem[] = [
   {
     slug: "2bhk",
     title: "2 BHK Interior Design",
-    tagline: "Smart Premium 2 BHK Interiors in Hyderabad",
+    tagline: "Smart Premium 2 BHK Interiors in Bangalore",
     heroImage: project2bhk.src,
-    metaTitle: "Best 2 BHK Interior Design in Hyderabad | Zikhra Interiors",
+    metaTitle: "Best 2 BHK Interior Design in Bangalore | Zikhra Interiors",
     metaDesc:
-      "Transform your 2 BHK apartment with premium interior design in Hyderabad. Modular kitchens, wardrobes, smart storage, false ceilings & more with clear scope planning.",
+      "Transform your 2 BHK apartment with premium interior design in Bangalore. Modular kitchens, wardrobes, smart storage, false ceilings & more with clear scope planning.",
     intro:
-      "A 2 BHK apartment demands smart design that maximizes every square foot without compromising on finish quality. At Zikhra Interiors, we create practical, premium, and signature 2 BHK interiors across Hyderabad.",
+      "A 2 BHK apartment demands smart design that maximizes every square foot without compromising on finish quality. At Zikhra Interiors, we create practical, premium, and signature 2 BHK interiors across Bangalore.",
     features: [
       "Space-optimized modular furniture",
       "Multi-functional living-dining layouts",
@@ -43,7 +43,7 @@ export const projectTypes: ProjectTypeItem[] = [
     timeline: "30 - 45 Days",
     faqs: [
       {
-        q: "What is the cost of 2 BHK interior design in Hyderabad?",
+        q: "What is the cost of 2 BHK interior design in Bangalore?",
         a: "Zikhra prepares a room-wise estimate after reviewing your floor plan, storage needs, finishes, and site conditions.",
       },
     ],
@@ -51,11 +51,11 @@ export const projectTypes: ProjectTypeItem[] = [
   {
     slug: "3bhk",
     title: "3 BHK Interior Design",
-    tagline: "Spacious Premium 3 BHK Interiors in Hyderabad",
+    tagline: "Spacious Premium 3 BHK Interiors in Bangalore",
     heroImage: project3bhk.src,
-    metaTitle: "Premium 3 BHK Interior Design Hyderabad | Zikhra Interiors",
+    metaTitle: "Premium 3 BHK Interior Design Bangalore | Zikhra Interiors",
     metaDesc:
-      "Premium 3 BHK interior design in Hyderabad. Complete home interiors with modular kitchen, wardrobes, living room & more with clear scope planning.",
+      "Premium 3 BHK interior design in Bangalore. Complete home interiors with modular kitchen, wardrobes, living room & more with clear scope planning.",
     intro:
       "A 3 BHK home is the perfect canvas for creating distinct zones - entertainment, relaxation, productivity, and family storage.",
     features: ["Separate living and family room design", "Premium modular kitchen with island option"],
@@ -67,27 +67,27 @@ export const projectTypes: ProjectTypeItem[] = [
   {
     slug: "4bhk",
     title: "4 BHK Interior Design",
-    tagline: "Grand 4 BHK Villa & Apartment Interiors in Hyderabad",
+    tagline: "Grand 4 BHK Villa & Apartment Interiors in Bangalore",
     heroImage: project4bhk.src,
-    metaTitle: "Premium 4 BHK Interior Design Hyderabad | Zikhra Interiors",
+    metaTitle: "Premium 4 BHK Interior Design Bangalore | Zikhra Interiors",
     metaDesc:
-      "Grand 4 BHK villa & apartment interior design in Hyderabad. Complete premium interiors with quality materials and supervised execution.",
+      "Grand 4 BHK villa & apartment interior design in Bangalore. Complete premium interiors with quality materials and supervised execution.",
     intro:
       "A 4 BHK home demands grandeur. Every space is crafted to feel refined, functional, and premium with strong material and lighting discipline.",
     features: ["Double-height living room design", "Premium marble flooring"],
     rooms: [{ name: "Grand Foyer", desc: "Impressive entrance with statement lighting" }],
     pricing: "Starts from Rs. 8.5 Lakhs",
     timeline: "60 - 90 Days",
-    faqs: [{ q: "Do you design 4 BHK villas too?", a: "Yes - we handle apartments and villas across Hyderabad." }],
+    faqs: [{ q: "Do you design 4 BHK villas too?", a: "Yes - we handle apartments and villas across Bangalore." }],
   },
   {
     slug: "penthouse",
     title: "Penthouse Interior Design",
-    tagline: "Elevated Penthouse Interiors in Hyderabad",
+    tagline: "Elevated Penthouse Interiors in Bangalore",
     heroImage: projectPenthouse.src,
-    metaTitle: "Premium Penthouse Interior Design Hyderabad | Zikhra Interiors",
+    metaTitle: "Premium Penthouse Interior Design Bangalore | Zikhra Interiors",
     metaDesc:
-      "Premium penthouse interior design in Hyderabad. Bespoke designs with panoramic views, premium materials & smart automation. Custom scope planning.",
+      "Premium penthouse interior design in Bangalore. Bespoke designs with panoramic views, premium materials & smart automation. Custom scope planning.",
     intro:
       "A penthouse is not just a home - it is a statement. We create elevated penthouse interiors with refined materials, spatial drama, and turnkey execution.",
     features: ["Panoramic living room with floor-to-ceiling glass", "Private terrace design"],

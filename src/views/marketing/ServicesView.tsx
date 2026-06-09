@@ -3,6 +3,6 @@ import type { MarketId } from "@/lib/market-types";
 
 type Props = { market?: MarketId };
 
-export default function ServicesView({ market = "hyderabad" }: Props) {
+export default function ServicesView({ market = "bangalore" }: Props) {
   return <Services market={market} />;
 }

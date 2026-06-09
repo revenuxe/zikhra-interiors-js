@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import SeoJsonLd from "@/components/SeoJsonLd";
 import { getCostGuideConfig } from "@/lib/interior-cost-data";
 import { breadcrumbSchema, faqPageSchema, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
+import { BANGALORE_COST_KEYWORDS, BANGALORE_CORE_KEYWORDS, uniqueKeywords } from "@/lib/seo-keywords";
 import InteriorCostGuideView from "@/views/marketing/InteriorCostGuideView";
 
 export const dynamic = "force-static";
@@ -12,6 +13,7 @@ const config = getCostGuideConfig("all", "all", "/interior-design-cost");
 export const metadata: Metadata = {
   title: config.title,
   description: config.description,
+  keywords: uniqueKeywords(BANGALORE_COST_KEYWORDS, BANGALORE_CORE_KEYWORDS),
   alternates: { canonical: config.canonicalPath },
   openGraph: pageOpenGraph({
     title: config.title,

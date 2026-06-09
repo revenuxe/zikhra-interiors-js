@@ -10,7 +10,7 @@ import { applyMarketToCopy, backHubPath, cityLabel } from "@/lib/marketing-paths
 
 type Props = { item: PortfolioItem; market?: MarketId };
 
-export default function PortfolioDetailView({ item, market = "hyderabad" }: Props) {
+export default function PortfolioDetailView({ item, market = "bangalore" }: Props) {
   const city = cityLabel(market);
   const description = applyMarketToCopy(item.description, market);
   const tagline = applyMarketToCopy(item.tagline, market);

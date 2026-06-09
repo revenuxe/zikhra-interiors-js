@@ -1,7 +1,17 @@
 import type { Metadata } from "next";
 import ServicesView from "@/views/marketing/ServicesView";
 import SeoJsonLd from "@/components/SeoJsonLd";
-import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
+import {
+  breadcrumbSchema,
+  DEFAULT_OG_IMAGE_PATH,
+  pageOpenGraph,
+  serviceCatalogSchema,
+  toJsonLd,
+  twitterSummaryLarge,
+  webPageSchema,
+} from "@/lib/seo";
+import { services } from "@/lib/services-data";
+import { BANGALORE_CORE_KEYWORDS, BANGALORE_SERVICE_KEYWORDS, uniqueKeywords } from "@/lib/seo-keywords";
 
 export const dynamic = "force-static";
 export const revalidate = 86400;
@@ -13,6 +23,7 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
+  keywords: uniqueKeywords(BANGALORE_CORE_KEYWORDS, BANGALORE_SERVICE_KEYWORDS),
   alternates: { canonical: "/bangalore/services" },
   openGraph: pageOpenGraph({
     title,
@@ -35,6 +46,29 @@ export default function BangaloreServicesPage() {
             { name: "Bangalore", path: "/bangalore" },
             { name: "Services", path: "/bangalore/services" },
           ]),
+        )}
+      />
+      <SeoJsonLd
+        id="bangalore-services-webpage"
+        json={toJsonLd(
+          webPageSchema({
+            name: title,
+            description,
+            path: "/bangalore/services",
+            keywords: uniqueKeywords(BANGALORE_CORE_KEYWORDS, BANGALORE_SERVICE_KEYWORDS),
+          }),
+        )}
+      />
+      <SeoJsonLd
+        id="bangalore-services-catalog"
+        json={toJsonLd(
+          serviceCatalogSchema(
+            services.map((service) => ({
+              name: `${service.title} in Bangalore`,
+              description: service.description,
+              path: `/bangalore/services/${service.id}`,
+            })),
+          ),
         )}
       />
       <ServicesView market="bangalore" />

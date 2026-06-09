@@ -21,7 +21,7 @@ const Terms = () => {
 
             <section>
               <h2 className="font-serif text-lg text-gold mb-3">2. Company Information</h2>
-              <p>Zikhra Interiors is an interior design firm based in Jubilee Hills, Hyderabad, Telangana 500033, India. For inquiries, contact us at <a href="mailto:zikhraofficial@gmail.com" className="text-gold hover:underline">zikhraofficial@gmail.com</a> or call <a href="tel:+919886579923" className="text-gold hover:underline">9886579923</a>.</p>
+              <p>Zikhra Interiors is an interior design firm based in Koramangala, Bangalore, Karnataka 560034, India. For inquiries, contact us at <a href="mailto:zikhraofficial@gmail.com" className="text-gold hover:underline">zikhraofficial@gmail.com</a> or call <a href="tel:+919886579923" className="text-gold hover:underline">9886579923</a>.</p>
             </section>
 
             <section>
@@ -82,7 +82,7 @@ const Terms = () => {
 
             <section>
               <h2 className="font-serif text-lg text-gold mb-3">13. Governing Law</h2>
-              <p>These terms shall be governed by and construed in accordance with the laws of India. Any disputes shall be subject to the exclusive jurisdiction of the courts in Hyderabad, Telangana.</p>
+              <p>These terms shall be governed by and construed in accordance with the laws of India. Any disputes shall be subject to the exclusive jurisdiction of the courts in Bangalore, Karnataka.</p>
             </section>
 
             <section>
@@ -95,7 +95,7 @@ const Terms = () => {
               <p>For questions about these Terms & Conditions, contact us at:</p>
               <div className="mt-2 p-4 rounded-xl bg-card border border-border/30 space-y-1">
                 <p className="text-foreground font-medium">Zikhra Interiors</p>
-                <p className="text-muted-foreground">Jubilee Hills, Hyderabad, Telangana 500033</p>
+                <p className="text-muted-foreground">Koramangala, Bangalore, Karnataka 560034</p>
                 <p className="text-muted-foreground">Email: <a href="mailto:zikhraofficial@gmail.com" className="text-gold hover:underline">zikhraofficial@gmail.com</a></p>
                 <p className="text-muted-foreground">Phone: <a href="tel:+919886579923" className="text-gold hover:underline">9886579923</a></p>
               </div>

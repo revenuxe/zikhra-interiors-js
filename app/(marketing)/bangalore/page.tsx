@@ -12,7 +12,15 @@ import {
   toJsonLd,
   twitterSummaryLarge,
   websiteSchema,
+  webPageSchema,
 } from "@/lib/seo";
+import {
+  BANGALORE_CORE_KEYWORDS,
+  BANGALORE_COST_KEYWORDS,
+  BANGALORE_NEIGHBOURHOODS,
+  BANGALORE_SERVICE_KEYWORDS,
+  uniqueKeywords,
+} from "@/lib/seo-keywords";
 
 export const dynamic = "force-static";
 export const revalidate = 86400;
@@ -21,20 +29,12 @@ const title = "Best Interior Designer in Bangalore | Zikhra";
 const description =
   "Zikhra designs premium 2 BHK, 3 BHK, villa, modular kitchen, and turnkey home interiors in Bangalore. Serving Koramangala, Indiranagar, Whitefield, HSR Layout, and more.";
 
-const keywords = [
-  "interior designers Bangalore",
-  "best interior designer Bangalore",
-  "2 BHK interiors Bangalore",
-  "3 BHK interiors Bangalore",
-  "interior design cost Bangalore",
-  "modular kitchen Bangalore",
-  "Koramangala interior designers",
-  "Whitefield home interiors",
-  "HSR layout interior design",
-  "Indiranagar interior designers",
-  "Sarjapur road interiors",
-  "turnkey interiors Bangalore",
-];
+const keywords = uniqueKeywords(
+  BANGALORE_CORE_KEYWORDS,
+  BANGALORE_SERVICE_KEYWORDS,
+  BANGALORE_COST_KEYWORDS,
+  BANGALORE_NEIGHBOURHOODS.map((area) => `${area} interior designers`),
+);
 
 export const metadata: Metadata = {
   title,
@@ -69,6 +69,7 @@ export default function BangaloreHubPage() {
       <SeoJsonLd id="bangalore-org-schema" json={toJsonLd(organizationSchema())} />
       <SeoJsonLd id="bangalore-local-schema" json={toJsonLd(localBusinessSchema())} />
       <SeoJsonLd id="bangalore-website-schema" json={toJsonLd(websiteSchema())} />
+      <SeoJsonLd id="bangalore-webpage-schema" json={toJsonLd(webPageSchema({ name: title, description, path: "/bangalore", keywords }))} />
       <SeoJsonLd
         id="bangalore-breadcrumb"
         json={toJsonLd(breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Bangalore", path: "/bangalore" }]))}

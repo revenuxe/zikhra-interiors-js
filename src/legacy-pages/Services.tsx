@@ -24,8 +24,8 @@ const services = [
     id: "full-home",
     image: serviceHome.src,
     title: "Full Home Interiors",
-    subtitle: "Complete Premium Home Design in Hyderabad",
-    description: "From conceptualization to execution, we design every corner of your home with precision and elegance. Our full home interior service covers living rooms, bedrooms, kitchens, bathrooms, and all transitional spaces — creating a cohesive premium experience throughout your Hyderabad home.",
+    subtitle: "Complete Premium Home Design in Bangalore",
+    description: "From conceptualization to execution, we design every corner of your home with precision and elegance. Our full home interior service covers living rooms, bedrooms, kitchens, bathrooms, and all transitional spaces — creating a cohesive premium experience throughout your Bangalore home.",
     features: [
       "Complete space planning & 3D visualization",
       "Custom furniture design & procurement",
@@ -40,7 +40,7 @@ const services = [
     id: "modular-kitchen",
     image: serviceKitchen.src,
     title: "Modular Kitchen",
-    subtitle: "Premium Kitchen Design Across Hyderabad",
+    subtitle: "Premium Kitchen Design Across Bangalore",
     description: "Our modular kitchens combine European aesthetics with Indian functionality. Every surface, handle, and fixture is selected with intent — creating spaces where cooking feels polished, efficient, and personal.",
     features: [
       "Premium Italian marble & quartz countertops",
@@ -56,7 +56,7 @@ const services = [
     id: "wardrobes",
     image: serviceWardrobe.src,
     title: "Wardrobes & Walk-in Closets",
-    subtitle: "Custom Storage Solutions in Hyderabad",
+    subtitle: "Custom Storage Solutions in Bangalore",
     description: "Walk-in closets and built-in wardrobes that turn your everyday routine into a boutique experience. Every shelf, drawer, and hanger is designed with purpose.",
     features: [
       "Glass-front display sections with LED strips",
@@ -72,7 +72,7 @@ const services = [
     id: "living-room",
     image: serviceLivingroom.src,
     title: "Living Room Design",
-    subtitle: "Elegant Living Spaces in Hyderabad",
+    subtitle: "Elegant Living Spaces in Bangalore",
     description: "Create a stunning first impression with our bespoke living room designs. From statement walls to premium seating arrangements, we craft spaces that reflect your personality and lifestyle.",
     features: [
       "Custom sofa & seating design",
@@ -88,7 +88,7 @@ const services = [
     id: "bedroom",
     image: serviceBedroom.src,
     title: "Bedroom Interiors",
-    subtitle: "Premium Bedroom Design in Hyderabad",
+    subtitle: "Premium Bedroom Design in Bangalore",
     description: "Your bedroom should be a sanctuary. We design bedrooms that promote relaxation and reflect your personal style — from custom headboards to ambient lighting that sets the perfect mood.",
     features: [
       "Custom upholstered headboard designs",
@@ -104,7 +104,7 @@ const services = [
     id: "bathroom",
     image: serviceBathroom.src,
     title: "Bathroom Interiors",
-    subtitle: "Premium Bathroom Design in Hyderabad",
+    subtitle: "Premium Bathroom Design in Bangalore",
     description: "Transform your bathroom into a spa-like retreat. From premium fixtures to marble finishes, we create bathrooms that are both functional and luxurious.",
     features: [
       "Premium marble & tile selection",
@@ -120,7 +120,7 @@ const services = [
     id: "false-ceiling",
     image: serviceCeiling.src,
     title: "False Ceiling & Lighting",
-    subtitle: "Designer Ceilings Across Hyderabad",
+    subtitle: "Designer Ceilings Across Bangalore",
     description: "Elevate your interiors with stunning false ceiling designs that add depth, dimension, and drama. Combined with expert lighting design, we create atmospheres that transform spaces.",
     features: [
       "Multi-layered gypsum ceiling designs",
@@ -136,7 +136,7 @@ const services = [
     id: "tv-unit",
     image: serviceTvunit.src,
     title: "TV Unit & Entertainment",
-    subtitle: "Custom Entertainment Units in Hyderabad",
+    subtitle: "Custom Entertainment Units in Bangalore",
     description: "Statement TV units that serve as the focal point of your living room. From floating designs to full wall units with integrated storage and lighting.",
     features: [
       "Wall-mounted & floating designs",
@@ -152,7 +152,7 @@ const services = [
     id: "pooja-room",
     image: servicePooja.src,
     title: "Pooja Room Design",
-    subtitle: "Sacred Space Design in Hyderabad",
+    subtitle: "Sacred Space Design in Bangalore",
     description: "Create a serene and beautiful pooja room that blends tradition with modern aesthetics. From marble temples to intricately carved wooden mandirs, we design spaces that inspire devotion.",
     features: [
       "Custom marble & wooden temple designs",
@@ -168,7 +168,7 @@ const services = [
     id: "renovation",
     image: serviceRenovation.src,
     title: "Home Renovation",
-    subtitle: "Transform Your Existing Hyderabad Home",
+    subtitle: "Transform Your Existing Bangalore Home",
     description: "Breathe new life into your existing space. Our renovation service covers everything from structural changes to cosmetic upgrades — transforming outdated interiors into modern, polished living spaces.",
     features: [
       "Complete demolition & reconstruction",
@@ -184,7 +184,7 @@ const services = [
     id: "commercial",
     image: serviceCommercial.src,
     title: "Commercial & Office Interiors",
-    subtitle: "Professional Workspace Design in Hyderabad",
+    subtitle: "Professional Workspace Design in Bangalore",
     description: "From startups to corporate offices, retail stores to restaurants — we design commercial spaces that impress clients and boost productivity.",
     features: [
       "Office layout & partition planning",
@@ -202,13 +202,13 @@ export { services };
 
 type ServicesProps = { market?: MarketId };
 
-const Services = ({ market = "hyderabad" }: ServicesProps) => {
+const Services = ({ market = "bangalore" }: ServicesProps) => {
   const city = cityLabel(market);
   const servicesStartPrice = "2 BHK starts from Rs. 3.5 Lakhs";
   const heroLine =
     market === "bangalore"
       ? `${servicesStartPrice}. 3 BHK starts from Rs. 5.5 Lakhs. Pricing for modular kitchen, wardrobes, renovation, and full home interior services across Bangalore comes with clear scope planning.`
-      : `${servicesStartPrice}. 3 BHK starts from Rs. 5.5 Lakhs. Pricing for modular kitchen, wardrobes, renovation, and full home interior services across Hyderabad comes with clear scope planning.`;
+      : `${servicesStartPrice}. 3 BHK starts from Rs. 5.5 Lakhs. Pricing for modular kitchen, wardrobes, renovation, and full home interior services across Bangalore comes with clear scope planning.`;
 
   return (
     <div className="min-h-screen bg-background">
@@ -223,7 +223,7 @@ const Services = ({ market = "hyderabad" }: ServicesProps) => {
         <p className="font-sans text-sm text-muted-foreground max-w-md mx-auto">{heroLine}</p>
         <p className="font-sans text-xs text-muted-foreground mt-4 max-w-md mx-auto">
           Compare packages in our{" "}
-          <Link href={market === "bangalore" ? "/bangalore/interior-design-cost" : "/hyderabad/interior-design-cost"} className="text-gold hover:underline">
+          <Link href="/bangalore/interior-design-cost" className="text-gold hover:underline">
             interior design cost guide
           </Link>
           , including room-wise planning for practical, premium, and signature scopes.

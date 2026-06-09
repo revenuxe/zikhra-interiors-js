@@ -37,16 +37,16 @@ function toPost(input: LocalPostInput): BlogPost {
 
 export const localBlogPosts: BlogPost[] = [
   toPost({
-    slug: "2bhk-interior-design-cost-in-hyderabad-2026",
-    title: "2 BHK Interior Design Cost in Hyderabad 2026",
+    slug: "2bhk-interior-design-cost-in-bangalore-2026",
+    title: "2 BHK Interior Design Cost in Bangalore 2026",
     excerpt:
-      "A practical 2026 guide to 2 BHK interior design cost in Hyderabad, including practical, premium, and signature scope planning.",
+      "A practical 2026 guide to 2 BHK interior design cost in Bangalore, including practical, premium, and signature scope planning.",
     publishedAt: "2026-05-05",
     sections: [
       {
         title: "Quick Cost Range",
         body:
-          "For Hyderabad homeowners, Zikhra prepares a room-wise estimate after reviewing the floor plan, storage volume, finishes, lighting, and civil scope.",
+          "For Bangalore homeowners, Zikhra prepares a room-wise estimate after reviewing the floor plan, storage volume, finishes, lighting, and civil scope.",
       },
       {
         title: "What Changes the Price",
@@ -85,16 +85,16 @@ export const localBlogPosts: BlogPost[] = [
     ],
   }),
   toPost({
-    slug: "3bhk-interior-design-cost-in-hyderabad",
-    title: "3 BHK Interior Design Cost in Hyderabad",
+    slug: "3bhk-interior-design-cost-in-bangalore",
+    title: "3 BHK Interior Design Cost in Bangalore",
     excerpt:
-      "A homeowner-friendly guide to 3 BHK interior design cost in Hyderabad, with premium and signature scope planning.",
+      "A homeowner-friendly guide to 3 BHK interior design cost in Bangalore, with premium and signature scope planning.",
     publishedAt: "2026-05-05",
     sections: [
       {
         title: "Expected Starting Cost",
         body:
-          "For a 3 BHK in Hyderabad, Zikhra prepares a detailed estimate after reviewing floor plan, premium finishes, wardrobe details, lighting, wall treatments, and larger living-dining execution.",
+          "For a 3 BHK in Bangalore, Zikhra prepares a detailed estimate after reviewing floor plan, premium finishes, wardrobe details, lighting, wall treatments, and larger living-dining execution.",
       },
       {
         title: "Why 3 BHK Costs More",
@@ -128,7 +128,7 @@ export const localBlogPosts: BlogPost[] = [
       {
         title: "The Zikhra View",
         body:
-          "Zikhra positions itself between catalogue efficiency and high-touch custom design: clear package bands, room-wise estimates, premium material options, and a designer-led process for Hyderabad and Bangalore homeowners.",
+          "Zikhra positions itself between catalogue efficiency and high-touch custom design: clear package bands, room-wise estimates, premium material options, and a designer-led process for Bangalore and Bengaluru homeowners.",
       },
     ],
   }),

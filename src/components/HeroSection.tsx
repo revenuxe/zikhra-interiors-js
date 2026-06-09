@@ -7,7 +7,7 @@ import { servicesIndexPath } from "@/lib/marketing-paths";
 
 type Props = { market?: MarketId };
 
-const HeroSection = ({ market = "hyderabad" }: Props) => {
+const HeroSection = ({ market = "bangalore" }: Props) => {
   const copy = getMarketCopy(market);
   const heroTitle =
     market === "bangalore"

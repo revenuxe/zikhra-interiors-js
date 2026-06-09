@@ -6,11 +6,12 @@ import SeoJsonLd from "@/components/SeoJsonLd";
 import {
   breadcrumbSchema,
   DEFAULT_OG_IMAGE_PATH,
+  localServiceSchema,
   pageOpenGraph,
-  SITE_URL,
   toJsonLd,
   twitterSummaryLarge,
 } from "@/lib/seo";
+import { serviceSeoKeywords } from "@/lib/seo-keywords";
 
 type Props = {
   params: Promise<{
@@ -32,11 +33,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!service) return { title: "Service Not Found" };
 
   const canonicalPath = `/services/${slug}`;
-  const title = `Best Interior Designer in Hyderabad for ${service.title} | Zikhra Interiors`;
+  const title = `Best Interior Designer in Bangalore for ${service.title} | Zikhra Interiors`;
   const description = service.description.slice(0, 160);
   return {
     title,
     description,
+    keywords: serviceSeoKeywords(service.title),
     alternates: { canonical: canonicalPath },
     openGraph: pageOpenGraph({
       title,
@@ -44,7 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       path: canonicalPath,
       type: "article",
       imageUrl: service.image ?? DEFAULT_OG_IMAGE_PATH,
-      imageAlt: `${service.title} interior design and turnkey services in Hyderabad`,
+      imageAlt: `${service.title} interior design and turnkey services in Bangalore`,
     }),
     twitter: twitterSummaryLarge(title, description, service.image ?? DEFAULT_OG_IMAGE_PATH),
   };
@@ -68,18 +70,14 @@ export default async function ServiceDetailRoute({ params }: Props) {
       />
       <SeoJsonLd
         id={`service-schema-${slug}`}
-        json={toJsonLd({
-          "@context": "https://schema.org",
-          "@type": "Service",
-          name: service.title,
-          description: service.description,
-          areaServed: "Hyderabad",
-          provider: {
-            "@type": "Organization",
-            name: "Zikhra Interiors",
-            url: SITE_URL,
-          },
-        })}
+        json={toJsonLd(
+          localServiceSchema({
+            name: `${service.title} in Bangalore`,
+            description: service.description,
+            path: `/services/${slug}`,
+            serviceType: service.title,
+          }),
+        )}
       />
       <ServiceDetailView service={service} />
     </>

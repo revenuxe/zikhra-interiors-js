@@ -16,9 +16,9 @@ const projectTypes = [
 
 type Props = { market?: MarketId };
 
-const ProjectTypeSection = ({ market = "hyderabad" }: Props) => {
+const ProjectTypeSection = ({ market = "bangalore" }: Props) => {
   const copy = getMarketCopy(market);
-  const city = market === "bangalore" ? "Bangalore" : "Hyderabad";
+  const city = "Bangalore";
   return (
     <section className="section-padding">
       <div className="text-center mb-10">
