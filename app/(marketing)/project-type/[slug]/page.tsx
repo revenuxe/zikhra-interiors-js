@@ -3,7 +3,15 @@ import { notFound } from "next/navigation";
 import { getProjectTypeBySlug, projectTypes } from "@/lib/project-types-data";
 import ProjectTypeDetailView from "@/views/marketing/ProjectTypeDetailView";
 import SeoJsonLd from "@/components/SeoJsonLd";
-import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
+import {
+  breadcrumbSchema,
+  DEFAULT_OG_IMAGE_PATH,
+  faqPageSchema,
+  localServiceSchema,
+  pageOpenGraph,
+  toJsonLd,
+  twitterSummaryLarge,
+} from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -42,6 +50,7 @@ export default async function ProjectTypePage({ params }: Props) {
   const { slug } = await params;
   const item = getProjectTypeBySlug(slug);
   if (!item) notFound();
+  const path = `/project-type/${item.slug}`;
   return (
     <>
       <SeoJsonLd
@@ -50,10 +59,22 @@ export default async function ProjectTypePage({ params }: Props) {
           breadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "Project Types", path: "/projects" },
-            { name: item.title, path: `/project-type/${item.slug}` },
+            { name: item.title, path },
           ]),
         )}
       />
+      <SeoJsonLd
+        id={`project-type-service-${item.slug}`}
+        json={toJsonLd(
+          localServiceSchema({
+            name: item.title,
+            description: item.metaDesc,
+            path,
+            serviceType: item.title,
+          }),
+        )}
+      />
+      <SeoJsonLd id={`project-type-faq-${item.slug}`} json={toJsonLd(faqPageSchema(item.faqs))} />
       <ProjectTypeDetailView item={item} />
     </>
   );

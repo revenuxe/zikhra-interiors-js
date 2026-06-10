@@ -4,7 +4,15 @@ import { getProjectTypeBySlug, projectTypes } from "@/lib/project-types-data";
 import ProjectTypeDetailView from "@/views/marketing/ProjectTypeDetailView";
 import SeoJsonLd from "@/components/SeoJsonLd";
 import { applyMarketToCopy, projectTypeDetailPath } from "@/lib/marketing-paths";
-import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
+import {
+  breadcrumbSchema,
+  DEFAULT_OG_IMAGE_PATH,
+  faqPageSchema,
+  localServiceSchema,
+  pageOpenGraph,
+  toJsonLd,
+  twitterSummaryLarge,
+} from "@/lib/seo";
 import { BANGALORE_CORE_KEYWORDS, BANGALORE_SERVICE_KEYWORDS, uniqueKeywords } from "@/lib/seo-keywords";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -55,6 +63,12 @@ export default async function BangaloreProjectTypePage({ params }: Props) {
   const { slug } = await params;
   const item = getProjectTypeBySlug(slug);
   if (!item) notFound();
+  const path = projectTypeDetailPath("bangalore", item.slug);
+  const description = applyMarketToCopy(item.metaDesc, "bangalore");
+  const faqs = item.faqs.map((faq) => ({
+    q: applyMarketToCopy(faq.q, "bangalore"),
+    a: applyMarketToCopy(faq.a, "bangalore"),
+  }));
   return (
     <>
       <SeoJsonLd
@@ -63,10 +77,22 @@ export default async function BangaloreProjectTypePage({ params }: Props) {
           breadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "Bangalore", path: "/bangalore" },
-            { name: item.title, path: projectTypeDetailPath("bangalore", item.slug) },
+            { name: item.title, path },
           ]),
         )}
       />
+      <SeoJsonLd
+        id={`bangalore-project-type-service-${item.slug}`}
+        json={toJsonLd(
+          localServiceSchema({
+            name: `${item.title} in Bangalore`,
+            description,
+            path,
+            serviceType: item.title,
+          }),
+        )}
+      />
+      <SeoJsonLd id={`bangalore-project-type-faq-${item.slug}`} json={toJsonLd(faqPageSchema(faqs))} />
       <ProjectTypeDetailView item={item} market="bangalore" />
     </>
   );
