@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = getServiceBySlug(slug);
   if (!service) return { title: "Service Not Found" };
 
-  const canonicalPath = `/services/${slug}`;
+  const canonicalPath = `/bangalore/services/${slug}`;
   const title = `Best Interior Designer in Bangalore for ${service.title} | Zikhra Interiors`;
   const description = service.description.slice(0, 160);
   return {
@@ -63,8 +63,8 @@ export default async function ServiceDetailRoute({ params }: Props) {
         json={toJsonLd(
           breadcrumbSchema([
             { name: "Home", path: "/" },
-            { name: "Services", path: "/services" },
-            { name: service.title, path: `/services/${slug}` },
+            { name: "Services", path: "/bangalore/services" },
+            { name: service.title, path: `/bangalore/services/${slug}` },
           ]),
         )}
       />
@@ -74,7 +74,7 @@ export default async function ServiceDetailRoute({ params }: Props) {
           localServiceSchema({
             name: `${service.title} in Bangalore`,
             description: service.description,
-            path: `/services/${slug}`,
+            path: `/bangalore/services/${slug}`,
             serviceType: service.title,
           }),
         )}

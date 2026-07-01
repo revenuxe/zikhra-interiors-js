@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   title: "Premium Interior Projects in Bangalore",
   description:
     "Browse premium interior design projects by Zikhra across villas, apartments, and modern homes in Bangalore.",
-  alternates: { canonical: "/projects" },
+  alternates: { canonical: "/bangalore/projects" },
   openGraph: pageOpenGraph({
     title: "Premium Interior Projects in Bangalore",
     description: "Discover Zikhra's high-end interior portfolio and turnkey project execution quality.",
-    path: "/projects",
+    path: "/bangalore/projects",
     imageUrl: DEFAULT_OG_IMAGE_PATH,
     imageAlt: "Premium interior design portfolio — Bangalore residential projects",
   }),

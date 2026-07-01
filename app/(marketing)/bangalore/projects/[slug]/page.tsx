@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = getProjectBySlug(slug);
   if (!project) return { title: "Project Not Found" };
   const { location, description: body } = getProjectDisplayFields(project, "bangalore");
-  const title = `${project.title} — Premium Interiors | Bangalore & Bengaluru`;
+  const title = `${project.title} - Premium Interiors in Bangalore | Zikhra`;
   const description = body.slice(0, 160);
   const path = `/bangalore/projects/${project.slug}`;
   return {

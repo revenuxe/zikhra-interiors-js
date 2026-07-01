@@ -16,9 +16,9 @@ import { BANGALORE_CORE_KEYWORDS, BANGALORE_COST_KEYWORDS, BANGALORE_SERVICE_KEY
 export const dynamic = "force-static";
 export const revalidate = 86400;
 
-const homeTitle = "Best Interior Designer in Bangalore & Bengaluru | Zikhra";
+const homeTitle = "Best Interior Designer in Bangalore | Zikhra Interiors";
 const homeDescription =
-  "Zikhra Interiors designs premium 2 BHK, 3 BHK, villa, and apartment interiors in Bangalore and Bengaluru with clear scope planning and turnkey execution.";
+  "Zikhra Interiors designs premium 2 BHK, 3 BHK, villa, and apartment interiors in Bangalore with clear scope planning and turnkey execution.";
 
 const homeFaqs = [
   {
@@ -26,8 +26,8 @@ const homeFaqs = [
     a: "Zikhra reviews your floor plan, storage needs, finishes, and site conditions before preparing a room-wise estimate. This keeps the scope clear before production begins.",
   },
   {
-    q: "Does Zikhra provide turnkey interior design in Bangalore and Bengaluru?",
-    a: "Yes. Zikhra provides turnkey interior design for apartments, villas, modular kitchens, wardrobes, living rooms, bedrooms, and renovation projects across Bangalore and Bengaluru.",
+    q: "Does Zikhra provide turnkey interior design in Bangalore?",
+    a: "Yes. Zikhra provides turnkey interior design for apartments, villas, modular kitchens, wardrobes, living rooms, bedrooms, and renovation projects across Bangalore.",
   },
   {
     q: "Does Zikhra offer premium interior design packages?",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     description: homeDescription,
     path: "/",
     imageUrl: DEFAULT_OG_IMAGE_PATH,
-    imageAlt: "Zikhra - best interior designer in Bangalore and Bengaluru",
+    imageAlt: "Zikhra - best interior designer in Bangalore",
   }),
   twitter: twitterSummaryLarge(homeTitle, homeDescription, DEFAULT_OG_IMAGE_PATH),
 };

@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!project) return { title: "Project Not Found" };
   const title = `${project.title} - Premium Interiors in ${project.location}`;
   const description = project.description.slice(0, 160);
-  const path = `/projects/${project.slug}`;
+  const path = `/bangalore/projects/${project.slug}`;
   return {
     title,
     description,
@@ -56,8 +56,8 @@ export default async function ProjectDetailPage({ params }: Props) {
         json={toJsonLd(
           breadcrumbSchema([
             { name: "Home", path: "/" },
-            { name: "Projects", path: "/projects" },
-            { name: project.title, path: `/projects/${project.slug}` },
+            { name: "Projects", path: "/bangalore/projects" },
+            { name: project.title, path: `/bangalore/projects/${project.slug}` },
           ]),
         )}
       />
@@ -70,7 +70,7 @@ export default async function ProjectDetailPage({ params }: Props) {
           description: project.description,
           locationCreated: project.location,
           about: "Premium interior design project",
-          url: absoluteUrl(`/projects/${project.slug}`),
+          url: absoluteUrl(`/bangalore/projects/${project.slug}`),
         })}
       />
       <ProjectDetailView project={project} />

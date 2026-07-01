@@ -18,7 +18,7 @@ export const revalidate = 86400;
 
 const title = "Best Interior Designer in Bangalore for Interior Design Services | Zikhra";
 const description =
-  "Premium home interiors, modular kitchens, wardrobes, and renovation in Bangalore and Bengaluru — Koramangala, Whitefield, Indiranagar, HSR, and across the city.";
+  "Premium home interiors, modular kitchens, wardrobes, and renovation in Bangalore, including Koramangala, Whitefield, Indiranagar, HSR, and across the city.";
 
 export const metadata: Metadata = {
   title,
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description,
     path: "/bangalore/services",
     imageUrl: DEFAULT_OG_IMAGE_PATH,
-    imageAlt: "Zikhra premium interior design services — Bangalore & Bengaluru",
+    imageAlt: "Zikhra premium interior design services in Bangalore",
   }),
   twitter: twitterSummaryLarge(title, description, DEFAULT_OG_IMAGE_PATH),
 };

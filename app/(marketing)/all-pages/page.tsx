@@ -11,13 +11,13 @@ export const dynamic = "force-dynamic";
 
 const title = "All pages | Zikhra Interiors";
 const description =
-  "Full list of Zikhra website pages: interior design services, project types, portfolio, Bangalore and Bengaluru area pages, and blog posts.";
+  "Full list of Zikhra website pages: interior design services, project types, portfolio, Bangalore area pages, and blog posts.";
 
 export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/all-pages" },
-  robots: { index: true, follow: true },
+  robots: { index: false, follow: true },
   openGraph: pageOpenGraph({
     title,
     description,

@@ -46,7 +46,7 @@ export function cityLabel(market: MarketId): string {
 
 export function cityLabelSeo(market: MarketId): string {
   void market;
-  return "Bangalore & Bengaluru";
+  return "Bangalore";
 }
 
 export function backHubPath(market: MarketId): string {

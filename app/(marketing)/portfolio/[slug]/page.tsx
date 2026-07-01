@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!item) return { title: "Portfolio Not Found" };
   const title = `${item.tagline} | Premium Interior Portfolio`;
   const description = item.description.slice(0, 160);
-  const path = `/portfolio/${item.slug}`;
+  const path = `/bangalore/portfolio/${item.slug}`;
   return {
     title,
     description,
@@ -49,8 +49,8 @@ export default async function PortfolioDetailPage({ params }: Props) {
         json={toJsonLd(
           breadcrumbSchema([
             { name: "Home", path: "/" },
-            { name: "Portfolio", path: "/projects" },
-            { name: item.title, path: `/portfolio/${item.slug}` },
+            { name: "Portfolio", path: "/bangalore/projects" },
+            { name: item.title, path: `/bangalore/portfolio/${item.slug}` },
           ]),
         )}
       />

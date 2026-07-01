@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const item = getProjectTypeBySlug(slug);
   if (!item) return { title: "Project Type Not Found" };
-  const title = `${applyMarketToCopy(item.metaTitle, "bangalore")} | Bangalore & Bengaluru`;
+  const title = `${applyMarketToCopy(item.metaTitle, "bangalore")} | Zikhra Interiors`;
   const description = applyMarketToCopy(item.metaDesc, "bangalore");
   const path = `/bangalore/project-type/${item.slug}`;
   return {
@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       path,
       type: "article",
       imageUrl: item.heroImage ?? DEFAULT_OG_IMAGE_PATH,
-      imageAlt: `${item.title} — premium interior design Bangalore Bengaluru`,
+      imageAlt: `${item.title} — premium interior design Bangalore`,
     }),
     twitter: twitterSummaryLarge(title, description, item.heroImage ?? DEFAULT_OG_IMAGE_PATH),
   };

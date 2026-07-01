@@ -24,11 +24,11 @@ export const metadata: Metadata = {
   title,
   description,
   keywords: uniqueKeywords(BANGALORE_CORE_KEYWORDS, BANGALORE_SERVICE_KEYWORDS),
-  alternates: { canonical: "/services" },
+  alternates: { canonical: "/bangalore/services" },
   openGraph: pageOpenGraph({
     title,
     description,
-    path: "/services",
+    path: "/bangalore/services",
     imageUrl: DEFAULT_OG_IMAGE_PATH,
     imageAlt: "Zikhra interior design services and home interior packages in Bangalore",
   }),
@@ -44,14 +44,14 @@ export default function ServicesRoute() {
       />
       <SeoJsonLd
         id="services-webpage-schema"
-        json={toJsonLd(webPageSchema({ name: title, description, path: "/services", keywords: uniqueKeywords(BANGALORE_CORE_KEYWORDS, BANGALORE_SERVICE_KEYWORDS) }))}
+        json={toJsonLd(webPageSchema({ name: title, description, path: "/bangalore/services", keywords: uniqueKeywords(BANGALORE_CORE_KEYWORDS, BANGALORE_SERVICE_KEYWORDS) }))}
       />
       <SeoJsonLd
         id="services-catalog-schema"
         json={toJsonLd(serviceCatalogSchema(services.map((service) => ({
           name: service.title,
           description: service.description,
-          path: `/services/${service.id}`,
+          path: `/bangalore/services/${service.id}`,
         }))))}
       />
       <ServicesView />

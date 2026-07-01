@@ -7,9 +7,9 @@ import { BANGALORE_CORE_KEYWORDS, BANGALORE_SERVICE_KEYWORDS, uniqueKeywords } f
 export const dynamic = "force-static";
 export const revalidate = 86400;
 
-const title = "Premium Interior Projects in Bangalore & Bengaluru | Zikhra";
+const title = "Premium Interior Projects in Bangalore | Zikhra Interiors";
 const description =
-  "Browse premium interior design projects by Zikhra across villas, apartments, and modern homes in Bangalore and Bengaluru.";
+  "Browse premium interior design projects by Zikhra across villas, apartments, and modern homes in Bangalore.";
 
 export const metadata: Metadata = {
   title,

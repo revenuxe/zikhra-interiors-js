@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const item = getPortfolioBySlug(slug);
   if (!item) return { title: "Portfolio Not Found" };
   const desc = applyMarketToCopy(item.description, "bangalore").slice(0, 160);
-  const title = `${applyMarketToCopy(item.tagline, "bangalore")} | Bangalore & Bengaluru`;
+  const title = `${applyMarketToCopy(item.tagline, "bangalore")} | Zikhra Interiors`;
   const path = `/bangalore/portfolio/${item.slug}`;
   return {
     title,
@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       path,
       type: "article",
       imageUrl: item.heroImage ?? DEFAULT_OG_IMAGE_PATH,
-      imageAlt: `${item.title} — premium interior portfolio Bangalore Bengaluru`,
+      imageAlt: `${item.title} — premium interior portfolio Bangalore`,
     }),
     twitter: twitterSummaryLarge(title, desc, item.heroImage ?? DEFAULT_OG_IMAGE_PATH),
   };

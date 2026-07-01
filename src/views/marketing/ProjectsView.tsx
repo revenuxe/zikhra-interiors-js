@@ -13,7 +13,7 @@ type Props = { market?: MarketId };
 
 export default function ProjectsView({ market = "bangalore" }: Props) {
   const cityLine =
-    "Explore premium interior transformations across villas and apartments, delivered with turnkey precision in Bangalore & Bengaluru.";
+    "Explore premium interior transformations across villas and apartments, delivered with turnkey precision in Bangalore.";
   return (
     <div className="min-h-screen bg-background">
       <Header />

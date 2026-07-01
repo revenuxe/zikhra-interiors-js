@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!item) return { title: "Project Type Not Found" };
   const title = `${item.metaTitle} | Premium Interior Design`;
   const description = item.metaDesc;
-  const path = `/project-type/${item.slug}`;
+  const path = `/bangalore/project-type/${item.slug}`;
   return {
     title,
     description,
@@ -50,7 +50,7 @@ export default async function ProjectTypePage({ params }: Props) {
   const { slug } = await params;
   const item = getProjectTypeBySlug(slug);
   if (!item) notFound();
-  const path = `/project-type/${item.slug}`;
+  const path = `/bangalore/project-type/${item.slug}`;
   return (
     <>
       <SeoJsonLd
@@ -58,7 +58,7 @@ export default async function ProjectTypePage({ params }: Props) {
         json={toJsonLd(
           breadcrumbSchema([
             { name: "Home", path: "/" },
-            { name: "Project Types", path: "/projects" },
+            { name: "Project Types", path: "/bangalore/projects" },
             { name: item.title, path },
           ]),
         )}

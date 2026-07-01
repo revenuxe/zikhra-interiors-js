@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       path: canonicalPath,
       type: "article",
       imageUrl: service.image ?? DEFAULT_OG_IMAGE_PATH,
-      imageAlt: `${service.title} interior design service in Bangalore Bengaluru`,
+      imageAlt: `${service.title} interior design service in Bangalore`,
     }),
     twitter: twitterSummaryLarge(title, description, service.image ?? DEFAULT_OG_IMAGE_PATH),
   };

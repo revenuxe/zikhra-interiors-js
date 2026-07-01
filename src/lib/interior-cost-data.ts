@@ -81,7 +81,7 @@ const baseFaqs = [
 
 function cityName(city: CostCity) {
   if (city === "bangalore") return "Bangalore";
-  return "Bangalore & Bengaluru";
+  return "Bangalore";
 }
 
 function homeTypeLabel(homeType: CostHomeType) {
@@ -133,7 +133,7 @@ export function getCostGuideConfig(city: CostCity, homeType: CostHomeType, canon
   const cityLabel = cityName(city);
   const homeLabel = homeTypeLabel(homeType);
   const isSpecificHome = homeType !== "all";
-  const suffix = city === "all" ? "Bangalore & Bengaluru" : cityLabel;
+  const suffix = cityLabel;
   const h1 = isSpecificHome
     ? `Best Interior Designer Pricing for ${homeLabel} Interior Design Cost in ${suffix}`
     : `Best Interior Designer Pricing and Interior Design Cost in ${suffix}`;

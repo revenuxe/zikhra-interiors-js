@@ -21,7 +21,6 @@ const mainPages: SiteIndexLink[] = [
   { label: "Blog", href: "/blog" },
   { label: "Terms", href: "/terms" },
   { label: "Privacy", href: "/privacy" },
-  { label: "Thank you", href: "/thank-you" },
 ];
 
 export function getStaticSiteIndexSections(): SiteIndexSection[] {
@@ -33,7 +32,7 @@ export function getStaticSiteIndexSections(): SiteIndexSection[] {
     },
     {
       title: "Bangalore areas",
-      description: "Local interior design landing pages in Bangalore and Bengaluru.",
+      description: "Local interior design landing pages in Bangalore.",
       links: [
         { label: "Bangalore premium interiors hub", href: "/bangalore" },
         ...bangaloreAreas.map((a) => ({ label: `${a.name}, Bangalore`, href: `/bangalore/${a.slug}` })),

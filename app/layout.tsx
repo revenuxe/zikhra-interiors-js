@@ -3,9 +3,9 @@ import "./globals.css";
 import Providers from "./providers";
 import { DEFAULT_OG_IMAGE_PATH, pageOpenGraph, SITE_NAME, SITE_URL, twitterSummaryLarge } from "@/lib/seo";
 
-const defaultTitle = "Best Interior Designer in Bangalore & Bengaluru | Zikhra";
+const defaultTitle = "Best Interior Designer in Bangalore | Zikhra Interiors";
 const defaultDescription =
-  "Premium home interiors, modular kitchens, and turnkey execution in Bangalore and Bengaluru with clear scope planning and supervised delivery.";
+  "Premium home interiors, modular kitchens, and turnkey execution in Bangalore with clear scope planning and supervised delivery.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -14,6 +14,13 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description: defaultDescription,
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+  },
   alternates: {
     canonical: "/",
   },
@@ -23,7 +30,7 @@ export const metadata: Metadata = {
       description: defaultDescription,
       path: "/",
       imageUrl: DEFAULT_OG_IMAGE_PATH,
-      imageAlt: "Zikhra - best interior designer in Bangalore and Bengaluru",
+      imageAlt: "Zikhra - best interior designer in Bangalore",
     }),
     siteName: SITE_NAME,
   },
