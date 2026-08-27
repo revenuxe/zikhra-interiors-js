@@ -1,17 +1,18 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
+import EditorialPageHero from "@/components/EditorialPageHero";
 
 const Privacy = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
 
-      <section className="pt-28 pb-6 px-5">
+      <EditorialPageHero title="Privacy Policy" description="How Zikhra collects, uses, and protects information shared through our website and services." showCta={false} />
+
+      <section className="px-5 pb-6 pt-12 sm:pt-16">
         <div className="max-w-3xl mx-auto">
-          <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3 text-center">Legal</p>
-          <h1 className="font-serif text-3xl md:text-4xl gold-text text-center mb-2">Privacy Policy</h1>
-          <p className="font-sans text-xs text-muted-foreground text-center mb-10">Last updated: March 28, 2026</p>
+          <p className="mb-10 font-sans text-sm text-[#6a6a6a]">Last updated: March 28, 2026</p>
 
           <div className="space-y-8 font-sans text-sm text-foreground/80 leading-relaxed">
             <section>

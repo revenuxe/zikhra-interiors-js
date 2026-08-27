@@ -24,16 +24,19 @@ const About = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <section className="relative min-h-[560px] w-full overflow-hidden md:h-[60vh] md:min-h-[520px]">
-        <img src={aboutHero.src} alt="About Zikhra Interior Designers Bangalore" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-luxury-black/80 via-luxury-black/60 to-luxury-black/95" />
-        <div className="relative z-10 flex min-h-[560px] flex-col items-center justify-end px-6 pb-14 pt-32 text-center md:h-full md:min-h-[520px] md:pb-16 md:pt-0">
-          <h1 className="font-serif text-4xl md:text-5xl font-bold gold-text mb-3">
-            About Zikhra Interior Designers in Bangalore & Bengaluru
-          </h1>
-          <p className="font-sans text-foreground/80 text-sm max-w-sm">
-            Bangalore's most trusted premium interior design studio
-          </p>
+      <section className="relative isolate overflow-hidden bg-[#f8f8f7] pb-12 pt-28 sm:pb-16 sm:pt-32">
+        <img src={aboutHero.src} alt="About Zikhra Interior Designers Bangalore" className="absolute inset-0 -z-20 h-full w-full object-cover opacity-[0.36] sm:opacity-[0.32]" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(248,248,247,0.94)_0%,rgba(248,248,247,0.86)_45%,rgba(248,248,247,0.64)_100%)]" />
+        <div className="absolute -right-32 top-1/3 -z-10 h-80 w-80 rounded-full bg-white/70 blur-3xl" />
+        <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
+          <div className="max-w-3xl text-left">
+            <h1 className="mb-8 max-w-[12ch] font-sans text-[3.35rem] font-light leading-[0.97] tracking-[-0.07em] text-[#171717] sm:text-6xl md:max-w-[14ch] md:text-7xl lg:text-[5.8rem]">
+              About Zikhra Interior Designers in Bangalore
+            </h1>
+            <p className="max-w-xl font-sans text-[1.03rem] font-light leading-[1.72] tracking-[-0.02em] text-[#525252] md:text-[1.15rem]">
+              Thoughtful, premium interiors shaped around the way you live.
+            </p>
+          </div>
         </div>
       </section>
 

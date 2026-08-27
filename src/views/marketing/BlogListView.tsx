@@ -3,6 +3,7 @@ import { Calendar, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
+import heroImage from "@/assets/hero-interior.webp";
 
 export type BlogListItem = {
   _id: string;
@@ -23,14 +24,17 @@ export default function BlogListView({ posts }: { posts: BlogListItem[] }) {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <section className="pt-32 md:pt-28 pb-8 px-5 text-center">
-        <h1 className="font-serif text-4xl md:text-5xl font-bold gold-text mb-3">
-          Interior Design Insights for Bangalore
-        </h1>
-        <p className="font-sans text-sm text-muted-foreground max-w-xl mx-auto mb-6">
+      <section className="relative isolate overflow-hidden bg-[#f8f8f7] pb-12 pt-28 sm:pb-16 sm:pt-32">
+        <img src={heroImage.src} alt="Interior design insights for Bangalore homes" className="absolute inset-0 -z-20 h-full w-full object-cover opacity-[0.36] sm:opacity-[0.32]" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(248,248,247,0.94)_0%,rgba(248,248,247,0.86)_45%,rgba(248,248,247,0.64)_100%)]" />
+        <div className="absolute -right-32 top-1/3 -z-10 h-80 w-80 rounded-full bg-white/70 blur-3xl" />
+        <div className="relative mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
+          <div className="max-w-3xl text-left">
+            <h1 className="mb-8 max-w-[12ch] font-sans text-[3.35rem] font-light leading-[0.97] tracking-[-0.07em] text-[#171717] sm:text-6xl md:max-w-[14ch] md:text-7xl lg:text-[5.8rem]">Interior Design Insights for Bangalore</h1>
+            <p className="mb-6 max-w-xl font-sans text-[1.03rem] font-light leading-[1.72] tracking-[-0.02em] text-[#525252] md:text-[1.15rem]">
           Pricing guides, planning advice, and premium interior design insights for Bangalore homes.
-        </p>
-        <div className="max-w-2xl mx-auto text-left space-y-4 font-sans text-sm text-muted-foreground leading-relaxed">
+            </p>
+        <div className="max-w-2xl space-y-4 font-sans text-sm leading-relaxed text-[#525252]">
           <p>
             Welcome to <strong className="text-foreground font-medium">Interior Design Insights</strong> by Zikhra - practical,
             idea-rich articles for homeowners who want calmer layouts, better lighting, and materials that age gracefully in
@@ -47,6 +51,8 @@ export default function BlogListView({ posts }: { posts: BlogListItem[] }) {
             Whether you are early in planning or already comparing quotes, these interior design insights help you ask sharper
             questions, spot durable specification details, and align your budget with the experiences that matter most in your home.
           </p>
+        </div>
+          </div>
         </div>
       </section>
 

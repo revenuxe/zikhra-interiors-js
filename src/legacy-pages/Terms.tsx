@@ -1,17 +1,18 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
+import EditorialPageHero from "@/components/EditorialPageHero";
 
 const Terms = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
 
-      <section className="pt-28 pb-6 px-5">
+      <EditorialPageHero title="Terms & Conditions" description="The terms that guide use of the Zikhra website and our interior design services." showCta={false} />
+
+      <section className="px-5 pb-6 pt-12 sm:pt-16">
         <div className="max-w-3xl mx-auto">
-          <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3 text-center">Legal</p>
-          <h1 className="font-serif text-3xl md:text-4xl gold-text text-center mb-2">Terms & Conditions</h1>
-          <p className="font-sans text-xs text-muted-foreground text-center mb-10">Last updated: March 28, 2026</p>
+          <p className="mb-10 font-sans text-sm text-[#6a6a6a]">Last updated: March 28, 2026</p>
 
           <div className="space-y-8 font-sans text-sm text-foreground/80 leading-relaxed">
             <section>

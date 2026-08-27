@@ -7,10 +7,11 @@ type Props = {
   title: string;
   description?: string;
   meta?: ReactNode;
+  showCta?: boolean;
 };
 
 /** Shared light editorial hero for detail pages. */
-export default function EditorialPageHero({ title, description, meta }: Props) {
+export default function EditorialPageHero({ title, description, meta, showCta = true }: Props) {
   return (
     <section className="relative isolate overflow-hidden bg-[#f8f8f7] pb-12 pt-28 sm:pb-16 sm:pt-32">
       <img src={heroImage.src} alt={`Luxury interior design inspiration for ${title}`} width={1920} height={1080} className="absolute inset-0 -z-20 h-full w-full object-cover opacity-[0.24] sm:opacity-[0.18]" />
@@ -23,9 +24,9 @@ export default function EditorialPageHero({ title, description, meta }: Props) {
           </h1>
           {description ? <p className="mt-8 max-w-xl font-sans text-[1.03rem] font-light leading-[1.72] tracking-[-0.02em] text-[#525252] md:text-[1.15rem]">{description}</p> : null}
           {meta ? <div className="mt-5 font-sans text-sm text-[#5b5b5b]">{meta}</div> : null}
-          <Link href="/contact" className="mt-10 inline-flex items-center gap-2 rounded-lg bg-[#171717] px-5 py-3.5 font-sans text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-black hover:shadow-[0_12px_24px_rgba(0,0,0,0.16)] active:translate-y-0">
+          {showCta ? <Link href="/contact" className="mt-10 inline-flex items-center gap-2 rounded-lg bg-[#171717] px-5 py-3.5 font-sans text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-black hover:shadow-[0_12px_24px_rgba(0,0,0,0.16)] active:translate-y-0">
             Get Free Consultation <ArrowUpRight className="h-4 w-4" />
-          </Link>
+          </Link> : null}
         </div>
       </div>
     </section>
