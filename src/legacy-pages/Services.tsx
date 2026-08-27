@@ -216,7 +216,7 @@ const Services = ({ market = "bangalore" }: ServicesProps) => {
       <Header />
 
       <section className="relative isolate overflow-hidden bg-[#f8f8f7] pb-12 pt-28 sm:pb-16 sm:pt-32">
-        <img src={heroImage.src} alt="" aria-hidden="true" className="absolute inset-0 -z-20 h-full w-full object-cover opacity-[0.24] sm:opacity-[0.18]" />
+        <img src={heroImage.src} alt={`Interior design services in ${city} by Zikhra`} className="absolute inset-0 -z-20 h-full w-full object-cover opacity-[0.24] sm:opacity-[0.18]" />
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(248,248,247,0.96)_0%,rgba(248,248,247,0.9)_45%,rgba(248,248,247,0.72)_100%)]" />
         <div className="relative mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
           <h1 className="max-w-[11ch] font-sans text-[3.35rem] font-light leading-[0.97] tracking-[-0.07em] text-[#171717] sm:text-6xl md:max-w-[13ch] md:text-7xl lg:text-[5.8rem]">Interior Design Services</h1>

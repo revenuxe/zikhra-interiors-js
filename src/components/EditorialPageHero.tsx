@@ -13,7 +13,7 @@ type Props = {
 export default function EditorialPageHero({ title, description, meta }: Props) {
   return (
     <section className="relative isolate overflow-hidden bg-[#f8f8f7] pb-12 pt-28 sm:pb-16 sm:pt-32">
-      <img src={heroImage.src} alt="" aria-hidden="true" width={1920} height={1080} className="absolute inset-0 -z-20 h-full w-full object-cover opacity-[0.24] sm:opacity-[0.18]" />
+      <img src={heroImage.src} alt={`Luxury interior design inspiration for ${title}`} width={1920} height={1080} className="absolute inset-0 -z-20 h-full w-full object-cover opacity-[0.24] sm:opacity-[0.18]" />
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(248,248,247,0.96)_0%,rgba(248,248,247,0.9)_45%,rgba(248,248,247,0.72)_100%)]" />
       <div className="absolute -right-32 top-1/3 -z-10 h-80 w-80 rounded-full bg-white/70 blur-3xl" />
       <div className="relative mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">

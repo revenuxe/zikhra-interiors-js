@@ -18,7 +18,7 @@ export default function ProjectsView({ market = "bangalore" }: Props) {
     <div className="min-h-screen bg-background">
       <Header />
       <section className="relative isolate overflow-hidden bg-[#f8f8f7] pb-12 pt-28 sm:pb-16 sm:pt-32">
-        <img src={projects[0]?.heroImage} alt="" aria-hidden="true" className="absolute inset-0 -z-20 h-full w-full object-cover opacity-[0.22] sm:opacity-[0.16]" />
+        <img src={projects[0]?.heroImage} alt="Featured premium interior project in Bangalore" className="absolute inset-0 -z-20 h-full w-full object-cover opacity-[0.22] sm:opacity-[0.16]" />
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(248,248,247,0.97)_0%,rgba(248,248,247,0.91)_48%,rgba(248,248,247,0.74)_100%)]" />
         <div className="absolute -right-32 top-1/3 -z-10 h-80 w-80 rounded-full bg-white/70 blur-3xl" />
         <div className="relative mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
