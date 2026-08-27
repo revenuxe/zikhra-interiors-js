@@ -28,8 +28,8 @@ export default function ProjectsView({ market = "bangalore" }: Props) {
           <p className="mt-8 max-w-xl font-sans text-[1.03rem] font-light leading-[1.72] tracking-[-0.02em] text-[#525252] md:text-[1.15rem]">{cityLine}</p>
         </div>
       </section>
-      <section className="px-5 pb-16">
-        <div className="mx-auto flex max-w-lg flex-col gap-5">
+      <section className="px-5 pb-16 sm:px-10 lg:px-16">
+        <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
           {projects.map((project) => {
             const { location } = getProjectDisplayFields(project, market);
             return (
@@ -38,7 +38,7 @@ export default function ProjectsView({ market = "bangalore" }: Props) {
                 href={projectDetailPath(market, project.slug)}
                 className="group block overflow-hidden rounded-[1.35rem] border border-black/10 bg-white shadow-[0_12px_30px_rgba(0,0,0,0.07)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_38px_rgba(0,0,0,0.12)]"
               >
-                <div className="relative h-60 overflow-hidden">
+                <div className="relative h-60 overflow-hidden lg:h-64">
                   <img
                     src={project.heroImage}
                     alt={`${project.title} ${location}`}
