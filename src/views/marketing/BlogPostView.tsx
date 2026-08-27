@@ -5,6 +5,7 @@ import BlogPortableText from "@/components/BlogPortableText";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
+import ContactForm from "@/components/ContactForm";
 
 export type BlogPost = {
   _id: string;
@@ -23,9 +24,23 @@ function formatDate(d: string | null | undefined) {
 }
 
 export default function BlogPostView({ post }: { post: BlogPost }) {
+  const isComparisonGuide = post.slug === "homelane-vs-designcafe-vs-truww-vs-livspace-honest-comparison-of-interiors-in-bangalore-and-why";
   return (
     <div className="min-h-screen bg-background">
       <Header />
+
+      {isComparisonGuide ? (
+        <>
+          <section className="bg-[#f8f8f7] px-6 pb-12 pt-28 sm:px-10 sm:pt-32 lg:px-16">
+            <div className="mx-auto max-w-5xl">
+              <p className="mb-4 font-sans text-[10px] font-medium uppercase tracking-[0.28em] text-[#626262]">Bangalore interior design guide</p>
+              <h1 className="max-w-4xl font-sans text-[2.7rem] font-light leading-[0.98] tracking-[-0.06em] text-[#171717] sm:text-6xl">{post.title}</h1>
+              <p className="mt-7 max-w-2xl font-sans text-[1rem] leading-[1.72] text-[#585858]">{post.excerpt}</p>
+            </div>
+          </section>
+          <ContactForm />
+        </>
+      ) : null}
 
       {post.mainImageUrl && (
         <section className="relative min-h-[620px] w-full overflow-hidden md:h-[60vh] md:min-h-[520px]">
@@ -57,7 +72,7 @@ export default function BlogPostView({ post }: { post: BlogPost }) {
       )}
 
       <article className="section-padding max-w-2xl mx-auto">
-        {!post.mainImageUrl && (
+        {!post.mainImageUrl && !isComparisonGuide && (
           <div className="mb-8">
             <Link href="/blog" className="flex items-center gap-2 text-gold text-sm font-sans mb-6">
               <ArrowLeft className="w-4 h-4" /> Blog
