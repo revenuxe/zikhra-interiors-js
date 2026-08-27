@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { getSupabaseClient } from "@/integrations/supabase/client";
 import { insertLead } from "@/lib/lead-insert";
-import { useBeginRouteChange } from "@/components/GlobalNavigationLoader";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 
@@ -11,7 +10,6 @@ const ContactForm = () => {
   const [formData, setFormData] = useState({ name: "", phone: "", area: "", projectType: "", message: "" });
   const [submitting, setSubmitting] = useState(false);
   const router = useRouter();
-  const beginRouteChange = useBeginRouteChange();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -39,23 +37,18 @@ const ContactForm = () => {
       return;
     }
 
-    beginRouteChange();
     router.push("/thank-you");
   };
 
   return (
-    <section className="section-padding bg-luxury-dark relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-gold/10 blur-3xl" />
-      </div>
-
-      <div className="relative z-10 max-w-lg mx-auto">
-        <div className="text-center mb-8">
-          <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Get Started</p>
-          <h2 className="font-serif text-3xl md:text-4xl gold-text mb-3">
+    <section className="section-padding bg-[#f5f5f3]">
+      <div className="mx-auto max-w-2xl rounded-[1.5rem] border border-black/10 bg-white p-6 shadow-[0_14px_32px_rgba(0,0,0,0.055)] sm:p-8">
+        <div className="mb-8">
+          <p className="mb-3 font-sans text-[10px] font-medium uppercase tracking-[0.28em] text-[#595959]">Get Started</p>
+          <h2 className="font-sans text-3xl font-light tracking-[-0.045em] text-[#171717] md:text-4xl">
             Book Your Free Consultation
           </h2>
-          <p className="font-sans text-muted-foreground text-sm">
+          <p className="mt-2 font-sans text-sm text-muted-foreground">
             Best interior designers in Bangalore — tell us about your dream space
           </p>
         </div>
@@ -67,7 +60,7 @@ const ContactForm = () => {
             required
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            className="w-full px-5 py-3.5 rounded-xl bg-card border border-border/50 font-sans text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors"
+            className="w-full rounded-lg border border-black/12 bg-[#fafafa] px-4 py-3 font-sans text-sm text-foreground placeholder:text-muted-foreground/70 focus:border-black/45 focus:outline-none transition-colors"
           />
           <input
             type="tel"
@@ -75,7 +68,7 @@ const ContactForm = () => {
             required
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-            className="w-full px-5 py-3.5 rounded-xl bg-card border border-border/50 font-sans text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors"
+            className="w-full rounded-lg border border-black/12 bg-[#fafafa] px-4 py-3 font-sans text-sm text-foreground placeholder:text-muted-foreground/70 focus:border-black/45 focus:outline-none transition-colors"
           />
           <input
             type="text"
@@ -83,14 +76,14 @@ const ContactForm = () => {
             required
             value={formData.area}
             onChange={(e) => setFormData({ ...formData, area: e.target.value })}
-            className="w-full px-5 py-3.5 rounded-xl bg-card border border-border/50 font-sans text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors"
+            className="w-full rounded-lg border border-black/12 bg-[#fafafa] px-4 py-3 font-sans text-sm text-foreground placeholder:text-muted-foreground/70 focus:border-black/45 focus:outline-none transition-colors"
           />
           <input
             type="text"
             placeholder="Project Type (e.g., 2 BHK, Villa, Duplex)"
             value={formData.projectType}
             onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-            className="w-full px-5 py-3.5 rounded-xl bg-card border border-border/50 font-sans text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors"
+            className="w-full rounded-lg border border-black/12 bg-[#fafafa] px-4 py-3 font-sans text-sm text-foreground placeholder:text-muted-foreground/70 focus:border-black/45 focus:outline-none transition-colors"
           />
           <textarea
             placeholder="Tell us about your project..."
@@ -98,18 +91,18 @@ const ContactForm = () => {
             required
             value={formData.message}
             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-            className="w-full px-5 py-3.5 rounded-xl bg-card border border-border/50 font-sans text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors resize-none"
+            className="w-full resize-none rounded-lg border border-black/12 bg-[#fafafa] px-4 py-3 font-sans text-sm text-foreground placeholder:text-muted-foreground/70 focus:border-black/45 focus:outline-none transition-colors"
           />
           <button
             type="submit"
             disabled={submitting}
-            className="w-full flex items-center justify-center gap-2 gold-gradient py-3.5 rounded-full font-sans text-sm font-medium text-primary-foreground transition-all duration-300 hover:scale-[1.02] gold-glow disabled:opacity-50"
+            className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#171717] py-3.5 font-sans text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-black hover:shadow-[0_10px_22px_rgba(0,0,0,0.16)] disabled:opacity-50"
           >
             {submitting ? "Submitting..." : "Submit"}
           </button>
         </form>
 
-        <p className="text-center font-sans text-xs text-muted-foreground/50 mt-4">
+        <p className="mt-4 text-center font-sans text-xs text-muted-foreground/70">
           Serving Bangalore, Koramangala, Indiranagar, Whitefield, HSR Layout & Electronic City
         </p>
       </div>

@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import ContactForm from "@/components/ContactForm";
 import type { CostGuideConfig } from "@/lib/interior-cost-data";
+import heroImage from "@/assets/hero-interior.webp";
 
 type Props = {
   config: CostGuideConfig;
@@ -18,23 +19,26 @@ export default function InteriorCostGuideView({ config }: Props) {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <section className="pt-32 md:pt-28 pb-12 px-5 text-center">
-        <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Interior Pricing Guide</p>
-        <h1 className="font-serif text-3xl md:text-5xl font-bold gold-text mb-4">{config.h1}</h1>
-        <p className="font-sans text-sm text-muted-foreground max-w-2xl mx-auto leading-relaxed">{config.intro}</p>
-        <div className="mt-7 flex flex-col sm:flex-row gap-3 justify-center">
+      <section className="relative isolate overflow-hidden bg-[#f8f8f7] pb-12 pt-28 sm:pb-16 sm:pt-32">
+        <img src={heroImage.src} alt="" aria-hidden="true" className="absolute inset-0 -z-20 h-full w-full object-cover opacity-[0.24] sm:opacity-[0.18]" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(248,248,247,0.96)_0%,rgba(248,248,247,0.9)_45%,rgba(248,248,247,0.72)_100%)]" />
+        <div className="relative mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
+        <h1 className="max-w-[11ch] font-sans text-[3.35rem] font-light leading-[0.97] tracking-[-0.07em] text-[#171717] sm:text-6xl md:max-w-[13ch] md:text-7xl lg:text-[5.8rem]">{config.h1}</h1>
+        <p className="mt-8 max-w-xl font-sans text-[1.03rem] font-light leading-[1.72] tracking-[-0.02em] text-[#525252] md:text-[1.15rem]">{config.intro}</p>
+        <div className="mt-10 flex flex-row items-center gap-4">
           <Link
             href="/contact"
-            className="gold-gradient px-8 py-3.5 rounded-full font-sans text-sm font-medium text-primary-foreground transition-all duration-300 hover:scale-105 gold-glow"
+            className="rounded-lg bg-[#171717] px-5 py-3.5 font-sans text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-black"
           >
             Get Free Estimate
           </Link>
           <Link
             href={servicesPath}
-            className="px-8 py-3.5 rounded-full font-sans text-sm font-medium border border-gold/40 text-gold-light transition-all duration-300 hover:border-gold hover:bg-gold/10"
+            className="px-1 py-3.5 font-sans text-sm font-medium text-[#171717] transition-colors duration-300 hover:text-black"
           >
             View Services
           </Link>
+        </div>
         </div>
       </section>
 

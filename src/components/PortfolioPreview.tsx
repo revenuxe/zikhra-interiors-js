@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import type { MarketId } from "@/lib/market-types";
 import { getMarketCopy } from "@/lib/market-copy";
 import { portfolioDetailPath } from "@/lib/marketing-paths";
@@ -31,12 +32,12 @@ const PortfolioPreview = ({ market = "bangalore" }: Props) => {
         <p className="font-sans text-muted-foreground text-sm mt-3 max-w-sm mx-auto">{copy.portfolioSub}</p>
       </div>
 
-      <div className="flex gap-4 overflow-x-auto hide-scrollbar pb-4 -mx-5 px-5 snap-x snap-mandatory md:justify-center md:mx-auto md:max-w-5xl">
+      <div className="flex gap-4 overflow-x-auto hide-scrollbar pb-4 -mx-5 px-5 snap-x snap-mandatory md:mx-auto md:grid md:max-w-7xl md:grid-cols-6 md:gap-4 md:overflow-visible md:px-0">
         {categories.map((cat) => (
           <Link
             key={cat.name}
               href={portfolioDetailPath(market, cat.slug)}
-            className="relative flex-shrink-0 w-[72vw] max-w-56 aspect-[4/5] rounded-xl overflow-hidden group snap-center cursor-pointer block md:w-40 lg:w-44"
+            className="relative block w-[72vw] max-w-56 flex-shrink-0 aspect-[4/5] cursor-pointer snap-center overflow-hidden rounded-[1.2rem] bg-white shadow-[0_12px_28px_rgba(0,0,0,0.1)] group md:w-auto md:max-w-none"
           >
             <img
               src={cat.image}
@@ -46,10 +47,13 @@ const PortfolioPreview = ({ market = "bangalore" }: Props) => {
               height={1024}
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-luxury-black/80 via-transparent to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-4">
-              <h3 className="font-serif text-base text-foreground">{cat.name}</h3>
-              <div className="w-8 h-0.5 gold-gradient mt-2 transition-all duration-300 group-hover:w-14" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+            <div className="absolute bottom-3 left-3 right-3 rounded-[1rem] bg-white/95 px-3 py-3 shadow-[0_8px_18px_rgba(0,0,0,0.16)] backdrop-blur-sm transition-transform duration-300 group-hover:-translate-y-1 sm:bottom-4 sm:left-4 sm:right-4 sm:px-4">
+              <div className="flex items-center justify-between gap-5">
+                <h3 className="truncate whitespace-nowrap font-serif text-[15px] text-[#171717] sm:text-base">{cat.name}</h3>
+                <ArrowUpRight className="h-4 w-4 text-black/70 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </div>
+              <div className="mt-1.5 h-px w-7 bg-black/45 transition-all duration-300 group-hover:w-10" />
             </div>
           </Link>
         ))}

@@ -24,7 +24,6 @@ export default function BlogListView({ posts }: { posts: BlogListItem[] }) {
       <Header />
 
       <section className="pt-32 md:pt-28 pb-8 px-5 text-center">
-        <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Our Blog</p>
         <h1 className="font-serif text-4xl md:text-5xl font-bold gold-text mb-3">
           Interior Design Insights for Bangalore
         </h1>

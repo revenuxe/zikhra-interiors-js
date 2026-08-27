@@ -5,11 +5,7 @@ import { bangaloreAreas } from "@/lib/bangalore-areas-data";
 import { portfolioItems } from "@/lib/portfolio-data";
 import { projectTypes } from "@/lib/project-types-data";
 import { absoluteUrl } from "@/lib/seo";
-import { sanityClient, sanityConfigured, sanitySitemapFetchOptions, skipSanityDuringBuild } from "@/lib/sanity/client";
-import { blogSitemapQuery } from "@/lib/sanity/queries";
 import { localBlogPosts } from "@/lib/local-blog-posts";
-
-type BlogSitemapItem = { slug: string; _updatedAt?: string };
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes = [
@@ -27,16 +23,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ];
 
   const now = new Date();
-  let blogItems: BlogSitemapItem[] = [];
-  if (sanityConfigured && sanityClient && !skipSanityDuringBuild) {
-    try {
-      blogItems = await sanityClient.fetch(blogSitemapQuery, {}, sanitySitemapFetchOptions);
-    } catch (error) {
-      // Keep sitemap available even if Sanity is temporarily unreachable.
-      console.error("Sitemap blog fetch failed:", error);
-    }
-  }
-
   return [
     ...staticRoutes.map((route) => ({
       url: absoluteUrl(route),
@@ -85,12 +71,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: post.publishedAt ? new Date(post.publishedAt) : now,
       changeFrequency: "monthly" as const,
       priority: 0.82,
-    })),
-    ...blogItems.filter((post) => !localBlogPosts.some((localPost) => localPost.slug === post.slug)).map((post) => ({
-      url: absoluteUrl(`/blog/${post.slug}`),
-      lastModified: post._updatedAt ? new Date(post._updatedAt) : now,
-      changeFrequency: "weekly" as const,
-      priority: 0.75,
     })),
   ];
 }

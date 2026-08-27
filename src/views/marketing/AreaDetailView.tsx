@@ -6,6 +6,7 @@ import BottomNav from "@/components/BottomNav";
 import ContactForm from "@/components/ContactForm";
 import HomeStorySection from "@/components/HomeStorySection";
 import ConsultationPopup from "@/components/ConsultationPopup";
+import heroImage from "@/assets/hero-interior.webp";
 import SeoJsonLd from "@/components/SeoJsonLd";
 import type { AreaItem } from "@/lib/areas-data";
 import { HomepageMarketingSections } from "@/views/marketing/CityLandingPage";
@@ -30,21 +31,23 @@ export default function AreaDetailView({ area }: Props) {
         <SeoJsonLd id={`area-faq-${area.slug}`} json={toJsonLd(faqPageSchema(area.faqs))} />
       ) : null}
       <Header />
-      <section className="pt-32 md:pt-28 pb-12 px-5 text-center">
-        <p className="text-xs font-sans tracking-[0.25em] uppercase text-gold mb-3">{area.city}</p>
-        <h1 className="font-serif text-3xl md:text-5xl font-bold gold-text mb-4">
+      <section className="relative isolate overflow-hidden bg-[#f8f8f7] pb-12 pt-28 sm:pb-16 sm:pt-32">
+        <img src={heroImage.src} alt="" aria-hidden="true" className="absolute inset-0 -z-20 h-full w-full object-cover opacity-[0.24] sm:opacity-[0.18]" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(248,248,247,0.96)_0%,rgba(248,248,247,0.9)_45%,rgba(248,248,247,0.72)_100%)]" />
+        <div className="relative mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
+        <h1 className="max-w-[11ch] font-sans text-[3.35rem] font-light leading-[0.97] tracking-[-0.07em] text-[#171717] sm:text-6xl md:max-w-[13ch] md:text-7xl lg:text-[5.8rem]">
           Best Interior Designer in {area.name}, {area.city}
         </h1>
-        <p className="font-sans text-muted-foreground text-sm max-w-md mx-auto">
+        <p className="mt-8 max-w-xl font-sans text-[1.03rem] font-light leading-[1.72] tracking-[-0.02em] text-[#525252] md:text-[1.15rem]">
           {area.tagline} 2 BHK pricing starts from Rs. 3.5 Lakhs and 3 BHK pricing starts from Rs. 5.5 Lakhs.
         </p>
         <Link
           href="/contact"
-          className="mt-6 inline-flex gold-gradient px-8 py-3.5 rounded-full font-sans text-sm font-medium tracking-wide text-primary-foreground transition-all duration-300 hover:scale-105 gold-glow"
+          className="mt-10 inline-flex items-center rounded-lg bg-[#171717] px-5 py-3.5 font-sans text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-black"
         >
           Get Free Estimate
         </Link>
-        <p className="font-sans text-xs text-muted-foreground mt-4 max-w-md mx-auto">
+        <p className="mt-4 max-w-xl font-sans text-xs text-muted-foreground">
           Also explore our{" "}
           <Link href={projectsBase} className="text-gold hover:underline">
             premium interior projects
@@ -59,6 +62,7 @@ export default function AreaDetailView({ area }: Props) {
           </Link>{" "}
           in {area.city}.
         </p>
+        </div>
       </section>
 
       <section className="section-padding pt-0">

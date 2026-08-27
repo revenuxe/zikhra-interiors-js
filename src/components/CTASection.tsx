@@ -30,7 +30,7 @@ const CTASection = ({ market = "bangalore" }: Props) => {
             <img
               src={whatsappIcon.src}
               alt={copy.ctaWhatsappAlt}
-              className="w-4 h-4 brightness-0"
+              className="w-4 h-4 brightness-0 invert"
             />
             WhatsApp a Designer
           </a>

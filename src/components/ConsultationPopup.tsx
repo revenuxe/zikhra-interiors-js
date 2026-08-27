@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { getSupabaseClient } from "@/integrations/supabase/client";
 import { insertLead } from "@/lib/lead-insert";
-import { useBeginRouteChange } from "@/components/GlobalNavigationLoader";
 import { toast } from "sonner";
 import { X } from "lucide-react";
 import popupHero from "@/assets/popup-hero.webp";
@@ -14,7 +13,6 @@ const ConsultationPopup = () => {
   const [formData, setFormData] = useState({ name: "", phone: "", area: "", projectType: "", message: "" });
   const [submitting, setSubmitting] = useState(false);
   const router = useRouter();
-  const beginRouteChange = useBeginRouteChange();
 
   useEffect(() => {
     const dismissed = sessionStorage.getItem("popup-dismissed");
@@ -51,7 +49,6 @@ const ConsultationPopup = () => {
       return;
     }
     close();
-    beginRouteChange();
     router.push("/thank-you");
   };
 

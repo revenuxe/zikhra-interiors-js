@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import { sanityClient, sanityConfigured, sanityLiveFetchOptions, skipSanityDuringBuild } from "@/lib/sanity/client";
-import { blogListQuery } from "@/lib/sanity/queries";
 import { localBlogListItems } from "@/lib/local-blog-posts";
 import BlogListView, { type BlogListItem } from "@/views/marketing/BlogListView";
 import SeoJsonLd from "@/components/SeoJsonLd";
@@ -12,8 +10,6 @@ import {
   toJsonLd,
   twitterSummaryLarge,
 } from "@/lib/seo";
-
-export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Interior Design Cost & Planning Blog",
@@ -36,12 +32,7 @@ export const metadata: Metadata = {
 };
 
 export default async function BlogPage() {
-  const sanityPosts: BlogListItem[] =
-    sanityConfigured && sanityClient && !skipSanityDuringBuild
-      ? await sanityClient.fetch(blogListQuery, {}, sanityLiveFetchOptions)
-      : [];
-  const localSlugs = new Set(localBlogListItems.map((post) => post.slug));
-  const posts = [...localBlogListItems, ...sanityPosts.filter((post) => !localSlugs.has(post.slug))];
+  const posts: BlogListItem[] = localBlogListItems;
 
   return (
     <>

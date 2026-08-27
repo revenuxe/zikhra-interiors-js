@@ -28,7 +28,6 @@ const About = () => {
         <img src={aboutHero.src} alt="About Zikhra Interior Designers Bangalore" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-luxury-black/80 via-luxury-black/60 to-luxury-black/95" />
         <div className="relative z-10 flex min-h-[560px] flex-col items-center justify-end px-6 pb-14 pt-32 text-center md:h-full md:min-h-[520px] md:pb-16 md:pt-0">
-          <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">About Us</p>
           <h1 className="font-serif text-4xl md:text-5xl font-bold gold-text mb-3">
             About Zikhra Interior Designers in Bangalore & Bengaluru
           </h1>

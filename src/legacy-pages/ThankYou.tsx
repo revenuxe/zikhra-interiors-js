@@ -37,7 +37,7 @@ const ThankYou = () => {
             <img
               src={whatsappIcon.src}
               alt="WhatsApp — reach Zikhra’s Bangalore interior design team after your form submission"
-              className="w-4 h-4 brightness-0"
+              className="w-4 h-4 brightness-0 invert"
             />
             Chat on WhatsApp for Faster Response
           </a>

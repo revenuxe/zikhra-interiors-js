@@ -6,51 +6,51 @@
 
 @layer base {
   :root {
-    --background: 0 0% 5%;
-    --foreground: 40 20% 90%;
+    --background: 40 20% 98%;
+    --foreground: 0 0% 10%;
 
-    --card: 0 0% 8%;
-    --card-foreground: 40 20% 90%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
 
-    --popover: 0 0% 8%;
-    --popover-foreground: 40 20% 90%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
 
-    --primary: 43 74% 49%;
-    --primary-foreground: 0 0% 5%;
+    --primary: 0 0% 10%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 40 20% 85%;
+    --secondary: 40 18% 96%;
+    --secondary-foreground: 0 0% 14%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 40 10% 55%;
+    --muted: 40 14% 95%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 43 74% 49%;
-    --accent-foreground: 0 0% 5%;
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 40 15% 18%;
-    --input: 40 15% 18%;
-    --ring: 43 74% 49%;
+    --border: 40 12% 86%;
+    --input: 40 12% 86%;
+    --ring: 0 0% 10%;
 
     --radius: 0.75rem;
 
-    --gold: 43 74% 49%;
-    --gold-light: 43 80% 65%;
-    --gold-dark: 43 70% 35%;
+    --gold: 0 0% 10%;
+    --gold-light: 0 0% 16%;
+    --gold-dark: 0 0% 6%;
     --luxury-black: 0 0% 5%;
-    --luxury-dark: 0 0% 8%;
-    --luxury-surface: 0 0% 12%;
+    --luxury-dark: 40 18% 96%;
+    --luxury-surface: 0 0% 100%;
 
-    --sidebar-background: 0 0% 8%;
-    --sidebar-foreground: 40 20% 90%;
-    --sidebar-primary: 43 74% 49%;
-    --sidebar-primary-foreground: 0 0% 5%;
-    --sidebar-accent: 0 0% 15%;
-    --sidebar-accent-foreground: 40 20% 90%;
-    --sidebar-border: 40 15% 18%;
-    --sidebar-ring: 43 74% 49%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 10%;
+    --sidebar-primary: 0 0% 10%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 40 14% 95%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 40 12% 86%;
+    --sidebar-ring: 0 0% 10%;
   }
 }
 
@@ -63,6 +63,7 @@
     @apply bg-background text-foreground font-sans;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-image: radial-gradient(circle at 50% -15%, rgba(0, 0, 0, 0.035), transparent 30rem);
   }
 
   img,
@@ -84,36 +85,37 @@
 
 @layer utilities {
   .gold-gradient {
-    background: linear-gradient(135deg, hsl(43 80% 65%), hsl(43 74% 49%), hsl(43 70% 35%));
+    background: linear-gradient(135deg, #2a2a2a, #111111);
   }
 
   .gold-text {
-    background: linear-gradient(135deg, hsl(43 80% 65%), hsl(43 74% 49%), hsl(43 70% 35%));
+    background: linear-gradient(135deg, #2b2b2b, #111111);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .glass-effect {
-    background: hsla(0, 0%, 5%, 0.7);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid hsla(40, 15%, 18%, 0.5);
+    background: rgba(255, 255, 255, 0.84);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(20, 20, 20, 0.09);
   }
 
   .glass-nav {
-    background: hsla(0, 0%, 5%, 0.85);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border-top: 1px solid hsla(43, 74%, 49%, 0.15);
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-top: 1px solid rgba(20, 20, 20, 0.1);
+    box-shadow: 0 -10px 30px rgba(20, 20, 20, 0.06);
   }
 
   .gold-glow {
-    box-shadow: 0 0 20px hsla(43, 74%, 49%, 0.3), 0 0 40px hsla(43, 74%, 49%, 0.1);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
   }
 
   .gold-glow-strong {
-    box-shadow: 0 0 25px hsla(43, 74%, 49%, 0.4), 0 0 50px hsla(43, 74%, 49%, 0.15);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
   }
 
   .section-padding {
@@ -127,6 +129,10 @@
   .hide-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+
+  .bg-card {
+    box-shadow: 0 12px 32px rgba(21, 18, 12, 0.07), 0 2px 8px rgba(21, 18, 12, 0.03);
   }
 }
 

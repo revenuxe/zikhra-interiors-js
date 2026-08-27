@@ -49,14 +49,14 @@ const BottomNav = () => {
                 rel="noopener noreferrer"
                 className="relative -mt-5 flex flex-col items-center"
               >
-                <div className="w-14 h-14 rounded-full gold-gradient flex items-center justify-center animate-pulse-gold shadow-xl">
+                <div className="w-14 h-14 rounded-full bg-[#1f7a5a] flex items-center justify-center shadow-xl transition-colors duration-300 hover:bg-[#176448]">
                   <img
                     src={whatsappIcon.src}
                     alt="Chat on WhatsApp with Zikhra interior designers"
-                    className="w-7 h-7 brightness-0"
+                    className="w-7 h-7 brightness-0 invert"
                   />
                 </div>
-                <span className="text-[10px] font-sans text-gold mt-1">{item.label}</span>
+                <span className="text-[10px] font-sans text-[#1f7a5a] mt-1">{item.label}</span>
               </a>
             );
           }

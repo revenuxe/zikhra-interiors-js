@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import ContactForm from "@/components/ContactForm";
-import { CheckCircle2 } from "lucide-react";
+import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import type { MarketId } from "@/lib/market-types";
 import { applyMarketToCopy, cityLabel, serviceDetailPath } from "@/lib/marketing-paths";
@@ -17,6 +17,7 @@ import serviceCeiling from "@/assets/service-ceiling.webp";
 import serviceBathroom from "@/assets/service-bathroom.webp";
 import serviceLivingroom from "@/assets/service-livingroom.webp";
 import serviceBedroom from "@/assets/service-bedroom.webp";
+import heroImage from "@/assets/hero-interior.webp";
 import serviceCommercial from "@/assets/service-commercial.webp";
 
 const services = [
@@ -214,62 +215,62 @@ const Services = ({ market = "bangalore" }: ServicesProps) => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      {/* Hero */}
-      <section className="pt-32 md:pt-28 pb-10 px-5 text-center">
-        <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Our Expertise</p>
-        <h1 className="font-serif text-4xl md:text-5xl font-bold gold-text mb-3">
-          Best Interior Designer in {city} for Interior Design Services
-        </h1>
-        <p className="font-sans text-sm text-muted-foreground max-w-md mx-auto">{heroLine}</p>
-        <p className="font-sans text-xs text-muted-foreground mt-4 max-w-md mx-auto">
-          Compare packages in our{" "}
-          <Link href="/bangalore/interior-design-cost" className="text-gold hover:underline">
-            interior design cost guide
-          </Link>
-          , including room-wise planning for practical, premium, and signature scopes.
-        </p>
+      <section className="relative isolate overflow-hidden bg-[#f8f8f7] pb-12 pt-28 sm:pb-16 sm:pt-32">
+        <img src={heroImage.src} alt="" aria-hidden="true" className="absolute inset-0 -z-20 h-full w-full object-cover opacity-[0.24] sm:opacity-[0.18]" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(248,248,247,0.96)_0%,rgba(248,248,247,0.9)_45%,rgba(248,248,247,0.72)_100%)]" />
+        <div className="relative mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
+          <h1 className="max-w-[11ch] font-sans text-[3.35rem] font-light leading-[0.97] tracking-[-0.07em] text-[#171717] sm:text-6xl md:max-w-[13ch] md:text-7xl lg:text-[5.8rem]">Interior Design Services</h1>
+          <p className="mt-8 max-w-xl font-sans text-[1.03rem] font-light leading-[1.72] tracking-[-0.02em] text-[#525252] md:text-[1.15rem]">{heroLine}</p>
+          <p className="mt-4 max-w-xl font-sans text-sm leading-relaxed text-[#5b5b5b]">
+            Compare packages in our{" "}
+            <Link href="/bangalore/interior-design-cost" className="font-medium text-[#171717] underline decoration-black/30 underline-offset-4 transition-colors hover:decoration-black">
+              interior design cost guide
+            </Link>
+            , including room-wise planning for practical, premium, and signature scopes.
+          </p>
+        </div>
       </section>
 
       {/* Services */}
-      <section className="px-5 pb-8">
-        <div className="flex flex-col gap-12 max-w-4xl mx-auto">
+      <section className="px-5 pb-12 sm:pb-16">
+        <div className="mx-auto flex max-w-5xl flex-col gap-7 md:gap-10">
           {services.map((svc, i) => (
-            <div key={svc.id} id={svc.id} className="scroll-mt-20">
-              <div className={`flex flex-col ${i % 2 === 1 ? "md:flex-row-reverse" : "md:flex-row"} gap-6 items-center`}>
-                <div className="w-full md:w-1/2 rounded-2xl overflow-hidden group">
+            <article key={svc.id} id={svc.id} className="scroll-mt-24 overflow-hidden rounded-[1.5rem] border border-black/10 bg-white shadow-[0_12px_32px_rgba(0,0,0,0.055)]">
+              <div className={`grid ${i % 2 === 1 ? "md:grid-cols-[1.05fr_0.95fr]" : "md:grid-cols-[0.95fr_1.05fr]"}`}>
+                <div className={`group min-h-[17rem] overflow-hidden md:min-h-full ${i % 2 === 1 ? "md:order-2" : ""}`}>
                   <img
                     src={svc.image}
                     alt={`${svc.title} interior design service in ${city} by Zikhra`}
                     loading="lazy"
                     width={640}
                     height={640}
-                    className="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="h-full min-h-[17rem] w-full object-cover transition-transform duration-700 group-hover:scale-[1.035]"
                   />
                 </div>
-                <div className="w-full md:w-1/2">
-                  <p className="text-xs font-sans tracking-[0.2em] uppercase text-gold mb-2">{applyMarketToCopy(svc.subtitle, market)}</p>
-                  <h2 className="font-serif text-2xl md:text-3xl gold-text mb-3">{svc.title}</h2>
-                  <p className="font-sans text-sm text-muted-foreground leading-relaxed mb-5">{applyMarketToCopy(svc.description, market)}</p>
-                  <div className="space-y-2.5 mb-5">
+                <div className="p-6 sm:p-8 md:p-9">
+                  <p className="mb-3 font-sans text-[10px] font-medium uppercase tracking-[0.22em] text-[#626262]">{applyMarketToCopy(svc.subtitle, market)}</p>
+                  <h2 className="mb-4 font-sans text-3xl font-light leading-[1.04] tracking-[-0.045em] text-[#171717] md:text-4xl">{svc.title}</h2>
+                  <p className="mb-7 font-sans text-sm leading-relaxed text-muted-foreground">{applyMarketToCopy(svc.description, market)}</p>
+                  <div className="grid gap-x-4 gap-y-3 border-y border-black/10 py-5 sm:grid-cols-2">
                     {svc.features.map((feat) => (
                       <div key={feat} className="flex items-start gap-2.5">
-                        <CheckCircle2 className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
-                        <span className="font-sans text-sm text-foreground/80">{feat}</span>
+                        <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-black/70" />
+                        <span className="font-sans text-sm leading-snug text-[#454545]">{feat}</span>
                       </div>
                     ))}
                   </div>
-                  <div className="flex items-center gap-4">
-                    <span className="font-serif text-lg text-gold">{svc.price}</span>
+                  <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                    <span className="font-sans text-base font-medium tracking-[-0.02em] text-[#171717]">{svc.price}</span>
                     <Link
                       href={serviceDetailPath(market, svc.id)}
-                      className="gold-gradient px-6 py-2.5 rounded-full font-sans text-xs font-medium text-primary-foreground transition-all duration-300 hover:scale-105 gold-glow inline-block"
+                      className="inline-flex w-fit items-center gap-2 rounded-lg bg-[#171717] px-4 py-3 font-sans text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-black hover:shadow-[0_10px_22px_rgba(0,0,0,0.16)]"
                     >
-                      View Details
+                      View Details <ArrowUpRight className="h-4 w-4" />
                     </Link>
                   </div>
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </section>

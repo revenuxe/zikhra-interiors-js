@@ -48,7 +48,7 @@ const FeaturedProjects = ({ market = "bangalore" }: Props) => {
   };
 
   return (
-    <section className="section-padding">
+    <section className="px-5 py-14 md:px-8 md:py-16">
       <div className="text-center mb-10">
         <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Featured</p>
         <h2 className="font-serif text-3xl md:text-4xl gold-text">{copy.featuredTitle}</h2>
@@ -57,20 +57,20 @@ const FeaturedProjects = ({ market = "bangalore" }: Props) => {
         ) : null}
       </div>
 
-      <div className="relative max-w-2xl mx-auto">
+      <div className="relative mx-auto max-w-7xl">
         <div
           ref={scrollRef}
           onScroll={handleScroll}
-          className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide px-4"
+          className="flex gap-4 overflow-x-auto px-4 snap-x snap-mandatory scrollbar-hide md:grid md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {projects.map((project) => (
             <Link
               key={project.slug}
               href={projectDetailPath(market, project.slug)}
-              className="min-w-[78%] max-w-sm sm:min-w-[60%] snap-center rounded-xl overflow-hidden bg-card border border-border/50 group cursor-pointer transition-all duration-300 hover:border-gold/30 block flex-shrink-0"
+              className="block min-w-[78%] max-w-sm flex-shrink-0 snap-center overflow-hidden rounded-xl border border-border/50 bg-card transition-all duration-300 hover:border-gold/30 group cursor-pointer sm:min-w-[60%] md:min-w-0 md:max-w-none"
             >
-              <div className="relative aspect-[4/3] max-h-52 overflow-hidden">
+              <div className="relative aspect-[4/3] max-h-52 overflow-hidden md:max-h-none">
                 <img
                   src={project.image}
                   alt={`${project.type} interior design ${project.location}`}
@@ -95,18 +95,18 @@ const FeaturedProjects = ({ market = "bangalore" }: Props) => {
 
         <button
           onClick={() => scroll("left")}
-          className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 w-9 h-9 rounded-full bg-card/90 border border-border/50 flex items-center justify-center transition-opacity ${activeIndex === 0 ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+          className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 w-9 h-9 rounded-full bg-card/90 border border-border/50 flex items-center justify-center transition-opacity md:hidden ${activeIndex === 0 ? "opacity-0 pointer-events-none" : "opacity-100"}`}
         >
           <ChevronLeft className="w-4 h-4 text-gold" />
         </button>
         <button
           onClick={() => scroll("right")}
-          className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 w-9 h-9 rounded-full bg-card/90 border border-border/50 flex items-center justify-center transition-opacity ${activeIndex === projects.length - 1 ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+          className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 w-9 h-9 rounded-full bg-card/90 border border-border/50 flex items-center justify-center transition-opacity md:hidden ${activeIndex === projects.length - 1 ? "opacity-0 pointer-events-none" : "opacity-100"}`}
         >
           <ChevronRight className="w-4 h-4 text-gold" />
         </button>
 
-        <div className="flex justify-center gap-2 mt-5">
+        <div className="mt-5 flex justify-center gap-2 md:hidden">
           {projects.map((_, i) => (
             <div
               key={i}

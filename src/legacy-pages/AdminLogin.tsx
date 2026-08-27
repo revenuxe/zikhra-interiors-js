@@ -4,14 +4,12 @@ import { useState } from "react";
 import { getSupabaseClient } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
-import { useBeginRouteChange } from "@/components/GlobalNavigationLoader";
 
 const AdminLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const router = useRouter();
-  const beginRouteChange = useBeginRouteChange();
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -28,7 +26,6 @@ const AdminLogin = () => {
       toast.error("Invalid credentials");
     } else {
       toast.success("Welcome back!");
-      beginRouteChange();
       router.push("/admin/dashboard");
     }
   };
