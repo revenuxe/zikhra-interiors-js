@@ -52,6 +52,50 @@ export default function PortfolioDetailView({ item, market = "bangalore" }: Prop
         </div>
       </section>
 
+      <section className="section-padding">
+        <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[1.05fr_0.95fr] md:gap-16">
+          <div>
+            <p className="mb-3 font-sans text-[10px] font-medium uppercase tracking-[0.28em] text-[#626262]">Design perspective</p>
+            <h2 className="font-sans text-3xl font-light tracking-[-0.045em] text-[#171717] md:text-4xl">A more considered {item.title.toLowerCase()}</h2>
+            <p className="mt-6 font-sans text-[1rem] leading-[1.75] text-[#585858]">{description}</p>
+            <p className="mt-4 font-sans text-[1rem] leading-[1.75] text-[#585858]">Every successful interior begins with the everyday requirements of the room—how it is used, what needs to be stored, where natural light falls, and what should remain visually quiet. The visual direction is then shaped around those practical decisions, not added on top of them.</p>
+            <p className="mt-4 font-sans text-[1rem] leading-[1.75] text-[#585858]">For a {item.title.toLowerCase()} in {city}, the most enduring choices tend to be proportionate furniture, layered lighting, durable finishes, and details that make the space easier to live with over time.</p>
+          </div>
+          <aside className="rounded-[1.5rem] border border-black/10 bg-[#f5f5f3] p-6 sm:p-7">
+            <h3 className="font-sans text-lg font-medium tracking-[-0.035em] text-[#171717]">Key planning conversations</h3>
+            <ul className="mt-5 space-y-4">{item.features.slice(0, 4).map((feature) => <li key={feature} className="flex gap-3 font-sans text-sm leading-relaxed text-[#555]"><CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-black/70" />{applyMarketToCopy(feature, market)}</li>)}</ul>
+            <Link href="/contact" className="mt-7 inline-flex rounded-lg bg-[#171717] px-4 py-3 font-sans text-sm font-medium text-white transition-colors hover:bg-black">Plan a similar space</Link>
+          </aside>
+        </div>
+      </section>
+
+      <section className="section-padding bg-[#f5f5f3]">
+        <div className="mx-auto max-w-6xl">
+          <div className="max-w-2xl">
+            <p className="mb-3 font-sans text-[10px] font-medium uppercase tracking-[0.28em] text-[#626262]">The design process</p>
+            <h2 className="font-sans text-3xl font-light tracking-[-0.045em] text-[#171717] md:text-4xl">From an initial brief to a more resolved room</h2>
+            <p className="mt-5 font-sans text-[1rem] leading-[1.75] text-[#585858]">{tagline} is shaped through a sequence of practical conversations and design decisions. The process below reflects the focus of this category, from the first brief through to the finished interior.</p>
+          </div>
+          <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {item.process.map((step, index) => (
+              <div key={step.step} className="rounded-[1.25rem] border border-black/10 bg-white p-5 shadow-[0_8px_20px_rgba(0,0,0,0.04)]">
+                <span className="font-sans text-xs font-medium tracking-[0.16em] text-[#6a6a6a]">0{index + 1}</span>
+                <h3 className="mt-4 font-sans text-base font-medium text-[#171717]">{step.step}</h3>
+                <p className="mt-2 font-sans text-sm leading-relaxed text-[#5b5b5b]">{applyMarketToCopy(step.desc, market)}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-[#f5f5f3]">
+        <div className="mx-auto max-w-4xl rounded-[1.5rem] border border-black/10 bg-white p-6 shadow-[0_10px_24px_rgba(0,0,0,0.045)] sm:p-8">
+          <h2 className="font-sans text-2xl font-light tracking-[-0.04em] text-[#171717]">Thinking about your own {item.title.toLowerCase()}?</h2>
+          <p className="mt-3 font-sans text-sm leading-relaxed text-[#5b5b5b]">Share your floor plan, photographs, and the rooms you want to prioritise. We can help turn early ideas into a clearer interior direction, scope, and next steps.</p>
+          <Link href="/contact" className="mt-6 inline-flex rounded-lg bg-[#171717] px-4 py-3 font-sans text-sm font-medium text-white transition-colors hover:bg-black">Book a consultation</Link>
+        </div>
+      </section>
+
       <ContactForm />
       <Footer />
       <BottomNav />

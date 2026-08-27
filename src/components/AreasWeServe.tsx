@@ -2,19 +2,10 @@
 
 import { useRef, useMemo } from "react";
 import Link from "next/link";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import type { MarketId } from "@/lib/market-types";
 import { getMarketCopy } from "@/lib/market-copy";
 import { bangaloreAreas } from "@/lib/bangalore-areas-data";
-import areaKitchen from "@/assets/area-kitchen.webp";
-import areaBedroom from "@/assets/area-bedroom.webp";
-import areaLiving from "@/assets/area-living.webp";
-import areaVilla from "@/assets/area-villa.webp";
-import areaBathroom from "@/assets/area-bathroom.webp";
-
-const areaImages = [areaKitchen, areaBedroom, areaLiving, areaVilla, areaBathroom].map((img) =>
-  typeof img === "string" ? img : img.src,
-);
 
 type Props = { market?: MarketId };
 
@@ -55,44 +46,37 @@ const AreasWeServe = ({ market = "bangalore" }: Props) => {
       <div className="relative max-w-2xl mx-auto">
         <div
           ref={scrollRef}
-          className="flex gap-4 overflow-x-auto scrollbar-hide px-4 py-2"
+          className="flex gap-3 overflow-x-auto scrollbar-hide px-5 py-2"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
-          {displayAreas.map((area, i) => (
+          {displayAreas.map((area) => (
             <Link
               key={`${area.hrefBase}-${area.slug}`}
               href={`${area.hrefBase}/${area.slug}`}
-              className="flex-shrink-0 flex flex-col items-center gap-2 group"
+              className="flex h-14 min-w-36 flex-shrink-0 items-center justify-center rounded-xl border border-black/12 bg-white px-5 font-sans text-sm font-medium text-[#303030] shadow-[0_6px_16px_rgba(0,0,0,0.045)] transition-all duration-300 hover:-translate-y-0.5 hover:border-black/35 hover:bg-[#171717] hover:text-white"
             >
-              <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-border/50 group-hover:border-gold/60 transition-all duration-300 gold-glow group-hover:scale-105">
-                <img
-                  src={areaImages[i % areaImages.length]}
-                  alt={`Interior design ${area.name}`}
-                  loading="lazy"
-                  width={80}
-                  height={80}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <span className="font-sans text-[11px] text-muted-foreground group-hover:text-gold transition-colors text-center whitespace-nowrap max-w-[80px] truncate">
-                {area.name}
-              </span>
+              {area.name}
             </Link>
           ))}
         </div>
 
         <button
           onClick={() => scroll("left")}
-          className="absolute left-0 top-10 -translate-y-1/2 w-8 h-8 rounded-full bg-card/90 border border-border/50 flex items-center justify-center z-10"
+          className="absolute left-0 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-black/12 bg-white shadow-[0_5px_14px_rgba(0,0,0,0.12)]"
         >
           <ChevronLeft className="w-4 h-4 text-gold" />
         </button>
         <button
           onClick={() => scroll("right")}
-          className="absolute right-0 top-10 -translate-y-1/2 w-8 h-8 rounded-full bg-card/90 border border-border/50 flex items-center justify-center z-10"
+          className="absolute right-0 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-black/12 bg-white shadow-[0_5px_14px_rgba(0,0,0,0.12)]"
         >
           <ChevronRight className="w-4 h-4 text-gold" />
         </button>
+      </div>
+      <div className="mt-7 text-center">
+        <Link href="/bangalore/locations" className="inline-flex items-center gap-2 rounded-[1rem] bg-[#171717] px-6 py-4 font-sans text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-black hover:shadow-[0_12px_24px_rgba(0,0,0,0.16)]">
+          Explore more locations <ArrowUpRight className="h-4 w-4" />
+        </Link>
       </div>
     </section>
   );

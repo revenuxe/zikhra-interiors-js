@@ -65,6 +65,22 @@ export default function InteriorCostGuideView({ config }: Props) {
         </div>
       </section>
 
+      <section className="section-padding bg-[#f5f5f3]">
+        <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-[1.05fr_0.95fr] md:gap-14">
+          <div>
+            <p className="mb-3 font-sans text-[10px] font-medium uppercase tracking-[0.28em] text-[#626262]">Understanding the starting price</p>
+            <h2 className="font-sans text-3xl font-light tracking-[-0.045em] text-[#171717] md:text-4xl">Why interior pricing starts from a defined scope</h2>
+            <p className="mt-6 font-sans text-[1rem] leading-[1.75] text-[#585858]">A starting price is not a one-size-fits-all quote. It is a useful reference point for a defined set of rooms, core joinery, and practical finish selections. It helps you compare like-for-like scope before making decisions on materials or upgrades.</p>
+            <p className="mt-4 font-sans text-[1rem] leading-[1.75] text-[#585858]">The final estimate changes when the plan includes more rooms, greater storage volume, premium hardware, specialised finishes, civil changes, lighting, appliances, or loose furniture. Reviewing these choices early gives you a more honest comparison than a single headline number.</p>
+          </div>
+          <aside className="rounded-[1.5rem] border border-black/10 bg-white p-6 shadow-[0_10px_24px_rgba(0,0,0,0.045)] sm:p-7">
+            <h3 className="font-sans text-lg font-medium tracking-[-0.035em] text-[#171717]">What a room-wise estimate helps clarify</h3>
+            <ul className="mt-5 space-y-4">{["Which rooms and fixed elements are included", "Where material and hardware upgrades affect the budget", "What can be completed now and what can be phased later", "How your floor plan and existing site condition affect the scope"].map((point) => <li key={point} className="flex gap-3 font-sans text-sm leading-relaxed text-[#555]"><CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-black/70" />{point}</li>)}</ul>
+            <Link href="/contact" className="mt-7 inline-flex rounded-lg bg-[#171717] px-4 py-3 font-sans text-sm font-medium text-white transition-colors hover:bg-black">Request a room-wise estimate</Link>
+          </aside>
+        </div>
+      </section>
+
       <section className="section-padding bg-luxury-dark">
         <div className="max-w-4xl mx-auto px-5">
           <div className="text-center mb-8">

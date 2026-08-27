@@ -15,10 +15,7 @@ export const metadata: Metadata = {
   },
   description: defaultDescription,
   icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
-      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
-    ],
+    icon: [{ url: "/favicon.ico", type: "image/x-icon" }],
     shortcut: "/favicon.ico",
   },
   alternates: {

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { MarketId } from "@/lib/market-types";
 import { getMarketCopy } from "@/lib/market-copy";
-import { servicesIndexPath } from "@/lib/marketing-paths";
+import { serviceDetailPath, servicesIndexPath } from "@/lib/marketing-paths";
 import serviceHome from "@/assets/service-home.webp";
 import serviceKitchen from "@/assets/service-kitchen.webp";
 import serviceWardrobe from "@/assets/service-wardrobe.webp";
@@ -32,7 +32,7 @@ const ServicesSection = ({ market = "bangalore" }: Props) => {
         {services.map((svc) => (
           <Link
             key={svc.title}
-            href={`${svcBase}#${svc.slug}`}
+            href={serviceDetailPath(market, svc.slug)}
             className="group flex flex-col overflow-hidden rounded-[1.2rem] border border-black/10 bg-white text-left shadow-[0_10px_24px_rgba(0,0,0,0.055)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(0,0,0,0.1)]"
           >
             <div className="relative w-full aspect-[4/3] max-h-32 overflow-hidden md:max-h-none">

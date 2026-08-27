@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CheckCircle, ChevronDown, Star } from "lucide-react";
+import { CheckCircle, ChevronDown } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
@@ -95,13 +95,8 @@ export default function AreaDetailView({ area }: Props) {
         </div>
       </section>
       <section className="section-padding">
-        <div className="max-w-lg mx-auto space-y-3">
-          {["500+ Homes Transformed", "10-Year Warranty", "Transparent Planning"].map((item) => (
-            <div key={item} className="flex items-center gap-3 p-4 rounded-2xl bg-card border border-border/30">
-              <Star className="w-4 h-4 text-gold" />
-              <p className="font-sans text-sm text-foreground">{item}</p>
-            </div>
-          ))}
+        <div className="mx-auto grid max-w-5xl gap-5 sm:grid-cols-3">
+          {[{ title: "Start with the plan", text: "Floor plans, room priorities, and storage needs shape the interior before finishes are selected." }, { title: "Design for the address", text: `Layouts and materials are considered in the context of ${area.name} homes, building rules, and daily routines.` }, { title: "Clarify the scope", text: "A clear brief helps identify the right services, sequence, and next steps for your project." }].map((item) => <div key={item.title} className="rounded-[1.25rem] border border-black/10 bg-white p-5 shadow-[0_8px_20px_rgba(0,0,0,0.04)]"><h3 className="font-sans text-base font-medium text-[#171717]">{item.title}</h3><p className="mt-2 font-sans text-sm leading-relaxed text-[#5b5b5b]">{item.text}</p></div>)}
         </div>
       </section>
 

@@ -3,7 +3,7 @@ import { Instagram, Linkedin, Mail, Phone } from "lucide-react";
 import logo from "@/assets/zikhra-design-logo.webp";
 
 const studioLinks = [{ label: "About Us", to: "/about" }, { label: "Projects", to: "/bangalore/projects" }, { label: "Portfolio", to: "/bangalore/portfolio/kitchen" }, { label: "Contact", to: "/contact" }];
-const serviceLinks = [{ label: "Full Home Interiors", to: "/bangalore/services#full-home" }, { label: "Modular Kitchen", to: "/bangalore/services#modular-kitchen" }, { label: "Wardrobes", to: "/bangalore/services#wardrobes" }, { label: "Renovation", to: "/bangalore/services#renovation" }];
+const serviceLinks = [{ label: "Full Home Interiors", to: "/bangalore/services/full-home" }, { label: "Modular Kitchen", to: "/bangalore/services/modular-kitchen" }, { label: "Wardrobes", to: "/bangalore/services/wardrobes" }, { label: "Renovation", to: "/bangalore/services/renovation" }];
 const resourceLinks = [{ label: "Interior Cost Guide", to: "/bangalore/interior-design-cost" }, { label: "2 BHK Cost", to: "/2bhk-interior-design-cost-bangalore" }, { label: "3 BHK Cost", to: "/3bhk-interior-design-cost-bangalore" }, { label: "Design Journal", to: "/blog" }];
 const linkClass = "font-sans text-sm leading-relaxed text-[#666] transition-colors hover:text-black";
 
@@ -22,7 +22,10 @@ export default function Footer() {
             </div>
           </div>
           <FooterColumn title="Studio" links={studioLinks} />
-          <FooterColumn title="Services" links={serviceLinks} />
+          <div>
+            <FooterColumn title="Services" links={serviceLinks} />
+            <Link href="/bangalore/services" className="mt-6 inline-flex rounded-lg bg-[#171717] px-4 py-3 font-sans text-sm font-medium text-white transition-all hover:-translate-y-0.5 hover:bg-black">Explore more services</Link>
+          </div>
           <div>
             <h4 className="mb-5 font-sans text-sm font-medium text-[#171717]">Resources</h4>
             <ul className="space-y-3">{resourceLinks.map((link) => <li key={link.label}><Link href={link.to} className={linkClass}>{link.label}</Link></li>)}</ul>

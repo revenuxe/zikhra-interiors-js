@@ -71,9 +71,10 @@ const ConsultationPopup = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-card" />
           <button
             onClick={close}
-            className="absolute top-3 right-3 w-8 h-8 rounded-full bg-luxury-black/60 backdrop-blur-sm border border-border/30 flex items-center justify-center transition-all hover:bg-luxury-black/80"
+            aria-label="Close consultation form"
+            className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full border border-black/20 bg-white/95 shadow-[0_4px_12px_rgba(0,0,0,0.2)] transition-all hover:scale-105 hover:bg-white"
           >
-            <X className="w-4 h-4 text-foreground" />
+            <X className="h-[18px] w-[18px] stroke-[2.5] text-[#171717]" />
           </button>
         </div>
 
@@ -89,12 +90,12 @@ const ConsultationPopup = () => {
             <input
               type="text" placeholder="Your Name" required
               value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-full px-4 py-2.5 rounded-xl bg-background border border-border/50 font-sans text-xs text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors"
+              className="w-full rounded-xl border border-black/15 bg-[#fafafa] px-4 py-2.5 font-sans text-xs text-foreground placeholder:text-muted-foreground/65 transition-colors focus:border-black/45 focus:outline-none"
             />
             <input
               type="tel" placeholder="Phone Number" required
               value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-              className="w-full px-4 py-2.5 rounded-xl bg-background border border-border/50 font-sans text-xs text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors"
+              className="w-full rounded-xl border border-black/15 bg-[#fafafa] px-4 py-2.5 font-sans text-xs text-foreground placeholder:text-muted-foreground/65 transition-colors focus:border-black/45 focus:outline-none"
             />
             <input
               type="text"
@@ -102,17 +103,17 @@ const ConsultationPopup = () => {
               required
               value={formData.area}
               onChange={(e) => setFormData({ ...formData, area: e.target.value })}
-              className="w-full px-4 py-2.5 rounded-xl bg-background border border-border/50 font-sans text-xs text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors"
+              className="w-full rounded-xl border border-black/15 bg-[#fafafa] px-4 py-2.5 font-sans text-xs text-foreground placeholder:text-muted-foreground/65 transition-colors focus:border-black/45 focus:outline-none"
             />
             <input
               type="text" placeholder="Project Type (e.g., 2 BHK, Villa, Duplex)"
               value={formData.projectType} onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-              className="w-full px-4 py-2.5 rounded-xl bg-background border border-border/50 font-sans text-xs text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors"
+              className="w-full rounded-xl border border-black/15 bg-[#fafafa] px-4 py-2.5 font-sans text-xs text-foreground placeholder:text-muted-foreground/65 transition-colors focus:border-black/45 focus:outline-none"
             />
             <textarea
               placeholder="Tell us about your project..." rows={2}
               value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              className="w-full px-4 py-2.5 rounded-xl bg-background border border-border/50 font-sans text-xs text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors resize-none"
+              className="w-full resize-none rounded-xl border border-black/15 bg-[#fafafa] px-4 py-2.5 font-sans text-xs text-foreground placeholder:text-muted-foreground/65 transition-colors focus:border-black/45 focus:outline-none"
             />
             <button
               type="submit" disabled={submitting}

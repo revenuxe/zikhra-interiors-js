@@ -233,44 +233,41 @@ const Services = ({ market = "bangalore" }: ServicesProps) => {
 
       {/* Services */}
       <section className="px-5 pb-12 sm:pb-16">
-        <div className="mx-auto flex max-w-5xl flex-col gap-7 md:gap-10">
+        <div className="mx-auto flex max-w-[23rem] flex-col gap-6 md:max-w-5xl md:gap-10">
           {services.map((svc, i) => (
-            <article key={svc.id} id={svc.id} className="scroll-mt-24 overflow-hidden rounded-[1.5rem] border border-black/10 bg-white shadow-[0_12px_32px_rgba(0,0,0,0.055)]">
+            <Link key={svc.id} id={svc.id} href={serviceDetailPath(market, svc.id)} className="group block scroll-mt-24 overflow-hidden rounded-[1.5rem] border border-black/10 bg-white shadow-[0_12px_32px_rgba(0,0,0,0.055)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_36px_rgba(0,0,0,0.1)]">
               <div className={`grid ${i % 2 === 1 ? "md:grid-cols-[1.05fr_0.95fr]" : "md:grid-cols-[0.95fr_1.05fr]"}`}>
-                <div className={`group min-h-[17rem] overflow-hidden md:min-h-full ${i % 2 === 1 ? "md:order-2" : ""}`}>
+                <div className={`min-h-[12rem] overflow-hidden md:min-h-full ${i % 2 === 1 ? "md:order-2" : ""}`}>
                   <img
                     src={svc.image}
                     alt={`${svc.title} interior design service in ${city} by Zikhra`}
                     loading="lazy"
                     width={640}
                     height={640}
-                    className="h-full min-h-[17rem] w-full object-cover transition-transform duration-700 group-hover:scale-[1.035]"
+                    className="h-full min-h-[12rem] w-full object-cover transition-transform duration-700 group-hover:scale-[1.035]"
                   />
                 </div>
-                <div className="p-6 sm:p-8 md:p-9">
-                  <p className="mb-3 font-sans text-[10px] font-medium uppercase tracking-[0.22em] text-[#626262]">{applyMarketToCopy(svc.subtitle, market)}</p>
-                  <h2 className="mb-4 font-sans text-3xl font-light leading-[1.04] tracking-[-0.045em] text-[#171717] md:text-4xl">{svc.title}</h2>
-                  <p className="mb-7 font-sans text-sm leading-relaxed text-muted-foreground">{applyMarketToCopy(svc.description, market)}</p>
-                  <div className="grid gap-x-4 gap-y-3 border-y border-black/10 py-5 sm:grid-cols-2">
-                    {svc.features.map((feat) => (
-                      <div key={feat} className="flex items-start gap-2.5">
+                <div className="p-5 sm:p-8 md:p-9">
+                  <p className="mb-2 font-sans text-[10px] font-medium uppercase tracking-[0.22em] text-[#626262]">{applyMarketToCopy(svc.subtitle, market)}</p>
+                  <h2 className="mb-3 font-sans text-2xl font-light leading-[1.04] tracking-[-0.045em] text-[#171717] md:text-4xl">{svc.title}</h2>
+                  <p className="mb-5 line-clamp-3 font-sans text-sm leading-relaxed text-muted-foreground md:mb-7 md:line-clamp-none">{applyMarketToCopy(svc.description, market)}</p>
+                  <div className="grid gap-x-4 gap-y-3 border-y border-black/10 py-4 sm:grid-cols-2 sm:py-5">
+                    {svc.features.map((feat, featureIndex) => (
+                      <div key={feat} className={`${featureIndex > 2 ? "hidden sm:flex" : "flex"} items-start gap-2.5`}>
                         <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-black/70" />
                         <span className="font-sans text-sm leading-snug text-[#454545]">{feat}</span>
                       </div>
                     ))}
                   </div>
-                  <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                  <div className="mt-5 flex flex-col gap-4 sm:mt-6 sm:flex-row sm:items-center sm:justify-between">
                     <span className="font-sans text-base font-medium tracking-[-0.02em] text-[#171717]">{svc.price}</span>
-                    <Link
-                      href={serviceDetailPath(market, svc.id)}
-                      className="inline-flex w-fit items-center gap-2 rounded-lg bg-[#171717] px-4 py-3 font-sans text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-black hover:shadow-[0_10px_22px_rgba(0,0,0,0.16)]"
-                    >
+                    <span className="inline-flex w-fit items-center gap-2 rounded-lg bg-[#171717] px-4 py-3 font-sans text-sm font-medium text-white transition-all duration-300 group-hover:-translate-y-0.5 group-hover:bg-black group-hover:shadow-[0_10px_22px_rgba(0,0,0,0.16)]">
                       View Details <ArrowUpRight className="h-4 w-4" />
-                    </Link>
+                    </span>
                   </div>
                 </div>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </section>

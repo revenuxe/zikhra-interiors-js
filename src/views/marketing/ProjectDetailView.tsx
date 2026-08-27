@@ -49,6 +49,18 @@ export default function ProjectDetailView({ project, market = "bangalore" }: Pro
           </div>
         </div>
       </section>
+      <section className="section-padding bg-[#f5f5f3]">
+        <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[0.9fr_1.1fr] md:items-center md:gap-16">
+          <div className="overflow-hidden rounded-[1.5rem] border border-black/10"><img src={project.heroImage} alt={`${project.title} interior design in ${location}`} className="h-72 w-full object-cover md:h-[26rem]" /></div>
+          <div>
+            <p className="mb-3 font-sans text-[10px] font-medium uppercase tracking-[0.28em] text-[#626262]">Project perspective</p>
+            <h2 className="font-sans text-3xl font-light tracking-[-0.045em] text-[#171717] md:text-4xl">Designed for the way this home is lived in</h2>
+            <p className="mt-6 font-sans text-[1rem] leading-[1.75] text-[#585858]">A project is more than a collection of finishes. The strongest interiors begin with practical circulation, natural light, storage requirements, and the character the homeowners want the space to hold.</p>
+            <p className="mt-4 font-sans text-[1rem] leading-[1.75] text-[#585858]">For this {project.title.toLowerCase()} in {location}, the design language can be read through its layered decisions: the balance of open and private zones, the relationship between furniture and architecture, and a material palette intended to feel coherent from room to room.</p>
+            <Link href="/contact" className="mt-7 inline-flex rounded-lg bg-[#171717] px-4 py-3 font-sans text-sm font-medium text-white transition-colors hover:bg-black">Discuss a similar project</Link>
+          </div>
+        </div>
+      </section>
       <ContactForm />
       <Footer />
       <BottomNav />

@@ -5,16 +5,19 @@ import type { MarketId } from "@/lib/market-types";
 const packages = [
   {
     name: "2 BHK",
+    href: "/2bhk-interior-design-cost-bangalore",
     price: "Starts from Rs. 3.5 Lakhs",
     desc: "Modular kitchen, two wardrobes, TV unit, basic storage, and practical finishes for compact apartments.",
   },
   {
     name: "3 BHK",
+    href: "/3bhk-interior-design-cost-bangalore",
     price: "Starts from Rs. 5.5 Lakhs",
     desc: "Kitchen, three bedrooms, living room, wardrobes, lighting, and coordinated finishes for family homes.",
   },
   {
     name: "4 BHK / Villa",
+    href: "/bangalore/interior-design-cost",
     price: "Starts from Rs. 8.5 Lakhs",
     desc: "Expanded room scope with premium materials, custom storage, feature lighting, panelling, and turnkey execution.",
   },
@@ -40,14 +43,14 @@ export default function PricingPreview({ market = "bangalore" }: Props) {
 
         <div className="grid gap-3 md:grid-cols-3 md:gap-4">
           {packages.map((item, index) => (
-            <article key={item.name} className={`group flex min-h-[17rem] flex-col rounded-[1.35rem] border p-6 transition-transform duration-300 hover:-translate-y-1 ${index === 1 ? "border-[#171717] bg-[#171717] text-white shadow-[0_18px_40px_rgba(0,0,0,0.16)]" : "border-black/10 bg-white shadow-[0_10px_26px_rgba(0,0,0,0.055)]"}`}>
+            <Link href={item.href} key={item.name} className={`group flex min-h-[17rem] flex-col rounded-[1.35rem] border p-6 transition-transform duration-300 hover:-translate-y-1 ${index === 1 ? "border-[#171717] bg-[#171717] text-white shadow-[0_18px_40px_rgba(0,0,0,0.16)]" : "border-black/10 bg-white shadow-[0_10px_26px_rgba(0,0,0,0.055)]"}`}>
               <div className="flex items-start justify-between gap-4">
                 <p className={`font-sans text-[10px] font-medium uppercase tracking-[0.25em] ${index === 1 ? "text-white/55" : "text-[#666]"}`}>0{index + 1} · {item.name}</p>
                 <ArrowUpRight className={`h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 ${index === 1 ? "text-white/80" : "text-black/60"}`} />
               </div>
               <h3 className={`mt-9 font-sans text-[1.7rem] font-light leading-[1.05] tracking-[-0.045em] ${index === 1 ? "text-white" : "text-[#171717]"}`}>{item.price}</h3>
               <p className={`mt-auto pt-8 font-sans text-sm leading-relaxed ${index === 1 ? "text-white/65" : "text-muted-foreground"}`}>{item.desc}</p>
-            </article>
+            </Link>
           ))}
         </div>
 
