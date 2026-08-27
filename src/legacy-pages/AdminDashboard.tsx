@@ -5,7 +5,6 @@ import { getSupabaseClient } from "@/integrations/supabase/client";
 import { Eye, Trash2, LogOut, Users, X } from "lucide-react";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
-import { useBeginRouteChange } from "@/components/GlobalNavigationLoader";
 
 interface Lead {
   id: string;
@@ -26,7 +25,6 @@ const AdminDashboard = () => {
   const [selectedLead, setSelectedLead] = useState<Lead | null>(null);
   const [deleteId, setDeleteId] = useState<string | null>(null);
   const router = useRouter();
-  const beginRouteChange = useBeginRouteChange();
 
   useEffect(() => {
     checkAuth();
@@ -36,9 +34,12 @@ const AdminDashboard = () => {
   const checkAuth = async () => {
     const supabase = getSupabaseClient();
     if (!supabase) return;
-    const { data: { session } } = await supabase.auth.getSession();
-    if (!session) {
-      beginRouteChange();
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) {
+        router.push("/admin/login");
+      }
+    } catch {
       router.push("/admin/login");
     }
   };
@@ -50,16 +51,24 @@ const AdminDashboard = () => {
       setLoading(false);
       return;
     }
-    const { data, error } = await supabase
-      .from("leads")
-      .select("*")
-      .order("created_at", { ascending: false });
-    if (error) {
-      toast.error("Failed to fetch leads");
-    } else {
-      setLeads(data || []);
+    try {
+      const { data, error } = await supabase
+        .from("leads")
+        .select("*")
+        .order("created_at", { ascending: false });
+      if (error) {
+        toast.error("Failed to fetch leads");
+      } else {
+        setLeads(data || []);
+      }
+    } catch {
+      // Session/token refresh failed (e.g. expired or revoked refresh token) — send back to login
+      // instead of leaving the dashboard stuck on "Loading...".
+      toast.error("Your session has expired. Please log in again.");
+      router.push("/admin/login");
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   const handleDelete = async (id: string) => {
@@ -79,7 +88,6 @@ const AdminDashboard = () => {
     const supabase = getSupabaseClient();
     if (!supabase) return;
     await supabase.auth.signOut();
-    beginRouteChange();
     router.push("/admin/login");
   };
 
@@ -89,31 +97,34 @@ const AdminDashboard = () => {
     });
 
   return (
-    <div className="min-h-screen bg-luxury-black">
+    <div className="min-h-screen bg-[#f5f5f3] text-[#171717]">
       {/* Header */}
-      <div className="sticky top-0 z-40 glass-effect border-b border-border/20 px-4 py-3 flex items-center justify-between">
-        <h1 className="font-serif text-xl gold-text">Dashboard</h1>
-        <button onClick={handleLogout} className="flex items-center gap-1.5 text-muted-foreground text-xs font-sans hover:text-gold transition-colors">
+      <div className="sticky top-0 z-40 flex items-center justify-between border-b border-black/10 bg-white/90 px-4 py-4 backdrop-blur-md sm:px-6">
+        <div>
+          <p className="text-[10px] font-sans font-medium uppercase tracking-[0.24em] text-[#777]">Zikhra Interiors</p>
+          <h1 className="mt-1 font-sans text-xl font-medium tracking-[-0.04em] text-[#171717]">Lead Dashboard</h1>
+        </div>
+        <button onClick={handleLogout} className="flex items-center gap-1.5 rounded-lg border border-black/12 bg-white px-3 py-2 font-sans text-xs font-medium text-[#333] transition-colors hover:border-black/35 hover:bg-[#fafafa]">
           <LogOut className="w-4 h-4" /> Logout
         </button>
       </div>
 
       {/* Stats */}
-      <div className="px-4 py-4 flex gap-3">
-        <div className="flex-1 bg-card rounded-2xl border border-border/30 p-4 flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl gold-gradient flex items-center justify-center">
-            <Users className="w-5 h-5 text-primary-foreground" />
+      <div className="mx-auto flex max-w-6xl gap-3 px-4 py-6 sm:px-6">
+        <div className="flex flex-1 items-center gap-3 rounded-[1.25rem] border border-black/10 bg-white p-5 shadow-[0_10px_24px_rgba(0,0,0,0.055)]">
+          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#171717]">
+            <Users className="h-5 w-5 text-white" />
           </div>
           <div>
-            <p className="font-sans text-2xl font-bold text-foreground">{leads.length}</p>
+            <p className="font-sans text-2xl font-semibold tracking-[-0.04em] text-[#171717]">{leads.length}</p>
             <p className="font-sans text-xs text-muted-foreground">Total Leads</p>
           </div>
         </div>
       </div>
 
       {/* Leads List */}
-      <div className="px-4 pb-8">
-        <h2 className="font-sans text-sm font-medium text-muted-foreground mb-3">Recent Leads</h2>
+      <div className="mx-auto max-w-6xl px-4 pb-10 sm:px-6">
+        <h2 className="mb-4 font-sans text-sm font-medium text-[#505050]">Recent Leads</h2>
         {loading ? (
           <div className="text-center py-10 text-muted-foreground text-sm">Loading...</div>
         ) : leads.length === 0 ? (
@@ -121,7 +132,7 @@ const AdminDashboard = () => {
         ) : (
           <div className="space-y-3">
             {leads.map((lead) => (
-              <div key={lead.id} className="bg-card rounded-2xl border border-border/30 p-4">
+              <div key={lead.id} className="rounded-[1.25rem] border border-black/10 bg-white p-4 shadow-[0_8px_20px_rgba(0,0,0,0.045)] transition-shadow hover:shadow-[0_12px_26px_rgba(0,0,0,0.075)]">
                 <div className="flex items-start justify-between">
                   <div className="flex-1 min-w-0">
                     <p className="font-sans text-sm font-medium text-foreground truncate">{lead.name}</p>
@@ -134,9 +145,9 @@ const AdminDashboard = () => {
                   <div className="flex items-center gap-2 ml-3">
                     <button
                       onClick={() => setSelectedLead(lead)}
-                      className="w-8 h-8 rounded-xl bg-gold/10 flex items-center justify-center hover:bg-gold/20 transition-colors"
+                      className="flex h-8 w-8 items-center justify-center rounded-lg bg-black/[0.06] transition-colors hover:bg-black/[0.12]"
                     >
-                      <Eye className="w-4 h-4 text-gold" />
+                      <Eye className="h-4 w-4 text-[#171717]" />
                     </button>
                     <button
                       onClick={() => setDeleteId(lead.id)}
@@ -154,11 +165,11 @@ const AdminDashboard = () => {
 
       {/* Lead Detail Modal */}
       {selectedLead && (
-        <div className="fixed inset-0 z-50 bg-black/70 flex items-end sm:items-center justify-center p-4" onClick={() => setSelectedLead(null)}>
-          <div className="bg-card rounded-2xl border border-border/30 w-full max-w-sm p-5 animate-fade-in-up" onClick={(e) => e.stopPropagation()}>
+        <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/45 p-4 backdrop-blur-sm sm:items-center" onClick={() => setSelectedLead(null)}>
+          <div className="w-full max-w-sm animate-fade-in-up rounded-[1.25rem] border border-black/10 bg-white p-5 shadow-[0_20px_50px_rgba(0,0,0,0.2)]" onClick={(e) => e.stopPropagation()}>
             <div className="flex items-center justify-between mb-4">
-              <h3 className="font-serif text-lg gold-text">Lead Details</h3>
-              <button onClick={() => setSelectedLead(null)} className="w-8 h-8 rounded-xl bg-muted/20 flex items-center justify-center hover:bg-muted/40 transition-colors">
+              <h3 className="font-sans text-lg font-medium tracking-[-0.035em] text-[#171717]">Lead Details</h3>
+              <button onClick={() => setSelectedLead(null)} className="flex h-8 w-8 items-center justify-center rounded-lg bg-black/[0.06] transition-colors hover:bg-black/[0.12]">
                 <X className="w-4 h-4 text-muted-foreground" />
               </button>
             </div>
@@ -208,7 +219,7 @@ const AdminDashboard = () => {
               href={`https://wa.me/${selectedLead.phone.replace(/\D/g, '')}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-5 w-full flex items-center justify-center gap-2 gold-gradient py-3 rounded-full font-sans text-sm font-medium text-primary-foreground transition-all hover:scale-[1.02]"
+              className="mt-5 flex w-full items-center justify-center gap-2 rounded-lg bg-[#171717] py-3 font-sans text-sm font-medium text-white transition-all hover:-translate-y-0.5 hover:bg-black"
             >
               Reply on WhatsApp
             </a>
@@ -218,23 +229,23 @@ const AdminDashboard = () => {
 
       {/* Delete Confirmation Modal */}
       {deleteId && (
-        <div className="fixed inset-0 z-50 bg-black/70 flex items-end sm:items-center justify-center p-4" onClick={() => setDeleteId(null)}>
-          <div className="bg-card rounded-2xl border border-border/30 w-full max-w-xs p-5 text-center animate-fade-in-up" onClick={(e) => e.stopPropagation()}>
+        <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/45 p-4 backdrop-blur-sm sm:items-center" onClick={() => setDeleteId(null)}>
+          <div className="w-full max-w-xs animate-fade-in-up rounded-[1.25rem] border border-black/10 bg-white p-5 text-center shadow-[0_20px_50px_rgba(0,0,0,0.2)]" onClick={(e) => e.stopPropagation()}>
             <div className="w-12 h-12 rounded-full bg-destructive/10 flex items-center justify-center mx-auto mb-3">
               <Trash2 className="w-5 h-5 text-destructive" />
             </div>
-            <h3 className="font-serif text-lg text-foreground mb-1">Delete Lead?</h3>
+            <h3 className="mb-1 font-sans text-lg font-medium tracking-[-0.035em] text-[#171717]">Delete Lead?</h3>
             <p className="font-sans text-xs text-muted-foreground mb-5">This action cannot be undone.</p>
             <div className="flex gap-3">
               <button
                 onClick={() => setDeleteId(null)}
-                className="flex-1 py-2.5 rounded-full border border-border/50 font-sans text-sm text-muted-foreground hover:bg-muted/10 transition-colors"
+                className="flex-1 rounded-lg border border-black/15 py-2.5 font-sans text-sm text-muted-foreground transition-colors hover:bg-black/[0.04]"
               >
                 Cancel
               </button>
               <button
                 onClick={() => handleDelete(deleteId)}
-                className="flex-1 py-2.5 rounded-full bg-destructive font-sans text-sm text-destructive-foreground hover:bg-destructive/90 transition-colors"
+                className="flex-1 rounded-lg bg-destructive py-2.5 font-sans text-sm text-destructive-foreground transition-colors hover:bg-destructive/90"
               >
                 Delete
               </button>
