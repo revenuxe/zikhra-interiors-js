@@ -35,7 +35,7 @@ export default function Footer() {
         <div className="my-10 h-px bg-black/10" />
         <div className="flex flex-col gap-4 font-sans text-xs text-[#777] sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 Zikhra Interiors. All rights reserved.</p>
-          <div className="flex flex-wrap gap-x-6 gap-y-2"><Link href="/privacy" className="hover:text-black">Privacy Policy</Link><Link href="/terms" className="hover:text-black">Terms & Conditions</Link><Link href="/contact" className="hover:text-black">Contact</Link></div>
+          <div className="flex flex-wrap gap-x-6 gap-y-2"><Link href="/blog" className="hover:text-black">Blog</Link><Link href="/privacy" className="hover:text-black">Privacy Policy</Link><Link href="/terms" className="hover:text-black">Terms & Conditions</Link><Link href="/contact" className="hover:text-black">Contact</Link></div>
         </div>
       </div>
     </footer>
