@@ -31,7 +31,7 @@ const AdminLogin = () => {
   };
 
   return (
-    <div className="min-h-screen bg-luxury-black flex items-center justify-center px-4">
+    <div className="min-h-screen bg-[#f7f5f1] flex items-center justify-center px-4">
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
           <h1 className="font-serif text-3xl gold-text mb-2">Zikhra Admin</h1>
