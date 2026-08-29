@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import ContactForm from "@/components/ContactForm";
+import TrustedPartners from "@/components/TrustedPartners";
 import heroImage from "@/assets/hero-interior.webp";
 import { bangaloreAreas } from "@/lib/bangalore-areas-data";
 
@@ -19,6 +20,7 @@ export default function LocationsView() {
           <Link href="/contact" className="mt-10 inline-flex items-center rounded-lg bg-[#171717] px-5 py-3.5 font-sans text-sm font-medium text-white transition-all hover:-translate-y-0.5 hover:bg-black">Get Free Estimate</Link>
         </div>
       </section>
+      <TrustedPartners />
       <section className="section-padding">
         <div className="mx-auto max-w-6xl">
           <div className="max-w-2xl"><h2 className="font-sans text-3xl font-light tracking-[-0.045em] text-[#171717] md:text-4xl">Find your neighbourhood</h2><p className="mt-4 font-sans text-sm leading-relaxed text-[#5b5b5b]">Every Bangalore locality has a different mix of apartment formats, independent homes, site rules, and lifestyle needs. Choose your area to explore relevant planning considerations and service information.</p></div>

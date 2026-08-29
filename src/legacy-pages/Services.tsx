@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import ContactForm from "@/components/ContactForm";
+import TrustedPartners from "@/components/TrustedPartners";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import type { MarketId } from "@/lib/market-types";
@@ -230,6 +231,8 @@ const Services = ({ market = "bangalore" }: ServicesProps) => {
           </p>
         </div>
       </section>
+
+      <TrustedPartners />
 
       {/* Services */}
       <section className="px-5 pb-12 sm:pb-16">

@@ -13,6 +13,7 @@ import {
   servicesIndexPath,
 } from "@/lib/marketing-paths";
 import EditorialPageHero from "@/components/EditorialPageHero";
+import TrustedPartners from "@/components/TrustedPartners";
 import { serviceDetailContent } from "@/lib/service-detail-content";
 
 type Props = {
@@ -32,6 +33,8 @@ export default function ServiceDetailView({ service, market = "bangalore" }: Pro
       <Header />
 
       <EditorialPageHero title={serviceTitle} description={description} />
+
+      <TrustedPartners />
 
       {detail ? (
         <section className="section-padding">

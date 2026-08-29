@@ -6,6 +6,7 @@ import BottomNav from "@/components/BottomNav";
 import ContactForm from "@/components/ContactForm";
 import HomeStorySection from "@/components/HomeStorySection";
 import ConsultationPopup from "@/components/ConsultationPopup";
+import TrustedPartners from "@/components/TrustedPartners";
 import heroImage from "@/assets/hero-interior.webp";
 import SeoJsonLd from "@/components/SeoJsonLd";
 import type { AreaItem } from "@/lib/areas-data";
@@ -64,6 +65,8 @@ export default function AreaDetailView({ area }: Props) {
         </p>
         </div>
       </section>
+
+      <TrustedPartners />
 
       <section className="section-padding pt-0">
         <div className="max-w-2xl mx-auto px-1">
