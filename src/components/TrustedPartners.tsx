@@ -3,7 +3,6 @@ import blumLogo from "@/assets/partners/blum.webp";
 import elicaLogo from "@/assets/partners/elica.webp";
 import faberLogo from "@/assets/partners/faber.webp";
 import hettichLogo from "@/assets/partners/hettich.webp";
-import rehauLogo from "@/assets/partners/rehau.webp";
 
 const partners = [
   { name: "Hettich", logo: hettichLogo },
@@ -11,7 +10,6 @@ const partners = [
   { name: "Asian Paints", logo: asianPaintsLogo },
   { name: "Elica", logo: elicaLogo },
   { name: "Blum", logo: blumLogo },
-  { name: "Rehau", logo: rehauLogo },
 ];
 
 function PartnerLogos({ hidden = false }: { hidden?: boolean }) {
@@ -33,7 +31,7 @@ function PartnerLogos({ hidden = false }: { hidden?: boolean }) {
 export default function TrustedPartners() {
   return (
     <section className="overflow-hidden bg-[#f8f8f7] py-10 sm:py-12" aria-labelledby="trusted-partners-heading">
-      <div className="mx-auto flex max-w-[1800px] flex-col gap-8 px-6 sm:px-10 lg:flex-row lg:items-center lg:gap-20 lg:px-16">
+      <div className="mx-auto flex max-w-7xl flex-col gap-8 px-6 sm:px-10 lg:flex-row lg:items-center lg:gap-20 lg:px-16">
         <h2 id="trusted-partners-heading" className="shrink-0 font-sans text-3xl font-light leading-[0.97] tracking-[-0.07em] text-[#171717] md:text-4xl">
           Trusted partners
         </h2>
