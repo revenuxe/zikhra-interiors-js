@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Instagram, Linkedin, Mail, Phone } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, Phone } from "lucide-react";
 import logo from "@/assets/zikhra-design-logo.webp";
 
 const studioLinks = [{ label: "About Us", to: "/about" }, { label: "Projects", to: "/bangalore/projects" }, { label: "Portfolio", to: "/bangalore/portfolio/kitchen" }, { label: "Contact", to: "/contact" }];
@@ -17,6 +17,7 @@ export default function Footer() {
             <p className="mt-6 font-sans text-sm leading-7 text-[#5e5e5e]">Thoughtful interior design for Bangalore homes—planned around the way you live.</p>
             <div className="mt-6 flex items-center gap-3">
               <a href="https://www.instagram.com/zikhra.interiors/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-[#222] transition-transform hover:-translate-y-0.5"><Instagram className="h-5 w-5" strokeWidth={1.75} /></a>
+              <a href="https://www.facebook.com/people/Zikhra/61594086923958/" target="_blank" rel="noopener noreferrer" aria-label="Zikhra on Facebook" className="text-[#222] transition-transform hover:-translate-y-0.5"><Facebook className="h-5 w-5" strokeWidth={1.75} /></a>
               <a href="https://www.linkedin.com/company/zikhra/" target="_blank" rel="noopener noreferrer" aria-label="Zikhra on LinkedIn" className="text-[#222] transition-transform hover:-translate-y-0.5"><Linkedin className="h-5 w-5" strokeWidth={1.75} /></a>
               <a href="mailto:zikhraofficial@gmail.com" aria-label="Email Zikhra" className="text-[#222] transition-transform hover:-translate-y-0.5"><Mail className="h-5 w-5" strokeWidth={1.75} /></a>
             </div>
