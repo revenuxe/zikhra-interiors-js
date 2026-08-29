@@ -176,3 +176,24 @@
 .animate-scroll-bounce {
   animation: scroll-bounce 2s ease-in-out infinite;
 }
+
+@keyframes partner-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.partner-marquee__track {
+  display: flex;
+  width: max-content;
+  animation: partner-marquee 52s linear infinite;
+}
+
+.partner-marquee:hover .partner-marquee__track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .partner-marquee__track {
+    animation-play-state: paused;
+  }
+}

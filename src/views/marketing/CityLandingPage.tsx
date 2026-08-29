@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import TrustedPartners from "@/components/TrustedPartners";
 import HomeStorySection from "@/components/HomeStorySection";
 import PortfolioPreview from "@/components/PortfolioPreview";
 import FeaturedProjects from "@/components/FeaturedProjects";
@@ -41,6 +42,7 @@ export default function CityLandingPage({ market }: Props) {
     <div className="min-h-screen bg-background">
       <Header />
       <HeroSection market={market} />
+      <TrustedPartners />
       <HomepageMarketingSections market={market} />
       <ContactForm />
       <HomeStorySection market={market} />
