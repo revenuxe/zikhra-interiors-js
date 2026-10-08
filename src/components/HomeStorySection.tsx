@@ -18,60 +18,16 @@ const HomeStorySection = ({ market = "bangalore", areaName }: Props) => {
         <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-4 text-center">Our Approach</p>
         <h2 className="font-serif text-2xl md:text-3xl gold-text text-center mb-8">
           {areaName
-            ? `Designing timeless interiors in ${areaName}, Bangalore`
-            : "Designing timeless interiors for Bangalore homes"}
+            ? `Planning meaningful journeys in ${areaName}, Bangalore`
+            : "Planning meaningful journeys from Bangalore"}
         </h2>
 
         <div className="space-y-5 font-sans text-sm md:text-base text-muted-foreground leading-relaxed">
-          <p>
-            At Zikhra, we believe <strong className="text-foreground font-medium">designing timeless interiors</strong> means
-            creating calm, sophisticated rooms that feel effortlessly <strong className="text-foreground font-medium">elegant</strong>{" "}
-            today and stay relevant for years. As we expand our presence in{" "}
-            <strong className="text-foreground font-medium">Bangalore</strong>, we bring studio discipline, premium materials,
-            transparent milestones, and designer-led execution to apartments, villas, and penthouses across the city.
-          </p>
-          <p>
-            Whether you are in <strong className="text-foreground font-medium">Koramangala</strong>,{" "}
-            <strong className="text-foreground font-medium">Indiranagar</strong>,{" "}
-            <strong className="text-foreground font-medium">Whitefield</strong>,{" "}
-            <strong className="text-foreground font-medium">HSR Layout</strong>, or along{" "}
-            <strong className="text-foreground font-medium">Sarjapur Road</strong>, we plan interiors around how you live:
-            daylight, ventilation, storage, and the rhythm of everyday routines, not generic catalogue layouts.
-          </p>
-          <p>
-            <strong className="text-foreground font-medium">Premium interior design</strong> in Bangalore should feel grounded
-            in climate and context. We layer textures, warm metallics, and sculptural lighting so your home feels inviting.
-            Kitchens get durable worktops, intelligent storage, and <strong className="text-foreground font-medium">modular</strong>{" "}
-            systems suited to Indian cooking and maintenance. Bedrooms and wardrobes focus on quiet details, soft-close hardware,
-            integrated lighting, and walk-in experiences that feel boutique.
-          </p>
-          <p>
-            Many clients choose <strong className="text-foreground font-medium">turnkey interiors</strong>: one team for drawings,
-            procurement, site coordination, and quality checks. That continuity protects your budget, reduces vendor confusion,
-            and keeps the vision intact. We are equally comfortable partnering with your architect or builder when you already
-            have a trusted construction team.
-          </p>
-          <p>
-            Comparing <strong className="text-foreground font-medium">interior designers in Bangalore</strong> for a{" "}
-            <strong className="text-foreground font-medium">premium home</strong>? Browse our{" "}
-            <Link href={projectsIndexPath("bangalore")} className="text-gold hover:underline">
-              project stories
-            </Link>
-            , explore{" "}
-            <Link href={servicesIndexPath("bangalore")} className="text-gold hover:underline">
-              services from full home interiors to renovation
-            </Link>
-            , visit our{" "}
-            <Link href="/bangalore" className="text-gold hover:underline">
-              Bangalore hub
-            </Link>{" "}
-            for neighbourhood pages, and{" "}
-            <Link href="/contact" className="text-gold hover:underline">
-              book a consultation
-            </Link>{" "}
-            when you are ready to translate <strong className="text-foreground font-medium">timeless design</strong> into a home
-            you will love living in.
-          </p>
+          <p>At Zikhra, <strong className="text-foreground font-medium">meaningful journeys begin with thoughtful planning</strong>. We help you discuss Umrah, Hajj enquiries, and Muslim-friendly travel from <strong className="text-foreground font-medium">Bangalore</strong>, with attention to the practical details that let you focus on your journey.</p>
+          <p>Whether you are in <strong className="text-foreground font-medium">Koramangala</strong>, <strong className="text-foreground font-medium">Indiranagar</strong>, <strong className="text-foreground font-medium">Whitefield</strong>, <strong className="text-foreground font-medium">HSR Layout</strong>, or along <strong className="text-foreground font-medium">Sarjapur Road</strong>, start by sharing your preferred dates, departure city, group size, and budget.</p>
+          <p>Your time in <strong className="text-foreground font-medium">Makkah and Madinah</strong> deserves a considered plan. Discuss accommodation locations, walking distances, room sharing, meals, and transport before choosing a package. Families can raise questions about children, older relatives, and mobility needs early.</p>
+          <p>For <strong className="text-foreground font-medium">Hajj enquiries</strong>, ask about the current season and authorised booking route. Places and arrangements depend on official eligibility, quota, permits, and approvals. A travel enquiry does not confirm a Hajj booking or visa.</p>
+          <p>Explore our <Link href={projectsIndexPath("bangalore")} className="text-gold hover:underline">illustrative itineraries</Link>, review <Link href={servicesIndexPath("bangalore")} className="text-gold hover:underline">Umrah and travel services</Link>, visit our <Link href="/bangalore" className="text-gold hover:underline">Bangalore travel hub</Link>, or <Link href="/contact" className="text-gold hover:underline">send your enquiry</Link> for a personalised written quotation.</p>
         </div>
       </div>
     </section>

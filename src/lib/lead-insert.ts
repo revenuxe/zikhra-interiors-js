@@ -1,5 +1,7 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import type { Database } from "@/integrations/supabase/types";
+import type { TravelLeadFormData } from "@/components/TravelLeadFields";
+import { validDeparture } from "@/lib/travel-enquiry";
 
 export type LeadFormInput = {
   name: string;
@@ -9,6 +11,7 @@ export type LeadFormInput = {
   projectType?: string;
   message?: string;
   source: string;
+  travel?: TravelLeadFormData;
 };
 
 function trimOrNull(s: string | undefined): string | null {
@@ -27,6 +30,14 @@ export async function insertLead(client: SupabaseClient<Database>, input: LeadFo
     project_type: trimOrNull(input.projectType),
     message: trimOrNull(input.message),
     source: input.source.trim(),
+    package_id: input.travel?.packageId || null,
+    package_name: trimOrNull(input.travel?.packageName),
+    flight_option_id: trimOrNull(input.travel?.flightId),
+    airline: trimOrNull(input.travel?.airline),
+    sharing: trimOrNull(input.travel?.sharing),
+    price_per_adult: input.travel?.pricePerAdult || null,
+    preferred_departure: input.travel?.travelDate && validDeparture(input.travel.travelDate) ? input.travel.travelDate : null,
+    travellers: input.travel?.travellers && Number.isInteger(Number(input.travel.travellers)) && Number(input.travel.travellers) >= 1 && Number(input.travel.travellers) <= 200 ? Number(input.travel.travellers) : null,
   };
   return client.from("leads").insert(row);
 }

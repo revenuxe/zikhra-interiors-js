@@ -1,13 +1,3 @@
-import kitchenImg from "@/assets/kitchen.webp";
-import kitchenImg2 from "@/assets/kitchen-2.webp";
-import bedroomImg from "@/assets/bedroom.webp";
-import bedroomImg2 from "@/assets/bedroom-2.webp";
-import livingroomImg from "@/assets/livingroom.webp";
-import livingroomImg2 from "@/assets/livingroom-2.webp";
-import wardrobeImg from "@/assets/wardrobe.webp";
-import wardrobeImg2 from "@/assets/wardrobe-2.webp";
-import bathroomImg from "@/assets/portfolio-bathroom.webp";
-import studyImg from "@/assets/portfolio-study.webp";
 
 export type PortfolioItem = {
   slug: string;
@@ -22,143 +12,227 @@ export type PortfolioItem = {
 
 export const portfolioItems: PortfolioItem[] = [
   {
-    slug: "kitchen",
-    title: "Kitchen Design",
-    tagline: "Premium Modular Kitchens in Bangalore",
-    description:
-      "Our modular kitchens blend European functionality with Indian cooking needs. Every surface, handle, and fixture is placed with intent — creating premium kitchen experiences across Koramangala, Whitefield, and Electronic City.",
-    heroImage: kitchenImg.src,
-    galleryImages: [kitchenImg.src, kitchenImg2.src],
-    features: [
-      "Premium Italian marble countertops",
-      "Soft-close German hardware",
-      "Integrated LED ambient lighting",
-      "Custom brass & gold fixtures",
-      "Space-optimized modular layouts",
-      "Waterproof & termite-proof materials",
+    "slug": "makkah",
+    "title": "Makkah",
+    "tagline": "Plan your stay near Masjid al-Haram",
+    "description": "Plan your Umrah around your dates, budget, and pace. Compare accommodation, transport, and practical support before choosing the itinerary that suits you.",
+    "heroImage": "/travel/makkah.jpg",
+    "galleryImages": [
+      "/travel/makkah.jpg",
+      "/travel/madinah.jpg"
     ],
-    process: [
-      { step: "Consultation", desc: "Understanding your cooking habits, family size, and style preferences" },
-      { step: "3D Design", desc: "Photorealistic 3D renders so you see it before it's built" },
-      { step: "Material Selection", desc: "Handpicked premium materials from our curated catalog" },
-      { step: "Installation", desc: "Expert craftsmen deliver flawless execution" },
+    "features": [
+      "Makkah and Madinah itinerary planning",
+      "Hotel and room-sharing options",
+      "Flight options from your departure city",
+      "Airport and intercity transfer options",
+      "Pre-departure document checklist",
+      "Written inclusions and exclusions"
     ],
+    "process": [
+      {
+        "step": "Discuss",
+        "desc": "Share your dates, departure city, group size, and preferences."
+      },
+      {
+        "step": "Compare",
+        "desc": "Review itinerary options, accommodation, transport, and costs."
+      },
+      {
+        "step": "Confirm",
+        "desc": "Check the written inclusions, exclusions, and booking terms."
+      },
+      {
+        "step": "Prepare",
+        "desc": "Review your documents, confirmed travel details, and packing checklist."
+      }
+    ]
   },
   {
-    slug: "bedroom",
-    title: "Bedroom Design",
-    tagline: "Premium Bedroom Interiors in Bangalore",
-    description:
-      "We design bedrooms that are personal retreats. Plush textures, moody lighting, and bespoke furniture come together to create your perfect sanctuary in Bangalore.",
-    heroImage: bedroomImg.src,
-    galleryImages: [bedroomImg.src, bedroomImg2.src],
-    features: [
-      "Custom upholstered headboards",
-      "Cove & ambient ceiling lighting",
-      "Built-in vanity & dressing areas",
-      "Premium veneer wall paneling",
-      "Motorized curtain systems",
-      "Acoustic-optimized layouts",
+    "slug": "madinah",
+    "title": "Madinah",
+    "tagline": "Time for reflection in Madinah",
+    "description": "Compare hotel options by location, room type, budget, and accessibility. Exact hotel names, availability, and distance information must be confirmed before you book.",
+    "heroImage": "/travel/madinah.jpg",
+    "galleryImages": [
+      "/travel/makkah.jpg",
+      "/travel/madinah.jpg"
     ],
-    process: [
-      { step: "Vision", desc: "We listen to your dreams — colors, moods, and lifestyle" },
-      { step: "Concept", desc: "Mood boards and material palettes for your approval" },
-      { step: "Crafting", desc: "Each element custom-built by master artisans" },
-      { step: "Reveal", desc: "A space that exceeds every expectation" },
+    "features": [
+      "Named hotel options",
+      "Room occupancy details",
+      "Location and access discussion",
+      "Meal-plan options",
+      "Check-in and check-out information",
+      "Availability confirmed in writing"
     ],
+    "process": [
+      {
+        "step": "Discuss",
+        "desc": "Share your dates, departure city, group size, and preferences."
+      },
+      {
+        "step": "Compare",
+        "desc": "Review itinerary options, accommodation, transport, and costs."
+      },
+      {
+        "step": "Confirm",
+        "desc": "Check the written inclusions, exclusions, and booking terms."
+      },
+      {
+        "step": "Prepare",
+        "desc": "Review your documents, confirmed travel details, and packing checklist."
+      }
+    ]
   },
   {
-    slug: "living-room",
-    title: "Living Room Design",
-    tagline: "Elegant Living Rooms Across Bangalore",
-    description:
-      "Grand yet inviting, our living rooms are designed to impress and comfort. Statement furniture and curated art walls reflect refined taste for Bangalore homes.",
-    heroImage: livingroomImg.src,
-    galleryImages: [livingroomImg.src, livingroomImg2.src],
-    features: [
-      "Statement designer furniture",
-      "Curated art & accent walls",
-      "Smart home integration ready",
-      "Premium marble & stone finishes",
-      "Layered lighting design",
-      "Custom entertainment units",
+    "slug": "umrah-journeys",
+    "title": "Umrah Journeys",
+    "tagline": "A clear plan from departure to return",
+    "description": "Discuss a private itinerary for your household or small group, with flexible travel dates and preferred accommodation. Each requested service is checked for availability before confirmation.",
+    "heroImage": "/travel/makkah.jpg",
+    "galleryImages": [
+      "/travel/makkah.jpg",
+      "/travel/madinah.jpg"
     ],
-    process: [
-      { step: "Discovery", desc: "Understanding how you live and entertain" },
-      { step: "Design", desc: "Space planning, furniture selection, and lighting design" },
-      { step: "Source", desc: "Procuring the finest pieces from trusted partners" },
-      { step: "Transform", desc: "Bringing it all together with precision and care" },
+    "features": [
+      "Flexible date enquiries",
+      "Private transfer options",
+      "Hotel preference discussion",
+      "Room configuration planning",
+      "Tailored itinerary requests",
+      "Clear service-by-service quotation"
     ],
+    "process": [
+      {
+        "step": "Discuss",
+        "desc": "Share your dates, departure city, group size, and preferences."
+      },
+      {
+        "step": "Compare",
+        "desc": "Review itinerary options, accommodation, transport, and costs."
+      },
+      {
+        "step": "Confirm",
+        "desc": "Check the written inclusions, exclusions, and booking terms."
+      },
+      {
+        "step": "Prepare",
+        "desc": "Review your documents, confirmed travel details, and packing checklist."
+      }
+    ]
   },
   {
-    slug: "wardrobe",
-    title: "Wardrobe Design",
-    tagline: "Custom Wardrobes & Walk-in Closets in Bangalore",
-    description:
-      "Walk-in closets and built-in wardrobes that turn your everyday routine into a boutique experience. Designed for premium Bangalore homes.",
-    heroImage: wardrobeImg.src,
-    galleryImages: [wardrobeImg.src, wardrobeImg2.src],
-    features: [
-      "Glass-front display sections",
-      "Built-in LED strip lighting",
-      "Soft-close drawer systems",
-      "Custom shoe & accessory racks",
-      "Pull-out trouser hangers",
-      "Anti-dust sealed compartments",
+    "slug": "family-travel",
+    "title": "Family Travel",
+    "tagline": "Thoughtful arrangements for every generation",
+    "description": "Plan a family Umrah with room arrangements, manageable transfers, and a pace suited to children and older relatives. Tell us about your group so the practical details can be discussed early.",
+    "heroImage": "/travel/madinah.jpg",
+    "galleryImages": [
+      "/travel/makkah.jpg",
+      "/travel/madinah.jpg"
     ],
-    process: [
-      { step: "Audit", desc: "We assess your wardrobe needs and collection size" },
-      { step: "Layout", desc: "Maximizing every inch with smart modular design" },
-      { step: "Material", desc: "High-grade laminates, veneers, and hardware" },
-      { step: "Install", desc: "Precision-fitted with factory-perfect finishing" },
+    "features": [
+      "Family room enquiries",
+      "Child and infant travel requirements",
+      "Room-sharing preferences",
+      "Transfer planning for the group",
+      "Walking-distance discussion",
+      "Mobility needs reviewed before booking"
     ],
+    "process": [
+      {
+        "step": "Discuss",
+        "desc": "Share your dates, departure city, group size, and preferences."
+      },
+      {
+        "step": "Compare",
+        "desc": "Review itinerary options, accommodation, transport, and costs."
+      },
+      {
+        "step": "Confirm",
+        "desc": "Check the written inclusions, exclusions, and booking terms."
+      },
+      {
+        "step": "Prepare",
+        "desc": "Review your documents, confirmed travel details, and packing checklist."
+      }
+    ]
   },
   {
-    slug: "bathroom",
-    title: "Bathroom Design",
-    tagline: "Premium Bathroom Interiors in Bangalore",
-    description:
-      "Transform your bathroom into a spa-like retreat with premium marble, rain showers, gold fixtures, and ambient lighting. Designed for premium homes across Bangalore.",
-    heroImage: bathroomImg.src,
-    galleryImages: [bathroomImg.src],
-    features: [
-      "Premium marble walls & flooring",
-      "Rain shower with premium fixtures",
-      "LED-lit vanity mirrors",
-      "Custom vanity & storage solutions",
-      "Heated towel rails",
-      "Complete waterproofing solutions",
+    "slug": "ziyarat-visits",
+    "title": "Ziyarat Visits",
+    "tagline": "Enquire about local heritage visits",
+    "description": "Ask about local ziyarat options in Makkah and Madinah. Visits, transport, guide availability, and access are subject to local conditions and the confirmed itinerary.",
+    "heroImage": "/travel/makkah.jpg",
+    "galleryImages": [
+      "/travel/makkah.jpg",
+      "/travel/madinah.jpg"
     ],
-    process: [
-      { step: "Assessment", desc: "Evaluating plumbing, space, and your finish preferences" },
-      { step: "Design", desc: "3D renders with material and fixture selection" },
-      { step: "Sourcing", desc: "Premium fixtures from top brands" },
-      { step: "Installation", desc: "Expert waterproofing and flawless finishing" },
+    "features": [
+      "Makkah ziyarat options",
+      "Madinah ziyarat options",
+      "Local transport enquiries",
+      "Guide and language enquiries",
+      "Visit timings discussed in advance",
+      "Access subject to local permissions"
     ],
+    "process": [
+      {
+        "step": "Discuss",
+        "desc": "Share your dates, departure city, group size, and preferences."
+      },
+      {
+        "step": "Compare",
+        "desc": "Review itinerary options, accommodation, transport, and costs."
+      },
+      {
+        "step": "Confirm",
+        "desc": "Check the written inclusions, exclusions, and booking terms."
+      },
+      {
+        "step": "Prepare",
+        "desc": "Review your documents, confirmed travel details, and packing checklist."
+      }
+    ]
   },
   {
-    slug: "study-room",
-    title: "Study Room Design",
-    tagline: "Premium Home Office & Study Rooms in Bangalore",
-    description:
-      "Create the perfect workspace at home. Our study room designs combine functionality with refinement — custom desks, built-in bookshelves, and ambient lighting for focused productivity.",
-    heroImage: studyImg.src,
-    galleryImages: [studyImg.src],
-    features: [
-      "Custom solid wood study desk",
-      "Floor-to-ceiling bookshelves",
-      "Ergonomic seating selection",
-      "Task & ambient lighting design",
-      "Cable management solutions",
-      "Acoustic paneling for focus",
+    "slug": "travel-preparation",
+    "title": "Travel Preparation",
+    "tagline": "Prepare with confidence",
+    "description": "Discuss the documents and application steps relevant to your proposed journey. Assistance does not guarantee approval; visa decisions are made by the relevant authorities.",
+    "heroImage": "/travel/madinah.jpg",
+    "galleryImages": [
+      "/travel/makkah.jpg",
+      "/travel/madinah.jpg"
     ],
-    process: [
-      { step: "Understand", desc: "Your work style, storage needs, and aesthetic preferences" },
-      { step: "Design", desc: "Ergonomic layout with 3D visualization" },
-      { step: "Craft", desc: "Custom furniture built by master craftsmen" },
-      { step: "Setup", desc: "Complete installation with tech integration" },
+    "features": [
+      "Application checklist discussion",
+      "Passport detail review",
+      "Document preparation support",
+      "Application route information",
+      "Status follow-up where available",
+      "Authority approval required"
     ],
-  },
+    "process": [
+      {
+        "step": "Discuss",
+        "desc": "Share your dates, departure city, group size, and preferences."
+      },
+      {
+        "step": "Compare",
+        "desc": "Review itinerary options, accommodation, transport, and costs."
+      },
+      {
+        "step": "Confirm",
+        "desc": "Check the written inclusions, exclusions, and booking terms."
+      },
+      {
+        "step": "Prepare",
+        "desc": "Review your documents, confirmed travel details, and packing checklist."
+      }
+    ]
+  }
 ];
 
 export function getPortfolioBySlug(slug: string) {

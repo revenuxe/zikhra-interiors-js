@@ -20,10 +20,13 @@ const AdminLogin = () => {
       setLoading(false);
       return;
     }
-    const { error } = await supabase.auth.signInWithPassword({ email, password });
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
     setLoading(false);
     if (error) {
       toast.error("Invalid credentials");
+    } else if (data.user?.app_metadata.role !== "admin") {
+      await supabase.auth.signOut();
+      toast.error("This account does not have admin access.");
     } else {
       toast.success("Welcome back!");
       router.push("/admin/dashboard");

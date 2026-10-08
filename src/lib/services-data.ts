@@ -1,14 +1,3 @@
-import serviceHome from "@/assets/service-home.webp";
-import serviceKitchen from "@/assets/service-kitchen.webp";
-import serviceWardrobe from "@/assets/service-wardrobe.webp";
-import serviceRenovation from "@/assets/service-renovation.webp";
-import serviceTvunit from "@/assets/service-tvunit.webp";
-import servicePooja from "@/assets/service-pooja.webp";
-import serviceCeiling from "@/assets/service-ceiling.webp";
-import serviceBathroom from "@/assets/service-bathroom.webp";
-import serviceLivingroom from "@/assets/service-livingroom.webp";
-import serviceBedroom from "@/assets/service-bedroom.webp";
-import serviceCommercial from "@/assets/service-commercial.webp";
 
 export type ServiceItem = {
   id: string;
@@ -22,192 +11,181 @@ export type ServiceItem = {
 
 export const services: ServiceItem[] = [
   {
-    id: "full-home",
-    image: serviceHome.src,
-    title: "Full Home Interiors",
-    subtitle: "Complete Premium Home Design in Bangalore",
-    description:
-      "From conceptualization to execution, we design every corner of your home with precision and elegance. Our full home interior service covers living rooms, bedrooms, kitchens, bathrooms, and all transitional spaces — creating a cohesive premium experience throughout your Bangalore home.",
-    features: [
-      "Complete space planning & 3D visualization",
-      "Custom furniture design & procurement",
-      "Premium flooring — marble, hardwood, vitrified",
-      "False ceiling with ambient cove lighting",
-      "Wall paneling, textures & accent walls",
-      "Smart home integration ready",
+    "id": "umrah-packages",
+    "image": "/travel/makkah.jpg",
+    "title": "Umrah Packages",
+    "subtitle": "A considered journey to Makkah and Madinah",
+    "description": "Plan your Umrah around your dates, budget, and pace. Compare accommodation, transport, and practical support before choosing the itinerary that suits you.",
+    "features": [
+      "Makkah and Madinah itinerary planning",
+      "Hotel and room-sharing options",
+      "Flight options from your departure city",
+      "Airport and intercity transfer options",
+      "Pre-departure document checklist",
+      "Written inclusions and exclusions"
     ],
-    price: "2 BHK starts from Rs. 3.5 Lakhs",
+    "price": "Request a current quote"
   },
   {
-    id: "modular-kitchen",
-    image: serviceKitchen.src,
-    title: "Modular Kitchen",
-    subtitle: "Premium Kitchen Design Across Bangalore",
-    description:
-      "Our modular kitchens combine European aesthetics with Indian functionality. Every surface, handle, and fixture is selected with intent — creating spaces where cooking feels polished, efficient, and personal.",
-    features: [
-      "Premium Italian marble & quartz countertops",
-      "Soft-close German Hettich/Blum hardware",
-      "Integrated LED ambient & task lighting",
-      "Custom brass & gold accent fixtures",
-      "Space-optimized modular island layouts",
-      "Waterproof & termite-proof BWR plywood",
+    "id": "hajj-enquiries",
+    "image": "/travel/madinah.jpg",
+    "title": "Hajj Enquiries",
+    "subtitle": "Prepare for the journey of a lifetime",
+    "description": "Start with a careful discussion of the current Hajj season, eligibility, and authorised arrangements. Places, permits, and services must be confirmed through the applicable official booking route.",
+    "features": [
+      "Current-season enquiry support",
+      "Authorised booking route information",
+      "Eligibility and document discussion",
+      "Accommodation and transport questions",
+      "Preparation and packing guidance",
+      "Availability subject to official approvals"
     ],
-    price: "Starts from Rs. 1.5 Lakhs",
+    "price": "Request a current quote"
   },
   {
-    id: "wardrobes",
-    image: serviceWardrobe.src,
-    title: "Wardrobes & Walk-in Closets",
-    subtitle: "Custom Storage Solutions in Bangalore",
-    description:
-      "Walk-in closets and built-in wardrobes that turn your everyday routine into a boutique experience. Every shelf, drawer, and hanger is designed with purpose.",
-    features: [
-      "Glass-front display sections with LED strips",
-      "Soft-close drawer & sliding systems",
-      "Custom shoe racks & accessory organizers",
-      "Pull-out trouser & saree hangers",
-      "Anti-dust sealed compartments",
-      "Premium lacquer & veneer finishes",
+    "id": "family-umrah",
+    "image": "/travel/makkah.jpg",
+    "title": "Family Umrah",
+    "subtitle": "Travel together with thoughtful planning",
+    "description": "Plan a family Umrah with room arrangements, manageable transfers, and a pace suited to children and older relatives. Tell us about your group so the practical details can be discussed early.",
+    "features": [
+      "Family room enquiries",
+      "Child and infant travel requirements",
+      "Room-sharing preferences",
+      "Transfer planning for the group",
+      "Walking-distance discussion",
+      "Mobility needs reviewed before booking"
     ],
-    price: "Starts from Rs. 90,000",
+    "price": "Request a current quote"
   },
   {
-    id: "living-room",
-    image: serviceLivingroom.src,
-    title: "Living Room Design",
-    subtitle: "Elegant Living Spaces in Bangalore",
-    description:
-      "Create a stunning first impression with our bespoke living room designs. From statement walls to premium seating arrangements, we craft spaces that reflect your personality and lifestyle.",
-    features: [
-      "Custom sofa & seating design",
-      "Statement accent walls & textures",
-      "Premium coffee tables & consoles",
-      "Ambient & decorative lighting design",
-      "Curtain & blind coordination",
-      "Art curation & styling",
+    "id": "group-umrah",
+    "image": "/travel/madinah.jpg",
+    "title": "Group Umrah",
+    "subtitle": "Shared journeys with a clear itinerary",
+    "description": "Explore group travel options with a defined departure plan and shared arrangements. Group size, language support, and any tour leader services are confirmed in your quotation.",
+    "features": [
+      "Group departure enquiries",
+      "Shared accommodation options",
+      "Coordinated transfer options",
+      "Group itinerary briefing",
+      "Meal-plan discussion",
+      "Tour leader availability on request"
     ],
-    price: "Starts from Rs. 1.2 Lakhs",
+    "price": "Request a current quote"
   },
   {
-    id: "bedroom",
-    image: serviceBedroom.src,
-    title: "Bedroom Interiors",
-    subtitle: "Premium Bedroom Design in Bangalore",
-    description:
-      "Your bedroom should be a sanctuary. We design bedrooms that promote relaxation and reflect your personal style — from custom headboards to ambient lighting that sets the perfect mood.",
-    features: [
-      "Custom upholstered headboard designs",
-      "Walk-in wardrobe integration",
-      "Ambient cove & bedside lighting",
-      "Premium bedside tables & dressers",
-      "Blackout curtain solutions",
-      "En-suite bathroom coordination",
+    "id": "private-umrah",
+    "image": "/travel/makkah.jpg",
+    "title": "Private Umrah",
+    "subtitle": "A journey planned around your pace",
+    "description": "Discuss a private itinerary for your household or small group, with flexible travel dates and preferred accommodation. Each requested service is checked for availability before confirmation.",
+    "features": [
+      "Flexible date enquiries",
+      "Private transfer options",
+      "Hotel preference discussion",
+      "Room configuration planning",
+      "Tailored itinerary requests",
+      "Clear service-by-service quotation"
     ],
-    price: "Starts from Rs. 1.5 Lakhs",
+    "price": "Request a current quote"
   },
   {
-    id: "bathroom",
-    image: serviceBathroom.src,
-    title: "Bathroom Interiors",
-    subtitle: "Premium Bathroom Design in Bangalore",
-    description:
-      "Transform your bathroom into a spa-like retreat. From premium fixtures to marble finishes, we create bathrooms that are both functional and refined.",
-    features: [
-      "Premium marble & tile selection",
-      "Rain shower & premium fixtures",
-      "LED mirror & vanity lighting",
-      "Custom vanity & storage solutions",
-      "Heated towel rails & accessories",
-      "Waterproofing & drainage solutions",
+    "id": "makkah-madinah-stays",
+    "image": "/travel/madinah.jpg",
+    "title": "Makkah & Madinah Stays",
+    "subtitle": "Accommodation choices for your journey",
+    "description": "Compare hotel options by location, room type, budget, and accessibility. Exact hotel names, availability, and distance information must be confirmed before you book.",
+    "features": [
+      "Named hotel options",
+      "Room occupancy details",
+      "Location and access discussion",
+      "Meal-plan options",
+      "Check-in and check-out information",
+      "Availability confirmed in writing"
     ],
-    price: "Starts from Rs. 1.25 Lakhs",
+    "price": "Request a current quote"
   },
   {
-    id: "false-ceiling",
-    image: serviceCeiling.src,
-    title: "False Ceiling & Lighting",
-    subtitle: "Designer Ceilings Across Bangalore",
-    description:
-      "Elevate your interiors with stunning false ceiling designs that add depth, dimension, and drama. Combined with expert lighting design, we create atmospheres that transform spaces.",
-    features: [
-      "Multi-layered gypsum ceiling designs",
-      "Cove lighting with LED strips",
-      "Chandelier & pendant integration",
-      "Recessed downlight planning",
-      "POP & wooden ceiling options",
-      "Smart lighting automation",
+    "id": "flights-transfers",
+    "image": "/travel/makkah.jpg",
+    "title": "Flights & Transfers",
+    "subtitle": "Connect every stage of your itinerary",
+    "description": "Coordinate flight options and ground travel for a more organised journey. Review baggage allowances, transit arrangements, and transfer details with the confirmed providers.",
+    "features": [
+      "Departure city options",
+      "Airline and baggage details",
+      "Airport transfer enquiries",
+      "Makkah–Madinah travel options",
+      "Private or shared transport choices",
+      "Timings confirmed before departure"
     ],
-    price: "Starts from Rs. 75,000",
+    "price": "Request a current quote"
   },
   {
-    id: "tv-unit",
-    image: serviceTvunit.src,
-    title: "TV Unit & Entertainment",
-    subtitle: "Custom Entertainment Units in Bangalore",
-    description:
-      "Statement TV units that serve as the focal point of your living room. From floating designs to full wall units with integrated storage and lighting.",
-    features: [
-      "Wall-mounted & floating designs",
-      "Integrated LED backlighting",
-      "Hidden cable management",
-      "Display shelves & storage",
-      "Premium wood & lacquer finishes",
-      "Sound system integration",
+    "id": "visa-assistance",
+    "image": "/travel/madinah.jpg",
+    "title": "Visa Assistance",
+    "subtitle": "Practical help with the application process",
+    "description": "Discuss the documents and application steps relevant to your proposed journey. Assistance does not guarantee approval; visa decisions are made by the relevant authorities.",
+    "features": [
+      "Application checklist discussion",
+      "Passport detail review",
+      "Document preparation support",
+      "Application route information",
+      "Status follow-up where available",
+      "Authority approval required"
     ],
-    price: "Starts from Rs. 80,000",
+    "price": "Request a current quote"
   },
   {
-    id: "pooja-room",
-    image: servicePooja.src,
-    title: "Pooja Room Design",
-    subtitle: "Sacred Space Design in Bangalore",
-    description:
-      "Create a serene and beautiful pooja room that blends tradition with modern aesthetics. From marble temples to intricately carved wooden mandirs, we design spaces that inspire devotion.",
-    features: [
-      "Custom marble & wooden temple designs",
-      "Brass & gold-finish embellishments",
-      "LED backlit deity panels",
-      "Storage for pooja essentials",
-      "Bell & diya holder integration",
-      "Vastu-compliant layouts",
+    "id": "ziyarat",
+    "image": "/travel/makkah.jpg",
+    "title": "Ziyarat Enquiries",
+    "subtitle": "Discover places of Islamic heritage",
+    "description": "Ask about local ziyarat options in Makkah and Madinah. Visits, transport, guide availability, and access are subject to local conditions and the confirmed itinerary.",
+    "features": [
+      "Makkah ziyarat options",
+      "Madinah ziyarat options",
+      "Local transport enquiries",
+      "Guide and language enquiries",
+      "Visit timings discussed in advance",
+      "Access subject to local permissions"
     ],
-    price: "Starts from Rs. 75,000",
+    "price": "Request a current quote"
   },
   {
-    id: "renovation",
-    image: serviceRenovation.src,
-    title: "Home Renovation",
-    subtitle: "Transform Your Existing Bangalore Home",
-    description:
-      "Breathe new life into your existing space. Our renovation service covers everything from structural changes to cosmetic upgrades — transforming outdated interiors into modern, polished living spaces.",
-    features: [
-      "Complete demolition & reconstruction",
-      "Electrical & plumbing rework",
-      "Flooring replacement & upgrades",
-      "Bathroom & kitchen remodeling",
-      "Painting, textures & wall treatments",
-      "Project managed end-to-end",
+    "id": "ramadan-umrah",
+    "image": "/travel/madinah.jpg",
+    "title": "Ramadan Umrah",
+    "subtitle": "Plan ahead for a special time",
+    "description": "Enquire early about Ramadan travel dates, hotel preferences, and room arrangements. Busy periods can affect availability, transport, and pricing, so all details are confirmed in writing.",
+    "features": [
+      "Ramadan date enquiries",
+      "Hotel availability checks",
+      "Meal-plan discussion",
+      "Room-sharing options",
+      "Transfer scheduling",
+      "Written booking and cancellation terms"
     ],
-    price: "Custom estimate after site review",
+    "price": "Request a current quote"
   },
   {
-    id: "commercial",
-    image: serviceCommercial.src,
-    title: "Commercial & Office Interiors",
-    subtitle: "Professional Workspace Design in Bangalore",
-    description:
-      "From startups to corporate offices, retail stores to restaurants — we design commercial spaces that impress clients and boost productivity.",
-    features: [
-      "Office layout & partition planning",
-      "Reception & lobby design",
-      "Conference room & cabin interiors",
-      "Retail store & showroom design",
-      "Restaurant & café interiors",
-      "Brand-aligned design language",
+    "id": "muslim-friendly-holidays",
+    "image": "/travel/makkah.jpg",
+    "title": "Muslim-Friendly Holidays",
+    "subtitle": "Explore with your travel preferences in mind",
+    "description": "Discuss leisure travel with halal dining preferences, prayer-time flexibility, and family needs. Destination services and specific facilities are checked as part of itinerary planning.",
+    "features": [
+      "Destination and budget discussion",
+      "Halal dining enquiries",
+      "Prayer facility enquiries",
+      "Family accommodation options",
+      "Private itinerary requests",
+      "Local service availability checks"
     ],
-    price: "Custom estimate after site review",
-  },
+    "price": "Request a current quote"
+  }
 ];
 
 export function getServiceBySlug(slug: string) {

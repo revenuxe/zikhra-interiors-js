@@ -1,16 +1,20 @@
+import { seoTitle } from "@/lib/seo";
 import type { Metadata } from "next";
 import AllPagesView from "@/views/marketing/AllPagesView";
 import SeoJsonLd from "@/components/SeoJsonLd";
 import { getStaticSiteIndexSections, type SiteIndexSection } from "@/lib/site-index-data";
 import { localBlogListItems } from "@/lib/local-blog-posts";
 import { breadcrumbSchema, DEFAULT_OG_IMAGE_PATH, pageOpenGraph, toJsonLd, twitterSummaryLarge } from "@/lib/seo";
+import { getPublicTravelCatalogue } from "@/lib/travel-cms-server";
 
-const title = "All pages | Zikhra Interiors";
+export const revalidate = 60;
+
+const title = "All pages | Zikhra Tours & Travels";
 const description =
-  "Full list of Zikhra website pages: interior design services, project types, portfolio, Bangalore area pages, and blog posts.";
+  "Browse Zikhra travel packages, destinations, services, Bangalore areas, and travel articles.";
 
 export const metadata: Metadata = {
-  title,
+  title: seoTitle(title),
   description,
   alternates: { canonical: "/all-pages" },
   robots: { index: false, follow: true },
@@ -26,6 +30,8 @@ export const metadata: Metadata = {
 
 export default async function AllPagesRoute() {
   const sections = getStaticSiteIndexSections();
+  const catalogue = await getPublicTravelCatalogue();
+  if (catalogue?.packages.length) sections.splice(1, 0, { title: "Published packages", links: catalogue.packages.map(pkg => ({ label: pkg.name, href: `/bangalore/packages/${pkg.slug}` })) });
 
   let blogSection: SiteIndexSection | null = {
     title: "Blog posts",

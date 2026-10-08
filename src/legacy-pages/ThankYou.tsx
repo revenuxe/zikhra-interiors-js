@@ -23,9 +23,7 @@ const ThankYou = () => {
         <p className="font-sans text-foreground/80 text-base mb-2 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
           Your message has been received successfully.
         </p>
-        <p className="font-sans text-muted-foreground text-sm mb-10 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
-          Our design team will review your requirements and get back to you within 24 hours. We're excited to help create your dream space!
-        </p>
+        <p className="font-sans text-muted-foreground text-sm mb-10 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>Our travel team will review your dates and requirements and follow up with you. This enquiry does not confirm a booking, visa, or departure.</p>
 
         <div className="flex flex-col gap-3 animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
           <a
@@ -36,7 +34,7 @@ const ThankYou = () => {
           >
             <img
               src={whatsappIcon.src}
-              alt="WhatsApp — reach Zikhra’s Bangalore interior design team after your form submission"
+              alt="WhatsApp — reach Zikhra’s Bangalore travel planning team after your form submission"
               className="w-4 h-4 brightness-0 invert"
             />
             Chat on WhatsApp for Faster Response
@@ -51,17 +49,15 @@ const ThankYou = () => {
           </Link>
 
           <Link
-            href="/bangalore/projects"
+            href="/bangalore/journeys"
             className="flex items-center justify-center gap-2 font-sans text-xs text-muted-foreground hover:text-gold transition-colors mt-2"
           >
-            Explore Our Projects
+            Explore Our Journeys
             <ArrowRight className="w-3 h-3" />
           </Link>
         </div>
 
-        <p className="font-sans text-[10px] text-muted-foreground/40 mt-12 animate-fade-in-up" style={{ animationDelay: "0.7s" }}>
-          Zikhra Interiors — Crafting Timeless Premium Interiors in Bangalore
-        </p>
+        <p className="font-sans text-[10px] text-muted-foreground/40 mt-12 animate-fade-in-up" style={{ animationDelay: "0.7s" }}>Zikhra Tours & Travels — Thoughtful Journeys from Bangalore</p>
       </div>
     </div>
   );

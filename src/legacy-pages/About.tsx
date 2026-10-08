@@ -1,22 +1,38 @@
+import HeroBackdrop from "@/components/HeroBackdrop";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import ContactForm from "@/components/ContactForm";
-import aboutHero from "@/assets/about-hero.webp";
 import { Award, Users, Clock, Target } from "lucide-react";
 
 const stats = [
-  { number: "500+", label: "Projects Delivered" },
-  { number: "8+", label: "Years Experience" },
-  { number: "98%", label: "Client Satisfaction" },
-  { number: "50+", label: "Design Awards" },
+  { number: "Umrah", label: "Journey Planning" },
+  { number: "Hajj", label: "Seasonal Enquiries" },
+  { number: "Family", label: "Travel Options" },
+  { number: "Private", label: "Itineraries" },
 ];
 
 const values = [
-  { icon: Award, title: "Excellence", desc: "We never settle for ordinary. Every Bangalore project is a masterpiece." },
-  { icon: Users, title: "Client First", desc: "Your vision drives our design. We listen, understand, and deliver." },
-  { icon: Clock, title: "On Time", desc: "We respect your time. Projects delivered as promised, always." },
-  { icon: Target, title: "Precision", desc: "Every millimeter matters. We obsess over the details so you don't have to." },
+  {
+    "icon": Award,
+    "title": "Careful Planning",
+    "desc": "Your dates, budget, and travel needs shape the itinerary."
+  },
+  {
+    "icon": Users,
+    "title": "Family First",
+    "desc": "Discuss children, older relatives, and accessibility before booking."
+  },
+  {
+    "icon": Clock,
+    "title": "Clear Communication",
+    "desc": "Review timings, provider details, and arrangements before departure."
+  },
+  {
+    "icon": Target,
+    "title": "Attention to Detail",
+    "desc": "Check room sharing, meals, transfers, and exclusions in writing."
+  }
 ];
 
 const About = () => {
@@ -25,29 +41,21 @@ const About = () => {
       <Header />
 
       <section className="relative isolate overflow-hidden bg-[#f8f8f7] pb-12 pt-28 sm:pb-16 sm:pt-32">
-        <img src={aboutHero.src} alt="About Zikhra Interior Designers Bangalore" className="absolute inset-0 -z-20 h-full w-full object-cover opacity-[0.36] sm:opacity-[0.32]" />
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(248,248,247,0.94)_0%,rgba(248,248,247,0.86)_45%,rgba(248,248,247,0.64)_100%)]" />
-        <div className="absolute -right-32 top-1/3 -z-10 h-80 w-80 rounded-full bg-white/70 blur-3xl" />
+      <HeroBackdrop />
         <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
           <div className="max-w-3xl text-left">
             <h1 className="mb-8 max-w-[12ch] font-sans text-[3.35rem] font-light leading-[0.97] tracking-[-0.07em] text-[#171717] sm:text-6xl md:max-w-[14ch] md:text-7xl lg:text-[5.8rem]">
-              About Zikhra Interior Designers in Bangalore
+              About Zikhra Tours & Travels in Bangalore
             </h1>
-            <p className="max-w-xl font-sans text-[1.03rem] font-light leading-[1.72] tracking-[-0.02em] text-[#525252] md:text-[1.15rem]">
-              Thoughtful, premium interiors shaped around the way you live.
-            </p>
+            <p className="max-w-xl font-sans text-[1.03rem] font-light leading-[1.72] tracking-[-0.02em] text-[#525252] md:text-[1.15rem]">Thoughtful planning for Umrah, Hajj enquiries, and Muslim-friendly journeys.</p>
           </div>
         </div>
       </section>
 
       <section className="section-padding max-w-2xl mx-auto text-center">
         <h2 className="font-serif text-2xl gold-text mb-6">Our Philosophy</h2>
-        <p className="font-sans text-foreground/80 text-sm leading-relaxed mb-4">
-          At Zikhra, we believe that interior design is not just about aesthetics — it's about creating environments that elevate the way you live. Founded in Bangalore, we've grown from a boutique studio into one of the city's most sought-after interior design firms, serving Koramangala, Indiranagar, Whitefield, HSR Layout, Electronic City and beyond.
-        </p>
-        <p className="font-sans text-foreground/80 text-sm leading-relaxed">
-          Our team of passionate designers, architects, and craftsmen work in harmony to deliver spaces that are both timeless and deeply personal. We don't follow trends — we set them.
-        </p>
+        <p className="font-sans text-foreground/80 text-sm leading-relaxed mb-4">Zikhra Tours & Travels focuses on thoughtful pilgrimage and travel planning from Bangalore. We help individuals, families, and groups explore Umrah itineraries, discuss Hajj enquiries, and plan journeys around their dates, budget, and preferences.</p>
+        <p className="font-sans text-foreground/80 text-sm leading-relaxed">Our approach starts with listening. Accommodation, room sharing, transfers, meals, and travel pace are discussed together, with the confirmed arrangements set out in a written quotation before booking.</p>
       </section>
 
       <section className="section-padding bg-luxury-dark">

@@ -1,11 +1,5 @@
-import project2bhk from "@/assets/project-2bhk.webp";
-import projectVilla from "@/assets/project-villa.webp";
-import project3bhk from "@/assets/project-3bhk.webp";
-import kitchenImg from "@/assets/kitchen.webp";
-import bedroomImg from "@/assets/bedroom.webp";
-import livingroomImg from "@/assets/livingroom.webp";
 
-/** Bangalore funnel copy with real neighbourhoods for /bangalore/projects. */
+/** Bangalore funnel copy with real neighbourhoods for /bangalore/journeys. */
 export type ProjectBangaloreCopy = {
   location: string;
   description: string;
@@ -27,128 +21,203 @@ export type ProjectItem = {
 
 export const projects: ProjectItem[] = [
   {
-    slug: "2bhk-apartment",
-    title: "2BHK Apartment",
-    location: "Whitefield, Bangalore",
-    budget: "Full-home apartment scope",
-    duration: "45 Days",
-    heroImage: project2bhk.src,
-    description:
-      "A complete transformation of a 2BHK apartment in Whitefield, designed with modern premium aesthetics. Every room was reimagined with quality materials, smart storage, and ambient lighting to maximize the compact space.",
-    highlights: ["Space-optimized design", "Premium laminate finishes", "Smart storage solutions", "Ambient cove lighting"],
-    scope: ["Living Room", "Master Bedroom", "Guest Bedroom", "Modular Kitchen", "2 Bathrooms", "Balcony"],
-    bangalore: {
-      location: "Whitefield, Bangalore",
-      description:
-        "A complete transformation of a 2BHK apartment in Whitefield, designed with modern premium aesthetics. Every room was reimagined with quality materials, smart storage, and ambient lighting to maximise the compact footprint typical of East Bangalore towers.",
-      highlights: [
-        "Space-optimised layouts for IT corridor homes",
-        "Premium laminate and veneer finishes",
-        "Integrated storage and study corners",
-        "Layered cove and accent lighting",
-      ],
-    },
+    "slug": "classic-umrah",
+    "title": "Classic Umrah Itinerary",
+    "location": "Makkah & Madinah, Saudi Arabia",
+    "budget": "Request a current quote",
+    "duration": "Dates on request",
+    "heroImage": "/travel/makkah.jpg",
+    "description": "Plan your Umrah around your dates, budget, and pace. Compare accommodation, transport, and practical support before choosing the itinerary that suits you. This is an illustrative itinerary, not a record of a completed trip. Dates, length of stay, hotels, and all services are confirmed in your individual quotation.",
+    "highlights": [
+      "Makkah and Madinah itinerary planning",
+      "Hotel and room-sharing options",
+      "Flight options from your departure city",
+      "Airport and intercity transfer options"
+    ],
+    "scope": [
+      "Makkah and Madinah itinerary planning",
+      "Hotel and room-sharing options",
+      "Flight options from your departure city",
+      "Airport and intercity transfer options",
+      "Pre-departure document checklist",
+      "Written inclusions and exclusions"
+    ],
+    "bangalore": {
+      "location": "Departures from Bangalore",
+      "description": "Plan your Umrah around your dates, budget, and pace. Compare accommodation, transport, and practical support before choosing the itinerary that suits you. This is an illustrative itinerary, not a record of a completed trip. Dates, length of stay, hotels, and all services are confirmed in your individual quotation.",
+      "highlights": [
+        "Makkah and Madinah itinerary planning",
+        "Hotel and room-sharing options",
+        "Flight options from your departure city",
+        "Airport and intercity transfer options"
+      ]
+    }
   },
   {
-    slug: "luxury-villa",
-    title: "Signature Villa",
-    location: "Koramangala, Bangalore",
-    budget: "Villa turnkey scope",
-    duration: "90 Days",
-    heroImage: projectVilla.src,
-    description:
-      "A grand villa transformation in the heart of Koramangala. Italian marble flooring, custom chandeliers, and bespoke furniture pieces create a composed, high-end atmosphere.",
-    highlights: ["Italian marble throughout", "Custom designer furniture", "Home automation integrated", "Landscape design included"],
-    scope: ["Grand Living Room", "4 Bedrooms", "Gourmet Kitchen", "Home Theatre", "5 Bathrooms", "Garden & Patio"],
-    bangalore: {
-      location: "Koramangala, Bangalore",
-      description:
-        "A grand villa fit-out in Koramangala — Italian marble flooring, custom chandeliers, and bespoke furniture tailored to South Bangalore’s design-conscious homeowners. Indoor–outdoor flow and landscape touches complete the experience.",
-      highlights: [
-        "Italian marble and large-format stone",
-        "Bespoke furniture and joinery",
-        "Home automation and lighting scenes",
-        "Garden, patio, and pool-deck coordination",
-      ],
-    },
+    "slug": "private-family-umrah",
+    "title": "Private Family Umrah",
+    "location": "Makkah & Madinah, Saudi Arabia",
+    "budget": "Request a current quote",
+    "duration": "Dates on request",
+    "heroImage": "/travel/madinah.jpg",
+    "description": "Plan a family Umrah with room arrangements, manageable transfers, and a pace suited to children and older relatives. Tell us about your group so the practical details can be discussed early. This is an illustrative itinerary, not a record of a completed trip. Dates, length of stay, hotels, and all services are confirmed in your individual quotation.",
+    "highlights": [
+      "Family room enquiries",
+      "Child and infant travel requirements",
+      "Room-sharing preferences",
+      "Transfer planning for the group"
+    ],
+    "scope": [
+      "Family room enquiries",
+      "Child and infant travel requirements",
+      "Room-sharing preferences",
+      "Transfer planning for the group",
+      "Walking-distance discussion",
+      "Mobility needs reviewed before booking"
+    ],
+    "bangalore": {
+      "location": "Departures from Bangalore",
+      "description": "Plan a family Umrah with room arrangements, manageable transfers, and a pace suited to children and older relatives. Tell us about your group so the practical details can be discussed early. This is an illustrative itinerary, not a record of a completed trip. Dates, length of stay, hotels, and all services are confirmed in your individual quotation.",
+      "highlights": [
+        "Family room enquiries",
+        "Child and infant travel requirements",
+        "Room-sharing preferences",
+        "Transfer planning for the group"
+      ]
+    }
   },
   {
-    slug: "3bhk-penthouse",
-    title: "3BHK Penthouse",
-    location: "Indiranagar, Bangalore",
-    budget: "Penthouse turnkey scope",
-    duration: "60 Days",
-    heroImage: project3bhk.src,
-    description:
-      "A stunning penthouse project in Indiranagar featuring panoramic city views complemented by interior design that brings the outdoors in.",
-    highlights: ["Panoramic view optimization", "Natural stone accents", "Floor-to-ceiling glazing", "Terrace lounge design"],
-    scope: ["Open Living & Dining", "3 Bedrooms", "Island Kitchen", "Study Room", "3 Bathrooms", "Terrace"],
-    bangalore: {
-      location: "Indiranagar, Bangalore",
-      description:
-        "A stunning penthouse-style residence in Indiranagar with skyline views, natural stone accents, and interiors that frame glazing and terrace living — designed for Bangalore’s elevated urban homes.",
-      highlights: [
-        "View-oriented furniture and lighting",
-        "Natural stone and warm metal accents",
-        "Terrace lounge and outdoor connectivity",
-        "Open kitchen and island entertaining",
-      ],
-    },
+    "slug": "makkah-madinah",
+    "title": "Makkah & Madinah Journey",
+    "location": "Makkah & Madinah, Saudi Arabia",
+    "budget": "Request a current quote",
+    "duration": "Dates on request",
+    "heroImage": "/travel/makkah.jpg",
+    "description": "Discuss a private itinerary for your household or small group, with flexible travel dates and preferred accommodation. Each requested service is checked for availability before confirmation. This is an illustrative itinerary, not a record of a completed trip. Dates, length of stay, hotels, and all services are confirmed in your individual quotation.",
+    "highlights": [
+      "Flexible date enquiries",
+      "Private transfer options",
+      "Hotel preference discussion",
+      "Room configuration planning"
+    ],
+    "scope": [
+      "Flexible date enquiries",
+      "Private transfer options",
+      "Hotel preference discussion",
+      "Room configuration planning",
+      "Tailored itinerary requests",
+      "Clear service-by-service quotation"
+    ],
+    "bangalore": {
+      "location": "Departures from Bangalore",
+      "description": "Discuss a private itinerary for your household or small group, with flexible travel dates and preferred accommodation. Each requested service is checked for availability before confirmation. This is an illustrative itinerary, not a record of a completed trip. Dates, length of stay, hotels, and all services are confirmed in your individual quotation.",
+      "highlights": [
+        "Flexible date enquiries",
+        "Private transfer options",
+        "Hotel preference discussion",
+        "Room configuration planning"
+      ]
+    }
   },
   {
-    slug: "modular-kitchen-project",
-    title: "Modular Kitchen",
-    location: "HSR Layout, Bangalore",
-    budget: "Kitchen remodel scope",
-    duration: "30 Days",
-    heroImage: kitchenImg.src,
-    description:
-      "A premium modular kitchen transformation in HSR Layout featuring marble countertops, gold hardware accents, and state-of-the-art fittings.",
-    highlights: ["Quartz countertops", "German Hettich hardware", "Integrated chimney & hob", "Pull-out pantry system"],
-    scope: ["L-shaped Kitchen Layout", "Breakfast Counter", "Tall Unit", "Pantry Pull-outs", "Under-cabinet Lighting"],
-    bangalore: {
-      location: "HSR Layout, Bangalore",
-      description:
-        "A premium modular kitchen in HSR Layout — quartz counters, soft-close hardware, integrated chimney and hob, and pull-out pantry systems tuned for compact city apartments and busy weeknight cooking.",
-      highlights: ["Quartz worktops", "Premium soft-close hardware", "Integrated chimney & hob", "Tall units and pantry pull-outs"],
-    },
+    "slug": "ramadan-umrah",
+    "title": "Ramadan Umrah Enquiry",
+    "location": "Makkah & Madinah, Saudi Arabia",
+    "budget": "Request a current quote",
+    "duration": "Dates on request",
+    "heroImage": "/travel/madinah.jpg",
+    "description": "Enquire early about Ramadan travel dates, hotel preferences, and room arrangements. Busy periods can affect availability, transport, and pricing, so all details are confirmed in writing. This is an illustrative itinerary, not a record of a completed trip. Dates, length of stay, hotels, and all services are confirmed in your individual quotation.",
+    "highlights": [
+      "Ramadan date enquiries",
+      "Hotel availability checks",
+      "Meal-plan discussion",
+      "Room-sharing options"
+    ],
+    "scope": [
+      "Ramadan date enquiries",
+      "Hotel availability checks",
+      "Meal-plan discussion",
+      "Room-sharing options",
+      "Transfer scheduling",
+      "Written booking and cancellation terms"
+    ],
+    "bangalore": {
+      "location": "Departures from Bangalore",
+      "description": "Enquire early about Ramadan travel dates, hotel preferences, and room arrangements. Busy periods can affect availability, transport, and pricing, so all details are confirmed in writing. This is an illustrative itinerary, not a record of a completed trip. Dates, length of stay, hotels, and all services are confirmed in your individual quotation.",
+      "highlights": [
+        "Ramadan date enquiries",
+        "Hotel availability checks",
+        "Meal-plan discussion",
+        "Room-sharing options"
+      ]
+    }
   },
   {
-    slug: "master-bedroom",
-    title: "Master Bedroom Suite",
-    location: "Electronic City, Bangalore",
-    budget: "Bedroom suite scope",
-    duration: "25 Days",
-    heroImage: bedroomImg.src,
-    description:
-      "A refined master bedroom suite designed as a personal sanctuary with custom headboard, ambient lighting, and walk-in wardrobe.",
-    highlights: ["Custom king-size bed", "Walk-in wardrobe", "Ambient mood lighting", "Premium wall paneling"],
-    scope: ["Bedroom Design", "Walk-in Closet", "Dressing Area", "Reading Corner", "En-suite Bathroom"],
-    bangalore: {
-      location: "Hebbal, Bangalore",
-      description:
-        "A refined master suite in a Hebbal high-rise — custom headboard, walk-in wardrobe with integrated lighting, and quiet wall panelling that suits North Bangalore’s contemporary towers.",
-      highlights: ["Custom bed wall and headboard", "Walk-in wardrobe with lighting", "Mood lighting layers", "Premium veneer and fabric panels"],
-    },
+    "slug": "small-group-umrah",
+    "title": "Small Group Umrah",
+    "location": "Makkah & Madinah, Saudi Arabia",
+    "budget": "Request a current quote",
+    "duration": "Dates on request",
+    "heroImage": "/travel/makkah.jpg",
+    "description": "Explore group travel options with a defined departure plan and shared arrangements. Group size, language support, and any tour leader services are confirmed in your quotation. This is an illustrative itinerary, not a record of a completed trip. Dates, length of stay, hotels, and all services are confirmed in your individual quotation.",
+    "highlights": [
+      "Group departure enquiries",
+      "Shared accommodation options",
+      "Coordinated transfer options",
+      "Group itinerary briefing"
+    ],
+    "scope": [
+      "Group departure enquiries",
+      "Shared accommodation options",
+      "Coordinated transfer options",
+      "Group itinerary briefing",
+      "Meal-plan discussion",
+      "Tour leader availability on request"
+    ],
+    "bangalore": {
+      "location": "Departures from Bangalore",
+      "description": "Explore group travel options with a defined departure plan and shared arrangements. Group size, language support, and any tour leader services are confirmed in your quotation. This is an illustrative itinerary, not a record of a completed trip. Dates, length of stay, hotels, and all services are confirmed in your individual quotation.",
+      "highlights": [
+        "Group departure enquiries",
+        "Shared accommodation options",
+        "Coordinated transfer options",
+        "Group itinerary briefing"
+      ]
+    }
   },
   {
-    slug: "living-room-makeover",
-    title: "Living Room Makeover",
-    location: "Bellandur, Bangalore",
-    budget: "Living-dining remodel scope",
-    duration: "35 Days",
-    heroImage: livingroomImg.src,
-    description:
-      "A dramatic living room transformation that turned a plain space into a designer showpiece with statement furniture and layered lighting.",
-    highlights: ["Statement accent wall", "Designer furniture", "Layered lighting design", "Smart home ready"],
-    scope: ["Living Area", "Dining Space", "TV Unit", "Accent Wall", "Foyer Design"],
-    bangalore: {
-      location: "Bellandur, Bangalore",
-      description:
-        "A dramatic living–dining transformation in Bellandur — statement TV wall, layered lighting, and furniture planned for ORR-side apartments and family entertaining in Outer Ring Road communities.",
-      highlights: ["Feature TV and display wall", "Designer sofa and dining layout", "Cove, accent, and task lighting", "Smart-home–ready cabling"],
-    },
-  },
+    "slug": "muslim-friendly-holiday",
+    "title": "Muslim-Friendly Holiday",
+    "location": "Destination on request",
+    "budget": "Request a current quote",
+    "duration": "Dates on request",
+    "heroImage": "/travel/madinah.jpg",
+    "description": "Discuss leisure travel with halal dining preferences, prayer-time flexibility, and family needs. Destination services and specific facilities are checked as part of itinerary planning. This is an illustrative itinerary, not a record of a completed trip. Dates, length of stay, hotels, and all services are confirmed in your individual quotation.",
+    "highlights": [
+      "Destination and budget discussion",
+      "Halal dining enquiries",
+      "Prayer facility enquiries",
+      "Family accommodation options"
+    ],
+    "scope": [
+      "Destination and budget discussion",
+      "Halal dining enquiries",
+      "Prayer facility enquiries",
+      "Family accommodation options",
+      "Private itinerary requests",
+      "Local service availability checks"
+    ],
+    "bangalore": {
+      "location": "Departures from Bangalore",
+      "description": "Discuss leisure travel with halal dining preferences, prayer-time flexibility, and family needs. Destination services and specific facilities are checked as part of itinerary planning. This is an illustrative itinerary, not a record of a completed trip. Dates, length of stay, hotels, and all services are confirmed in your individual quotation.",
+      "highlights": [
+        "Destination and budget discussion",
+        "Halal dining enquiries",
+        "Prayer facility enquiries",
+        "Family accommodation options"
+      ]
+    }
+  }
 ];
 
 export function getProjectBySlug(slug: string) {

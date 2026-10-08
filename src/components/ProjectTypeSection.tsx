@@ -1,18 +1,15 @@
+import { projectTypes as journeyTypes } from "@/lib/project-types-data";
 import Link from "next/link";
 import type { MarketId } from "@/lib/market-types";
 import { getMarketCopy } from "@/lib/market-copy";
-import { projectTypeDetailPath } from "@/lib/marketing-paths";
-import project2bhk from "@/assets/project-2bhk.webp";
-import project3bhk from "@/assets/project-3bhk.webp";
-import project4bhk from "@/assets/project-4bhk.webp";
-import projectPenthouse from "@/assets/project-penthouse.webp";
+import { serviceDetailPath } from "@/lib/marketing-paths";
 
 const projectTypes = [
-  { name: "2 BHK", image: project2bhk.src, slug: "2bhk", desc: "Smart planning for compact spaces" },
-  { name: "3 BHK", image: project3bhk.src, slug: "3bhk", desc: "Spacious elegance for families" },
-  { name: "4 BHK", image: project4bhk.src, slug: "4bhk", desc: "Grand living redefined" },
-  { name: "Penthouse", image: projectPenthouse.src, slug: "penthouse", desc: "Elevated sky living" },
-];
+  { name: "Visa Assistance", slug: "visa-assistance", desc: "Help with documents and application steps" },
+  { name: "Hotel Stays", slug: "makkah-madinah-stays", desc: "Accommodation options in Makkah and Madinah" },
+  { name: "Flights & Transfers", slug: "flights-transfers", desc: "Connect each stage of your journey" },
+  { name: "Ziyarat Visits", slug: "ziyarat", desc: "Explore places of Islamic heritage" },
+].map((item, index) => ({ ...item, image: journeyTypes[index].heroImage }));
 
 type Props = { market?: MarketId };
 
@@ -22,8 +19,8 @@ const ProjectTypeSection = ({ market = "bangalore" }: Props) => {
   return (
     <section className="px-5 py-14 md:px-8 md:py-16">
       <div className="text-center mb-10">
-        <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">By Property</p>
-        <h2 className="font-serif text-3xl md:text-4xl gold-text">Project Types</h2>
+        <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Travel Support</p>
+        <h2 className="font-serif text-3xl md:text-4xl gold-text">Travel Essentials</h2>
         <p className="font-sans text-muted-foreground text-sm mt-3 max-w-sm mx-auto">{copy.projectTypesSub}</p>
       </div>
 
@@ -31,13 +28,13 @@ const ProjectTypeSection = ({ market = "bangalore" }: Props) => {
         {projectTypes.map((pt) => (
           <Link
             key={pt.slug}
-            href={projectTypeDetailPath(market, pt.slug)}
+            href={serviceDetailPath(market, pt.slug)}
             className="group flex flex-col overflow-hidden rounded-[1.2rem] border border-black/10 bg-white text-left shadow-[0_10px_24px_rgba(0,0,0,0.055)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(0,0,0,0.1)]"
           >
             <div className="relative w-full aspect-[4/3] max-h-32 overflow-hidden md:max-h-none">
               <img
                 src={pt.image}
-                alt={`${pt.name} interior design ${city}`}
+                alt={`${pt.name} travel planning ${city}`}
                 loading="lazy"
                 width={800}
                 height={1024}

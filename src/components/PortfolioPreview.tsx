@@ -1,47 +1,34 @@
+"use client";
+import { useTravelCatalogue } from "@/lib/travel-cms";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import type { MarketId } from "@/lib/market-types";
 import { getMarketCopy } from "@/lib/market-copy";
-import { portfolioDetailPath } from "@/lib/marketing-paths";
-import kitchenImg from "@/assets/kitchen.webp";
-import bedroomImg from "@/assets/bedroom.webp";
-import livingroomImg from "@/assets/livingroom.webp";
-import wardrobeImg from "@/assets/wardrobe.webp";
-import bathroomImg from "@/assets/portfolio-bathroom.webp";
-import studyImg from "@/assets/portfolio-study.webp";
-
-const categories = [
-  { name: "Kitchen", image: kitchenImg.src, slug: "kitchen" },
-  { name: "Bedroom", image: bedroomImg.src, slug: "bedroom" },
-  { name: "Living Room", image: livingroomImg.src, slug: "living-room" },
-  { name: "Wardrobe", image: wardrobeImg.src, slug: "wardrobe" },
-  { name: "Bathroom", image: bathroomImg.src, slug: "bathroom" },
-  { name: "Study Room", image: studyImg.src, slug: "study-room" },
-];
 
 type Props = { market?: MarketId };
 
 const PortfolioPreview = ({ market = "bangalore" }: Props) => {
   const copy = getMarketCopy(market);
-  const city = "Bangalore";
+  const {categories,loading,error}=useTravelCatalogue();
   return (
     <section className="section-padding">
       <div className="text-center mb-10">
-        <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Portfolio</p>
-        <h2 className="font-serif text-3xl md:text-4xl gold-text">Explore Our Craft</h2>
+        <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Packages</p>
+        <h2 className="font-serif text-3xl md:text-4xl gold-text">Explore Our Packages</h2>
         <p className="font-sans text-muted-foreground text-sm mt-3 max-w-sm mx-auto">{copy.portfolioSub}</p>
       </div>
 
-      <div className="flex gap-4 overflow-x-auto hide-scrollbar pb-4 -mx-5 px-5 snap-x snap-mandatory md:mx-auto md:grid md:max-w-7xl md:grid-cols-6 md:gap-4 md:overflow-visible md:px-0">
+      <div className="flex gap-4 overflow-x-auto hide-scrollbar pb-4 -mx-5 px-5 snap-x snap-mandatory md:mx-auto md:grid md:max-w-7xl md:grid-cols-3 lg:grid-cols-5 md:gap-4 md:overflow-visible md:px-0">
+        {loading && <p className="text-sm">Loading journeys…</p>}{error && <p className="text-sm">Journeys are temporarily unavailable.</p>}
         {categories.map((cat) => (
           <Link
             key={cat.name}
-              href={portfolioDetailPath(market, cat.slug)}
+              href={`/${market}/packages?journey=${cat.slug}`}
             className="relative block w-[72vw] max-w-56 flex-shrink-0 aspect-[4/5] cursor-pointer snap-center overflow-hidden rounded-[1.2rem] bg-white shadow-[0_12px_28px_rgba(0,0,0,0.1)] group md:w-auto md:max-w-none"
           >
             <img
-              src={cat.image}
-              alt={`${cat.name} interior design ${city}`}
+              src={cat.image_url || "/travel/makkah.jpg"}
+              alt={cat.image_alt || cat.name}
               loading="lazy"
               width={800}
               height={1024}

@@ -1,8 +1,9 @@
+import { seoTitle } from "@/lib/seo";
 import type { Metadata } from "next";
 import AdminDashboard from "@/legacy-pages/AdminDashboard";
 
 export const metadata: Metadata = {
-  title: "Admin Dashboard",
+  title: seoTitle("Admin Dashboard"),
   robots: {
     index: false,
     follow: false,

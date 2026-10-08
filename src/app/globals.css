@@ -197,3 +197,10 @@
     animation-play-state: paused;
   }
 }
+
+.travel-brands-marquee:focus-within .travel-brands-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .travel-brands-track { animation: none; }
+}

@@ -6,27 +6,27 @@ import { SITE_NAME, SITE_URL } from "@/lib/seo";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Best Interior Designer in Bangalore & Bengaluru | Zikhra",
+    default: "Umrah & Hajj Travel from Bangalore & Bengaluru | Zikhra",
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    "Zikhra designs premium home interiors, modular kitchens, and turnkey interiors in Bangalore and Bengaluru with clear scope planning and supervised delivery.",
+    "Zikhra designs premium Umrah journeys, Hajj enquiries, and coordinated travel in Bangalore and Bengaluru with clear scope planning and supervised delivery.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
-    siteName: "Zikhra Interiors",
-    title: "Best Interior Designer in Bangalore & Bengaluru | Zikhra",
+    siteName: "Zikhra Tours & Travels",
+    title: "Umrah & Hajj Travel from Bangalore & Bengaluru | Zikhra",
     description:
-      "Premium and high-end interior design in Bangalore for villas, apartments, and modern homes.",
+      "Umrah planning, Hajj enquiries, and family travel from Bangalore.",
     url: SITE_URL,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Best Interior Designer in Bangalore & Bengaluru | Zikhra",
+    title: "Umrah & Hajj Travel from Bangalore & Bengaluru | Zikhra",
     description:
-      "Premium and high-end interior design in Bangalore for villas, apartments, and modern homes.",
+      "Umrah planning, Hajj enquiries, and family travel from Bangalore.",
   },
 };
 

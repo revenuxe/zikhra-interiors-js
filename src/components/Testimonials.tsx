@@ -15,7 +15,7 @@ const Testimonials = ({ market = "bangalore" }: Props) => {
   return (
     <section className="section-padding">
       <div className="text-center mb-10">
-        <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Testimonials</p>
+        <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Travel Notes</p>
         <h2 className="font-serif text-3xl md:text-4xl gold-text">{copy.testimonialsTitle}</h2>
       </div>
 
@@ -38,6 +38,8 @@ const Testimonials = ({ market = "bangalore" }: Props) => {
           {testimonials.map((_, i) => (
             <button
               key={i}
+              aria-label={`Show travel note ${i + 1}`}
+              aria-pressed={i === active}
               onClick={() => setActive(i)}
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
                 i === active ? "w-6 gold-gradient" : "bg-muted-foreground/30"

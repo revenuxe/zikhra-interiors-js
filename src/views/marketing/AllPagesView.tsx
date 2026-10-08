@@ -1,4 +1,5 @@
 import Link from "next/link";
+import EditorialPageHero from "@/components/EditorialPageHero";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
@@ -12,15 +13,8 @@ export default function AllPagesView({ sections }: Props) {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-32 md:pt-28 pb-16 px-5 max-w-4xl mx-auto">
-        <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3 text-center">Sitemap</p>
-        <h1 className="font-serif text-3xl md:text-4xl gold-text text-center mb-2">
-          All Interior Design Pages in Bangalore
-        </h1>
-        <p className="font-sans text-sm text-muted-foreground text-center max-w-xl mx-auto mb-12">
-          Every major URL on Zikhra - services, project types, portfolio, Bangalore locations, and more.
-        </p>
-
+      <EditorialPageHero title="All Travel Planning Pages in Bangalore" description="Explore our services, packages, destinations and travel planning pages." showCta={false} />
+      <main className="pb-16 pt-12 px-5 max-w-4xl mx-auto">
         <div className="space-y-12">
           {sections.map((section) => (
             <section key={section.title} className="border border-border/40 rounded-2xl bg-card/30 p-6 md:p-8">

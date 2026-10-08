@@ -1,379 +1,292 @@
-import type { BlogListItem } from "@/views/marketing/BlogListView";
-import type { BlogPost } from "@/views/marketing/BlogPostView";
-
-type LocalPostInput = {
-  slug: string;
-  title: string;
-  excerpt: string;
-  publishedAt: string;
-  sections: { title?: string; body: string }[];
-  body?: BlogPost["body"];
-};
-
-function block(text: string, style = "normal") {
-  return {
-    _type: "block",
-    _key: text.slice(0, 24).replace(/[^a-z0-9]/gi, "-").toLowerCase(),
-    style,
-    markDefs: [],
-    children: [{ _type: "span", _key: "span", text, marks: [] }],
-  };
-}
-
-
-function linkedBlock(
-  key: string,
-  text: string,
-  links: Array<{ text: string; href: string }>,
-  style = "normal",
-) {
-  const markDefs = links.map((link, index) => ({
-    _key: `${key}-link-${index}`,
-    _type: "link",
-    href: link.href,
-  }));
-  const children: Array<{ _type: "span"; _key: string; text: string; marks: string[] }> = [];
-  let cursor = 0;
-
-  links.forEach((link, index) => {
-    const nextIndex = text.indexOf(link.text, cursor);
-    if (nextIndex < 0) return;
-    if (nextIndex > cursor) {
-      children.push({ _type: "span", _key: `${key}-span-${index}-before`, text: text.slice(cursor, nextIndex), marks: [] });
-    }
-    children.push({ _type: "span", _key: `${key}-span-${index}-link`, text: link.text, marks: [markDefs[index]._key] });
-    cursor = nextIndex + link.text.length;
-  });
-
-  if (cursor < text.length) {
-    children.push({ _type: "span", _key: `${key}-span-tail`, text: text.slice(cursor), marks: [] });
+import type { BlogListItem } from '@/views/marketing/BlogListView';
+import type { BlogPost } from '@/views/marketing/BlogPostView';
+const posts = [
+  {
+    "_id": "umrah-planning-checklist",
+    "slug": "umrah-planning-checklist",
+    "title": "Your Umrah planning checklist",
+    "excerpt": "A practical starting point for discussing dates, accommodation, and travel arrangements.",
+    "publishedAt": "2026-10-08T00:00:00.000Z",
+    "body": [
+      {
+        "_type": "block",
+        "_key": "umrah-planning-checklist-0",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-0",
+            "text": "Start with your travel preferences",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "umrah-planning-checklist-1",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-1",
+            "text": "Tell your travel planner your departure city, dates, group size, budget, and room-sharing preference. Raise mobility or family needs before comparing itineraries.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "umrah-planning-checklist-2",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-2",
+            "text": "Review the written itinerary",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "umrah-planning-checklist-3",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-3",
+            "text": "Check hotel names and locations, flights, baggage, transfers, meals, and exclusions. Confirm which services are included and which are optional.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "umrah-planning-checklist-4",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-4",
+            "text": "Prepare before departure",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "umrah-planning-checklist-5",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-5",
+            "text": "Review the current requirements through the relevant official channels. Keep copies of your confirmed itinerary and provider contact details.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "mainImageUrl": "/travel/makkah.jpg",
+    "authorName": "Zikhra Travel Team"
+  },
+  {
+    "_id": "choosing-family-umrah",
+    "slug": "choosing-family-umrah",
+    "title": "Planning Umrah as a family",
+    "excerpt": "Discuss room arrangements, travel pace, and the needs of every generation.",
+    "publishedAt": "2026-10-08T00:00:00.000Z",
+    "body": [
+      {
+        "_type": "block",
+        "_key": "choosing-family-umrah-0",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-0",
+            "text": "Plan for every traveller",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "choosing-family-umrah-1",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-1",
+            "text": "Discuss children, older relatives, room occupancy, and any accessibility requirements before selecting hotels or transfers.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "choosing-family-umrah-2",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-2",
+            "text": "Allow time between journeys",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "choosing-family-umrah-3",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-3",
+            "text": "Review arrival times and transfer plans together. Ask about the pace of the itinerary and how your group will stay in contact.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "choosing-family-umrah-4",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-4",
+            "text": "Confirm the details",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "choosing-family-umrah-5",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-5",
+            "text": "A family enquiry should lead to a written quotation with specific inclusions, costs, and cancellation terms.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "mainImageUrl": "/travel/madinah.jpg",
+    "authorName": "Zikhra Travel Team"
+  },
+  {
+    "_id": "understanding-hajj-enquiries",
+    "slug": "understanding-hajj-enquiries",
+    "title": "What to ask when enquiring about Hajj",
+    "excerpt": "Understand the questions to ask before making a seasonal Hajj enquiry.",
+    "publishedAt": "2026-10-08T00:00:00.000Z",
+    "body": [
+      {
+        "_type": "block",
+        "_key": "understanding-hajj-enquiries-0",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-0",
+            "text": "Ask about the authorised route",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "understanding-hajj-enquiries-1",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-1",
+            "text": "Confirm the current official booking route and the provider responsible for any proposed arrangements. Do not treat a marketing enquiry as a confirmed place.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "understanding-hajj-enquiries-2",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-2",
+            "text": "Check availability and approvals",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "understanding-hajj-enquiries-3",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-3",
+            "text": "Hajj arrangements depend on seasonal eligibility, quota, permits, and official approvals. Check the current requirements through the relevant authorities.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "understanding-hajj-enquiries-4",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-4",
+            "text": "Review before paying",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "understanding-hajj-enquiries-5",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-5",
+            "text": "Request the full written itinerary, provider details, price breakdown, payment schedule, and cancellation terms before committing.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "mainImageUrl": "/travel/makkah.jpg",
+    "authorName": "Zikhra Travel Team"
   }
-
-  return {
-    _type: "block",
-    _key: key,
-    style,
-    markDefs,
-    children: children.length ? children : [{ _type: "span", _key: "span", text, marks: [] }],
-  };
-}
-
-function heading(key: string, text: string, style = "h2") {
-  return { _type: "block", _key: key, style, markDefs: [], children: [{ _type: "span", _key: "span", text, marks: [] }] };
-}
-function toPost(input: LocalPostInput): BlogPost {
-  return {
-    _id: `local-${input.slug}`,
-    title: input.title,
-    slug: input.slug,
-    excerpt: input.excerpt,
-    publishedAt: input.publishedAt,
-    authorName: "Zikhra Interiors",
-    category: "Interior Pricing",
-    body: input.body ?? input.sections.flatMap((section) => [
-      ...(section.title ? [block(section.title, "h2")] : []),
-      block(section.body),
-    ]),
-  };
-}
-
-export const localBlogPosts: BlogPost[] = [
-  toPost({
-    slug: "2bhk-interior-design-cost-in-bangalore-2026",
-    title: "2 BHK Interior Design Cost in Bangalore 2026",
-    excerpt:
-      "A practical 2026 guide to 2 BHK interior design cost in Bangalore, including practical, premium, and signature scope planning.",
-    publishedAt: "2026-05-05",
-    sections: [
-      {
-        title: "Quick Cost Range",
-        body:
-          "For Bangalore homeowners, Zikhra prepares a room-wise estimate after reviewing the floor plan, storage volume, finishes, lighting, and civil scope.",
-      },
-      {
-        title: "What Changes the Price",
-        body:
-          "The largest cost drivers are kitchen size, wardrobe running feet, laminate or acrylic selection, false ceiling scope, electrical changes, wall panelling, appliance choices, and whether loose furniture or styling is included.",
-      },
-      {
-        title: "How to Plan Smartly",
-        body:
-          "Start with the must-have rooms first: kitchen, wardrobes, living TV unit, and bedroom storage. Once the functional scope is clear, upgrade finishes and lighting where they visibly improve the home.",
-      },
-    ],
-  }),
-  toPost({
-    slug: "3bhk-interior-design-cost-in-bangalore",
-    title: "3 BHK Interior Design Cost in Bangalore",
-    excerpt:
-      "A homeowner-friendly guide to 3 BHK interior design cost in Bangalore, with premium and signature scope planning.",
-    publishedAt: "2026-05-05",
-    sections: [
-      {
-        title: "Expected Starting Cost",
-        body:
-          "For a 3 BHK in Bangalore, Zikhra prepares a detailed estimate after reviewing floor plan, premium finishes, wardrobe details, lighting, wall treatments, and larger living-dining execution.",
-      },
-      {
-        title: "Why 3 BHK Costs More",
-        body:
-          "A 3 BHK has more wardrobe volume, more electrical and lighting decisions, a larger living-dining zone, and usually more family-specific storage. The cost rises with every extra running foot of cabinetry and each premium finish upgrade.",
-      },
-      {
-        title: "Budgeting Advice",
-        body:
-          "Keep a base budget for kitchen, wardrobes, and living room. Then create a separate upgrade budget for false ceiling, decorative lighting, wall panels, curtains, loose furniture, and final styling.",
-      },
-    ],
-  }),
-  toPost({
-    slug: "homelane-vs-livspace-vs-local-interior-designers",
-    title: "HomeLane vs Livspace vs Local Interior Designers: What to Compare",
-    excerpt:
-      "A neutral comparison guide for homeowners comparing national interior brands with a design-led local studio like Zikhra.",
-    publishedAt: "2026-05-05",
-    sections: [
-      {
-        title: "Compare Scope, Not Just Price",
-        body:
-          "When comparing HomeLane, Livspace, DesignCafe, or a local interior designer, check what is included in the quote: plywood grade, hardware brand, finish type, wardrobe internals, false ceiling, lighting, electrical work, installation, warranty, and site supervision.",
-      },
-      {
-        title: "National Brand vs Local Studio",
-        body:
-          "Large brands can offer process standardisation and package clarity. A focused local studio can offer more personal design attention, flexible material choices, and closer site coordination. The right choice depends on how custom your home needs to be.",
-      },
-      {
-        title: "The Zikhra View",
-        body:
-          "Zikhra positions itself between catalogue efficiency and high-touch custom design: clear package bands, room-wise estimates, premium material options, and a designer-led process for Bangalore and Bengaluru homeowners.",
-      },
-    ],
-  }),
-  toPost({
-    slug: "homelane-vs-designcafe-vs-truww-vs-livspace-honest-comparison-of-interiors-in-bangalore-and-why",
-    title: "HomeLane vs DesignCafe vs Truww vs Livspace: An Honest Bangalore Interior Comparison",
-    excerpt: "A simple, neutral guide to comparing interior design companies and local studios in Bangalore—scope, materials, process, pricing, site coordination, and questions worth asking.",
-    publishedAt: "2026-08-27",
-    sections: [
-      { title: "The short answer", body: "There is no single best interior company for every Bangalore home. National brands, design-led studios, and local contractors can all be a good fit. The useful question is not who has the biggest name; it is whether the scope, design attention, materials, communication, and execution model match your home and your expectations." },
-      { title: "Think of it like choosing a school bag", body: "A school bag may look good from outside, but what matters is whether it holds the books you need, feels comfortable, and lasts through daily use. An interior quote works the same way. The headline price is the outside of the bag. The materials, hardware, storage internals, site work, lighting, and after-sales terms are what is inside." },
-      { title: "What large interior brands can offer", body: "Brands such as HomeLane, DesignCafe, Truww, and Livspace may offer a structured process, showrooms, catalogues, package choices, and digital tools. This can be helpful when you want a more standardised journey. However, the exact level of customisation, site attention, material choice, and inclusions can vary by project, city, designer, and package. Ask for the written scope rather than assuming it is the same for every home." },
-      { title: "What a design-led local studio can offer", body: "A focused local studio may be a stronger fit when you want more design discussion, flexible material selection, and closer coordination around your specific floor plan. The trade-off is that you should understand how drawings, production, vendor management, and site supervision are handled. Good local does not automatically mean better; it means you should evaluate the process carefully." },
-      { title: "Compare scope before comparing price", body: "Ask every company to break the estimate into rooms and elements. Compare the kitchen, wardrobe running length, TV unit, lofts, study, false ceiling, electrical work, wall finishes, hardware, countertops, appliances, loose furniture, and installation separately. If one quote looks much lower, check what is not included before deciding it is a better deal." },
-      { title: "Materials: the details that change value", body: "Two wardrobes can look similar in a render and still be very different in use. Check board type, thickness, back panels, edge banding, hardware brand, drawer channels, hinges, shutter finish, internal accessories, and whether installation is included. For kitchens, also ask about counters, sink, baskets, skirting, backsplash, and appliance cut-outs." },
-      { title: "Design: ask to see how decisions are made", body: "A beautiful render is useful, but it is only one part of the process. Ask how the team studies circulation, storage, electrical points, lighting, ventilation, and real cooking or working habits. A child should be able to understand the test: does every important thing in the room have a sensible place and a sensible way to use it?" },
-      { title: "Execution and site coordination", body: "Bangalore apartments and homes have access rules, lift timings, neighbour considerations, civil constraints, and changing site conditions. Ask who visits the site, who answers when something does not match the drawing, how changes are approved, and how the final handover is checked. Clear responsibility matters as much as a good-looking design." },
-      { title: "Questions to ask before you sign", body: "Request a room-wise scope, material specification, hardware list, exclusions list, payment milestones, timeline assumptions, change-order process, and warranty terms in writing. Ask what happens if measurements change on site. Ask who will be your day-to-day contact. A clear answer is more useful than a vague promise." },
-      { title: "How Zikhra approaches the comparison", body: "Zikhra does not ask you to choose based on labels alone. We encourage homeowners to compare scope, material choices, layout thinking, and execution responsibility. Our approach is designer-led and built around your floor plan, room priorities, storage needs, and finish direction. You can explore our services, cost guides, and project pages before deciding whether a consultation is right for you." },
-      { title: "A simple comparison worksheet", body: "Put every proposal on one sheet of paper. Make columns for the kitchen, wardrobes, TV unit, study, false ceiling, electrical work, bathrooms, loose furniture, and site work. In each column, write the material, quantity, price, and whether installation is included. This takes a little time, but it stops a common mistake: comparing one company’s complete kitchen with another company’s cabinet-only kitchen." },
-      { title: "Kitchen comparison: what people often miss", body: "Do not compare a kitchen only by its number of cabinets. Ask about the layout, counter length, shutter finish, carcass material, hardware, baskets, tall units, sink, backsplash, skirting, appliance space, and electrical points. Also ask who measures the site before production. A kitchen is used many times every day, so a small mistake in workflow can be more frustrating than a small difference in colour." },
-      { title: "Wardrobes and storage: count the inside, not only the outside", body: "A wardrobe front can look premium in a brochure, yet the inside may not suit your clothes. Ask for hanging space, drawers, shelves, lofts, shoe storage, internal finish, lighting, handles, and soft-close hardware. If you have sarees, luggage, long dresses, sports equipment, children’s items, or work clothes, say so early. Good storage is like a well-organised kitchen drawer: it saves time every day." },
-      { title: "False ceiling and lighting: compare the plan, not the number of lights", body: "A quote may mention lighting without explaining what kind of lighting is included. Ask where the downlights go, whether there is cove lighting, how the room is zoned, what happens near fans and AC units, and whether electrical changes are included. A room with ten random lights can still feel uncomfortable. A room with fewer, well-placed layers can feel calmer and more useful." },
-      { title: "What does customisation really mean?", body: "Customisation can mean different things. Sometimes it means choosing from a catalogue of sizes and colours. Sometimes it means changing internal storage. Sometimes it means a design built specifically around an awkward wall, a window, or a family routine. None of these is automatically right or wrong. Ask the team to show exactly what can change, what cannot change, and how that affects price and delivery." },
-      { title: "How to read a timeline honestly", body: "An interior timeline has stages: design decisions, site measurement, production, civil work, installation, finishing, and handover. Delays can happen when scope changes, materials are changed late, site conditions differ from the drawing, or building access is restricted. Ask for the assumptions behind the timeline. A responsible answer explains dependencies instead of promising a date without conditions." },
-      { title: "Payments and change requests", body: "Before paying, understand what each milestone covers. Ask when material orders are placed, what happens if you change a finish, how revisions are documented, and whether a change affects time as well as cost. Keep approvals in writing. This is not about distrust; it is about making sure the client and design team remember the same decision." },
-      { title: "Showroom visits and references", body: "Showrooms are useful for touching materials and seeing hardware, but they are not a copy of your home. Take photographs, note what you liked, and ask how the same finish will behave under your lighting and in your room size. Project photographs and drawings can help you understand a studio’s design language, but ask questions about the scope behind each image before using it as a price reference." },
-      { title: "When a lower quote is genuinely sensible", body: "A lower quote may be the right choice if the scope is simpler, the materials suit your needs, and the execution responsibility is clear. Premium does not mean buying every upgrade. It means spending intentionally on the things that improve daily use, such as good workflow, reliable hardware, durable surfaces, useful storage, and comfortable lighting." },
-      { title: "When to choose a consultation before choosing a company", body: "If your floor plan is unclear, your requirements are changing, or different quotes are hard to compare, begin with a design conversation rather than a final purchase decision. Share the plan, the rooms that matter most, your budget comfort zone, and a few inspiration images. The goal of the first conversation is clarity—not pressure." },
-      { title: "A child-friendly way to judge a floor plan", body: "Imagine walking through the home with a glass of water, a school bag, groceries, and a phone charger. Can you put each thing somewhere without blocking a door? Can you open the wardrobe while the bed is in use? Can two people work in the kitchen? Can a guest find a bathroom easily? These small questions reveal whether a plan will be comfortable long after the newness has gone." },
-      { title: "Bangalore-specific site questions", body: "Ask about apartment association permissions, lift protection, working hours, parking for deliveries, water and electrical shutdowns, waste removal, and access for large materials. These are not glamorous design topics, but they affect the experience of building an interior. A team that discusses them early is more likely to have thought about the real site, not only the render." },
-      { title: "Do not let a render make every decision", body: "Renders are helpful because they make an idea easier to see. They are not a substitute for drawings, measurements, and a written material schedule. A render can show a beautiful wall panel, but it may not tell you the board type, finish, thickness, cost, or whether the panel is included. Use renders to discuss the feeling of the home, then use specifications to confirm the work." },
-      { title: "How to choose where to spend more", body: "If the budget is limited, prioritise the parts you touch and use most: kitchen workflow, wardrobe internals, comfortable lighting, good-quality hardware, and practical storage. Decorative upgrades can be added later more easily than hidden construction decisions. This does not mean every home should look plain. It means the design should put money where it improves life first, then add visual richness with purpose." },
-      { title: "A calm decision is usually a better decision", body: "You do not have to sign immediately because a promotion ends or a mood board looks exciting. Take the scope home, read it slowly, compare it with your floor plan, and ask questions. A well-run design process should make you feel informed. If a proposal becomes clearer after you ask for detail, that is a positive sign. If it becomes harder to understand, pause before committing." },
-      { title: "Final takeaway", body: "Choose the partner whose written scope you understand, whose design process answers your daily-life questions, and whose execution responsibility is clear. The right interior project should feel easier to manage before work starts—not more confusing." },
-    ],
-  }),
-  toPost({
-    slug: "top-home-interior-designer-near-me-yelahanka",
-    title: "Top Home Interior Designer Near Me in Yelahanka | Zikhra",
-    excerpt:
-      "A simple, human guide to choosing a top home interior designer near you in Yelahanka, with room-wise ideas, costs, process, and Zikhra links.",
-    publishedAt: "2026-07-01",
-    sections: [],
-    body: [
-      linkedBlock(
-        "yelahanka-intro",
-        "If you searched for top home interior designer near me in Yelahanka, you are probably not looking for fancy words. You are looking for someone who can understand your home, your budget, your family, and the way you live every day. This guide explains how to choose the right designer in simple language, and how Zikhra plans premium home interiors across Bangalore with a calm, clear process.",
-        [
-          { text: "Zikhra plans premium home interiors across Bangalore", href: "/bangalore" },
-        ],
-      ),
-      linkedBlock(
-        "yelahanka-intro-two",
-        "Yelahanka is not one kind of place. It has older homes, new apartments, gated communities, villa pockets, airport-road connectivity, and families who want comfort without daily maintenance headaches. A good interior designer near Yelahanka should know how to plan storage, kitchens, lighting, wardrobes, and finishes that work for real homes, not just showroom photos.",
-        [],
-      ),
-      heading("yelahanka-meaning", "What does 'home interior designer near me in Yelahanka' really mean?"),
-      linkedBlock(
-        "yelahanka-meaning-body",
-        "When people type near me, they usually want three things: quick access, local understanding, and dependable execution. Quick access means the design team can discuss your floor plan and visit the site when needed. Local understanding means they know North Bangalore homes, society rules, lift timings, material movement, and practical site constraints. Dependable execution means the same design promise should survive until handover.",
-        [],
-      ),
-      linkedBlock(
-        "yelahanka-nearby-context",
-        "Yelahanka also connects naturally with Hebbal, Airport Road, Jakkur, Sahakar Nagar, Thanisandra, and new North Bangalore developments. If you are comparing studios around this belt, also look at Zikhra's Hebbal interior design page to understand how we think about North Bangalore high-rise and premium apartment homes.",
-        [
-          { text: "Zikhra's Hebbal interior design page", href: "/bangalore/hebbal" },
-        ],
-      ),
-      heading("yelahanka-why", "Why Yelahanka homes need thoughtful interior planning"),
-      linkedBlock(
-        "yelahanka-why-body",
-        "A home in Yelahanka often has to do many jobs. It may need a quiet bedroom for sleep, a kitchen that handles regular Indian cooking, a study corner for work or school, storage for seasonal items, and a living room that feels welcoming when guests arrive. The best interior design is not only about making things look rich. It is about making daily life easier.",
-        [],
-      ),
-      linkedBlock(
-        "yelahanka-why-list",
-        "Think of your home like a school bag. If everything has a place, mornings become easier. If everything is thrown in randomly, even a beautiful bag becomes stressful. Interior design works the same way. Wardrobes, kitchen drawers, shoe storage, TV units, pooja spaces, and utility corners should all have a clear purpose.",
-        [],
-      ),
-      heading("yelahanka-services", "Room-wise interior design services for Yelahanka homes"),
-      linkedBlock(
-        "yelahanka-services-body",
-        "A full-home plan usually starts with the rooms that work hardest: kitchen, wardrobes, living room, bedrooms, and storage. Zikhra's Bangalore interior design services cover full home interiors, modular kitchens, wardrobes, renovation, false ceilings, lighting, TV units, pooja rooms, bathroom interiors, and premium upgrades.",
-        [
-          { text: "Zikhra's Bangalore interior design services", href: "/bangalore/services" },
-        ],
-      ),
-      linkedBlock(
-        "yelahanka-kitchen",
-        "For the modular kitchen, the important questions are simple: Where will you chop? Where will hot vessels go? Where will groceries sit? Can two people work without bumping into each other? A good kitchen design answers these questions before choosing colours. You can explore Zikhra's kitchen portfolio for layout and finish ideas.",
-        [
-          { text: "Zikhra's kitchen portfolio", href: "/bangalore/portfolio/kitchen" },
-        ],
-      ),
-      linkedBlock(
-        "yelahanka-bedroom",
-        "For bedrooms, the goal is calm. Wardrobes should open easily, side tables should be reachable, charging points should make sense, and lighting should help you relax. A premium bedroom is not always the one with the most decoration. It is the one that feels peaceful at night and useful in the morning. See Zikhra's bedroom interior ideas for inspiration.",
-        [
-          { text: "Zikhra's bedroom interior ideas", href: "/bangalore/portfolio/bedroom" },
-        ],
-      ),
-      linkedBlock(
-        "yelahanka-living",
-        "For the living room, the TV wall, seating, lighting, and storage should work together. Many homes need space for guests, children, prayer, display, and hidden clutter. The design should look premium, but it should also forgive real life. Zikhra's living room portfolio shows how comfort and polish can stay together.",
-        [
-          { text: "Zikhra's living room portfolio", href: "/bangalore/portfolio/living-room" },
-        ],
-      ),
-      heading("yelahanka-cost", "How much does interior design cost in Yelahanka?"),
-      linkedBlock(
-        "yelahanka-cost-body",
-        "There is no honest single price for every home. Cost depends on carpet area, kitchen size, wardrobe running feet, plywood and finish choices, hardware, false ceiling, lighting, civil work, appliances, and how much custom detailing you want. A practical home may focus on must-have storage and durable finishes. A premium home may add better hardware, richer surfaces, layered lighting, wall panels, and custom furniture.",
-        [],
-      ),
-      linkedBlock(
-        "yelahanka-cost-link",
-        "Before speaking to any designer, read Zikhra's interior design cost guide. It will help you understand package bands, room-wise budgeting, and what changes the estimate. If you have a 2 BHK, the 2 BHK interior cost guide is a useful starting point. If you have a larger family home, the 3 BHK interior cost guide will be closer to your planning needs.",
-        [
-          { text: "Zikhra's interior design cost guide", href: "/bangalore/interior-design-cost" },
-          { text: "2 BHK interior cost guide", href: "/2bhk-interior-design-cost-bangalore" },
-          { text: "3 BHK interior cost guide", href: "/3bhk-interior-design-cost-bangalore" },
-        ],
-      ),
-      heading("yelahanka-how-to-choose", "How to choose the best interior designer near you"),
-      linkedBlock(
-        "yelahanka-choose-one",
-        "First, check if the designer listens before suggesting. A good designer asks about your routines, cooking style, storage problems, family size, budget comfort, building rules, and timeline. If someone starts with finishes before understanding your life, the design may look good but fail in daily use.",
-        [],
-      ),
-      linkedBlock(
-        "yelahanka-choose-two",
-        "Second, ask for scope clarity. What is included? What is excluded? Are electrical points included? What about lights, false ceiling, civil changes, painting, appliances, loose furniture, and styling? Many budget shocks happen because the first quote looks small but leaves out important work.",
-        [],
-      ),
-      linkedBlock(
-        "yelahanka-choose-three",
-        "Third, compare process. A mature studio will explain design, estimate, material selection, production, site preparation, installation, quality checks, and handover. The process should feel boring in a good way: clear, documented, and predictable.",
-        [],
-      ),
-      heading("yelahanka-zikhra-process", "Zikhra's simple process for Yelahanka homeowners"),
-      linkedBlock(
-        "yelahanka-process-body",
-        "Zikhra keeps the journey simple. We begin with a conversation about your home and how you live. Then we review the floor plan, define room-wise scope, discuss material direction, prepare an estimate, and move into design development. Once details are locked, production and site execution are coordinated with supervision and quality checks.",
-        [],
-      ),
-      linkedBlock(
-        "yelahanka-process-steps",
-        "The process can be understood like this: first we listen, then we plan, then we design, then we build, then we check. A 12-year-old can understand it, and that is the point. A homeowner should never feel lost inside their own project.",
-        [],
-      ),
-      heading("yelahanka-2bhk-3bhk", "2 BHK, 3 BHK, villa, or apartment: what changes?"),
-      linkedBlock(
-        "yelahanka-2bhk",
-        "A 2 BHK in Yelahanka usually needs smart storage and careful space planning. Every wall matters. The design should make the home feel open without wasting storage. If this sounds like your home, start with Zikhra's 2 BHK interior design page.",
-        [
-          { text: "Zikhra's 2 BHK interior design page", href: "/bangalore/project-type/2bhk" },
-        ],
-      ),
-      linkedBlock(
-        "yelahanka-3bhk",
-        "A 3 BHK needs more coordination. The living room, kitchen, master bedroom, children's room, guest room, and storage zones should feel connected but not identical. Explore Zikhra's 3 BHK interior design page if you want a complete family-home plan.",
-        [
-          { text: "Zikhra's 3 BHK interior design page", href: "/bangalore/project-type/3bhk" },
-        ],
-      ),
-      linkedBlock(
-        "yelahanka-villa",
-        "A villa or larger home needs proportion, lighting, and material discipline. Bigger spaces can look empty if they are under-designed, and crowded if they are over-designed. The right designer balances scale, comfort, and long-term maintenance.",
-        [],
-      ),
-      heading("yelahanka-mistakes", "Common mistakes homeowners should avoid"),
-      linkedBlock(
-        "yelahanka-mistakes-body",
-        "Do not choose only by the lowest quote. Do not approve designs without checking storage. Do not ignore hardware quality. Do not add too many colours in every room. Do not leave lighting for the end. Do not forget society rules, lift access, and site working hours. Most importantly, do not build a home only for photos. Build a home you can enjoy every day.",
-        [],
-      ),
-      heading("yelahanka-faq", "FAQs: interior designer near me in Yelahanka"),
-      heading("yelahanka-faq-one", "Who is the best home interior designer near me in Yelahanka?", "h3"),
-      linkedBlock(
-        "yelahanka-faq-one-body",
-        "The best designer for you is the one who understands your lifestyle, explains cost clearly, manages execution, and designs for daily comfort. If you want a premium, structured process in Bangalore, you can book a free estimate with Zikhra.",
-        [
-          { text: "book a free estimate with Zikhra", href: "/contact" },
-        ],
-      ),
-      heading("yelahanka-faq-two", "Can Zikhra design modular kitchens and wardrobes in Yelahanka?", "h3"),
-      linkedBlock(
-        "yelahanka-faq-two-body",
-        "Yes. Zikhra plans modular kitchens, wardrobes, TV units, pooja spaces, bedrooms, living rooms, bathrooms, lighting, false ceilings, renovation scopes, and full-home interiors for Bangalore homeowners.",
-        [],
-      ),
-      heading("yelahanka-faq-three", "Is a premium interior designer always expensive?", "h3"),
-      linkedBlock(
-        "yelahanka-faq-three-body",
-        "Not always. Premium design means better planning, cleaner details, stronger materials, and a smoother experience. You can phase decorative upgrades while protecting the important parts: kitchen, wardrobes, hardware, storage, lighting, and site quality.",
-        [],
-      ),
-      heading("yelahanka-faq-four", "How do I start my Yelahanka interior project?", "h3"),
-      linkedBlock(
-        "yelahanka-faq-four-body",
-        "Start with your floor plan, a rough budget range, possession date, must-have rooms, and a few reference images. Then speak to Zikhra so the team can map your scope and suggest the right next step.",
-        [
-          { text: "speak to Zikhra", href: "/contact" },
-        ],
-      ),
-      heading("yelahanka-final", "Final word: choose a designer who makes home feel easier"),
-      linkedBlock(
-        "yelahanka-final-body",
-        "A good interior designer near Yelahanka should not confuse you. They should help you see your home clearly: what to build first, where to spend, where to save, and how every room will support your life. Zikhra designs premium interiors with that belief. Beautiful, yes. But also practical, calm, and made for the way your family actually lives.",
-        [],
-      ),
-    ],
-  }),
 ];
-
-export const localBlogListItems: BlogListItem[] = localBlogPosts.map((post) => ({
-  _id: post._id,
-  title: post.title,
-  slug: post.slug,
-  excerpt: post.excerpt,
-  publishedAt: post.publishedAt,
-  mainImageUrl: post.mainImageUrl,
-  authorName: post.authorName,
-}));
-
-export function getLocalBlogPostBySlug(slug: string) {
-  return localBlogPosts.find((post) => post.slug === slug) ?? null;
-}
+export const localBlogPosts: BlogPost[] = posts;
+export const localBlogListItems: BlogListItem[] = localBlogPosts.map(({body, ...post}) => post);
+export function getLocalBlogPostBySlug(slug: string) { return localBlogPosts.find(post => post.slug === slug) ?? null; }

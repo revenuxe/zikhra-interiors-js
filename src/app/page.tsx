@@ -7,10 +7,10 @@ export default function HomePage() {
       <main className="min-h-screen bg-background text-foreground flex items-center justify-center px-6">
         <section className="max-w-2xl text-center">
           <h1 className="text-4xl md:text-5xl font-serif gold-text mb-4">
-            Best Interior Designer in Bangalore & Bengaluru
+            Umrah & Hajj Travel from Bangalore & Bengaluru
           </h1>
           <p className="text-muted-foreground text-sm md:text-base font-sans">
-            Best interior designer for premium home interiors in Bangalore and Bengaluru.
+            Best travel planner for premium Umrah journeys in Bangalore and Bengaluru.
           </p>
         </section>
       </main>

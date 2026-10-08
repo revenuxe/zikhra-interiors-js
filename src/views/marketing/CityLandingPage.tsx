@@ -1,6 +1,6 @@
-import Header from "@/components/Header";
+﻿import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import TrustedPartners from "@/components/TrustedPartners";
+import TravelBrands from "@/components/TravelBrands";
 import HomeStorySection from "@/components/HomeStorySection";
 import PortfolioPreview from "@/components/PortfolioPreview";
 import FeaturedProjects from "@/components/FeaturedProjects";
@@ -17,7 +17,7 @@ import BottomNav from "@/components/BottomNav";
 import ConsultationPopup from "@/components/ConsultationPopup";
 import type { MarketId } from "@/lib/market-types";
 
-/** Same sections as the homepage (Portfolio → Areas), for city or area landing pages — no hero, header, or chrome. */
+/** Same sections as the homepage (Portfolio â†’ Areas), for city or area landing pages â€” no hero, header, or chrome. */
 export function HomepageMarketingSections({ market }: { market: MarketId }) {
   return (
     <>
@@ -42,7 +42,7 @@ export default function CityLandingPage({ market }: Props) {
     <div className="min-h-screen bg-background">
       <Header />
       <HeroSection market={market} />
-      <TrustedPartners />
+      <TravelBrands />
       <HomepageMarketingSections market={market} />
       <ContactForm />
       <HomeStorySection market={market} />
@@ -52,3 +52,4 @@ export default function CityLandingPage({ market }: Props) {
     </div>
   );
 }
+

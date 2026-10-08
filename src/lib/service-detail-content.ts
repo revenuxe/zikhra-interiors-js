@@ -5,59 +5,356 @@ export type ServiceDetailContent = {
 };
 
 export const serviceDetailContent: Record<string, ServiceDetailContent> = {
-  "full-home": {
-    introduction: ["A full-home interior project works best when every room is planned as part of one considered whole. We begin with how your household moves through the home, then connect storage, lighting, materials, and furniture into a calm, coherent interior.", "The scope can include the kitchen, wardrobes, living spaces, bedrooms, bathrooms, ceilings, and finishing details. Decisions are coordinated early so junctions, electrical points, and proportions feel intentional rather than added later."],
-    planningPoints: ["Room-by-room layout and circulation planning", "A coordinated material, lighting, and storage palette", "Phased decisions for a clearer execution brief"],
-    faqs: [{ question: "What is included in full home interiors?", answer: "The scope is tailored to your home and can cover planning, fixed furniture, finishes, lighting coordination, kitchens, wardrobes, and living spaces." }, { question: "When should I start planning?", answer: "Start before electrical, plumbing, flooring, or civil work is finalised so the interior plan can inform those decisions." }, { question: "Can I renovate only selected rooms?", answer: "Yes. A coordinated plan can focus on priority rooms while keeping future upgrades in mind." }],
+  "umrah-packages": {
+    "introduction": [
+      "Plan your Umrah around your dates, budget, and pace. Compare accommodation, transport, and practical support before choosing the itinerary that suits you.",
+      "Prices and inclusions depend on travel dates, airline availability, hotel selection, room sharing, and applicable approvals. Your written quotation confirms what is included."
+    ],
+    "planningPoints": [
+      "Makkah and Madinah itinerary planning",
+      "Hotel and room-sharing options",
+      "Flight options from your departure city",
+      "Airport and intercity transfer options",
+      "Pre-departure document checklist",
+      "Written inclusions and exclusions"
+    ],
+    "faqs": [
+      {
+        "question": "How do I request an Umrah package?",
+        "answer": "Share your departure city, preferred dates, number of travellers, room-sharing preference, and budget. We will help you compare a suitable itinerary and written quotation."
+      },
+      {
+        "question": "Are flights, meals, and transfers included?",
+        "answer": "Inclusions vary by itinerary. Check the named hotels, flight details, meal plan, transfers, taxes, and exclusions in your written quotation before making a payment."
+      },
+      {
+        "question": "Can I enquire about Hajj?",
+        "answer": "Yes. Ask about the current season and the authorised booking route. Hajj arrangements depend on official eligibility, quota, permits, and approvals; an enquiry does not confirm a place."
+      },
+      {
+        "question": "Is a visa or departure guaranteed?",
+        "answer": "No. Visa decisions and travel permissions rest with the relevant authorities. Book only after reviewing the applicable requirements and the terms of your itinerary."
+      }
+    ]
   },
-  "modular-kitchen": {
-    introduction: ["A well-planned modular kitchen balances daily cooking habits with clear circulation and durable materials. We study the work triangle, appliance positions, counter lengths, and storage before selecting the visual language.", "From compact apartments to larger family kitchens, the goal is a kitchen that stays practical under real use while looking composed from the adjoining living areas."],
-    planningPoints: ["Workflow zones for prep, cooking, cleaning, and storage", "Cabinet internals sized around your cookware and provisions", "Countertop, backsplash, and hardware selections that work together"],
-    faqs: [{ question: "How is a modular kitchen layout chosen?", answer: "It is based on room dimensions, plumbing points, appliance requirements, and the way you cook every day." }, { question: "Can storage be customised?", answer: "Yes. Drawers, pull-outs, pantry units, corner storage, and tall units are planned around your requirements." }, { question: "Do you help with appliances?", answer: "We can coordinate appliance dimensions and service clearances within the kitchen plan." }],
+  "hajj-enquiries": {
+    "introduction": [
+      "Start with a careful discussion of the current Hajj season, eligibility, and authorised arrangements. Places, permits, and services must be confirmed through the applicable official booking route.",
+      "Prices and inclusions depend on travel dates, airline availability, hotel selection, room sharing, and applicable approvals. Your written quotation confirms what is included."
+    ],
+    "planningPoints": [
+      "Current-season enquiry support",
+      "Authorised booking route information",
+      "Eligibility and document discussion",
+      "Accommodation and transport questions",
+      "Preparation and packing guidance",
+      "Availability subject to official approvals"
+    ],
+    "faqs": [
+      {
+        "question": "How do I request an Umrah package?",
+        "answer": "Share your departure city, preferred dates, number of travellers, room-sharing preference, and budget. We will help you compare a suitable itinerary and written quotation."
+      },
+      {
+        "question": "Are flights, meals, and transfers included?",
+        "answer": "Inclusions vary by itinerary. Check the named hotels, flight details, meal plan, transfers, taxes, and exclusions in your written quotation before making a payment."
+      },
+      {
+        "question": "Can I enquire about Hajj?",
+        "answer": "Yes. Ask about the current season and the authorised booking route. Hajj arrangements depend on official eligibility, quota, permits, and approvals; an enquiry does not confirm a place."
+      },
+      {
+        "question": "Is a visa or departure guaranteed?",
+        "answer": "No. Visa decisions and travel permissions rest with the relevant authorities. Book only after reviewing the applicable requirements and the terms of your itinerary."
+      }
+    ]
   },
-  wardrobes: {
-    introduction: ["Wardrobes should make everyday routines easier, not simply fill a wall. We plan hanging, folding, drawers, luggage storage, accessories, and internal lighting around what needs to be stored.", "The external finish is then matched to the bedroom or dressing space so the unit feels built into the architecture rather than placed inside it."],
-    planningPoints: ["Internal divisions based on clothing and accessory needs", "Sliding or hinged shutter planning around room clearances", "Finish and handle choices aligned with the bedroom"],
-    faqs: [{ question: "Which wardrobe shutter is right for my room?", answer: "That depends on the available clearance, bed position, wall length, and the look you prefer." }, { question: "Can a wardrobe include a study or dresser?", answer: "Yes. We can combine storage with a dresser, display niche, study surface, or seating where space allows." }, { question: "How do you plan loft storage?", answer: "Lofts are sized for seasonal or infrequent items while keeping the main wardrobe easy to access." }],
+  "family-umrah": {
+    "introduction": [
+      "Plan a family Umrah with room arrangements, manageable transfers, and a pace suited to children and older relatives. Tell us about your group so the practical details can be discussed early.",
+      "Prices and inclusions depend on travel dates, airline availability, hotel selection, room sharing, and applicable approvals. Your written quotation confirms what is included."
+    ],
+    "planningPoints": [
+      "Family room enquiries",
+      "Child and infant travel requirements",
+      "Room-sharing preferences",
+      "Transfer planning for the group",
+      "Walking-distance discussion",
+      "Mobility needs reviewed before booking"
+    ],
+    "faqs": [
+      {
+        "question": "How do I request an Umrah package?",
+        "answer": "Share your departure city, preferred dates, number of travellers, room-sharing preference, and budget. We will help you compare a suitable itinerary and written quotation."
+      },
+      {
+        "question": "Are flights, meals, and transfers included?",
+        "answer": "Inclusions vary by itinerary. Check the named hotels, flight details, meal plan, transfers, taxes, and exclusions in your written quotation before making a payment."
+      },
+      {
+        "question": "Can I enquire about Hajj?",
+        "answer": "Yes. Ask about the current season and the authorised booking route. Hajj arrangements depend on official eligibility, quota, permits, and approvals; an enquiry does not confirm a place."
+      },
+      {
+        "question": "Is a visa or departure guaranteed?",
+        "answer": "No. Visa decisions and travel permissions rest with the relevant authorities. Book only after reviewing the applicable requirements and the terms of your itinerary."
+      }
+    ]
   },
-  "living-room": {
-    introduction: ["The living room often needs to welcome guests, support family time, and connect visually with adjacent spaces. We establish a furniture plan first, then layer lighting, wall treatments, storage, and soft furnishings around it.", "The result is not one fixed style; it is a room with balanced sightlines, comfortable seating, and a material palette that suits how you live."],
-    planningPoints: ["Seating layouts sized for conversation and circulation", "Lighting layers for daily use, entertaining, and evenings", "TV, storage, and display elements integrated into the room"],
-    faqs: [{ question: "Can a small living room feel spacious?", answer: "Yes. Scale, circulation, built-in storage, and a restrained palette can make a compact room work harder." }, { question: "Do you help select loose furniture?", answer: "We can guide the size, placement, and visual direction of loose furniture as part of the overall plan." }, { question: "Can the TV unit be included?", answer: "Yes. TV and entertainment storage can be designed as part of the living room composition." }],
+  "group-umrah": {
+    "introduction": [
+      "Explore group travel options with a defined departure plan and shared arrangements. Group size, language support, and any tour leader services are confirmed in your quotation.",
+      "Prices and inclusions depend on travel dates, airline availability, hotel selection, room sharing, and applicable approvals. Your written quotation confirms what is included."
+    ],
+    "planningPoints": [
+      "Group departure enquiries",
+      "Shared accommodation options",
+      "Coordinated transfer options",
+      "Group itinerary briefing",
+      "Meal-plan discussion",
+      "Tour leader availability on request"
+    ],
+    "faqs": [
+      {
+        "question": "How do I request an Umrah package?",
+        "answer": "Share your departure city, preferred dates, number of travellers, room-sharing preference, and budget. We will help you compare a suitable itinerary and written quotation."
+      },
+      {
+        "question": "Are flights, meals, and transfers included?",
+        "answer": "Inclusions vary by itinerary. Check the named hotels, flight details, meal plan, transfers, taxes, and exclusions in your written quotation before making a payment."
+      },
+      {
+        "question": "Can I enquire about Hajj?",
+        "answer": "Yes. Ask about the current season and the authorised booking route. Hajj arrangements depend on official eligibility, quota, permits, and approvals; an enquiry does not confirm a place."
+      },
+      {
+        "question": "Is a visa or departure guaranteed?",
+        "answer": "No. Visa decisions and travel permissions rest with the relevant authorities. Book only after reviewing the applicable requirements and the terms of your itinerary."
+      }
+    ]
   },
-  bedroom: {
-    introduction: ["Bedroom interiors are planned around rest, privacy, storage, and a quieter visual rhythm. The bed wall, wardrobe, bedside lighting, curtains, and circulation are considered together from the start.", "Whether the room is compact or generous, the objective is an uncluttered sanctuary that supports your routine and feels personal without becoming over-designed."],
-    planningPoints: ["Bed-wall proportions and integrated bedside lighting", "Wardrobe, dresser, and study coordination", "Window treatment and lighting choices for rest"],
-    faqs: [{ question: "What should be planned first in a bedroom?", answer: "Bed placement, wardrobe access, window positions, and electrical points are the best starting points." }, { question: "Can you design a bedroom with a study area?", answer: "Yes. A study can be integrated with storage while protecting the room's circulation and calm atmosphere." }, { question: "Do you coordinate attached bathrooms?", answer: "Yes. Bedroom finishes and storage can be coordinated with the attached bathroom for a cohesive suite." }],
+  "private-umrah": {
+    "introduction": [
+      "Discuss a private itinerary for your household or small group, with flexible travel dates and preferred accommodation. Each requested service is checked for availability before confirmation.",
+      "Prices and inclusions depend on travel dates, airline availability, hotel selection, room sharing, and applicable approvals. Your written quotation confirms what is included."
+    ],
+    "planningPoints": [
+      "Flexible date enquiries",
+      "Private transfer options",
+      "Hotel preference discussion",
+      "Room configuration planning",
+      "Tailored itinerary requests",
+      "Clear service-by-service quotation"
+    ],
+    "faqs": [
+      {
+        "question": "How do I request an Umrah package?",
+        "answer": "Share your departure city, preferred dates, number of travellers, room-sharing preference, and budget. We will help you compare a suitable itinerary and written quotation."
+      },
+      {
+        "question": "Are flights, meals, and transfers included?",
+        "answer": "Inclusions vary by itinerary. Check the named hotels, flight details, meal plan, transfers, taxes, and exclusions in your written quotation before making a payment."
+      },
+      {
+        "question": "Can I enquire about Hajj?",
+        "answer": "Yes. Ask about the current season and the authorised booking route. Hajj arrangements depend on official eligibility, quota, permits, and approvals; an enquiry does not confirm a place."
+      },
+      {
+        "question": "Is a visa or departure guaranteed?",
+        "answer": "No. Visa decisions and travel permissions rest with the relevant authorities. Book only after reviewing the applicable requirements and the terms of your itinerary."
+      }
+    ]
   },
-  bathroom: {
-    introduction: ["Bathroom design is where measured planning matters most. Fixture positions, drainage, waterproofing, ventilation, storage, and lighting must work together before finishes are selected.", "We create a refined, easy-to-maintain room by balancing practical surfaces with thoughtful vanity storage, mirror lighting, and shower zoning."],
-    planningPoints: ["Wet and dry zone planning around drainage", "Vanity, mirror, and concealed storage design", "Tile and fixture selection for cleaning and longevity"],
-    faqs: [{ question: "Can a bathroom be redesigned without moving every pipe?", answer: "Often, yes. We assess existing service points and recommend the most sensible level of change." }, { question: "How is waterproofing handled?", answer: "Waterproofing and drainage requirements are considered before finishes are installed." }, { question: "Can small bathrooms have good storage?", answer: "Yes. Recesses, mirrored cabinets, vanities, and vertical storage can improve utility without crowding the room." }],
+  "makkah-madinah-stays": {
+    "introduction": [
+      "Compare hotel options by location, room type, budget, and accessibility. Exact hotel names, availability, and distance information must be confirmed before you book.",
+      "Prices and inclusions depend on travel dates, airline availability, hotel selection, room sharing, and applicable approvals. Your written quotation confirms what is included."
+    ],
+    "planningPoints": [
+      "Named hotel options",
+      "Room occupancy details",
+      "Location and access discussion",
+      "Meal-plan options",
+      "Check-in and check-out information",
+      "Availability confirmed in writing"
+    ],
+    "faqs": [
+      {
+        "question": "How do I request an Umrah package?",
+        "answer": "Share your departure city, preferred dates, number of travellers, room-sharing preference, and budget. We will help you compare a suitable itinerary and written quotation."
+      },
+      {
+        "question": "Are flights, meals, and transfers included?",
+        "answer": "Inclusions vary by itinerary. Check the named hotels, flight details, meal plan, transfers, taxes, and exclusions in your written quotation before making a payment."
+      },
+      {
+        "question": "Can I enquire about Hajj?",
+        "answer": "Yes. Ask about the current season and the authorised booking route. Hajj arrangements depend on official eligibility, quota, permits, and approvals; an enquiry does not confirm a place."
+      },
+      {
+        "question": "Is a visa or departure guaranteed?",
+        "answer": "No. Visa decisions and travel permissions rest with the relevant authorities. Book only after reviewing the applicable requirements and the terms of your itinerary."
+      }
+    ]
   },
-  "false-ceiling": {
-    introduction: ["A false ceiling should support the room rather than dominate it. We use it to organise lighting, conceal services where needed, and bring proportion to the ceiling plane.", "Lighting is planned as a layered system—ambient, task, and accent—so the atmosphere can adapt across the day instead of relying on a single harsh source."],
-    planningPoints: ["Ceiling levels aligned with room proportions", "Downlight, cove, pendant, and fan positions", "Access and service considerations for a practical installation"],
-    faqs: [{ question: "Is a false ceiling suitable for every room?", answer: "It depends on ceiling height, services, and the desired lighting. Some rooms benefit from a simple perimeter treatment instead." }, { question: "Can lighting be upgraded without a full renovation?", answer: "In many cases, targeted ceiling and electrical work can improve lighting without redoing the full room." }, { question: "How do you avoid an over-designed ceiling?", answer: "We start with proportion and lighting needs, then keep the geometry restrained." }],
+  "flights-transfers": {
+    "introduction": [
+      "Coordinate flight options and ground travel for a more organised journey. Review baggage allowances, transit arrangements, and transfer details with the confirmed providers.",
+      "Prices and inclusions depend on travel dates, airline availability, hotel selection, room sharing, and applicable approvals. Your written quotation confirms what is included."
+    ],
+    "planningPoints": [
+      "Departure city options",
+      "Airline and baggage details",
+      "Airport transfer enquiries",
+      "Makkah–Madinah travel options",
+      "Private or shared transport choices",
+      "Timings confirmed before departure"
+    ],
+    "faqs": [
+      {
+        "question": "How do I request an Umrah package?",
+        "answer": "Share your departure city, preferred dates, number of travellers, room-sharing preference, and budget. We will help you compare a suitable itinerary and written quotation."
+      },
+      {
+        "question": "Are flights, meals, and transfers included?",
+        "answer": "Inclusions vary by itinerary. Check the named hotels, flight details, meal plan, transfers, taxes, and exclusions in your written quotation before making a payment."
+      },
+      {
+        "question": "Can I enquire about Hajj?",
+        "answer": "Yes. Ask about the current season and the authorised booking route. Hajj arrangements depend on official eligibility, quota, permits, and approvals; an enquiry does not confirm a place."
+      },
+      {
+        "question": "Is a visa or departure guaranteed?",
+        "answer": "No. Visa decisions and travel permissions rest with the relevant authorities. Book only after reviewing the applicable requirements and the terms of your itinerary."
+      }
+    ]
   },
-  "tv-unit": {
-    introduction: ["A TV unit has to manage technology, storage, and the visual focus of a room. We plan screen position, viewing height, cable routes, ventilation, and display areas before choosing finishes.", "The final unit can be minimal and floating or become a more architectural wall composition, depending on the room and how much storage is required."],
-    planningPoints: ["Viewing height and cable-management planning", "Closed storage balanced with display niches", "Material and lighting choices that suit the living room"],
-    faqs: [{ question: "Can cables be concealed in a TV unit?", answer: "Yes. Cable routes, power points, and access panels are planned before the unit is built." }, { question: "Can a TV unit include storage?", answer: "Yes. It can include drawers, cabinets, shelves, and display niches based on your needs." }, { question: "Do you plan for sound systems?", answer: "We can allow for speaker locations, ventilation, and equipment access in the design." }],
+  "visa-assistance": {
+    "introduction": [
+      "Discuss the documents and application steps relevant to your proposed journey. Assistance does not guarantee approval; visa decisions are made by the relevant authorities.",
+      "Prices and inclusions depend on travel dates, airline availability, hotel selection, room sharing, and applicable approvals. Your written quotation confirms what is included."
+    ],
+    "planningPoints": [
+      "Application checklist discussion",
+      "Passport detail review",
+      "Document preparation support",
+      "Application route information",
+      "Status follow-up where available",
+      "Authority approval required"
+    ],
+    "faqs": [
+      {
+        "question": "How do I request an Umrah package?",
+        "answer": "Share your departure city, preferred dates, number of travellers, room-sharing preference, and budget. We will help you compare a suitable itinerary and written quotation."
+      },
+      {
+        "question": "Are flights, meals, and transfers included?",
+        "answer": "Inclusions vary by itinerary. Check the named hotels, flight details, meal plan, transfers, taxes, and exclusions in your written quotation before making a payment."
+      },
+      {
+        "question": "Can I enquire about Hajj?",
+        "answer": "Yes. Ask about the current season and the authorised booking route. Hajj arrangements depend on official eligibility, quota, permits, and approvals; an enquiry does not confirm a place."
+      },
+      {
+        "question": "Is a visa or departure guaranteed?",
+        "answer": "No. Visa decisions and travel permissions rest with the relevant authorities. Book only after reviewing the applicable requirements and the terms of your itinerary."
+      }
+    ]
   },
-  "pooja-room": {
-    introduction: ["A pooja room is a personal space that benefits from calm proportions, purposeful storage, and materials that feel appropriate to the home. We adapt the design to the available niche, room, or cabinet format.", "Details such as doors, back panels, lighting, shelves, and diya storage are handled with care so the space feels serene in everyday use."],
-    planningPoints: ["Temple proportions suited to the available space", "Storage for essentials with easy daily access", "Lighting and material choices that create a quiet focal point"],
-    faqs: [{ question: "Can a pooja unit work in a small apartment?", answer: "Yes. A compact wall niche or cabinet can be designed with storage and lighting without overwhelming the room." }, { question: "Can the design follow vastu preferences?", answer: "We can consider your stated orientation and placement preferences within the practical limits of the home." }, { question: "Which materials are suitable?", answer: "Wood, stone-look surfaces, marble, metal details, and textured panels can be selected based on the desired character and maintenance needs." }],
+  "ziyarat": {
+    "introduction": [
+      "Ask about local ziyarat options in Makkah and Madinah. Visits, transport, guide availability, and access are subject to local conditions and the confirmed itinerary.",
+      "Prices and inclusions depend on travel dates, airline availability, hotel selection, room sharing, and applicable approvals. Your written quotation confirms what is included."
+    ],
+    "planningPoints": [
+      "Makkah ziyarat options",
+      "Madinah ziyarat options",
+      "Local transport enquiries",
+      "Guide and language enquiries",
+      "Visit timings discussed in advance",
+      "Access subject to local permissions"
+    ],
+    "faqs": [
+      {
+        "question": "How do I request an Umrah package?",
+        "answer": "Share your departure city, preferred dates, number of travellers, room-sharing preference, and budget. We will help you compare a suitable itinerary and written quotation."
+      },
+      {
+        "question": "Are flights, meals, and transfers included?",
+        "answer": "Inclusions vary by itinerary. Check the named hotels, flight details, meal plan, transfers, taxes, and exclusions in your written quotation before making a payment."
+      },
+      {
+        "question": "Can I enquire about Hajj?",
+        "answer": "Yes. Ask about the current season and the authorised booking route. Hajj arrangements depend on official eligibility, quota, permits, and approvals; an enquiry does not confirm a place."
+      },
+      {
+        "question": "Is a visa or departure guaranteed?",
+        "answer": "No. Visa decisions and travel permissions rest with the relevant authorities. Book only after reviewing the applicable requirements and the terms of your itinerary."
+      }
+    ]
   },
-  renovation: {
-    introduction: ["Renovation begins with a clear view of what should stay, what needs repair, and what can be transformed. We assess existing layouts, services, and finishes to build a practical sequence for the work.", "The goal is to make an older home feel current and more functional without unnecessary intervention—whether the priority is a kitchen, bathrooms, flooring, or an entire home refresh."],
-    planningPoints: ["Existing-condition review before finalising the scope", "Phased work planning for occupied homes where possible", "Updated finishes, services, and storage aligned to current needs"],
-    faqs: [{ question: "Do I need to move out during a renovation?", answer: "That depends on the scope and affected rooms. We can discuss phasing where the work allows it." }, { question: "Can you renovate one room at a time?", answer: "Yes. Targeted kitchen, bathroom, bedroom, or living room upgrades can be planned independently." }, { question: "How is the scope decided?", answer: "A site review helps identify the existing condition, required upgrades, and the best sequence of work." }],
+  "ramadan-umrah": {
+    "introduction": [
+      "Enquire early about Ramadan travel dates, hotel preferences, and room arrangements. Busy periods can affect availability, transport, and pricing, so all details are confirmed in writing.",
+      "Prices and inclusions depend on travel dates, airline availability, hotel selection, room sharing, and applicable approvals. Your written quotation confirms what is included."
+    ],
+    "planningPoints": [
+      "Ramadan date enquiries",
+      "Hotel availability checks",
+      "Meal-plan discussion",
+      "Room-sharing options",
+      "Transfer scheduling",
+      "Written booking and cancellation terms"
+    ],
+    "faqs": [
+      {
+        "question": "How do I request an Umrah package?",
+        "answer": "Share your departure city, preferred dates, number of travellers, room-sharing preference, and budget. We will help you compare a suitable itinerary and written quotation."
+      },
+      {
+        "question": "Are flights, meals, and transfers included?",
+        "answer": "Inclusions vary by itinerary. Check the named hotels, flight details, meal plan, transfers, taxes, and exclusions in your written quotation before making a payment."
+      },
+      {
+        "question": "Can I enquire about Hajj?",
+        "answer": "Yes. Ask about the current season and the authorised booking route. Hajj arrangements depend on official eligibility, quota, permits, and approvals; an enquiry does not confirm a place."
+      },
+      {
+        "question": "Is a visa or departure guaranteed?",
+        "answer": "No. Visa decisions and travel permissions rest with the relevant authorities. Book only after reviewing the applicable requirements and the terms of your itinerary."
+      }
+    ]
   },
-  commercial: {
-    introduction: ["Commercial interiors should make daily work and visitor experience feel considered from the first step inside. We plan circulation, work zones, reception, storage, meeting areas, and brand touchpoints around the operation of the space.", "Each office, retail space, café, or studio has different pressures. The design process balances those functional needs with a clear visual identity and practical maintenance."],
-    planningPoints: ["Layout zoning for teams, customers, and operations", "Reception, meeting, storage, and utility planning", "Materials and lighting selected for the brand and daily use"],
-    faqs: [{ question: "Can you design small commercial spaces?", answer: "Yes. Compact offices and retail spaces benefit greatly from disciplined zoning and storage planning." }, { question: "Do you work with an existing brand identity?", answer: "Yes. Existing colours, materials, and brand cues can inform the spatial design without making it feel overly branded." }, { question: "How is the project scope defined?", answer: "We begin with your operational requirements, site conditions, and the customer or team experience you want to create." }],
-  },
+  "muslim-friendly-holidays": {
+    "introduction": [
+      "Discuss leisure travel with halal dining preferences, prayer-time flexibility, and family needs. Destination services and specific facilities are checked as part of itinerary planning.",
+      "Prices and inclusions depend on travel dates, airline availability, hotel selection, room sharing, and applicable approvals. Your written quotation confirms what is included."
+    ],
+    "planningPoints": [
+      "Destination and budget discussion",
+      "Halal dining enquiries",
+      "Prayer facility enquiries",
+      "Family accommodation options",
+      "Private itinerary requests",
+      "Local service availability checks"
+    ],
+    "faqs": [
+      {
+        "question": "How do I request an Umrah package?",
+        "answer": "Share your departure city, preferred dates, number of travellers, room-sharing preference, and budget. We will help you compare a suitable itinerary and written quotation."
+      },
+      {
+        "question": "Are flights, meals, and transfers included?",
+        "answer": "Inclusions vary by itinerary. Check the named hotels, flight details, meal plan, transfers, taxes, and exclusions in your written quotation before making a payment."
+      },
+      {
+        "question": "Can I enquire about Hajj?",
+        "answer": "Yes. Ask about the current season and the authorised booking route. Hajj arrangements depend on official eligibility, quota, permits, and approvals; an enquiry does not confirm a place."
+      },
+      {
+        "question": "Is a visa or departure guaranteed?",
+        "answer": "No. Visa decisions and travel permissions rest with the relevant authorities. Book only after reviewing the applicable requirements and the terms of your itinerary."
+      }
+    ]
+  }
 };

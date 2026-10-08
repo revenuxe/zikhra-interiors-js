@@ -1,3 +1,4 @@
+import { seoTitle } from "@/lib/seo";
 import type { Metadata } from "next";
 import CityLandingPage from "@/views/marketing/CityLandingPage";
 import SeoJsonLd from "@/components/SeoJsonLd";
@@ -25,28 +26,28 @@ import {
 export const dynamic = "force-static";
 export const revalidate = 86400;
 
-const title = "Best Interior Designer in Bangalore | Zikhra";
+const title = "Tours and Travels in Bangalore | Zikhra Tours & Travels";
 const description =
-  "Zikhra designs premium 2 BHK, 3 BHK, villa, modular kitchen, and turnkey home interiors in Bangalore. Serving Koramangala, Indiranagar, Whitefield, HSR Layout, and more.";
+  "Explore Umrah packages, Hajj guidance and family travel with Zikhra Tours and Travels in RT Nagar, Bangalore. Compare flights, prices and departure batches.";
 
 const keywords = uniqueKeywords(
   BANGALORE_CORE_KEYWORDS,
   BANGALORE_SERVICE_KEYWORDS,
   BANGALORE_COST_KEYWORDS,
-  BANGALORE_NEIGHBOURHOODS.map((area) => `${area} interior designers`),
+  BANGALORE_NEIGHBOURHOODS.map((area) => `${area} travel planners`),
 );
 
 export const metadata: Metadata = {
-  title,
+  title: seoTitle(title),
   description,
   keywords,
-  alternates: { canonical: "/bangalore" },
+  alternates: { canonical: "/" },
   openGraph: pageOpenGraph({
     title,
     description,
     path: "/bangalore",
     imageUrl: DEFAULT_OG_IMAGE_PATH,
-    imageAlt: "Best interior designer in Bangalore - Zikhra",
+    imageAlt: "Umrah & travel enquiries from Bangalore - Zikhra",
   }),
   twitter: twitterSummaryLarge(title, description, DEFAULT_OG_IMAGE_PATH),
 };
@@ -55,11 +56,11 @@ export default function BangaloreHubPage() {
   const itemList = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Bangalore neighbourhoods - Zikhra premium interiors",
+    name: "Bangalore neighbourhoods - Zikhra Tours & Travels",
     itemListElement: bangaloreAreas.map((area, index) => ({
       "@type": "ListItem",
       position: index + 1,
-      name: `Interior designers in ${area.name}, Bangalore`,
+      name: `Umrah & Hajj Tours from ${area.name}, Bangalore`,
       item: absoluteUrl(`/bangalore/${area.slug}`),
     })),
   };

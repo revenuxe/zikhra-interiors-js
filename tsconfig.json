@@ -32,11 +32,13 @@
     "strictNullChecks": true
   },
   "include": [
+    ".next/types/**/*.ts",
+    "app/**/*.ts",
+    "app/**/*.tsx",
     "next-env.d.ts",
-    "src/app/**/*.ts",
-    "src/app/**/*.tsx",
     "src/**/*.d.ts",
-    ".next/types/**/*.ts"
+    "src/app/**/*.ts",
+    "src/app/**/*.tsx"
   ],
   "exclude": [
     "node_modules",

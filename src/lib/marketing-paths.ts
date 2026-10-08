@@ -21,22 +21,22 @@ export function serviceDetailPath(market: MarketId, slug: string): string {
 
 export function projectTypeDetailPath(market: MarketId, slug: string): string {
   void market;
-  return `/bangalore/project-type/${slug}`;
+  return `/bangalore/packages/${slug}`;
 }
 
 export function portfolioDetailPath(market: MarketId, slug: string): string {
   void market;
-  return `/bangalore/portfolio/${slug}`;
+  return `/bangalore/destinations/${slug}`;
 }
 
 export function projectsIndexPath(market: MarketId): string {
   void market;
-  return "/bangalore/projects";
+  return "/bangalore/journeys";
 }
 
 export function projectDetailPath(market: MarketId, slug: string): string {
   void market;
-  return `/bangalore/projects/${slug}`;
+  return `/bangalore/journeys/${slug}`;
 }
 
 export function cityLabel(market: MarketId): string {

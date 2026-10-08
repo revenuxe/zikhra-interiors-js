@@ -1,3 +1,4 @@
+import { seoTitle } from "@/lib/seo";
 import type { Metadata } from "next";
 import About from "@/legacy-pages/About";
 import SeoJsonLd from "@/components/SeoJsonLd";
@@ -14,21 +15,21 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "About Zikhra Interiors",
+  title: seoTitle("About Zikhra Tours & Travels"),
   description:
-    "Learn about Zikhra, a premium interior design studio in Bangalore known for craftsmanship, transparent execution, and timeless spaces.",
+    "Learn about Zikhra Tours & Travels and our approach to Umrah planning, Hajj enquiries, and family journeys from Bangalore.",
   alternates: { canonical: "/about" },
   openGraph: pageOpenGraph({
-    title: "About Zikhra Interiors",
+    title: "About Zikhra Tours & Travels",
     description:
-      "Meet the design team behind premium interior spaces across Bangalore homes and villas.",
+      "Explore thoughtful pilgrimage and family travel planning from Bangalore.",
     path: "/about",
     imageUrl: DEFAULT_OG_IMAGE_PATH,
-    imageAlt: "About Zikhra — premium interior designers and bespoke homes Bangalore",
+    imageAlt: "Zikhra Tours & Travels in RT Nagar, Bangalore",
   }),
   twitter: twitterSummaryLarge(
-    "About Zikhra Interiors",
-    "Meet the design team behind premium interior spaces across Bangalore homes and villas.",
+    "About Zikhra Tours & Travels",
+    "Explore thoughtful pilgrimage and family travel planning from Bangalore.",
     DEFAULT_OG_IMAGE_PATH,
   ),
 };

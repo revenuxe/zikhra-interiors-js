@@ -1,3 +1,4 @@
+import HeroBackdrop from "@/components/HeroBackdrop";
 import Link from "next/link";
 import { ArrowUpRight, MapPin } from "lucide-react";
 import Header from "@/components/Header";
@@ -13,18 +14,14 @@ type Props = { market?: MarketId };
 
 export default function ProjectsView({ market = "bangalore" }: Props) {
   const cityLine =
-    "Explore premium interior transformations across villas and apartments, delivered with turnkey precision in Bangalore.";
+    "Explore illustrative Umrah and travel itineraries for individuals, families, and groups. Dates, hotels, prices, and inclusions are confirmed in a personalised quotation.";
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <section className="relative isolate overflow-hidden bg-[#f8f8f7] pb-12 pt-28 sm:pb-16 sm:pt-32">
-        <img src={projects[0]?.heroImage} alt="Featured premium interior project in Bangalore" className="absolute inset-0 -z-20 h-full w-full object-cover opacity-[0.22] sm:opacity-[0.16]" />
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(248,248,247,0.97)_0%,rgba(248,248,247,0.91)_48%,rgba(248,248,247,0.74)_100%)]" />
-        <div className="absolute -right-32 top-1/3 -z-10 h-80 w-80 rounded-full bg-white/70 blur-3xl" />
+      <HeroBackdrop />
         <div className="relative mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
-          <h1 className="max-w-[11ch] font-sans text-[3.35rem] font-light leading-[0.97] tracking-[-0.07em] text-[#171717] sm:text-6xl md:max-w-[13ch] md:text-7xl lg:text-[5.8rem]">
-            Featured Interior Projects in Bangalore
-          </h1>
+          <h1 className="max-w-[11ch] font-sans text-[3.35rem] font-light leading-[0.97] tracking-[-0.07em] text-[#171717] sm:text-6xl md:max-w-[13ch] md:text-7xl lg:text-[5.8rem]">Explore Our Journeys</h1>
           <p className="mt-8 max-w-xl font-sans text-[1.03rem] font-light leading-[1.72] tracking-[-0.02em] text-[#525252] md:text-[1.15rem]">{cityLine}</p>
         </div>
       </section>
@@ -67,16 +64,14 @@ export default function ProjectsView({ market = "bangalore" }: Props) {
       </section>
       <section className="px-5 pb-10">
         <div className="max-w-lg mx-auto rounded-2xl border border-border/50 bg-card p-5">
-          <h2 className="font-serif text-xl gold-text mb-2">Need Similar Premium Interiors?</h2>
-          <p className="font-sans text-sm text-muted-foreground mb-4">
-            Discover the services behind these projects and connect with our design team for your home.
-          </p>
+          <h2 className="font-serif text-xl gold-text mb-2">Need Similar Pilgrimage Journeys?</h2>
+          <p className="font-sans text-sm text-muted-foreground mb-4">Explore the travel services that can help shape your itinerary and discuss your next journey with our team.</p>
           <div className="flex flex-wrap gap-4 text-sm font-sans">
             <Link href={servicesIndexPath(market)} className="text-gold hover:underline">
-              Explore Interior Services
+              Explore Travel Services
             </Link>
             <Link href="/contact" className="text-gold hover:underline">
-              Book a Design Consultation
+              Discuss Your Journey
             </Link>
           </div>
         </div>

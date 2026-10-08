@@ -1,5 +1,6 @@
+﻿import HeroBackdrop from "@/components/HeroBackdrop";
 import Link from "next/link";
-import { CheckCircle, ChevronDown } from "lucide-react";
+import { CheckCircle, ChevronDown, ArrowUpRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
@@ -7,7 +8,6 @@ import ContactForm from "@/components/ContactForm";
 import HomeStorySection from "@/components/HomeStorySection";
 import ConsultationPopup from "@/components/ConsultationPopup";
 import TrustedPartners from "@/components/TrustedPartners";
-import heroImage from "@/assets/hero-interior.webp";
 import SeoJsonLd from "@/components/SeoJsonLd";
 import type { AreaItem } from "@/lib/areas-data";
 import { HomepageMarketingSections } from "@/views/marketing/CityLandingPage";
@@ -18,13 +18,13 @@ type Props = {
   area: AreaItem;
 };
 
-const services = ["Full Home Interiors", "Modular Kitchen Design", "Wardrobe Solutions", "Living Room Design"];
+const services = ["Umrah Packages", "Hajj Enquiries", "Family Umrah", "Group Umrah"];
 
 export default function AreaDetailView({ area }: Props) {
   const market = "bangalore";
   const servicesBase = servicesIndexPath(market);
   const projectsBase = projectsIndexPath(market);
-  const costGuidePath = "/bangalore/interior-design-cost";
+  const costGuidePath = "/bangalore/travel-package-guide";
 
   return (
     <div className="min-h-screen bg-background">
@@ -33,33 +33,28 @@ export default function AreaDetailView({ area }: Props) {
       ) : null}
       <Header />
       <section className="relative isolate overflow-hidden bg-[#f8f8f7] pb-12 pt-28 sm:pb-16 sm:pt-32">
-        <img src={heroImage.src} alt={`Premium home interior design in ${area.name}, ${area.city}`} className="absolute inset-0 -z-20 h-full w-full object-cover opacity-[0.24] sm:opacity-[0.18]" />
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(248,248,247,0.96)_0%,rgba(248,248,247,0.9)_45%,rgba(248,248,247,0.72)_100%)]" />
+      <HeroBackdrop />
         <div className="relative mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
         <h1 className="max-w-[11ch] font-sans text-[3.35rem] font-light leading-[0.97] tracking-[-0.07em] text-[#171717] sm:text-6xl md:max-w-[13ch] md:text-7xl lg:text-[5.8rem]">
-          Best Interior Designer in {area.name}, {area.city}
+          Umrah & Hajj Tours from {area.name}
         </h1>
-        <p className="mt-8 max-w-xl font-sans text-[1.03rem] font-light leading-[1.72] tracking-[-0.02em] text-[#525252] md:text-[1.15rem]">
-          {area.tagline} 2 BHK pricing starts from Rs. 3.5 Lakhs and 3 BHK pricing starts from Rs. 5.5 Lakhs.
-        </p>
-        <Link
-          href="/contact"
-          className="mt-10 inline-flex items-center rounded-lg bg-[#171717] px-5 py-3.5 font-sans text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-black"
-        >
-          Get Free Estimate
-        </Link>
+        <p className="mt-8 max-w-xl font-sans text-[1.03rem] font-light leading-[1.72] tracking-[-0.02em] text-[#525252] md:text-[1.15rem]">Umrah packages, Hajj guidance and family travel from {area.name}, {area.city}.</p>
+        <div className="mt-8 flex flex-wrap items-center gap-3">
+          <Link href="/contact" className="inline-flex items-center rounded-lg bg-[#171717] px-4 py-3.5 font-sans text-sm font-medium text-white transition-colors hover:bg-black">Plan Your Journey</Link>
+          <Link href="/bangalore/packages" className="inline-flex items-center gap-2 rounded-lg border border-black/20 bg-white/60 px-4 py-3.5 font-sans text-sm font-medium text-[#171717] transition-colors hover:bg-white">Explore Packages<ArrowUpRight size={16}/></Link>
+        </div>
         <p className="mt-4 max-w-xl font-sans text-xs text-muted-foreground">
           Also explore our{" "}
           <Link href={projectsBase} className="text-gold hover:underline">
-            premium interior projects
+            illustrative itineraries
           </Link>{" "}
           and{" "}
           <Link href={servicesBase} className="text-gold hover:underline">
-            premium service packages
+            travel services
           </Link>
           , and{" "}
           <Link href={costGuidePath} className="text-gold hover:underline">
-            interior design costs
+            travel package costs
           </Link>{" "}
           in {area.city}.
         </p>
@@ -71,7 +66,7 @@ export default function AreaDetailView({ area }: Props) {
       <section className="section-padding pt-0">
         <div className="max-w-2xl mx-auto px-1">
           <h2 className="font-serif text-xl md:text-2xl gold-text text-center mb-6">
-            Premium home interiors in {area.name}, {area.city}
+            Umrah travel from {area.name}, {area.city}
           </h2>
           <div className="space-y-4 text-left">
             {area.description
@@ -99,7 +94,7 @@ export default function AreaDetailView({ area }: Props) {
       </section>
       <section className="section-padding">
         <div className="mx-auto grid max-w-5xl gap-5 sm:grid-cols-3">
-          {[{ title: "Start with the plan", text: "Floor plans, room priorities, and storage needs shape the interior before finishes are selected." }, { title: "Design for the address", text: `Layouts and materials are considered in the context of ${area.name} homes, building rules, and daily routines.` }, { title: "Clarify the scope", text: "A clear brief helps identify the right services, sequence, and next steps for your project." }].map((item) => <div key={item.title} className="rounded-[1.25rem] border border-black/10 bg-white p-5 shadow-[0_8px_20px_rgba(0,0,0,0.04)]"><h3 className="font-sans text-base font-medium text-[#171717]">{item.title}</h3><p className="mt-2 font-sans text-sm leading-relaxed text-[#5b5b5b]">{item.text}</p></div>)}
+          {[{ title: "Start with the plan", text: "Travel dates, group size, and budget help shape your itinerary." }, { title: "Plan for your family", text: `Families from ${area.name} can discuss room sharing, children, older relatives, and accessibility needs.` }, { title: "Clarify the scope", text: "A written quotation confirms the travel services, exclusions, costs, and next steps." }].map((item) => <div key={item.title} className="rounded-[1.25rem] border border-black/10 bg-white p-5 shadow-[0_8px_20px_rgba(0,0,0,0.04)]"><h3 className="font-sans text-base font-medium text-[#171717]">{item.title}</h3><p className="mt-2 font-sans text-sm leading-relaxed text-[#5b5b5b]">{item.text}</p></div>)}
         </div>
       </section>
 
@@ -108,7 +103,7 @@ export default function AreaDetailView({ area }: Props) {
           <div className="max-w-xl mx-auto px-1">
             <h2 className="font-serif text-xl md:text-2xl gold-text text-center mb-2">Questions about {area.name}</h2>
             <p className="font-sans text-xs text-muted-foreground text-center mb-8">
-              Straight answers for homeowners planning interiors in {area.city}.
+              Straight answers for travellers planning journeys in {area.city}.
             </p>
             <ul className="space-y-3">
               {area.faqs.map((f) => (
@@ -130,9 +125,7 @@ export default function AreaDetailView({ area }: Props) {
       <section className="section-padding pt-0">
         <div className="max-w-xl mx-auto rounded-2xl border border-border/30 bg-card/20 px-5 py-6 text-center">
           <p className="font-sans text-xs text-muted-foreground uppercase tracking-wider mb-2">Local service</p>
-          <p className="font-sans text-sm text-foreground/90">
-            Zikhra serves {area.name} and surrounding neighbourhoods in {area.city} with the same premium standards as our Bangalore studio — book a consultation to discuss your floor plan and style direction.
-          </p>
+          <p className="font-sans text-sm text-foreground/90">Planning travel from {area.name}, {area.city}? Start with your dates, group size, and preferences, then review the written itinerary before booking.</p>
         </div>
       </section>
 
@@ -147,3 +140,4 @@ export default function AreaDetailView({ area }: Props) {
     </div>
   );
 }
+

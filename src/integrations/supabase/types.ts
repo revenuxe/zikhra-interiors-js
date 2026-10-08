@@ -1,4 +1,4 @@
-export type Json =
+﻿export type Json =
   | string
   | number
   | boolean
@@ -10,112 +10,234 @@ export type Database = {
   // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: "14.4"
+    PostgrestVersion: "14.18"
+  }
+  graphql_public: {
+    Tables: {
+      [_ in never]: never
+    }
+    Views: {
+      [_ in never]: never
+    }
+    Functions: {
+      graphql: {
+        Args: {
+          extensions?: Json
+          operationName?: string
+          query?: string
+          variables?: Json
+        }
+        Returns: Json
+      }
+    }
+    Enums: {
+      [_ in never]: never
+    }
+    CompositeTypes: {
+      [_ in never]: never
+    }
   }
   public: {
     Tables: {
-      blog_posts: {
-        Row: {
-          author: string | null
-          category: string | null
-          content: string
-          created_at: string | null
-          excerpt: string | null
-          featured_image: string | null
-          id: string
-          meta_description: string | null
-          meta_keywords: string | null
-          meta_title: string | null
-          published: boolean | null
-          published_at: string | null
-          slug: string
-          tags: string[] | null
-          title: string
-          updated_at: string | null
-        }
-        Insert: {
-          author?: string | null
-          category?: string | null
-          content: string
-          created_at?: string | null
-          excerpt?: string | null
-          featured_image?: string | null
-          id?: string
-          meta_description?: string | null
-          meta_keywords?: string | null
-          meta_title?: string | null
-          published?: boolean | null
-          published_at?: string | null
-          slug: string
-          tags?: string[] | null
-          title: string
-          updated_at?: string | null
-        }
-        Update: {
-          author?: string | null
-          category?: string | null
-          content?: string
-          created_at?: string | null
-          excerpt?: string | null
-          featured_image?: string | null
-          id?: string
-          meta_description?: string | null
-          meta_keywords?: string | null
-          meta_title?: string | null
-          published?: boolean | null
-          published_at?: string | null
-          slug?: string
-          tags?: string[] | null
-          title?: string
-          updated_at?: string | null
-        }
-        Relationships: []
-      }
       leads: {
         Row: {
+          airline: string | null
           area: string | null
           created_at: string
           email: string | null
+          flight_option_id: string | null
           id: string
           message: string | null
           name: string
+          package_id: string | null
+          package_name: string | null
           phone: string
+          preferred_departure: string | null
+          price_per_adult: number | null
           project_type: string | null
+          sharing: string | null
           source: string | null
           status: string | null
+          travellers: number | null
         }
         Insert: {
+          airline?: string | null
           area?: string | null
           created_at?: string
           email?: string | null
+          flight_option_id?: string | null
           id?: string
           message?: string | null
           name: string
+          package_id?: string | null
+          package_name?: string | null
           phone: string
+          preferred_departure?: string | null
+          price_per_adult?: number | null
           project_type?: string | null
+          sharing?: string | null
           source?: string | null
           status?: string | null
+          travellers?: number | null
         }
         Update: {
+          airline?: string | null
           area?: string | null
           created_at?: string
           email?: string | null
+          flight_option_id?: string | null
           id?: string
           message?: string | null
           name?: string
+          package_id?: string | null
+          package_name?: string | null
           phone?: string
+          preferred_departure?: string | null
+          price_per_adult?: number | null
           project_type?: string | null
+          sharing?: string | null
           source?: string | null
           status?: string | null
+          travellers?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "leads_package_id_fkey"
+            columns: ["package_id"]
+            isOneToOne: false
+            referencedRelation: "travel_packages"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      travel_categories: {
+        Row: {
+          created_at: string
+          description: string
+          id: string
+          image_alt: string
+          image_url: string
+          name: string
+          published: boolean
+          slug: string
+          sort_order: number
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string
+          id?: string
+          image_alt?: string
+          image_url?: string
+          name: string
+          published?: boolean
+          slug: string
+          sort_order?: number
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string
+          id?: string
+          image_alt?: string
+          image_url?: string
+          name?: string
+          published?: boolean
+          slug?: string
+          sort_order?: number
+          updated_at?: string
         }
         Relationships: []
+      }
+      travel_packages: {
+        Row: {
+          category_id: string
+          created_at: string
+          departure_city: string
+          description: string
+          destinations: string
+          duration_days: number | null
+          exclusions: string[]
+          featured: boolean
+          hotel_details: string
+          id: string
+          image_alt: string
+          image_url: string
+          inclusions: string[]
+          itinerary: string[]
+          name: string
+          options: Json
+          published: boolean
+          sharing: string
+          slug: string
+          sort_order: number
+          terms: string
+          updated_at: string
+        }
+        Insert: {
+          category_id: string
+          created_at?: string
+          departure_city?: string
+          description?: string
+          destinations?: string
+          duration_days?: number | null
+          exclusions?: string[]
+          featured?: boolean
+          hotel_details?: string
+          id?: string
+          image_alt?: string
+          image_url?: string
+          inclusions?: string[]
+          itinerary?: string[]
+          name: string
+          options: Json
+          published?: boolean
+          sharing?: string
+          slug: string
+          sort_order?: number
+          terms?: string
+          updated_at?: string
+        }
+        Update: {
+          category_id?: string
+          created_at?: string
+          departure_city?: string
+          description?: string
+          destinations?: string
+          duration_days?: number | null
+          exclusions?: string[]
+          featured?: boolean
+          hotel_details?: string
+          id?: string
+          image_alt?: string
+          image_url?: string
+          inclusions?: string[]
+          itinerary?: string[]
+          name?: string
+          options?: Json
+          published?: boolean
+          sharing?: string
+          slug?: string
+          sort_order?: number
+          terms?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "travel_packages_category_id_fkey"
+            columns: ["category_id"]
+            isOneToOne: false
+            referencedRelation: "travel_categories"
+            referencedColumns: ["id"]
+          },
+        ]
       }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      valid_travel_options: { Args: { options: Json }; Returns: boolean }
     }
     Enums: {
       [_ in never]: never
@@ -134,12 +256,12 @@ export type Tables<
   DefaultSchemaTableNameOrOptions extends
     | keyof (DefaultSchema["Tables"] & DefaultSchema["Views"])
     | { schema: keyof DatabaseWithoutInternals },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
+  TableName extends (DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof (DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
         DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Views"])
-    : never = never,
+    : never) = never,
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -163,11 +285,11 @@ export type TablesInsert<
   DefaultSchemaTableNameOrOptions extends
     | keyof DefaultSchema["Tables"]
     | { schema: keyof DatabaseWithoutInternals },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
+  TableName extends (DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
-    : never = never,
+    : never) = never,
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -188,11 +310,11 @@ export type TablesUpdate<
   DefaultSchemaTableNameOrOptions extends
     | keyof DefaultSchema["Tables"]
     | { schema: keyof DatabaseWithoutInternals },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
+  TableName extends (DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
-    : never = never,
+    : never) = never,
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -213,11 +335,11 @@ export type Enums<
   DefaultSchemaEnumNameOrOptions extends
     | keyof DefaultSchema["Enums"]
     | { schema: keyof DatabaseWithoutInternals },
-  EnumName extends DefaultSchemaEnumNameOrOptions extends {
+  EnumName extends (DefaultSchemaEnumNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"]
-    : never = never,
+    : never) = never,
 > = DefaultSchemaEnumNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -230,11 +352,11 @@ export type CompositeTypes<
   PublicCompositeTypeNameOrOptions extends
     | keyof DefaultSchema["CompositeTypes"]
     | { schema: keyof DatabaseWithoutInternals },
-  CompositeTypeName extends PublicCompositeTypeNameOrOptions extends {
+  CompositeTypeName extends (PublicCompositeTypeNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"]
-    : never = never,
+    : never) = never,
 > = PublicCompositeTypeNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -244,6 +366,9 @@ export type CompositeTypes<
     : never
 
 export const Constants = {
+  graphql_public: {
+    Enums: {},
+  },
   public: {
     Enums: {},
   },

@@ -25,51 +25,59 @@ export type MarketCopy = {
 };
 
 export const MARKET_COPY: Record<MarketId, MarketCopy> = {
-  bangalore: {
-    heroSubline: "Premium home interiors across Bangalore and Bengaluru with clear scope planning.",
-    heroSecondaryLine: "2 BHK, 3 BHK, villa, modular kitchen, and turnkey interiors by Zikhra.",
-    heroImageAlt: "Zikhra - best interior designer in Bangalore",
-    portfolioSub: "Premium interior design categories for apartments, villas, and penthouses in Bangalore",
-    featuredTitle: "Recent interior projects in Bangalore",
-    featuredSubtitle:
-      "Explore the craftsmanship and layouts we deliver, from compact city homes to villas and penthouses across Bangalore.",
-    projectTypesSub: "Tailored interior solutions for every Bangalore home type",
-    servicesSub: "2 BHK, 3 BHK, villa, modular kitchen, and renovation packages across Bangalore",
-    whyTitle: "Why Bangalore homeowners choose Zikhra",
-    whyPoints: [
-      { title: "End-to-End Solutions", desc: "From concept to completion, we handle everything for your Bangalore home" },
-      { title: "Clear Estimates", desc: "Room-wise planning for practical, premium, and signature scopes" },
-      { title: "Premium Materials", desc: "Quality hardware, finishes, and materials selected for Indian homes" },
-      { title: "Transparent Process", desc: "Clear milestones, supervised execution, and no vague cost surprises" },
+  "bangalore": {
+    "heroSubline": "Umrah, Hajj enquiries, and Muslim-friendly travel from Bangalore.",
+    "heroSecondaryLine": "Thoughtful planning for your journey to Makkah, Madinah, and beyond.",
+    "heroImageAlt": "The Kaaba at Masjid al-Haram in Makkah",
+    "portfolioSub": "Explore Umrah, Hajj, and pilgrimage packages for families, groups, and private journeys",
+    "featuredTitle": "Find your journey",
+    "featuredSubtitle": "Illustrative itineraries for individuals, families, and groups. Every departure is confirmed through a written quotation.",
+    "projectTypesSub": "Plan the details of your journey, from visa assistance and hotel stays to transfers and ziyarat",
+    "servicesSub": "Umrah planning, Hajj enquiries, accommodation, transfers, and travel assistance",
+    "whyTitle": "Thoughtful support for your journey",
+    "whyPoints": [
+      {
+        "title": "Personal planning",
+        "desc": "Your dates, budget, and family needs guide the itinerary."
+      },
+      {
+        "title": "Clear quotations",
+        "desc": "Review hotels, flights, meals, transfers, and exclusions before booking."
+      },
+      {
+        "title": "Practical preparation",
+        "desc": "Discuss documents, baggage, and travel arrangements before departure."
+      },
+      {
+        "title": "Considered choices",
+        "desc": "Compare room sharing, travel pace, and accessibility requirements."
+      }
     ],
-    testimonialsTitle: "What Bangalore Homeowners Say",
-    testimonials: [
+    "testimonialsTitle": "Before you travel",
+    "testimonials": [
       {
-        name: "Kavya N.",
-        location: "Koramangala, Bangalore",
-        quote:
-          "Our apartment fit-out felt effortless. The kitchen and wardrobes are stunning - exactly the calm, premium look we wanted.",
-        rating: 5,
+        "name": "Plan your dates",
+        "location": "Travel planning",
+        "quote": "Share your departure city and preferred travel window so suitable options can be checked.",
+        "rating": 0
       },
       {
-        name: "Arjun M.",
-        location: "Whitefield, Bangalore",
-        quote:
-          "Clear communication and beautiful execution. Zikhra understood how we use our home and delivered on every promise.",
-        rating: 5,
+        "name": "Review your package",
+        "location": "Booking preparation",
+        "quote": "Confirm hotel names, room sharing, flight details, meals, transfers, and exclusions in writing.",
+        "rating": 0
       },
       {
-        name: "Sneha R.",
-        location: "Indiranagar, Bangalore",
-        quote:
-          "Premium materials and detailing without the chaos. We would recommend Zikhra to anyone serious about interiors.",
-        rating: 5,
-      },
+        "name": "Prepare your documents",
+        "location": "Departure checklist",
+        "quote": "Review the requirements for your journey and keep your confirmed itinerary and provider contacts accessible.",
+        "rating": 0
+      }
     ],
-    ctaSubline: "Get a clear estimate for premium home interiors and modular kitchens in Bangalore",
-    ctaWhatsappAlt: "WhatsApp icon - message Zikhra for interior design planning in Bangalore",
-    areasSectionSub: "Premium interior design across Bangalore neighbourhoods",
-  },
+    "ctaSubline": "Tell us about your Umrah plans, Hajj enquiry, or next family journey",
+    "ctaWhatsappAlt": "WhatsApp Zikhra Tours & Travels for a travel enquiry",
+    "areasSectionSub": "Travel enquiries from Bangalore neighbourhoods and surrounding areas"
+  }
 };
 
 export function getMarketCopy(market: MarketId): MarketCopy {

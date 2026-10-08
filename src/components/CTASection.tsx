@@ -15,9 +15,7 @@ const CTASection = ({ market = "bangalore" }: Props) => {
       </div>
 
       <div className="relative z-10 text-center max-w-md mx-auto">
-        <h2 className="font-serif text-3xl md:text-4xl gold-text mb-4">
-          Let's Design Your Dream Space
-        </h2>
+        <h2 className="font-serif text-3xl md:text-4xl gold-text mb-4">Let’s Plan Your Journey</h2>
         <p className="font-sans text-muted-foreground text-sm mb-8">{copy.ctaSubline}</p>
 
         <div className="flex flex-col gap-3">
@@ -26,14 +24,7 @@ const CTASection = ({ market = "bangalore" }: Props) => {
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-sans text-sm font-medium gold-gradient text-primary-foreground transition-all duration-300 hover:scale-105 gold-glow"
-          >
-            <img
-              src={whatsappIcon.src}
-              alt={copy.ctaWhatsappAlt}
-              className="w-4 h-4 brightness-0 invert"
-            />
-            WhatsApp a Designer
-          </a>
+          ><img src={whatsappIcon.src} alt={copy.ctaWhatsappAlt} className="w-4 h-4 brightness-0 invert" /> WhatsApp Our Travel Team</a>
           <Link
             href="/contact"
             className="gold-gradient px-8 py-3.5 rounded-full font-sans text-sm font-medium text-primary-foreground transition-all duration-300 hover:scale-105 gold-glow"

@@ -1,3 +1,4 @@
+import HeroBackdrop from "@/components/HeroBackdrop";
 import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
 import Header from "@/components/Header";
@@ -5,7 +6,6 @@ import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import ContactForm from "@/components/ContactForm";
 import type { CostGuideConfig } from "@/lib/interior-cost-data";
-import heroImage from "@/assets/hero-interior.webp";
 
 type Props = {
   config: CostGuideConfig;
@@ -13,15 +13,14 @@ type Props = {
 
 export default function InteriorCostGuideView({ config }: Props) {
   const servicesPath = "/bangalore/services";
-  const projectTypeBase = "/bangalore/project-type";
+  const projectTypeBase = "/bangalore/packages";
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
 
       <section className="relative isolate overflow-hidden bg-[#f8f8f7] pb-12 pt-28 sm:pb-16 sm:pt-32">
-        <img src={heroImage.src} alt={`${config.homeType === "all" ? "Home interior" : config.homeType.toUpperCase()} design inspiration for pricing guidance in ${config.locationLabel}`} className="absolute inset-0 -z-20 h-full w-full object-cover opacity-[0.24] sm:opacity-[0.18]" />
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(248,248,247,0.96)_0%,rgba(248,248,247,0.9)_45%,rgba(248,248,247,0.72)_100%)]" />
+      <HeroBackdrop />
         <div className="relative mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
         <h1 className="max-w-[11ch] font-sans text-[3.35rem] font-light leading-[0.97] tracking-[-0.07em] text-[#171717] sm:text-6xl md:max-w-[13ch] md:text-7xl lg:text-[5.8rem]">{config.h1}</h1>
         <p className="mt-8 max-w-xl font-sans text-[1.03rem] font-light leading-[1.72] tracking-[-0.02em] text-[#525252] md:text-[1.15rem]">{config.intro}</p>
@@ -30,7 +29,7 @@ export default function InteriorCostGuideView({ config }: Props) {
             href="/contact"
             className="rounded-lg bg-[#171717] px-5 py-3.5 font-sans text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-black"
           >
-            Get Free Estimate
+            Plan Your Journey
           </Link>
           <Link
             href={servicesPath}
@@ -69,14 +68,14 @@ export default function InteriorCostGuideView({ config }: Props) {
         <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-[1.05fr_0.95fr] md:gap-14">
           <div>
             <p className="mb-3 font-sans text-[10px] font-medium uppercase tracking-[0.28em] text-[#626262]">Understanding the starting price</p>
-            <h2 className="font-sans text-3xl font-light tracking-[-0.045em] text-[#171717] md:text-4xl">Why interior pricing starts from a defined scope</h2>
-            <p className="mt-6 font-sans text-[1rem] leading-[1.75] text-[#585858]">A starting price is not a one-size-fits-all quote. It is a useful reference point for a defined set of rooms, core joinery, and practical finish selections. It helps you compare like-for-like scope before making decisions on materials or upgrades.</p>
-            <p className="mt-4 font-sans text-[1rem] leading-[1.75] text-[#585858]">The final estimate changes when the plan includes more rooms, greater storage volume, premium hardware, specialised finishes, civil changes, lighting, appliances, or loose furniture. Reviewing these choices early gives you a more honest comparison than a single headline number.</p>
+            <h2 className="font-sans text-3xl font-light tracking-[-0.045em] text-[#171717] md:text-4xl">Why every travel quote needs clear inclusions</h2>
+            <p className="mt-6 font-sans text-[1rem] leading-[1.75] text-[#585858]">Compare like-for-like travel arrangements before booking. A quotation should identify your travel dates, named hotels, room occupancy, flights or ground transport, meal plan, and any optional services.</p>
+            <p className="mt-4 font-sans text-[1rem] leading-[1.75] text-[#585858]">The total can change with season, availability, length of stay, airline choice, hotel location, and private or shared arrangements. Confirm the final price, taxes, exclusions, payment schedule, and cancellation terms in writing.</p>
           </div>
           <aside className="rounded-[1.5rem] border border-black/10 bg-white p-6 shadow-[0_10px_24px_rgba(0,0,0,0.045)] sm:p-7">
-            <h3 className="font-sans text-lg font-medium tracking-[-0.035em] text-[#171717]">What a room-wise estimate helps clarify</h3>
-            <ul className="mt-5 space-y-4">{["Which rooms and fixed elements are included", "Where material and hardware upgrades affect the budget", "What can be completed now and what can be phased later", "How your floor plan and existing site condition affect the scope"].map((point) => <li key={point} className="flex gap-3 font-sans text-sm leading-relaxed text-[#555]"><CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-black/70" />{point}</li>)}</ul>
-            <Link href="/contact" className="mt-7 inline-flex rounded-lg bg-[#171717] px-4 py-3 font-sans text-sm font-medium text-white transition-colors hover:bg-black">Request a room-wise estimate</Link>
+            <h3 className="font-sans text-lg font-medium tracking-[-0.035em] text-[#171717]">What your travel quotation should clarify</h3>
+            <ul className="mt-5 space-y-4">{["Which flights, hotels, meals, and transfers are included", "How hotel choice and room sharing affect the budget", "Which activities are included and which are optional", "What payment, change, and cancellation terms apply"].map((point) => <li key={point} className="flex gap-3 font-sans text-sm leading-relaxed text-[#555]"><CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-black/70" />{point}</li>)}</ul>
+            <Link href="/contact" className="mt-7 inline-flex rounded-lg bg-[#171717] px-4 py-3 font-sans text-sm font-medium text-white transition-colors hover:bg-black">Request a travel quotation</Link>
           </aside>
         </div>
       </section>
@@ -84,17 +83,17 @@ export default function InteriorCostGuideView({ config }: Props) {
       <section className="section-padding bg-luxury-dark">
         <div className="max-w-4xl mx-auto px-5">
           <div className="text-center mb-8">
-            <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Room-Wise Cost</p>
-            <h2 className="font-serif text-3xl md:text-4xl gold-text">What Each Room Can Cost</h2>
+            <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Package Comparison</p>
+            <h2 className="font-serif text-3xl md:text-4xl gold-text">Compare Travel Arrangements</h2>
           </div>
           <div className="overflow-x-auto rounded-2xl border border-border/40">
             <table className="w-full min-w-[620px] border-collapse bg-card/40 text-left">
               <thead>
                 <tr className="border-b border-border/40 text-xs uppercase tracking-[0.2em] text-gold/80">
-                  <th className="p-4 font-sans font-medium">Room</th>
-                  <th className="p-4 font-sans font-medium">Practical</th>
+                  <th className="p-4 font-sans font-medium">Arrangement</th>
+                  <th className="p-4 font-sans font-medium">Shared</th>
                   <th className="p-4 font-sans font-medium">Premium</th>
-                  <th className="p-4 font-sans font-medium">Signature</th>
+                  <th className="p-4 font-sans font-medium">Private</th>
                 </tr>
               </thead>
               <tbody>
@@ -119,11 +118,11 @@ export default function InteriorCostGuideView({ config }: Props) {
             <h2 className="font-serif text-2xl md:text-3xl gold-text mb-4">What Changes the Final Quote?</h2>
             <div className="space-y-3">
               {[
-                "Carpet area and room count",
-                "Kitchen layout, wardrobes, and storage volume",
-                "Laminate, acrylic, PU, veneer, stone, and hardware choices",
-                "False ceiling, lighting, electrical, and civil work",
-                "Appliances, loose furniture, curtains, and styling",
+                "Travel dates, season, and length of stay",
+                "Departure city, airline, and baggage allowance",
+                "Hotel location, room type, and sharing preference",
+                "Private or shared transfers and ziyarat options",
+                "Meal plans, service fees, and applicable taxes",
               ].map((item) => (
                 <p key={item} className="flex items-start gap-2 font-sans text-sm text-foreground/85">
                   <CheckCircle2 className="w-4 h-4 text-gold shrink-0 mt-0.5" />
@@ -134,19 +133,19 @@ export default function InteriorCostGuideView({ config }: Props) {
           </div>
           <div className="rounded-2xl border border-border/40 bg-card/50 p-5">
             <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Plan Next</p>
-            <h3 className="font-serif text-2xl text-foreground mb-3">Compare by Home Type</h3>
+            <h3 className="font-serif text-2xl text-foreground mb-3">Compare Journey Types</h3>
             <div className="flex flex-col gap-3">
-              <Link href={`${projectTypeBase}/2bhk`} className="text-sm text-gold hover:underline">
-                2 BHK interior design
+              <Link href={`${projectTypeBase}/umrah`} className="text-sm text-gold hover:underline">
+                Umrah travel planning
               </Link>
-              <Link href={`${projectTypeBase}/3bhk`} className="text-sm text-gold hover:underline">
-                3 BHK interior design
+              <Link href={`${projectTypeBase}/family-umrah`} className="text-sm text-gold hover:underline">
+                Family Umrah travel planning
               </Link>
-              <Link href={`${projectTypeBase}/4bhk`} className="text-sm text-gold hover:underline">
-                4 BHK and villa interiors
+              <Link href={`${projectTypeBase}/group-umrah`} className="text-sm text-gold hover:underline">
+                Group and private Umrah
               </Link>
               <Link href={servicesPath} className="text-sm text-gold hover:underline">
-                Modular kitchen, wardrobe, and renovation services
+                Umrah, family travel, and Ramadan enquiries
               </Link>
             </div>
           </div>

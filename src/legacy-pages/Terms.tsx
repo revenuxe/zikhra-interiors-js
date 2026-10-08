@@ -1,114 +1,21 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import BottomNav from "@/components/BottomNav";
-import EditorialPageHero from "@/components/EditorialPageHero";
+﻿import LegalDocument, { type LegalSection } from "@/components/LegalDocument";
+import { COMPANY } from "@/lib/company";
 
-const Terms = () => {
-  return (
-    <div className="min-h-screen bg-background">
-      <Header />
+const sections: LegalSection[] = [
+  { id: "company", title: "About these terms", content: <><p>These terms apply to the {COMPANY.name} website and enquiries about Umrah, Hajj, and related travel services. Our office is in {COMPANY.locality}; the full address and contact details appear below.</p><p>An enquiry or selected package is a request for information, not a confirmed booking. Before paying, review the written quotation, itinerary, responsible providers, payment schedule, and the booking-specific terms supplied to you.</p></> },
+  { id: "prices", title: "Packages and indicative prices", content: <><p>Displayed prices are in Indian rupees and are indicative unless a written quotation states otherwise. A “per adult” price applies to the stated sharing basis, such as 4/5 Sharing. Children, infants, different room occupancy, upgrades, taxes, and additional services may have separate charges.</p><p>Traveller totals may include children and infants. An adult subtotal does not represent the final group price. Senior travellers are included in the adult count. Batch dates, fares, hotels, and availability must be confirmed before booking; prices can change before confirmation.</p></> },
+  { id: "confirmation", title: "Quotations, payments and confirmation", content: <><p>A quotation should identify the selected flight option, dates, room-sharing basis, itinerary, inclusions, exclusions, total payable, validity period, and payment recipient. Confirm any unclear detail before payment.</p><p>Pay only using the method and recipient confirmed by our team and retain your receipt. A booking is confirmed only when you receive written confirmation and the stated confirmation conditions are met. Submitting this website form creates no payment obligation.</p></> },
+  { id: "flights-hotels", title: "Flights, accommodation and services", content: <><p>The confirmed itinerary sets out airline routing, baggage allowances, hotels, meals, transfers, and other included services. Airline and hotel terms may also apply. Hotel distances shown in a package are approximate and depend on the confirmed property and walking route.</p><p>Airline schedules and operational arrangements can change. Any necessary change or proposed substitute should be communicated with its effect on your itinerary and applicable charges. Logos and destination images help illustrate travel options and do not themselves establish a commercial partnership.</p></> },
+  { id: "documents", title: "Passports, visas and Hajj arrangements", content: <><p>Travellers must check current passport, visa, health, entry, and transit requirements for their nationality and itinerary. Provide accurate names and documents that match the booking. Tell the team promptly about any discrepancy.</p><p>Visa and permit decisions belong to the relevant authorities. Assistance does not guarantee approval. Hajj enquiries depend on official eligibility, quota, permits, and authorised arrangements; availability and the responsible booking route must be verified for the relevant season.</p></> },
+  { id: "changes", title: "Changes, cancellation and refunds", content: <><p>Before paying, request the cancellation, amendment, no-show, and refund terms for your booking. Charges can depend on when you cancel, ticket conditions, hotel commitments, and other provider rules. No universal refund percentage or processing time applies to all packages.</p><p>Send change or cancellation requests to our team in writing. We will confirm receipt, explain applicable charges and refundable amounts, and provide the expected processing position. Refund handling remains subject to applicable consumer law and does not remove rights that cannot lawfully be excluded.</p></> },
+  { id: "needs", title: "Traveller needs and responsibilities", content: <><p>An adult should submit enquiries and have authority to discuss requirements for other travellers in their group. Raise mobility, accessibility, dietary, room-sharing, child, and senior traveller needs before booking so suitability can be assessed.</p><p>Review your documents and itinerary, follow official instructions and local rules, and arrive in time for flights and transfers. Discuss suitable travel insurance and check its coverage, exclusions, and claims process before departure.</p></> },
+  { id: "disruption", title: "Disruption and service concerns", content: <><p>Weather, airline disruption, official decisions, public health restrictions, and other events outside a provider's reasonable control can affect travel. The applicable booking and provider terms determine available options; we will help you understand the arrangements and next steps.</p><p>Report service issues promptly, keeping relevant receipts and correspondence. Provider responsibilities and any lawful limitations must be stated in the confirmed booking. These website terms do not exclude liability or statutory rights that cannot lawfully be excluded.</p></> },
+  { id: "website", title: "Website use and content", content: <p>Use the website for legitimate enquiries. Do not submit false information, attempt unauthorised administrator access, or interfere with the site. Branding, text, images, and airline or hotel marks belong to their respective owners. General travel information is a planning aid; your confirmed booking documents determine the services purchased.</p> },
+  { id: "privacy", title: "Personal information", content: <p>Our <a href="/privacy">Privacy Policy</a> explains how enquiry and booking information is handled. The initial form is for travel preferences; do not send payment card details, passport scans, or unnecessary sensitive information through it.</p> },
+  { id: "law", title: "Applicable law and resolving questions", content: <p>These website terms are governed by applicable Indian law. Please contact our team first with a booking or website concern so it can be investigated. Disputes may be raised before the competent courts, consumer forums, or other authorities with jurisdiction; nothing here restricts an available statutory remedy.</p> },
+  { id: "updates", title: "Updates to these terms", content: <p>Updates will be published here with a revised date. A later website update does not, by itself, change an existing confirmed booking. Refer to the terms agreed for that booking and any subsequent changes accepted by the parties.</p> },
+];
 
-      <EditorialPageHero title="Terms & Conditions" description="The terms that guide use of the Zikhra website and our interior design services." showCta={false} />
-
-      <section className="px-5 pb-6 pt-12 sm:pt-16">
-        <div className="max-w-3xl mx-auto">
-          <p className="mb-10 font-sans text-sm text-[#6a6a6a]">Last updated: March 28, 2026</p>
-
-          <div className="space-y-8 font-sans text-sm text-foreground/80 leading-relaxed">
-            <section>
-              <h2 className="font-serif text-lg text-gold mb-3">1. Acceptance of Terms</h2>
-              <p>By accessing and using the Zikhra Interiors website ("Site") and our interior design services ("Services"), you accept and agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, please do not use our Site or Services. These terms apply to all visitors, clients, and users of the Site.</p>
-            </section>
-
-            <section>
-              <h2 className="font-serif text-lg text-gold mb-3">2. Company Information</h2>
-              <p>Zikhra Interiors is an interior design firm based in Koramangala, Bangalore, Karnataka 560034, India. For inquiries, contact us at <a href="mailto:zikhraofficial@gmail.com" className="text-gold hover:underline">zikhraofficial@gmail.com</a> or call <a href="tel:+919886579923" className="text-gold hover:underline">9886579923</a>.</p>
-            </section>
-
-            <section>
-              <h2 className="font-serif text-lg text-gold mb-3">3. Services</h2>
-              <p>Zikhra Interiors provides residential and commercial interior design services, including but not limited to full home interiors, modular kitchen design, wardrobe solutions, renovation services, and design consultation. All services are subject to availability and may be modified at our discretion.</p>
-              <ul className="list-disc list-inside mt-2 space-y-1 text-muted-foreground">
-                <li>Design consultations and 3D visualizations</li>
-                <li>Material selection and procurement</li>
-                <li>Project management and execution</li>
-                <li>Post-installation support and warranty services</li>
-              </ul>
-            </section>
-
-            <section>
-              <h2 className="font-serif text-lg text-gold mb-3">4. Quotations & Pricing</h2>
-              <p>All quotations provided are valid for 30 days from the date of issue unless otherwise specified. Prices are subject to change based on material costs, design modifications, and scope changes. A detailed cost breakdown will be provided before project commencement. Any changes requested after approval may incur additional charges.</p>
-            </section>
-
-            <section>
-              <h2 className="font-serif text-lg text-gold mb-3">5. Payment Terms</h2>
-              <p>Payment schedules are outlined in individual project agreements. Typically, a booking amount is required to initiate work, with milestone-based payments throughout the project. Final payment is due upon project completion and handover. Late payments may attract interest as specified in the project agreement.</p>
-            </section>
-
-            <section>
-              <h2 className="font-serif text-lg text-gold mb-3">6. Project Timeline</h2>
-              <p>Estimated project timelines are provided in good faith but may vary due to unforeseen circumstances including material availability, weather conditions, regulatory approvals, or client-requested changes. Zikhra Interiors will communicate any significant delays promptly.</p>
-            </section>
-
-            <section>
-              <h2 className="font-serif text-lg text-gold mb-3">7. Intellectual Property</h2>
-              <p>All design concepts, drawings, 3D renders, and creative materials produced by Zikhra Interiors remain our intellectual property until full payment is received. Unauthorized reproduction, distribution, or use of our designs is strictly prohibited. Upon full payment, design rights for the specific project transfer to the client.</p>
-            </section>
-
-            <section>
-              <h2 className="font-serif text-lg text-gold mb-3">8. Warranty & Guarantee</h2>
-              <p>Zikhra Interiors provides a warranty on workmanship as specified in individual project agreements. Material warranties are subject to manufacturer terms. The warranty does not cover damage caused by misuse, negligence, natural wear, or unauthorized modifications.</p>
-            </section>
-
-            <section>
-              <h2 className="font-serif text-lg text-gold mb-3">9. Cancellation & Refund</h2>
-              <p>Cancellation policies are outlined in individual project agreements. The booking amount is generally non-refundable. Refunds for work not yet commenced will be processed within 15 business days. Materials already procured or customized cannot be refunded.</p>
-            </section>
-
-            <section>
-              <h2 className="font-serif text-lg text-gold mb-3">10. Client Responsibilities</h2>
-              <p>Clients are responsible for providing accurate information, ensuring site access for our team, obtaining necessary permissions from building management or authorities, and making timely decisions to avoid project delays.</p>
-            </section>
-
-            <section>
-              <h2 className="font-serif text-lg text-gold mb-3">11. Limitation of Liability</h2>
-              <p>Zikhra Interiors shall not be liable for any indirect, incidental, or consequential damages arising from the use of our services. Our total liability shall not exceed the total project value. We are not responsible for delays caused by force majeure events.</p>
-            </section>
-
-            <section>
-              <h2 className="font-serif text-lg text-gold mb-3">12. Website Usage</h2>
-              <p>The content on this website is for general information purposes only. While we strive to keep information current, we make no warranties about completeness, accuracy, or reliability. Project images may differ from actual results due to lighting, photography, and display variations.</p>
-            </section>
-
-            <section>
-              <h2 className="font-serif text-lg text-gold mb-3">13. Governing Law</h2>
-              <p>These terms shall be governed by and construed in accordance with the laws of India. Any disputes shall be subject to the exclusive jurisdiction of the courts in Bangalore, Karnataka.</p>
-            </section>
-
-            <section>
-              <h2 className="font-serif text-lg text-gold mb-3">14. Changes to Terms</h2>
-              <p>Zikhra Interiors reserves the right to modify these terms at any time. Changes will be posted on this page with an updated revision date. Continued use of our Site after changes constitutes acceptance of the new terms.</p>
-            </section>
-
-            <section>
-              <h2 className="font-serif text-lg text-gold mb-3">15. Contact</h2>
-              <p>For questions about these Terms & Conditions, contact us at:</p>
-              <div className="mt-2 p-4 rounded-xl bg-card border border-border/30 space-y-1">
-                <p className="text-foreground font-medium">Zikhra Interiors</p>
-                <p className="text-muted-foreground">Koramangala, Bangalore, Karnataka 560034</p>
-                <p className="text-muted-foreground">Email: <a href="mailto:zikhraofficial@gmail.com" className="text-gold hover:underline">zikhraofficial@gmail.com</a></p>
-                <p className="text-muted-foreground">Phone: <a href="tel:+919886579923" className="text-gold hover:underline">9886579923</a></p>
-              </div>
-            </section>
-          </div>
-        </div>
-      </section>
-
-      <Footer />
-      <BottomNav />
-    </div>
-  );
-};
-
-export default Terms;
+export default function Terms() {
+  return <LegalDocument title="Terms & Conditions" description="Clear terms for package enquiries, booking confirmation, payments, changes, and traveller responsibilities." sections={sections} />;
+}

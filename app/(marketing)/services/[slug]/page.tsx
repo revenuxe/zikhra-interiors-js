@@ -1,3 +1,4 @@
+import { seoTitle } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ServiceDetailView from "@/views/marketing/ServiceDetailView";
@@ -33,10 +34,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!service) return { title: "Service Not Found" };
 
   const canonicalPath = `/bangalore/services/${slug}`;
-  const title = `Best Interior Designer in Bangalore for ${service.title} | Zikhra Interiors`;
+  const title = `${service.title} from Bangalore | Zikhra Tours & Travels`;
   const description = service.description.slice(0, 160);
   return {
-    title,
+    title: seoTitle(title),
     description,
     keywords: serviceSeoKeywords(service.title),
     alternates: { canonical: canonicalPath },
@@ -46,7 +47,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       path: canonicalPath,
       type: "article",
       imageUrl: service.image ?? DEFAULT_OG_IMAGE_PATH,
-      imageAlt: `${service.title} interior design and turnkey services in Bangalore`,
+      imageAlt: `${service.title} travel planning and travel assistance in Bangalore`,
     }),
     twitter: twitterSummaryLarge(title, description, service.image ?? DEFAULT_OG_IMAGE_PATH),
   };

@@ -1,6 +1,6 @@
-"use client";
+﻿"use client";
 
-import { Home, FolderKanban, Wrench, Send } from "lucide-react";
+import { Home, FolderKanban, Package, Send } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import whatsappIcon from "@/assets/whatsapp.svg";
@@ -25,14 +25,14 @@ const BottomNav = () => {
   const bangalore = useBangaloreFunnel(pathname);
 
   const homeTo = bangalore ? "/bangalore" : "/";
-  const projectsTo = "/bangalore/projects";
-  const servicesTo = "/bangalore/services";
+  const projectsTo = "/bangalore/journeys";
+  const packagesTo = "/bangalore/packages";
 
   const navItems: NavItem[] = [
     { icon: Home, label: "Home", to: homeTo },
-    { icon: FolderKanban, label: "Projects", to: projectsTo },
+    { icon: FolderKanban, label: "Journeys", to: projectsTo },
     { icon: null, label: "WhatsApp" },
-    { icon: Wrench, label: "Services", to: servicesTo },
+    { icon: Package, label: "Packages", to: packagesTo },
     { icon: Send, label: "Contact", to: "/contact" },
   ];
 
@@ -52,7 +52,7 @@ const BottomNav = () => {
                 <div className="w-14 h-14 rounded-full bg-[#1f7a5a] flex items-center justify-center shadow-xl transition-colors duration-300 hover:bg-[#176448]">
                   <img
                     src={whatsappIcon.src}
-                    alt="Chat on WhatsApp with Zikhra interior designers"
+                    alt="Chat on WhatsApp with Zikhra travel planners"
                     className="w-7 h-7 brightness-0 invert"
                   />
                 </div>
@@ -81,3 +81,4 @@ const BottomNav = () => {
 };
 
 export default BottomNav;
+

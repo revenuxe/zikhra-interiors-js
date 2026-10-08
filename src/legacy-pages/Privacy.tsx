@@ -1,157 +1,18 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import BottomNav from "@/components/BottomNav";
-import EditorialPageHero from "@/components/EditorialPageHero";
+﻿import LegalDocument, { type LegalSection } from "@/components/LegalDocument";
+import { COMPANY } from "@/lib/company";
 
-const Privacy = () => {
-  return (
-    <div className="min-h-screen bg-background">
-      <Header />
+const sections: LegalSection[] = [
+  { id: "who-we-are", title: "Who we are", content: <p>{COMPANY.name} is based in {COMPANY.locality}. This policy explains how we handle information when you use this website, request a quotation, or discuss travel arrangements with our team.</p> },
+  { id: "information", title: "Information you share", content: <><p>Our enquiry forms collect your name, phone number, departure city, journey preference, selected package and airline, batch or preferred departure date, traveller count, and your message. Package pricing and room-sharing details may also be recorded with your request.</p><p>You may provide an email address or further information through calls, email, WhatsApp, or a booking discussion. For an initial enquiry, share only what is needed. Please do not upload passport scans, payment card details, or medical documents through the general enquiry form.</p><p>When a booking requires passport, visa, insurance, or accessibility information, we will explain the purpose and the appropriate way to provide it.</p></> },
+  { id: "purpose", title: "How we use information", content: <><ul><li>Respond to your enquiry and prepare relevant package options and quotations.</li><li>Discuss departure dates, room sharing, flights, and group requirements.</li><li>Coordinate requested bookings, documents, and travel updates.</li><li>Handle questions, complaints, and necessary business records.</li><li>Maintain website security and meet applicable legal obligations.</li></ul><p>Submitting a form asks us to contact you about that request. It does not automatically subscribe you to unrelated promotional messages. You can ask us to stop promotional contact at any time.</p></> },
+  { id: "providers", title: "Service providers and sharing", content: <><p>Website enquiries are stored using Supabase, with access restricted to authorised administrators. Our hosting and communication providers also process information needed to operate their services.</p><p>For arrangements you request, relevant information may be shared with airlines, hotels, transport operators, visa or insurance providers, and booking partners. International travel can require information to be processed outside India, including in Saudi Arabia. We may also disclose information where required by law or to address fraud or security concerns.</p><p>We do not sell enquiry information. Clicking a WhatsApp, map, airline, or other external link takes you to a service governed by its own privacy terms.</p></> },
+  { id: "storage", title: "Browser storage and technical information", content: <><p>The site uses browser storage to remember a dismissed enquiry popup. Administrator sign-in, listing drafts, and navigation preferences use local or session storage. Hosting services may process technical logs, such as IP addresses and browser information, to deliver and protect the website.</p><p>You can clear storage or limit it in your browser settings; this may reset preferences or affect administrator sign-in. If optional analytics or advertising tools are introduced, this policy and any necessary preference controls will be updated.</p></> },
+  { id: "security", title: "Security and retention", content: <><p>Website connections use HTTPS in production, and database access is restricted by authentication and access policies. No online system can guarantee absolute security.</p><p>We retain enquiry information while handling your request and related follow-up. Booking, payment, and complaint records may need to be retained for applicable accounting, legal, or dispute requirements. Contact us to request deletion of information that is no longer needed; we will explain any lawful reason for retaining it.</p></> },
+  { id: "requests", title: "Your choices and privacy requests", content: <><p>You can contact us to ask about your information, correct inaccurate details, request deletion, withdraw a consent you have given, or raise a privacy concern. We will assess the request under applicable law and may need proportionate information to verify your identity.</p><p>Send requests to <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a> with the subject “Privacy request”. Avoid sending identity documents unless our team requests them through an appropriate channel. Withdrawing consent may affect arrangements that require the information.</p></> },
+  { id: "children", title: "Children and group enquiries", content: <p>Enquiries should be submitted by an adult. A parent, guardian, or authorised group organiser may give traveller counts and relevant requirements for children. Do not include unnecessary identifying details about children in the enquiry message. Further child traveller information should be provided only when required for a booking and with the appropriate authority.</p> },
+  { id: "updates", title: "Policy updates and concerns", content: <p>We may update this policy as our services or applicable requirements change. The date at the top identifies the current version. For questions or unresolved concerns, contact the travel team using the details below, describing your request and the best way to reach you.</p> },
+];
 
-      <EditorialPageHero title="Privacy Policy" description="How Zikhra collects, uses, and protects information shared through our website and services." showCta={false} />
-
-      <section className="px-5 pb-6 pt-12 sm:pt-16">
-        <div className="max-w-3xl mx-auto">
-          <p className="mb-10 font-sans text-sm text-[#6a6a6a]">Last updated: March 28, 2026</p>
-
-          <div className="space-y-8 font-sans text-sm text-foreground/80 leading-relaxed">
-            <section>
-              <h2 className="font-serif text-lg text-gold mb-3">1. Introduction</h2>
-              <p>Zikhra Interiors ("we," "our," or "us") is committed to protecting your privacy and personal data. This Privacy Policy explains how we collect, use, store, and protect your information when you visit our website, use our services, or interact with us. We comply with applicable Indian data protection laws, including the Information Technology Act, 2000, and the Digital Personal Data Protection Act, 2023.</p>
-            </section>
-
-            <section>
-              <h2 className="font-serif text-lg text-gold mb-3">2. Information We Collect</h2>
-              <p className="mb-2">We collect the following types of information:</p>
-              <div className="space-y-3">
-                <div>
-                  <h3 className="font-medium text-foreground mb-1">Personal Information (provided by you):</h3>
-                  <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-                    <li>Full name</li>
-                    <li>Phone number</li>
-                    <li>Email address</li>
-                    <li>Property address (for project purposes)</li>
-                    <li>Project requirements and preferences</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="font-medium text-foreground mb-1">Automatically Collected Information:</h3>
-                  <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-                    <li>Device type and browser information</li>
-                    <li>IP address and approximate location</li>
-                    <li>Pages visited and interaction data</li>
-                    <li>Referral source</li>
-                  </ul>
-                </div>
-              </div>
-            </section>
-
-            <section>
-              <h2 className="font-serif text-lg text-gold mb-3">3. How We Collect Information</h2>
-              <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-                <li>Contact forms and consultation booking forms on our website</li>
-                <li>WhatsApp conversations initiated through our website</li>
-                <li>Phone calls and email communications</li>
-                <li>In-person meetings and site visits</li>
-                <li>Cookies and similar tracking technologies on our website</li>
-              </ul>
-            </section>
-
-            <section>
-              <h2 className="font-serif text-lg text-gold mb-3">4. How We Use Your Information</h2>
-              <p className="mb-2">We use your personal information for the following purposes:</p>
-              <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-                <li>To respond to your inquiries and provide consultations</li>
-                <li>To create and deliver interior design proposals</li>
-                <li>To manage and execute your interior design project</li>
-                <li>To communicate project updates and milestones</li>
-                <li>To send relevant offers, updates, and newsletters (with your consent)</li>
-                <li>To improve our website and services</li>
-                <li>To comply with legal obligations</li>
-              </ul>
-            </section>
-
-            <section>
-              <h2 className="font-serif text-lg text-gold mb-3">5. Data Storage & Security</h2>
-              <p>Your data is stored securely using industry-standard encryption and security measures. We use Supabase, a secure cloud platform, for data storage with row-level security policies. Access to personal data is restricted to authorized personnel only. We implement the following security measures:</p>
-              <ul className="list-disc list-inside mt-2 space-y-1 text-muted-foreground">
-                <li>SSL/TLS encryption for data in transit</li>
-                <li>Encrypted database storage</li>
-                <li>Role-based access controls</li>
-                <li>Regular security audits and monitoring</li>
-                <li>Secure authentication for admin access</li>
-              </ul>
-            </section>
-
-            <section>
-              <h2 className="font-serif text-lg text-gold mb-3">6. Data Sharing</h2>
-              <p>We do not sell, trade, or rent your personal information to third parties. We may share your data only in the following circumstances:</p>
-              <ul className="list-disc list-inside mt-2 space-y-1 text-muted-foreground">
-                <li>With trusted vendors and contractors involved in your project (e.g., material suppliers, craftsmen)</li>
-                <li>With service providers who assist our operations (e.g., cloud hosting, analytics)</li>
-                <li>When required by law, regulation, or legal process</li>
-                <li>To protect our rights, property, or safety</li>
-              </ul>
-            </section>
-
-            <section>
-              <h2 className="font-serif text-lg text-gold mb-3">7. Cookies & Tracking</h2>
-              <p>Our website may use cookies and similar technologies to enhance your browsing experience. These help us understand how visitors interact with our site and improve our services. You can control cookie preferences through your browser settings. Disabling cookies may affect some website functionality.</p>
-            </section>
-
-            <section>
-              <h2 className="font-serif text-lg text-gold mb-3">8. Your Rights</h2>
-              <p className="mb-2">Under applicable data protection laws, you have the right to:</p>
-              <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-                <li><strong className="text-foreground">Access:</strong> Request a copy of your personal data</li>
-                <li><strong className="text-foreground">Correction:</strong> Request correction of inaccurate data</li>
-                <li><strong className="text-foreground">Deletion:</strong> Request deletion of your personal data</li>
-                <li><strong className="text-foreground">Withdraw Consent:</strong> Withdraw consent for marketing communications</li>
-                <li><strong className="text-foreground">Portability:</strong> Request your data in a portable format</li>
-                <li><strong className="text-foreground">Grievance:</strong> Lodge a complaint with the relevant data protection authority</li>
-              </ul>
-              <p className="mt-2">To exercise any of these rights, contact us at <a href="mailto:zikhraofficial@gmail.com" className="text-gold hover:underline">zikhraofficial@gmail.com</a>.</p>
-            </section>
-
-            <section>
-              <h2 className="font-serif text-lg text-gold mb-3">9. Data Retention</h2>
-              <p>We retain your personal data only for as long as necessary to fulfill the purposes outlined in this policy, or as required by law. Project-related data is retained for a minimum of 5 years after project completion for warranty and legal purposes. Marketing data is retained until you withdraw consent.</p>
-            </section>
-
-            <section>
-              <h2 className="font-serif text-lg text-gold mb-3">10. Third-Party Links</h2>
-              <p>Our website may contain links to third-party websites (e.g., WhatsApp, social media platforms). We are not responsible for the privacy practices of these external sites. We encourage you to review their privacy policies before providing any personal information.</p>
-            </section>
-
-            <section>
-              <h2 className="font-serif text-lg text-gold mb-3">11. Children's Privacy</h2>
-              <p>Our services and website are not directed at individuals under 18 years of age. We do not knowingly collect personal information from minors. If we become aware of such collection, we will take steps to delete the information promptly.</p>
-            </section>
-
-            <section>
-              <h2 className="font-serif text-lg text-gold mb-3">12. Changes to This Policy</h2>
-              <p>We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. The updated version will be posted on this page with a revised date. We encourage you to review this policy periodically.</p>
-            </section>
-
-            <section>
-              <h2 className="font-serif text-lg text-gold mb-3">13. Grievance Officer</h2>
-              <p>In accordance with the Information Technology Act, 2000, the name and contact details of the Grievance Officer are:</p>
-              <div className="mt-2 p-4 rounded-xl bg-card border border-border/30 space-y-1">
-                <p className="text-foreground font-medium">Zikhra Interiors — Grievance Officer</p>
-                <p className="text-muted-foreground">Koramangala, Bangalore, Karnataka 560034</p>
-                <p className="text-muted-foreground">Email: <a href="mailto:zikhraofficial@gmail.com" className="text-gold hover:underline">zikhraofficial@gmail.com</a></p>
-                <p className="text-muted-foreground">Phone: <a href="tel:+919886579923" className="text-gold hover:underline">9886579923</a></p>
-                <p className="text-muted-foreground text-xs mt-1">Grievances will be addressed within 30 days of receipt.</p>
-              </div>
-            </section>
-          </div>
-        </div>
-      </section>
-
-      <Footer />
-      <BottomNav />
-    </div>
-  );
-};
-
-export default Privacy;
+export default function Privacy() {
+  return <LegalDocument title="Privacy Policy" description="How we handle your travel enquiry, personal information, and privacy requests." sections={sections} />;
+}

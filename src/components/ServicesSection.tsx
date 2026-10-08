@@ -1,18 +1,10 @@
+import { services as travelServices } from "@/lib/services-data";
 import Link from "next/link";
 import type { MarketId } from "@/lib/market-types";
 import { getMarketCopy } from "@/lib/market-copy";
 import { serviceDetailPath, servicesIndexPath } from "@/lib/marketing-paths";
-import serviceHome from "@/assets/service-home.webp";
-import serviceKitchen from "@/assets/service-kitchen.webp";
-import serviceWardrobe from "@/assets/service-wardrobe.webp";
-import serviceRenovation from "@/assets/service-renovation.webp";
 
-const services = [
-  { image: serviceHome.src, title: "Full Home Interiors", desc: "Complete premium home design solutions", slug: "full-home" },
-  { image: serviceKitchen.src, title: "Modular Kitchen", desc: "Bespoke premium kitchen designs", slug: "modular-kitchen" },
-  { image: serviceWardrobe.src, title: "Wardrobes", desc: "Custom walk-in closet solutions", slug: "wardrobes" },
-  { image: serviceRenovation.src, title: "Renovation", desc: "Transform your existing space", slug: "renovation" },
-];
+const services = ["umrah-packages", "hajj-enquiries", "family-umrah", "ramadan-umrah"].map(id => travelServices.find(item => item.id === id)!).map(item => ({ image: item.image, title: item.title, desc: item.subtitle, slug: item.id }));
 
 type Props = { market?: MarketId };
 

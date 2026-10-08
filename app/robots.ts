@@ -8,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/admin"],
+        // These pages use noindex; allow crawling so search engines can read it.
       },
     ],
     sitemap: absoluteUrl("/sitemap.xml"),

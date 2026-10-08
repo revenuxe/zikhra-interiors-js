@@ -1,307 +1,40 @@
+﻿import HeroBackdrop from "@/components/HeroBackdrop";
+import { services } from "@/lib/services-data";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
-import ContactForm from "@/components/ContactForm";
 import TrustedPartners from "@/components/TrustedPartners";
-import { ArrowUpRight, CheckCircle2 } from "lucide-react";
+import FeaturedProjects from "@/components/FeaturedProjects";
+import { ArrowUpRight, Plane, Hotel, FileCheck, MapPin } from "lucide-react";
 import Link from "next/link";
 import type { MarketId } from "@/lib/market-types";
-import { applyMarketToCopy, cityLabel, serviceDetailPath } from "@/lib/marketing-paths";
-
-import serviceHome from "@/assets/service-home.webp";
-import serviceKitchen from "@/assets/service-kitchen.webp";
-import serviceWardrobe from "@/assets/service-wardrobe.webp";
-import serviceRenovation from "@/assets/service-renovation.webp";
-import serviceTvunit from "@/assets/service-tvunit.webp";
-import servicePooja from "@/assets/service-pooja.webp";
-import serviceCeiling from "@/assets/service-ceiling.webp";
-import serviceBathroom from "@/assets/service-bathroom.webp";
-import serviceLivingroom from "@/assets/service-livingroom.webp";
-import serviceBedroom from "@/assets/service-bedroom.webp";
-import heroImage from "@/assets/hero-interior.webp";
-import serviceCommercial from "@/assets/service-commercial.webp";
-
-const services = [
-  {
-    id: "full-home",
-    image: serviceHome.src,
-    title: "Full Home Interiors",
-    subtitle: "Complete Premium Home Design in Bangalore",
-    description: "From conceptualization to execution, we design every corner of your home with precision and elegance. Our full home interior service covers living rooms, bedrooms, kitchens, bathrooms, and all transitional spaces — creating a cohesive premium experience throughout your Bangalore home.",
-    features: [
-      "Complete space planning & 3D visualization",
-      "Custom furniture design & procurement",
-      "Premium flooring — marble, hardwood, vitrified",
-      "False ceiling with ambient cove lighting",
-      "Wall paneling, textures & accent walls",
-      "Smart home integration ready",
-    ],
-    price: "2 BHK starts from Rs. 3.5 Lakhs",
-  },
-  {
-    id: "modular-kitchen",
-    image: serviceKitchen.src,
-    title: "Modular Kitchen",
-    subtitle: "Premium Kitchen Design Across Bangalore",
-    description: "Our modular kitchens combine European aesthetics with Indian functionality. Every surface, handle, and fixture is selected with intent — creating spaces where cooking feels polished, efficient, and personal.",
-    features: [
-      "Premium Italian marble & quartz countertops",
-      "Soft-close German Hettich/Blum hardware",
-      "Integrated LED ambient & task lighting",
-      "Custom brass & gold accent fixtures",
-      "Space-optimized modular island layouts",
-      "Waterproof & termite-proof BWR plywood",
-    ],
-    price: "Starts from Rs. 1.5 Lakhs",
-  },
-  {
-    id: "wardrobes",
-    image: serviceWardrobe.src,
-    title: "Wardrobes & Walk-in Closets",
-    subtitle: "Custom Storage Solutions in Bangalore",
-    description: "Walk-in closets and built-in wardrobes that turn your everyday routine into a boutique experience. Every shelf, drawer, and hanger is designed with purpose.",
-    features: [
-      "Glass-front display sections with LED strips",
-      "Soft-close drawer & sliding systems",
-      "Custom shoe racks & accessory organizers",
-      "Pull-out trouser & saree hangers",
-      "Anti-dust sealed compartments",
-      "Premium lacquer & veneer finishes",
-    ],
-    price: "Starts from Rs. 90,000",
-  },
-  {
-    id: "living-room",
-    image: serviceLivingroom.src,
-    title: "Living Room Design",
-    subtitle: "Elegant Living Spaces in Bangalore",
-    description: "Create a stunning first impression with our bespoke living room designs. From statement walls to premium seating arrangements, we craft spaces that reflect your personality and lifestyle.",
-    features: [
-      "Custom sofa & seating design",
-      "Statement accent walls & textures",
-      "Premium coffee tables & consoles",
-      "Ambient & decorative lighting design",
-      "Curtain & blind coordination",
-      "Art curation & styling",
-    ],
-    price: "Starts from Rs. 1.2 Lakhs",
-  },
-  {
-    id: "bedroom",
-    image: serviceBedroom.src,
-    title: "Bedroom Interiors",
-    subtitle: "Premium Bedroom Design in Bangalore",
-    description: "Your bedroom should be a sanctuary. We design bedrooms that promote relaxation and reflect your personal style — from custom headboards to ambient lighting that sets the perfect mood.",
-    features: [
-      "Custom upholstered headboard designs",
-      "Walk-in wardrobe integration",
-      "Ambient cove & bedside lighting",
-      "Premium bedside tables & dressers",
-      "Blackout curtain solutions",
-      "En-suite bathroom coordination",
-    ],
-    price: "Starts from Rs. 1.5 Lakhs",
-  },
-  {
-    id: "bathroom",
-    image: serviceBathroom.src,
-    title: "Bathroom Interiors",
-    subtitle: "Premium Bathroom Design in Bangalore",
-    description: "Transform your bathroom into a spa-like retreat. From premium fixtures to marble finishes, we create bathrooms that are both functional and luxurious.",
-    features: [
-      "Premium marble & tile selection",
-      "Rain shower & premium fixtures",
-      "LED mirror & vanity lighting",
-      "Custom vanity & storage solutions",
-      "Heated towel rails & accessories",
-      "Waterproofing & drainage solutions",
-    ],
-    price: "Starts from Rs. 1.25 Lakhs",
-  },
-  {
-    id: "false-ceiling",
-    image: serviceCeiling.src,
-    title: "False Ceiling & Lighting",
-    subtitle: "Designer Ceilings Across Bangalore",
-    description: "Elevate your interiors with stunning false ceiling designs that add depth, dimension, and drama. Combined with expert lighting design, we create atmospheres that transform spaces.",
-    features: [
-      "Multi-layered gypsum ceiling designs",
-      "Cove lighting with LED strips",
-      "Chandelier & pendant integration",
-      "Recessed downlight planning",
-      "POP & wooden ceiling options",
-      "Smart lighting automation",
-    ],
-    price: "Starts from Rs. 75,000",
-  },
-  {
-    id: "tv-unit",
-    image: serviceTvunit.src,
-    title: "TV Unit & Entertainment",
-    subtitle: "Custom Entertainment Units in Bangalore",
-    description: "Statement TV units that serve as the focal point of your living room. From floating designs to full wall units with integrated storage and lighting.",
-    features: [
-      "Wall-mounted & floating designs",
-      "Integrated LED backlighting",
-      "Hidden cable management",
-      "Display shelves & storage",
-      "Premium wood & lacquer finishes",
-      "Sound system integration",
-    ],
-    price: "Starts from Rs. 80,000",
-  },
-  {
-    id: "pooja-room",
-    image: servicePooja.src,
-    title: "Pooja Room Design",
-    subtitle: "Sacred Space Design in Bangalore",
-    description: "Create a serene and beautiful pooja room that blends tradition with modern aesthetics. From marble temples to intricately carved wooden mandirs, we design spaces that inspire devotion.",
-    features: [
-      "Custom marble & wooden temple designs",
-      "Brass & gold-finish embellishments",
-      "LED backlit deity panels",
-      "Storage for pooja essentials",
-      "Bell & diya holder integration",
-      "Vastu-compliant layouts",
-    ],
-    price: "Starts from Rs. 75,000",
-  },
-  {
-    id: "renovation",
-    image: serviceRenovation.src,
-    title: "Home Renovation",
-    subtitle: "Transform Your Existing Bangalore Home",
-    description: "Breathe new life into your existing space. Our renovation service covers everything from structural changes to cosmetic upgrades — transforming outdated interiors into modern, polished living spaces.",
-    features: [
-      "Complete demolition & reconstruction",
-      "Electrical & plumbing rework",
-      "Flooring replacement & upgrades",
-      "Bathroom & kitchen remodeling",
-      "Painting, textures & wall treatments",
-      "Project managed end-to-end",
-    ],
-    price: "Custom estimate after site review",
-  },
-  {
-    id: "commercial",
-    image: serviceCommercial.src,
-    title: "Commercial & Office Interiors",
-    subtitle: "Professional Workspace Design in Bangalore",
-    description: "From startups to corporate offices, retail stores to restaurants — we design commercial spaces that impress clients and boost productivity.",
-    features: [
-      "Office layout & partition planning",
-      "Reception & lobby design",
-      "Conference room & cabin interiors",
-      "Retail store & showroom design",
-      "Restaurant & café interiors",
-      "Brand-aligned design language",
-    ],
-    price: "Custom estimate after site review",
-  },
-];
+import { serviceDetailPath } from "@/lib/marketing-paths";
 
 export { services };
+const support = [
+  { id: "visa-assistance", title: "Visa Assistance", description: "Documents & application guidance", icon: FileCheck },
+  { id: "makkah-madinah-stays", title: "Hotel Stays", description: "Locations & accommodation options", icon: Hotel },
+  { id: "flights-transfers", title: "Flights & Transfers", description: "Flights and ground transport", icon: Plane },
+  { id: "ziyarat", title: "Ziyarat", description: "Local visits & guide enquiries", icon: MapPin },
+];
 
-type ServicesProps = { market?: MarketId };
-
-const Services = ({ market = "bangalore" }: ServicesProps) => {
-  const city = cityLabel(market);
-  const servicesStartPrice = "2 BHK starts from Rs. 3.5 Lakhs";
-  const heroLine =
-    market === "bangalore"
-      ? `${servicesStartPrice}. 3 BHK starts from Rs. 5.5 Lakhs. Pricing for modular kitchen, wardrobes, renovation, and full home interior services across Bangalore comes with clear scope planning.`
-      : `${servicesStartPrice}. 3 BHK starts from Rs. 5.5 Lakhs. Pricing for modular kitchen, wardrobes, renovation, and full home interior services across Bangalore comes with clear scope planning.`;
-
-  return (
-    <div className="min-h-screen bg-background">
-      <Header />
-
-      <section className="relative isolate overflow-hidden bg-[#f8f8f7] pb-12 pt-28 sm:pb-16 sm:pt-32">
-        <img src={heroImage.src} alt={`Interior design services in ${city} by Zikhra`} className="absolute inset-0 -z-20 h-full w-full object-cover opacity-[0.24] sm:opacity-[0.18]" />
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(248,248,247,0.96)_0%,rgba(248,248,247,0.9)_45%,rgba(248,248,247,0.72)_100%)]" />
-        <div className="relative mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
-          <h1 className="max-w-[11ch] font-sans text-[3.35rem] font-light leading-[0.97] tracking-[-0.07em] text-[#171717] sm:text-6xl md:max-w-[13ch] md:text-7xl lg:text-[5.8rem]">Interior Design Services</h1>
-          <p className="mt-8 max-w-xl font-sans text-[1.03rem] font-light leading-[1.72] tracking-[-0.02em] text-[#525252] md:text-[1.15rem]">{heroLine}</p>
-          <p className="mt-4 max-w-xl font-sans text-sm leading-relaxed text-[#5b5b5b]">
-            Compare packages in our{" "}
-            <Link href="/bangalore/interior-design-cost" className="font-medium text-[#171717] underline decoration-black/30 underline-offset-4 transition-colors hover:decoration-black">
-              interior design cost guide
-            </Link>
-            , including room-wise planning for practical, premium, and signature scopes.
-          </p>
-        </div>
-      </section>
-
-      <TrustedPartners />
-
-      {/* Services */}
-      <section className="px-5 pb-12 sm:pb-16">
-        <div className="mx-auto flex max-w-[23rem] flex-col gap-6 md:max-w-5xl md:gap-10">
-          {services.map((svc, i) => (
-            <Link key={svc.id} id={svc.id} href={serviceDetailPath(market, svc.id)} className="group block scroll-mt-24 overflow-hidden rounded-[1.5rem] border border-black/10 bg-white shadow-[0_12px_32px_rgba(0,0,0,0.055)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_36px_rgba(0,0,0,0.1)]">
-              <div className={`grid ${i % 2 === 1 ? "md:grid-cols-[1.05fr_0.95fr]" : "md:grid-cols-[0.95fr_1.05fr]"}`}>
-                <div className={`min-h-[12rem] overflow-hidden md:min-h-full ${i % 2 === 1 ? "md:order-2" : ""}`}>
-                  <img
-                    src={svc.image}
-                    alt={`${svc.title} interior design service in ${city} by Zikhra`}
-                    loading="lazy"
-                    width={640}
-                    height={640}
-                    className="h-full min-h-[12rem] w-full object-cover transition-transform duration-700 group-hover:scale-[1.035]"
-                  />
-                </div>
-                <div className="p-5 sm:p-8 md:p-9">
-                  <p className="mb-2 font-sans text-[10px] font-medium uppercase tracking-[0.22em] text-[#626262]">{applyMarketToCopy(svc.subtitle, market)}</p>
-                  <h2 className="mb-3 font-sans text-2xl font-light leading-[1.04] tracking-[-0.045em] text-[#171717] md:text-4xl">{svc.title}</h2>
-                  <p className="mb-5 line-clamp-3 font-sans text-sm leading-relaxed text-muted-foreground md:mb-7 md:line-clamp-none">{applyMarketToCopy(svc.description, market)}</p>
-                  <div className="grid gap-x-4 gap-y-3 border-y border-black/10 py-4 sm:grid-cols-2 sm:py-5">
-                    {svc.features.map((feat, featureIndex) => (
-                      <div key={feat} className={`${featureIndex > 2 ? "hidden sm:flex" : "flex"} items-start gap-2.5`}>
-                        <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-black/70" />
-                        <span className="font-sans text-sm leading-snug text-[#454545]">{feat}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-5 flex flex-col gap-4 sm:mt-6 sm:flex-row sm:items-center sm:justify-between">
-                    <span className="font-sans text-base font-medium tracking-[-0.02em] text-[#171717]">{svc.price}</span>
-                    <span className="inline-flex w-fit items-center gap-2 rounded-lg bg-[#171717] px-4 py-3 font-sans text-sm font-medium text-white transition-all duration-300 group-hover:-translate-y-0.5 group-hover:bg-black group-hover:shadow-[0_10px_22px_rgba(0,0,0,0.16)]">
-                      View Details <ArrowUpRight className="h-4 w-4" />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* Process */}
-      <section className="section-padding bg-luxury-dark">
-        <div className="text-center mb-10">
-          <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold mb-3">Our Process</p>
-          <h2 className="font-serif text-3xl md:text-4xl gold-text">How We Work</h2>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-          {[
-            { step: "01", title: "Consultation", desc: "Free meeting to understand your vision & budget" },
-            { step: "02", title: "3D Design", desc: "Photorealistic renders of your dream space" },
-            { step: "03", title: "Execution", desc: "Expert craftsmen bring the design to life" },
-            { step: "04", title: "Handover", desc: "Quality checked & delivered on time" },
-          ].map((item) => (
-            <div key={item.step} className="text-center p-5 rounded-2xl bg-card border border-border/50">
-              <span className="font-serif text-3xl font-bold gold-text">{item.step}</span>
-              <h3 className="font-serif text-sm text-foreground mt-3 mb-1">{item.title}</h3>
-              <p className="font-sans text-xs text-muted-foreground">{item.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <ContactForm />
-      <Footer />
-      <BottomNav />
-    </div>
-  );
-};
-
-export default Services;
+export default function Services({ market = "bangalore" }: { market?: MarketId }) {
+  return <div className="min-h-screen bg-background">
+    <Header />
+    <section className="relative isolate overflow-hidden bg-[#f8f8f7] pb-8 pt-24 sm:pb-10 sm:pt-28">
+      <HeroBackdrop />
+      <div className="relative mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
+        <h1 className="font-sans text-4xl font-light leading-tight tracking-[-0.055em] text-[#171717] sm:text-6xl">Travel Services</h1>
+        <p className="mt-3 max-w-lg text-sm leading-relaxed text-[#525252] sm:text-base">Umrah packages and thoughtful support for your journey.</p>
+      </div>
+    </section>
+    <TrustedPartners />
+    <FeaturedProjects market={market} featuredOnly={false} title="Available Packages" subtitle="Compare flights, prices and departure dates." />
+    <section className="mx-auto max-w-5xl px-5 pb-10 sm:px-8" aria-label="Travel support">
+      <h2 className="mb-4 font-serif text-2xl text-[#171717]">Travel support</h2>
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">{support.map(item => <Link key={item.id} href={serviceDetailPath(market,item.id)} className="group rounded-2xl border border-black/10 bg-white p-4 transition-colors hover:border-black/30"><item.icon size={20} strokeWidth={1.5} className="mb-3 text-[#65512b]"/><h3 className="text-sm font-medium text-[#171717]">{item.title}</h3><p className="mt-1 text-xs leading-relaxed text-muted-foreground">{item.description}</p><ArrowUpRight size={15} className="mt-3 text-black/50"/></Link>)}</div>
+      <div className="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-2xl bg-[#f3efe6] p-4"><p className="text-sm text-[#525252]">Planning Hajj or a tailored journey?</p><Link href="/contact" className="inline-flex items-center gap-2 rounded-xl bg-[#171717] px-4 py-2.5 text-xs font-medium text-white">Talk to our travel team<ArrowUpRight size={14}/></Link></div>
+    </section>
+    <Footer /><BottomNav />
+  </div>;
+}

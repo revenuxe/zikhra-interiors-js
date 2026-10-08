@@ -1,3 +1,4 @@
+import { seoTitle } from "@/lib/seo";
 import type { Metadata } from "next";
 import ServicesView from "@/views/marketing/ServicesView";
 import SeoJsonLd from "@/components/SeoJsonLd";
@@ -16,12 +17,12 @@ import { BANGALORE_CORE_KEYWORDS, BANGALORE_SERVICE_KEYWORDS, uniqueKeywords } f
 export const dynamic = "force-static";
 export const revalidate = 86400;
 
-const title = "Best Interior Designer in Bangalore for Interior Design Services | Zikhra";
+const title = "Umrah & Travel Services from Bangalore | Zikhra";
 const description =
-  "Premium home interiors, modular kitchens, wardrobes, and renovation in Bangalore, including Koramangala, Whitefield, Indiranagar, HSR, and across the city.";
+  "Premium Umrah journeys, Hajj enquiries, family travel, and Ramadan travel in Bangalore, including Koramangala, Whitefield, Indiranagar, HSR, and across the city.";
 
 export const metadata: Metadata = {
-  title,
+  title: seoTitle(title),
   description,
   keywords: uniqueKeywords(BANGALORE_CORE_KEYWORDS, BANGALORE_SERVICE_KEYWORDS),
   alternates: { canonical: "/bangalore/services" },
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
     description,
     path: "/bangalore/services",
     imageUrl: DEFAULT_OG_IMAGE_PATH,
-    imageAlt: "Zikhra premium interior design services in Bangalore",
+    imageAlt: "Zikhra premium travel planning services in Bangalore",
   }),
   twitter: twitterSummaryLarge(title, description, DEFAULT_OG_IMAGE_PATH),
 };

@@ -1,3 +1,4 @@
+import { seoTitle } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { bangaloreAreas, getBangaloreAreaBySlug } from "@/lib/bangalore-areas-data";
@@ -28,12 +29,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const area = getBangaloreAreaBySlug(slug);
   if (!area) return { title: "Area Not Found" };
-  const title = `Best Interior Designer in ${area.name}, Bangalore | Zikhra`;
-  const description = `Looking for the best interior designer in ${area.name}, Bangalore? Zikhra designs premium 2 BHK, 3 BHK, villa, modular kitchen, wardrobes, and turnkey home interiors with clear scope planning.`;
+  const title = `Umrah & Hajj Tours from ${area.name}, Bangalore | Zikhra`;
+  const description = `Explore Umrah packages and Hajj guidance from ${area.name}, Bangalore. Compare departures and flights with Zikhra, based in RT Nagar.`;
   const path = `/bangalore/${area.slug}`;
   const keywords = areaSeoKeywords(area.name);
   return {
-    title,
+    title: seoTitle(title),
     description,
     keywords,
     alternates: { canonical: path },
@@ -42,7 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description,
       path,
       imageUrl: DEFAULT_OG_IMAGE_PATH,
-      imageAlt: `Best interior designer in ${area.name}, Bangalore - Zikhra`,
+      imageAlt: `Umrah & travel enquiries from ${area.name}, Bangalore - Zikhra`,
     }),
     twitter: twitterSummaryLarge(title, description, DEFAULT_OG_IMAGE_PATH),
   };
@@ -68,7 +69,7 @@ export default async function BangaloreAreaPage({ params }: Props) {
         id={`bangalore-area-webpage-${area.slug}`}
         json={toJsonLd(
           webPageSchema({
-            name: `Interior designers in ${area.name}, Bangalore`,
+            name: `Umrah & Hajj Tours from ${area.name}, Bangalore`,
             description: area.description.split(/\n\n+/)[0],
             path: `/bangalore/${area.slug}`,
             keywords: areaSeoKeywords(area.name),
@@ -79,11 +80,11 @@ export default async function BangaloreAreaPage({ params }: Props) {
         id={`bangalore-area-service-${area.slug}`}
         json={toJsonLd(
           localServiceSchema({
-            name: `Premium interior design in ${area.name}, Bangalore`,
+            name: `Umrah & Hajj travel from ${area.name}, Bangalore`,
             description: area.description.split(/\n\n+/)[0],
             path: `/bangalore/${area.slug}`,
             areaServed: [area.name, "Bangalore", "Bengaluru"],
-            serviceType: "Residential interior design",
+            serviceType: "Umrah and Hajj travel planning",
           }),
         )}
       />

@@ -1,3 +1,5 @@
+import { getPublicTravelCatalogue } from "@/lib/travel-cms-server";
+import { seoTitle } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ServiceDetailView from "@/views/marketing/ServiceDetailView";
@@ -18,7 +20,7 @@ type Props = { params: Promise<{ slug: string }> };
 
 export const dynamic = "force-static";
 export const dynamicParams = false;
-export const revalidate = 86400;
+export const revalidate = 60;
 
 export function generateStaticParams() {
   return services.map((service) => ({ slug: service.id }));
@@ -29,12 +31,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = getServiceBySlug(slug);
   if (!service) return { title: "Service Not Found" };
 
-  const canonicalPath = `/bangalore/services/${slug}`;
-  const title = `Best Interior Designer in Bangalore for ${service.title} | Zikhra Interiors`;
+  const canonicalPackages: Record<string, string> = { "umrah-packages": "umrah", "family-umrah": "family-umrah", "group-umrah": "family-umrah", "private-umrah": "private-umrah" };
+  const canonicalPath = canonicalPackages[slug] ? `/bangalore/packages/${canonicalPackages[slug]}` : `/bangalore/services/${slug}`;
+  const title = `${service.title} from Bangalore | Zikhra Tours & Travels`;
   const description = applyMarketToCopy(service.description, "bangalore").slice(0, 160);
 
   return {
-    title,
+    title: seoTitle(title),
     description,
     keywords: serviceSeoKeywords(service.title),
     alternates: { canonical: canonicalPath },
@@ -44,7 +47,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       path: canonicalPath,
       type: "article",
       imageUrl: service.image ?? DEFAULT_OG_IMAGE_PATH,
-      imageAlt: `${service.title} interior design service in Bangalore`,
+      imageAlt: `${service.title} travel planning service in Bangalore`,
     }),
     twitter: twitterSummaryLarge(title, description, service.image ?? DEFAULT_OG_IMAGE_PATH),
   };
@@ -54,6 +57,8 @@ export default async function BangaloreServiceDetailPage({ params }: Props) {
   const { slug } = await params;
   const service = getServiceBySlug(slug);
   if (!service) notFound();
+  const packageService = ["umrah-packages", "hajj-enquiries", "family-umrah", "group-umrah", "private-umrah", "ramadan-umrah"].includes(slug);
+  const catalogue = packageService ? await getPublicTravelCatalogue() : undefined;
 
   return (
     <>
@@ -79,7 +84,7 @@ export default async function BangaloreServiceDetailPage({ params }: Props) {
           }),
         )}
       />
-      <ServiceDetailView service={service} market="bangalore" />
+      <ServiceDetailView service={service} market="bangalore" initialCatalogue={catalogue} />
     </>
   );
 }

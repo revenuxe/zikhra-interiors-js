@@ -3,9 +3,9 @@ import "./globals.css";
 import Providers from "./providers";
 import { DEFAULT_OG_IMAGE_PATH, pageOpenGraph, SITE_NAME, SITE_URL, twitterSummaryLarge } from "@/lib/seo";
 
-const defaultTitle = "Best Interior Designer in Bangalore | Zikhra Interiors";
+const defaultTitle = "Tours and Travels in Bangalore | Zikhra Tours & Travels";
 const defaultDescription =
-  "Premium home interiors, modular kitchens, and turnkey execution in Bangalore with clear scope planning and supervised delivery.";
+  "Explore Umrah packages, Hajj guidance and family travel with Zikhra Tours and Travels in RT Nagar, Bangalore. Compare flights, prices and departure batches.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description: defaultDescription,
+  verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION } : undefined,
   icons: {
     icon: [{ url: "/favicon.ico", type: "image/x-icon" }],
     shortcut: "/favicon.ico",
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
       description: defaultDescription,
       path: "/",
       imageUrl: DEFAULT_OG_IMAGE_PATH,
-      imageAlt: "Zikhra - best interior designer in Bangalore",
+      imageAlt: "Zikhra - Umrah travel planner in Bangalore",
     }),
     siteName: SITE_NAME,
   },

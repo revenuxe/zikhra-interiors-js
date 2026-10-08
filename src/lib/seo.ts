@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { COMPANY, OFFICE_MAP_URL } from "@/lib/company";
 
 /**
  * Must match the final URL after hosting redirects. Apex zikhra.com 301s to www on Vercel — canonicals must use www
@@ -14,19 +15,19 @@ function resolveSiteUrl(): string {
     const host = url.hostname.toLowerCase();
     // Keep one canonical host for SEO consistency.
     if (host === "zikhra.com" || host === "www.zikhra.com") {
-      return `https://www.zikhra.com${url.pathname === "/" ? "" : url.pathname}`.replace(/\/$/, "");
+      return "https://www.zikhra.com";
     }
     if (url.protocol === "http:") url.protocol = "https:";
-    return url.toString().replace(/\/$/, "");
+    return url.origin;
   } catch {
     return fallback;
   }
 }
 
 export const SITE_URL = resolveSiteUrl();
-export const SITE_NAME = "Zikhra Interiors";
+export const SITE_NAME = "Zikhra Tours & Travels";
 /** Served from `/public` for reliable social previews. */
-export const DEFAULT_OG_IMAGE_PATH = "/og-image.webp";
+export const DEFAULT_OG_IMAGE_PATH = "/travel/makkah.jpg";
 
 export function absoluteUrl(path: string): string {
   if (!path) return SITE_URL;
@@ -55,10 +56,12 @@ export function pageOpenGraph(input: {
   const alt = input.imageAlt ?? input.title;
   return {
     type: input.type ?? "website",
+    siteName: SITE_NAME,
+    locale: "en_IN",
     title: input.title,
     description: input.description,
     url: absoluteUrl(input.path),
-    images: [{ url: image, width: 1200, height: 630, alt }],
+    images: [{ url: image, alt }],
   };
 }
 
@@ -76,37 +79,51 @@ export function twitterSummaryLarge(
 }
 
 export function toJsonLd<T>(data: T): string {
-  return JSON.stringify(data);
+  return JSON.stringify(data).replace(/</g, "\\u003c");
+}
+
+/** Use an absolute title to avoid applying the brand suffix twice. */
+export function seoTitle(title: string): { absolute: string } {
+  const clean = title.replace(/(?:\s*\|\s*Zikhra(?: Tours & Travels)?)+$/i, "");
+  return { absolute: /zikhra/i.test(clean) ? clean : `${clean} | ${SITE_NAME}` };
 }
 
 export function organizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": absoluteUrl("/#organization"),
     name: SITE_NAME,
     url: SITE_URL,
-    sameAs: ["https://www.instagram.com/zikhra.interiors/"],
+    logo: absoluteUrl("/travel/zikhra-travel-logo.svg"),
+    email: COMPANY.email,
+    telephone: COMPANY.phone,
   };
 }
 
 export function localBusinessSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "InteriorDesignBusiness",
+    "@type": "TravelAgency",
+    "@id": absoluteUrl("/#travel-agency"),
     name: SITE_NAME,
     url: SITE_URL,
-    email: "zikhraofficial@gmail.com",
-    telephone: "9886579923",
+    email: COMPANY.email,
+    telephone: COMPANY.phone,
+    logo: absoluteUrl("/travel/zikhra-travel-logo.svg"),
+    hasMap: OFFICE_MAP_URL,
     image: DEFAULT_OG_IMAGE,
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Bangalore",
-      addressRegion: "Karnataka",
-      postalCode: "560034",
+      streetAddress: COMPANY.streetAddress,
+      addressLocality: COMPANY.city,
+      addressRegion: COMPANY.region,
+      postalCode: COMPANY.postalCode,
       addressCountry: "IN",
     },
     areaServed: [
       "Bangalore",
+      "RT Nagar",
       "Koramangala",
       "Indiranagar",
       "Whitefield",
@@ -147,7 +164,7 @@ export function localServiceSchema(input: {
     "@context": "https://schema.org",
     "@type": "Service",
     name: input.name,
-    serviceType: input.serviceType ?? "Interior design",
+    serviceType: input.serviceType ?? "Umrah and travel planning",
     description: input.description,
     url: absoluteUrl(input.path),
     areaServed: (input.areaServed ?? ["Bangalore", "Bengaluru"]).map((name) => ({
@@ -155,11 +172,12 @@ export function localServiceSchema(input: {
       name,
     })),
     provider: {
-      "@type": "InteriorDesignBusiness",
+      "@type": "TravelAgency",
+      "@id": absoluteUrl("/#travel-agency"),
       name: SITE_NAME,
       url: SITE_URL,
-      telephone: "9886579923",
-      email: "zikhraofficial@gmail.com",
+      telephone: COMPANY.phone,
+      email: COMPANY.email,
     },
   };
 }
@@ -168,7 +186,7 @@ export function serviceCatalogSchema(items: Array<{ name: string; path: string; 
   return {
     "@context": "https://schema.org",
     "@type": "OfferCatalog",
-    name: "Zikhra Bangalore Interior Design Services",
+    name: "Zikhra Umrah and Travel Services",
     itemListElement: items.map((item) => ({
       "@type": "Offer",
       itemOffered: {
@@ -177,7 +195,7 @@ export function serviceCatalogSchema(items: Array<{ name: string; path: string; 
         description: item.description,
         url: absoluteUrl(item.path),
         provider: {
-          "@type": "InteriorDesignBusiness",
+          "@type": "TravelAgency",
           name: SITE_NAME,
           url: SITE_URL,
         },
@@ -190,13 +208,10 @@ export function websiteSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": absoluteUrl("/#website"),
     name: SITE_NAME,
     url: SITE_URL,
-    potentialAction: {
-      "@type": "SearchAction",
-      target: `${SITE_URL}/blog?query={search_term_string}`,
-      "query-input": "required name=search_term_string",
-    },
+    publisher: { "@id": absoluteUrl("/#organization") },
   };
 }
 

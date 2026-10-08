@@ -1,3 +1,4 @@
+import { seoTitle } from "@/lib/seo";
 import type { Metadata } from "next";
 import { localBlogListItems } from "@/lib/local-blog-posts";
 import BlogListView, { type BlogListItem } from "@/views/marketing/BlogListView";
@@ -12,21 +13,21 @@ import {
 } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Interior Design Cost & Planning Blog",
+  title: seoTitle("Travel Package Guide & Planning Blog"),
   description:
-    "Read Zikhra's interior design cost guides, 2 BHK and 3 BHK pricing advice, modular kitchen planning tips, and premium home interior insights.",
+    "Read Zikhra's travel package costs guides, Umrah and Family Umrah pricing advice, Hajj enquiry planning tips, and premium Umrah travel insights.",
   alternates: { canonical: "/blog" },
   openGraph: pageOpenGraph({
-    title: "Interior Design Cost & Planning Blog | Zikhra",
-    description: "Pricing guides and expert insights on premium interiors, materials, layouts, and design trends.",
+    title: "Travel Package Guide & Planning Blog | Zikhra",
+    description: "Travel checklists, itinerary planning, and practical preparation for Umrah and family journeys.",
     path: "/blog",
     type: "website",
     imageUrl: DEFAULT_OG_IMAGE_PATH,
-    imageAlt: "Interior design cost and planning insights from Zikhra",
+    imageAlt: "Umrah and travel planning notes from Zikhra",
   }),
   twitter: twitterSummaryLarge(
-    "Interior Design Cost & Planning Blog | Zikhra",
-    "Pricing guides and expert insights on premium interiors, materials, layouts, and design trends.",
+    "Travel Package Guide & Planning Blog | Zikhra",
+    "Travel checklists, itinerary planning, and practical preparation for Umrah and family journeys.",
     DEFAULT_OG_IMAGE_PATH,
   ),
 };
@@ -45,8 +46,8 @@ export default async function BlogPage() {
         json={toJsonLd({
           "@context": "https://schema.org",
           "@type": "CollectionPage",
-          name: "Interior Design Cost & Planning Blog",
-          description: "Interior pricing guides, premium design tips, and planning resources from Zikhra.",
+          name: "Travel Package Guide & Planning Blog",
+          description: "Umrah checklists, family travel notes, and Hajj enquiry preparation from Zikhra.",
           url: absoluteUrl("/blog"),
         })}
       />

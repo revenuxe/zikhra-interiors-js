@@ -32,12 +32,12 @@ const AreasWeServe = ({ market = "bangalore" }: Props) => {
         <p className="font-sans text-muted-foreground text-sm">{copy.areasSectionSub}</p>
         <p className="font-sans text-muted-foreground text-xs mt-3 max-w-md mx-auto leading-relaxed">
           Compare{" "}
-          <Link href="/bangalore/interior-design-cost" className="text-gold hover:underline">
-            Bangalore interior design costs
+          <Link href="/bangalore/travel-package-guide" className="text-gold hover:underline">
+            Bangalore travel package costs
           </Link>{" "}
           or explore{" "}
           <Link href="/bangalore" className="text-gold hover:underline">
-            interior design in Bangalore
+            travel planning in Bangalore
           </Link>
           , including Koramangala, Whitefield, Indiranagar, and more.
         </p>

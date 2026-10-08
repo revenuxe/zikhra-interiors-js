@@ -11,6 +11,8 @@ node_modules
 dist
 dist-ssr
 .next
+.next-*
+supabase/.temp/
 tsconfig.tsbuildinfo
 *.local
 .env

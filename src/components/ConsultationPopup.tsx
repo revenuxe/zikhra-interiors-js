@@ -3,14 +3,14 @@
 import { useState, useEffect } from "react";
 import { getSupabaseClient } from "@/integrations/supabase/client";
 import { insertLead } from "@/lib/lead-insert";
+import TravelLeadFields, { emptyTravelLead, travelLeadMessage } from "@/components/TravelLeadFields";
 import { toast } from "sonner";
 import { X } from "lucide-react";
-import popupHero from "@/assets/popup-hero.webp";
 import { useRouter } from "next/navigation";
 
 const ConsultationPopup = () => {
   const [open, setOpen] = useState(false);
-  const [formData, setFormData] = useState({ name: "", phone: "", area: "", projectType: "", message: "" });
+  const [formData, setFormData] = useState(emptyTravelLead);
   const [submitting, setSubmitting] = useState(false);
   const router = useRouter();
 
@@ -40,7 +40,8 @@ const ConsultationPopup = () => {
       phone: formData.phone,
       area: formData.area,
       projectType: formData.projectType,
-      message: formData.message,
+      message: travelLeadMessage(formData),
+      travel: formData,
       source: "popup",
     });
     if (error) {
@@ -59,19 +60,19 @@ const ConsultationPopup = () => {
       <div className="absolute inset-0 bg-luxury-black/80 backdrop-blur-sm" />
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-sm bg-card rounded-3xl overflow-hidden border border-border/30 shadow-2xl animate-fade-in-up"
+        className="relative max-h-[90dvh] overflow-y-auto w-full max-w-sm bg-card rounded-3xl border border-border/30 shadow-2xl animate-fade-in-up"
       >
         {/* Hero Image */}
           <div className="relative h-36 overflow-hidden">
           <img
-            src={popupHero.src}
-            alt="Premium Bangalore home interior consultation — bespoke living space design by Zikhra"
+            src={"/travel/makkah.jpg"}
+            alt="Plan an Umrah journey with Zikhra Tours & Travels"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-card" />
           <button
             onClick={close}
-            aria-label="Close consultation form"
+            aria-label="Close travel enquiry form"
             className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full border border-black/20 bg-white/95 shadow-[0_4px_12px_rgba(0,0,0,0.2)] transition-all hover:scale-105 hover:bg-white"
           >
             <X className="h-[18px] w-[18px] stroke-[2.5] text-[#171717]" />
@@ -81,45 +82,18 @@ const ConsultationPopup = () => {
         {/* Content */}
         <div className="px-5 pb-5 -mt-4 relative z-10">
           <div className="text-center mb-4">
-            <p className="text-[10px] font-sans tracking-[0.3em] uppercase text-gold mb-1">Limited Offer</p>
-            <h3 className="font-serif text-lg gold-text leading-snug">Get Your Free Design Consultation</h3>
-            <p className="font-sans text-[11px] text-muted-foreground mt-1">Book today & get a complimentary 3D render</p>
+            <p className="text-[10px] font-sans tracking-[0.3em] uppercase text-gold mb-1">Travel Enquiry</p>
+            <h3 className="font-serif text-lg gold-text leading-snug">Plan Your Journey With Us</h3>
+            <p className="font-sans text-[11px] text-muted-foreground mt-1">Share your dates, group size, and travel preferences</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-2.5">
-            <input
-              type="text" placeholder="Your Name" required
-              value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-full rounded-xl border border-black/15 bg-[#fafafa] px-4 py-2.5 font-sans text-xs text-foreground placeholder:text-muted-foreground/65 transition-colors focus:border-black/45 focus:outline-none"
-            />
-            <input
-              type="tel" placeholder="Phone Number" required
-              value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-              className="w-full rounded-xl border border-black/15 bg-[#fafafa] px-4 py-2.5 font-sans text-xs text-foreground placeholder:text-muted-foreground/65 transition-colors focus:border-black/45 focus:outline-none"
-            />
-            <input
-              type="text"
-              placeholder="Area / locality"
-              required
-              value={formData.area}
-              onChange={(e) => setFormData({ ...formData, area: e.target.value })}
-              className="w-full rounded-xl border border-black/15 bg-[#fafafa] px-4 py-2.5 font-sans text-xs text-foreground placeholder:text-muted-foreground/65 transition-colors focus:border-black/45 focus:outline-none"
-            />
-            <input
-              type="text" placeholder="Project Type (e.g., 2 BHK, Villa, Duplex)"
-              value={formData.projectType} onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-              className="w-full rounded-xl border border-black/15 bg-[#fafafa] px-4 py-2.5 font-sans text-xs text-foreground placeholder:text-muted-foreground/65 transition-colors focus:border-black/45 focus:outline-none"
-            />
-            <textarea
-              placeholder="Tell us about your project..." rows={2}
-              value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              className="w-full resize-none rounded-xl border border-black/15 bg-[#fafafa] px-4 py-2.5 font-sans text-xs text-foreground placeholder:text-muted-foreground/65 transition-colors focus:border-black/45 focus:outline-none"
-            />
+            <TravelLeadFields value={formData} onChange={setFormData} compact />
             <button
               type="submit" disabled={submitting}
               className="w-full gold-gradient py-3 rounded-full font-sans text-xs font-medium text-primary-foreground transition-all duration-300 hover:scale-[1.02] gold-glow disabled:opacity-50"
             >
-              {submitting ? "Submitting..." : "Book Free Consultation"}
+              {submitting ? "Submitting..." : "Request Travel Quote"}
             </button>
           </form>
         </div>

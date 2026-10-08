@@ -1,3 +1,4 @@
+import { seoTitle } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getLocalBlogPostBySlug, localBlogPosts } from "@/lib/local-blog-posts";
@@ -24,9 +25,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (localPost) {
     const description = (localPost.excerpt ?? "").slice(0, 160);
     const path = `/blog/${localPost.slug}`;
-    const ogTitle = `${localPost.title} | Zikhra Interiors`;
+    const ogTitle = `${localPost.title} | Zikhra Tours & Travels`;
     return {
-      title: ogTitle,
+      title: seoTitle(ogTitle),
       description,
       alternates: { canonical: path },
       openGraph: pageOpenGraph({
@@ -34,9 +35,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         description,
         path,
         type: "article",
-        imageAlt: `${localPost.title} by Zikhra Interiors`,
+        imageUrl: localPost.mainImageUrl,
+        imageAlt: `${localPost.title} by Zikhra Tours & Travels`,
       }),
-      twitter: twitterSummaryLarge(ogTitle, description),
+      twitter: twitterSummaryLarge(ogTitle, description, localPost.mainImageUrl),
     };
   }
 
@@ -67,10 +69,11 @@ export default async function BlogPostPage({ params }: Props) {
             headline: localPost.title,
             datePublished: localPost.publishedAt,
             dateModified: localPost.publishedAt,
-            author: { "@type": "Person", name: localPost.authorName ?? "Zikhra Interiors" },
+            author: { "@type": "Organization", name: localPost.authorName ?? "Zikhra Tours & Travels" },
             description: localPost.excerpt ?? "",
             mainEntityOfPage: absoluteUrl(`/blog/${localPost.slug}`),
-            publisher: { "@type": "Organization", name: "Zikhra Interiors" },
+            image: absoluteUrl(localPost.mainImageUrl || DEFAULT_OG_IMAGE_PATH),
+            publisher: { "@type": "Organization", "@id": absoluteUrl("/#organization"), name: "Zikhra Tours & Travels" },
           })}
         />
         <BlogPostView post={localPost} />
