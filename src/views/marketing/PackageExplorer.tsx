@@ -71,7 +71,7 @@ function CatalogueExplorer({initialCategory, initialPackageId, categories, packa
   const dates = option.dates.filter(d => d >= today && (!dateFilter || d === dateFilter)).sort();
   const selectedDate = dates.includes(departure) ? departure : dates[0];
   const journeyCategories = category === "all" ? packageCategories : packageCategories.filter(item => item.id === category);
-  const journeyTitle = category === "all" ? "Your next journey" : category === "classic" ? "Your Umrah journey" : packageCategories.find(item => item.id === category)?.label ?? "Your journey";
+  const journeyTitle = category === "all" ? "Your next journey" : category === "classic" ? "Umrah Tour Package" : packageCategories.find(item => item.id === category)?.label ?? "Your journey";
   const available = Boolean(selected) && options.length > 0;
   const filterCount = Number(airlineFilter !== "all") + Number(Boolean(dateFilter));
   const reset = () => { setAirlineFilter("all"); setDateFilter(""); };
